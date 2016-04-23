@@ -1,0 +1,66 @@
+@color-yellow: #ffc600;
+
+@font-size-title: 26px;
+@font-size-subtitle: 22px;
+@font-size-normal: 18px;
+@font-size-btn: 22px;
+
+@margin-md: 40px;
+@margin-sm: @margin-md / 2;
+@margin-lg: @margin-md * 2;
+
+body {
+  font-family: 'Hind', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+}
+
+header {
+  background-color: yellow;
+  background-image: url('../images/test-header.jpg');
+  background-position: 50% 10%;
+  background-size: cover;
+}
+
+.header-form {
+  margin: @margin-md 0;
+}
+
+.header-form .btn {
+  background-color: @color-yellow;
+  border-radius: 12px;
+  font-family: 'Oswald';
+  font-size: @font-size-btn;
+  margin-bottom: @margin-sm;
+  margin-top: @margin-sm;
+  padding: 10px;
+}
+
+.header-form .form-control {
+  background-color: transparent;
+  border-color: black;
+  border-radius: 0;
+  border-width: 0 0 1px 0;
+  box-shadow: none;
+  color: #333;
+  font-size: @font-size-normal;
+  margin: @margin-sm 0;
+}
+
+.header-logo {
+  margin-bottom: @margin-md;
+  margin-top: @margin-md;
+}
+
+.header-tagline {
+  font-size: @font-size-subtitle;
+  text-align: center;
+}
+
+.home-icon {
+  height: 40px;
+  margin-left: @margin-sm;
+  margin-top: @margin-sm;
+}
