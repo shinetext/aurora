@@ -34,7 +34,31 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+
+  '/faq': {
+    view: 'faq',
+    locals: {
+      title: 'Shine - FAQ',
+      layout: 'layouts/subpage.layout'
+    }
+  },
+
+  '/privacy-policy': {
+    view: 'privacy-policy',
+    locals: {
+      title: 'Shine - Privacy Policy',
+      layout: 'layouts/subpage.layout'
+    }
+  },
+
+  '/squad': {
+    view: 'squad',
+    locals: {
+      title: 'Shine - Squad',
+      layout: 'layouts/subpage.layout'
+    }
+  },
 
   /***************************************************************************
   *                                                                          *
