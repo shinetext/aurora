@@ -64,3 +64,24 @@ header {
   margin-left: @margin-sm;
   margin-top: @margin-sm;
 }
+
+.in-the-news img {
+  max-height: 80px;
+  max-width: 100%;
+  opacity: 0.8;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition-property: opacity, -webkit-filter, filter;
+  transition-duration: 0.5s;
+}
+
+.in-the-news img:hover {
+  opacity: 1;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.news-item {
+  margin: 20px 0;
+  text-align: center;
+}
