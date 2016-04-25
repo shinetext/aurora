@@ -1,11 +1,6 @@
 <header>
-  <div class="container-fluid">
-    <div class="row">
-      <a href="/">
-        <img class="home-icon pull-left" src="/images/shine-logo-320x132.png">
-      </a>
-    </div>
-  </div>
+
+  <%- partial ('partials/header-icon.ejs') %>
 
   <div class="container">
 
@@ -93,31 +88,4 @@
   </div>
 </div>
 
-<footer class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12 subpages-container">
-      <a href="/faq" target="_blank">
-        FAQ
-      </a>
-      <a href="/privacy-policy" target="_blank">
-        Privacy Policy
-      </a>
-      <a href="/squad" target="_blank">
-        Squad
-      </a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 social-icons">
-      <a href="https://www.facebook.com/Shine-Text" target="_blank">
-        <img src="/images/social/facebook_yellow.png">
-      </a>
-      <a href="https://instagram.com/ShineText" target="_blank">
-        <img src="/images/social/instagram_yellow.png">
-      </a>
-      <a href="https://twitter.com/ShineText" target="_blank">
-        <img src="/images/social/twitter_yellow.png">
-      </a>
-    </div>
-  </div>
-</footer>
+<%- partial ('partials/footer.ejs') %>
