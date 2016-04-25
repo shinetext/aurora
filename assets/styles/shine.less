@@ -11,6 +11,7 @@
 
 body {
   font-family: 'Hind', sans-serif;
+  font-size: @font-size-normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,6 +23,7 @@ header {
   background-image: url('../images/test-header.jpg');
   background-position: 50% 10%;
   background-size: cover;
+  padding-bottom: @margin-lg;
 }
 
 .header-form {
@@ -63,6 +65,22 @@ header {
   height: 40px;
   margin-left: @margin-sm;
   margin-top: @margin-sm;
+}
+
+.how-does-it-work {
+  background-image: url('http://img.csfd.cz/files/images/user/profile/160/046/160046376_024774.png');
+  background-image: url('http://img.csfd.cz/files/images/user/profile/160/046/160046376_024774.png'), linear-gradient(#fff, #fbfbbf);
+  margin-top: @margin-lg;
+  text-align: center;
+}
+
+.how-does-it-work h1 {
+  margin-bottom: @margin-md;
+}
+
+.how-does-it-work p {
+  font-size: @font-size-subtitle;
+  margin-bottom: @margin-sm;
 }
 
 .in-the-news img {
