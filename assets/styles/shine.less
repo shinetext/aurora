@@ -1,15 +1,3 @@
-@color-footer: #222;
-@color-yellow: #ffc600;
-
-@font-size-title: 26px;
-@font-size-subtitle: 22px;
-@font-size-normal: 18px;
-@font-size-btn: 22px;
-
-@margin-md: 40px;
-@margin-sm: @margin-md / 2;
-@margin-lg: @margin-md * 2;
-
 body {
   font-family: 'Hind', sans-serif;
   font-size: @font-size-normal;
@@ -19,6 +7,16 @@ footer {
   background-color: @color-footer;
   padding: @margin-md 0;
   text-align: center;
+}
+
+form .btn {
+  background-color: @color-yellow;
+  border-radius: 12px;
+  font-family: 'Oswald';
+  font-size: @font-size-btn;
+  margin-bottom: @margin-sm;
+  margin-top: @margin-sm;
+  padding: 10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -50,16 +48,6 @@ header {
 
 .header-form {
   margin: @margin-md 0;
-}
-
-.header-form .btn {
-  background-color: @color-yellow;
-  border-radius: 12px;
-  font-family: 'Oswald';
-  font-size: @font-size-btn;
-  margin-bottom: @margin-sm;
-  margin-top: @margin-sm;
-  padding: 10px;
 }
 
 .header-form .form-control {

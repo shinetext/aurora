@@ -1,0 +1,52 @@
+<%
+  var phone = '';
+  var firstName = '';
+  if (typeof query !== undefined) {
+    if (typeof query.phone === 'string') {
+      phone = query.phone;
+    }
+    if (typeof query.first_name === 'string') {
+      firstName = query.first_name;
+    }
+  }
+
+  var headerText;
+  var bodyText;
+  if (query.referral) {
+    headerText = "You're a rockstar! Thanks for sharing.";
+    bodyText = "Got more friends who would appreciate Shine? Spread some more motiv-affirmation!";
+  }
+  else {
+    headerText = "You're signed up!";
+    bodyText = "You're now signed up for Shine. Your daily texts will start on the next business day. Spread the motiv-affirmation and share with friends!";
+  }
+%>
+
+<header class="header-confirmation">
+
+  <%- partial ('partials/header-icon.ejs') %>
+
+  <h1><%= headerText %></h1>
+
+</header>
+<div class="page-confirmation">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <p><%= bodyText %></p>
+      </div>
+
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <form action="/refer" method="post">
+          <input class="form-control" name="first_name" placeholder="Your First Name" type="text" value="<%= firstName %>" required>
+          <input class="form-control" name="phone" placeholder="Your Phone Number" type="tel" value="<%= phone %>" required>
+          <input class="form-control" name="friends[]" placeholder="Your Friend's Number" type="tel" required>
+          <input class="form-control" name="friends[]" placeholder="Other Friend's Number (optional)" type="tel">
+          <input class="form-control" name="friends[]" placeholder="Other Friend's Number (optional)" type="tel">
+          <input class="form-control" name="friends[]" placeholder="Other Friend's Number (optional)" type="tel">
+          <input class="btn col-xs-8 col-xs-offset-2" type="submit" value="SUBMIT"/>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -36,6 +36,8 @@ module.exports.routes = {
     view: 'homepage'
   },
 
+  '/confirmation': 'WebViewController.confirmation',
+
   '/faq': {
     view: 'faq',
     locals: {
@@ -70,4 +72,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  'post /join': 'WebActionsController.join',
+  'post /refer': 'WebActionsController.refer',
 };
