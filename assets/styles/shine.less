@@ -33,6 +33,21 @@ header {
   padding-bottom: @margin-lg;
 }
 
+.form-control::-moz-placeholder {
+  color: #222;
+  opacity: 0.8;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #222;
+  opacity: 0.8;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #222x;
+  opacity: 0.8;
+}
+
 .header-form {
   margin: @margin-md 0;
 }
@@ -48,7 +63,7 @@ header {
 }
 
 .header-form .form-control {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.3);
   border-color: black;
   border-radius: 0;
   border-width: 0 0 1px 0;
@@ -178,4 +193,51 @@ header.header-error h1 {
   color: white;
   padding: @margin-md * 4 0;
   text-align: center;
+}
+
+/**
+ * Checkbox style and animation
+ */
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+  position: relative;
+  font-size: @font-size-normal;
+  cursor: pointer;
+  color: #fff;
+  padding-left: 40px;
+}
+
+label:before, label:after {
+  font-family: FontAwesome;
+  font-size: 30px;
+  position: absolute;
+  left: 0;
+  top: -8px;
+}
+
+label:before {
+  content: '\f096'; /* checkbox unchecked */
+}
+
+label:after {
+  content: '\f00c'; /* checkbox checked */
+  max-width: 0;
+  overflow: visible;
+  font-size: 28px;
+  top: -10px;
+  color: @color-yellow;
+  opacity: 0;
+
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+   transition: all 0.2s;
+}
+
+input[type="checkbox"]:checked + label:after {
+  opacity: 1;
 }
