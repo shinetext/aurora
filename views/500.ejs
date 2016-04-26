@@ -1,47 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Server Error | Shine</title>
-
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <link href='https://fonts.googleapis.com/css?family=Hind' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!--STYLES-->
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
-  </head>
-
-  <body>
-    <header class="header-error header-500">
-      <%- partial ('partials/header-icon.ejs') %>
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-          <h1>Uh oh. We ran into a problem.</h1>
-        </div>
+<header class="header-error header-500">
+  <%- partial ('partials/header-icon.ejs') %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+        <h1>Uh oh. We ran into a problem.</h1>
       </div>
-    </header>
-    <div class="content-error">
-      If the problem persists, please contact us at <a href="mailto:help@shinetext.com">help@shinetext.com</a>!
-
-      <% if (typeof data !== 'undefined') { %>
-        <pre class="error"><code>
-          <%- data %>
-        </code></pre>
-      <% } %>
-
     </div>
-    <%- partial ('partials/footer.ejs') %>
+  </div>
+</header>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<div class="content-error">
+  If the problem persists, please contact us at <a href="mailto:help@shinetext.com">help@shinetext.com</a>!
 
-    <!--SCRIPTS-->
-    <script src="/js/dependencies/sails.io.js"></script>
-    <!--SCRIPTS END-->
-  </body>
-</html>
+  <% if (typeof data !== 'undefined') { %>
+    <pre class="error"><code>
+      <%- data %>
+    </code></pre>
+  <% } %>
+</div>
+
+<%- partial ('partials/footer.ejs') %>
