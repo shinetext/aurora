@@ -39,7 +39,7 @@ module.exports.routes = {
   '/faq': {
     view: 'faq',
     locals: {
-      title: 'Shine - FAQ',
+      title: 'FAQ | Shine',
       layout: 'layouts/subpage.layout'
     }
   },
@@ -47,7 +47,7 @@ module.exports.routes = {
   '/privacy-policy': {
     view: 'privacy-policy',
     locals: {
-      title: 'Shine - Privacy Policy',
+      title: 'Privacy Policy | Shine',
       layout: 'layouts/subpage.layout'
     }
   },
@@ -55,7 +55,7 @@ module.exports.routes = {
   '/squad': {
     view: 'squad',
     locals: {
-      title: 'Shine - Squad',
+      title: 'Squad | Shine',
       layout: 'layouts/subpage.layout'
     }
   },

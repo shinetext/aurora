@@ -1,3 +1,4 @@
+@color-footer: #222;
 @color-yellow: #ffc600;
 
 @font-size-title: 26px;
@@ -15,7 +16,7 @@ body {
 }
 
 footer {
-  background-color: #222;
+  background-color: @color-footer;
   padding: @margin-md 0;
   text-align: center;
 }
@@ -125,6 +126,18 @@ header {
   padding: 16px;
 }
 
+.subpages-container {
+  padding: @margin-sm 0;
+}
+
+.subpages-container a {
+  color: white;
+  margin: 0 @margin-sm;
+  text-decoration: none;
+}
+
+/** Styles for subpages **/
+
 .subpage {
   padding: @margin-md 0;
 }
@@ -138,12 +151,31 @@ header {
   padding: @margin-sm 0;
 }
 
-.subpages-container {
-  padding: @margin-sm 0;
+/** Styles for error pages **/
+
+header.header-error {
+  background-color: @color-footer;
+  background-size: cover;
 }
 
-.subpages-container a {
+header.header-404 {
+  background-image: url('../images/error/404-maru.gif');
+}
+
+header.header-500 {
+  background-image: url('../images/error/500-maru.gif');
+}
+
+header.header-error h1 {
+  color: @color-yellow;
+  font-size: 64px;
+  margin: @margin-md * 4 0;
+  text-align: center;
+}
+
+.content-error {
+  background-color: @color-footer;
   color: white;
-  margin: 0 @margin-sm;
-  text-decoration: none;
+  padding: @margin-md * 4 0;
+  text-align: center;
 }
