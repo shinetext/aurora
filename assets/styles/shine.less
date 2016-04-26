@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-  background-color: yellow;
+  background-color: @color-offwhite-bg;
   background-image: url('../images/test-header.jpg');
   background-position: 50% 10%;
   background-size: cover;
@@ -32,17 +32,17 @@ header {
 }
 
 .form-control::-moz-placeholder {
-  color: #222;
+  color: #555;
   opacity: 0.8;
 }
 
 .form-control:-ms-input-placeholder {
-  color: #222;
+  color: #555;
   opacity: 0.8;
 }
 
 .form-control::-webkit-input-placeholder {
-  color: #222x;
+  color: #555;
   opacity: 0.8;
 }
 
@@ -139,19 +139,11 @@ header {
   text-decoration: none;
 }
 
-/** Styles for subpages **/
-
-.subpage {
-  padding: @margin-md 0;
+.subpages-container a:first-child {
+  margin-left: 0;
 }
-
-.subpage h1 {
-  text-align: center;
-  padding-bottom: @margin-md;
-}
-
-.subpage h3 {
-  padding: @margin-sm 0;
+.subpages-container a:last-child {
+  margin-right: 0;
 }
 
 /** Styles for error pages **/
