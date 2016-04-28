@@ -1,0 +1,59 @@
+<div class="homepage">
+
+<%- partial ('partials/header-icon.ejs') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+      <div class="tagline">
+        Daily work and life advice sent to you in a text message every morning
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <!-- Example image -->
+    <div class="col-sm-4 col-sm-offset-2">
+      <img class="example-img-1" src="/images/shine-example-1.png">
+    </div>
+
+    <!-- Sign Up Form -->
+    <div class="col-sm-3 col-sm-offset-1">
+      <div class="row">
+        <div class="text-lg form-title">
+          We got you.
+        </div>
+      </div>
+      <div class="row">
+        <form action="/join" method="post">
+          <div class="form-field">
+            <input class="form-control" name="first_name" id="form-first-name" type="text" required value="">
+            <label for="form-first-name">First Name</label>
+          </div>
+
+          <div class="form-field">
+            <input class="form-control" name="phone" id="form-phone-number" type="tel" required value="">
+            <label for="form-phone-number">Phone Number</label>
+          </div>
+
+          <div class="form-field">
+            <input class="form-control" name="phone" id="form-email" type="email" value="">
+            <label for="form-email">Email Address</label>
+          </div>
+
+          <input type="checkbox" name="send_gifs" id="form-send-gifs"/>
+          <label class="send-gifs-label" for="form-send-gifs">I like GIFs!</label>
+
+          <div>
+            <input class="btn" type="submit" value="Sign Up"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div> <!-- div class="homepage" -->

@@ -1,0 +1,82 @@
+.form-field label:hover {
+  cursor: text;
+}
+
+.example-img-1 {
+  width: 100%;
+}
+
+.form-title {
+  margin-bottom: @margin-xs;
+}
+
+.home-icon {
+  margin-top: @margin-sm;
+  width: 100%;
+}
+
+.tagline {
+  .font-merriweather-bold;
+
+  font-size: @font-size-subtitle;
+  margin: @margin-md 0;
+  text-align: center;
+}
+
+.text-lg {
+  .font-merriweather-bold;
+
+  font-size: @font-size-title;
+  text-transform: uppercase;
+}
+
+/**
+ * Styles for the send-gifs checkbox.
+ */
+input[type="checkbox"] {
+    display:none;
+}
+
+label.send-gifs-label {
+  .font-karla-bold;
+
+  color: @color-form-primary;
+  cursor: pointer;
+  font-size: @font-size-normal;
+  margin-bottom: 0;
+  padding-left: 40px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+label.send-gifs-label:before, label.send-gifs-label:after {
+  font-family: FontAwesome;
+  font-size: 30px;
+  position: absolute;
+  left: 0;
+  top: -8px;
+}
+
+label.send-gifs-label:before {
+  content: '\f096';
+  color: @color-primary;
+}
+
+label.send-gifs-label:after {
+  content: '\f00c';
+  max-width: 0;
+  overflow: visible;
+  font-size: 28px;
+  top: -10px;
+  color: @color-form-primary;
+  opacity: 0;
+
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+input[type="checkbox"]:checked + label.send-gifs-label:after {
+  opacity: 1;
+}

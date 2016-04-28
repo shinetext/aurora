@@ -1,0 +1,69 @@
+.btn {
+  .font-merriweather-extrabold;
+
+  background-color: @color-primary;
+  color: white;
+  font-size: @font-size-btn;
+  margin-bottom: @margin-sm;
+  margin-top: @margin-sm;
+  padding: 15px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.btn:focus,
+.btn:hover {
+  color: white;
+}
+
+.topline {
+  border-top: 5px solid @color-primary;
+  margin-bottom: @margin-md;
+}
+
+.form-control {
+  .font-karla;
+
+  border: none;
+  border-radius: 0;
+  color: @color-form-primary;
+  height: 60px;
+  padding: 20px 10px 0px 10px;
+  box-shadow: none;
+  font-size: @font-size-input;
+}
+
+.form-control + label {
+  .font-karla-bold;
+
+  color: @color-form-secondary;
+  position: absolute;
+  font-size: @font-size-label-sm;
+  top: 5px;
+  left: 10px;
+  margin: 0;
+  text-transform: uppercase;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+
+.form-control[value=""] + label {
+  color: @color-form-primary;
+  font-size: @font-size-label;
+  top: 20px;
+}
+
+.form-control:focus + label {
+  color: @color-form-secondary!important;
+  font-size: @font-size-label-sm!important;
+  top: 5px!important;
+}
+
+.form-field {
+  border: 2px solid @color-primary;
+  margin: @margin-sm 0;
+  position: relative;
+}
