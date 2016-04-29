@@ -1,0 +1,253 @@
+.bg-yellow {
+  background-color: @color-primary;
+}
+
+.example-img-1 {
+  max-height: 910px;
+  max-width: 436px;
+  min-height: 565px;
+  min-width: 270px;
+  width: 100%;
+}
+
+.example-img-2 {
+  margin-left: @margin-lg;
+  max-height: 910px;
+  max-width: 308px;
+  min-height: 645px;
+  min-width: 220px;
+  width: 55%;
+}
+
+@media (max-width: @screen-xs-max) {
+  .example-img-2 {
+    display: none;
+  }
+}
+
+.example-img-container {
+  position: absolute;
+}
+
+@media (max-width: @screen-xs-max) {
+  .example-img-container {
+    margin-bottom: @margin-sm;
+    position: relative;
+    text-align: center;
+  }
+}
+
+.form-container {
+  left: -@margin-md;
+  padding-bottom: @margin-lg;
+}
+
+@media (max-width: @screen-sm-max) {
+  .form-container {
+    left: -@margin-sm;
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  .form-container {
+    left: 0;
+    padding-bottom: @margin-sm;
+  }
+
+  .form-image-container {
+    position: relative;
+  }
+
+  .form-image-container .img-1-xs-bg {
+    background-color: @color-primary;
+    height: 30%;
+    position: absolute;
+    top: 70%;
+    width: 100%;
+  }
+}
+
+.form-title {
+  margin-bottom: @margin-xs;
+}
+
+@media (max-width: @screen-xs-max) {
+  .form-title {
+    text-align: center;
+  }
+}
+
+.friends-signup {
+  margin-bottom: @margin-lg * 2;
+  margin-top: @margin-lg;
+  text-align: center;
+}
+
+@media (min-width: @screen-lg-min) {
+  .friends-signup {
+    margin-bottom: @margin-lg * 4;
+  }
+}
+
+.friends-signup h2 {
+  .font-merriweather-bold;
+
+  color: @color-primary;
+  font-size: @font-size-title;
+  text-transform: uppercase;
+}
+
+.friends-signup p {
+  .font-merriweather;
+
+  color: white;
+  font-size: @font-size-normal;
+  margin: @margin-sm 0;
+}
+
+.friends-signup .btn {
+  .font-merriweather-extrabold;
+
+  background-color: @color-primary;
+  font-size: @font-size-btn;
+  margin-bottom: @margin-md;
+  margin-top: @margin-md;
+  padding: 15px;
+  text-transform: uppercase;
+  width: 80%;
+}
+
+.friends-signup .btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.friends-signup-container {
+  background-color: black;
+  background-image: url('/images/friends.gif');
+  background-size: cover;
+}
+
+@media (max-width: @screen-xs-max) {
+  .friends-signup-container {
+    background-image: none;
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  .how-container {
+    margin-top: @margin-md;
+  }
+}
+
+.how-shine-works {
+  padding-bottom: @margin-lg;
+}
+
+.how-shine-works h2 {
+  .font-merriweather-bold;
+
+  color: white;
+  font-size: @font-size-title;
+  margin-bottom: @margin-md;
+  text-transform: uppercase;
+}
+
+.how-shine-works p {
+  .font-merriweather;
+
+  color: white;
+  font-size: @font-size-normal;
+  margin-bottom: @margin-sm;
+}
+
+.in-the-news {
+  margin-top: @margin-sm;
+}
+
+.in-the-news img {
+  max-height: 80px;
+  max-width: 100%;
+  opacity: 0.8;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition-property: opacity, -webkit-filter, filter;
+  transition-duration: 0.25s;
+}
+
+.in-the-news img:hover {
+  opacity: 1;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.news-item {
+  margin: 20px 0;
+  padding: 0 6px;
+  text-align: center;
+}
+
+@media (max-width: @screen-md-min) {
+  .news-item {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: @screen-sm-min) {
+  .news-item {
+    padding: 0 20px;
+  }
+}
+
+.tagline {
+  .font-merriweather-bold;
+
+  font-size: @font-size-subtitle;
+  margin: @margin-md 0;
+  text-align: center;
+}
+
+.testimonials {
+  margin-bottom: @margin-sm;
+}
+
+@media (min-width: @screen-lg-min) {
+  .testimonials {
+    margin-top: @margin-md;
+  }
+}
+
+.testimonials p {
+  .font-merriweather-bold;
+
+  color: white;
+  font-size: @font-size-title;
+  padding: @margin-md;
+  text-align: center;
+}
+
+@media (max-width: @screen-xs-max) {
+  .testimonials p {
+    font-size: @font-size-subtitle;
+    padding: @margin-sm;
+  }
+}
+
+.testimonials .quote-left {
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+.testimonials .quote-right {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+}
+
+.text-lg {
+  .font-merriweather-bold;
+
+  font-size: @font-size-title;
+  text-transform: uppercase;
+}
