@@ -19,7 +19,6 @@ module.exports = {
     let data = {
       'opt_in_path[]': optInPath,
       'person[first_name]': req.body.first_name,
-      'person[last_name]': req.body.last_name,
       'person[phone]': req.body.phone,
       'person[email]': req.body.email,
       'person[send_gifs]': typeof req.body.send_gifs === 'undefined' ? 'no' : 'yes'

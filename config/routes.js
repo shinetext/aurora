@@ -68,7 +68,7 @@ module.exports.routes = {
       title: 'Refer a Friend | Shine',
       layout: 'layouts/subpageCustomHeader.layout',
       headerImage: 'images/refer-header.gif',
-      headerText: 'Shine together with friends!',
+      headerText: 'Shine with friends!',
       bodyText: 'Got friends who would appreciate Shine? Use the form below to spread some motiv-affirmation!'
     }
   },
