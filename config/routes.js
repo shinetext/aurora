@@ -51,6 +51,14 @@ module.exports.routes = {
     }
   },
 
+  '/jobs': {
+    view: 'jobs',
+    locals: {
+      title: 'Jobs | Shine',
+      layout: 'layouts/subpage.layout'
+    }
+  },
+
   '/privacy-policy': {
     view: 'privacy-policy',
     locals: {
