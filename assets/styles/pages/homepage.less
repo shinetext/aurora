@@ -1,3 +1,7 @@
+.bg-yellow {
+  background-color: @color-primary;
+}
+
 .ctia {
   .font-karla;
 
@@ -10,16 +14,122 @@
 }
 
 .example-img-1 {
+  max-height: 910px;
+  max-width: 436px;
   width: 100%;
+}
+
+.example-img-2 {
+  max-height: 910px;
+  max-width: 308px;
+  width: 100%;
+}
+
+.example-img-container {
+  position: absolute;
 }
 
 .form-title {
   margin-bottom: @margin-xs;
 }
 
+.friends-signup {
+  margin-top: @margin-lg;
+  text-align: center;
+}
+
+.friends-signup h2 {
+  .font-merriweather-bold;
+
+  font-size: @font-size-title;
+  text-transform: uppercase;
+}
+
+.friends-signup .btn {
+  .font-merriweather-extrabold;
+
+  background-color: @color-primary;
+  font-size: @font-size-btn;
+  margin-bottom: @margin-md;
+  margin-top: @margin-md;
+  padding: 15px;
+  text-transform: uppercase;
+  width: 80%;
+}
+
+.friends-signup .btn a {
+  color: white;
+  text-decoration: none;
+}
+
 .home-icon {
   margin-top: @margin-sm;
   width: 100%;
+}
+
+@media (min-width: @screen-lg-min) {
+  .how-container {
+    margin-top: @margin-md;
+  }
+}
+
+.how-shine-works {
+  padding-bottom: @margin-lg;
+}
+
+.how-shine-works h2 {
+  .font-merriweather-bold;
+
+  color: white;
+  font-size: @font-size-title;
+  margin-bottom: @margin-md;
+  text-transform: uppercase;
+}
+
+.how-shine-works p {
+  .font-merriweather;
+
+  color: white;
+  font-size: @font-size-normal;
+  margin-bottom: @margin-sm;
+}
+
+.in-the-news {
+  margin-top: @margin-sm;
+}
+
+.in-the-news img {
+  max-height: 80px;
+  max-width: 100%;
+  opacity: 0.8;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition-property: opacity, -webkit-filter, filter;
+  transition-duration: 0.25s;
+}
+
+.in-the-news img:hover {
+  opacity: 1;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.news-item {
+  margin: 20px 0;
+  padding: 0 8px;
+  text-align: center;
+}
+
+@media (max-width: @screen-md-min) {
+  .news-item {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: @screen-sm-min) {
+  .news-item {
+    padding: 0 40px;
+  }
 }
 
 .tagline {
@@ -28,6 +138,37 @@
   font-size: @font-size-subtitle;
   margin: @margin-md 0;
   text-align: center;
+}
+
+.testimonials {
+  margin-bottom: @margin-sm;
+}
+
+@media (min-width: @screen-lg-min) {
+  .testimonials {
+    margin-top: @margin-md;
+  }
+}
+
+.testimonials p {
+  .font-merriweather-bold;
+
+  color: white;
+  font-size: @font-size-title;
+  padding: @margin-md;
+  text-align: center;
+}
+
+.testimonials .quote-left {
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+.testimonials .quote-right {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
 }
 
 .text-lg {
@@ -75,7 +216,7 @@ label.send-gifs-label:after {
   overflow: visible;
   font-size: 28px;
   top: -10px;
-  color: @color-form-primary;
+  color: black;
   opacity: 0;
 
   -webkit-transition: all 0.2s;
