@@ -20,15 +20,21 @@
 }
 
 .example-img-2 {
+  margin-left: @margin-lg;
   max-height: 910px;
   max-width: 308px;
-  width: 100%;
+  min-height: 645px;
+  min-width: 220px;
+  width: 55%;
 }
 
 .example-img-container {
   position: absolute;
 }
 
+.form-container {
+  padding-bottom: 80px;
+}
 .form-title {
   margin-bottom: @margin-xs;
 }
@@ -48,8 +54,17 @@
 .friends-signup h2 {
   .font-merriweather-bold;
 
+  color: @color-primary;
   font-size: @font-size-title;
   text-transform: uppercase;
+}
+
+.friends-signup p {
+  .font-merriweather;
+
+  color: white;
+  font-size: @font-size-normal;
+  margin: @margin-sm 0;
 }
 
 .friends-signup .btn {
@@ -67,6 +82,11 @@
 .friends-signup .btn a {
   color: white;
   text-decoration: none;
+}
+
+.friends-signup-container {
+  background-image: url('/images/friends.gif');
+  background-size: cover;
 }
 
 @media (min-width: @screen-lg-min) {
