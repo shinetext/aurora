@@ -36,11 +36,6 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  /* @todo temporary. move this to homepage when done. */
-  '/kim': {
-    view: 'homepage-v2'
-  },
-
   '/confirmation': 'WebViewController.confirmation',
 
   '/faq': {
