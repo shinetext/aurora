@@ -38,11 +38,19 @@
 }
 
 .form-container {
+  left: -@margin-md;
   padding-bottom: @margin-lg;
+}
+
+@media (max-width: @screen-sm-max) {
+  .form-container {
+    left: -@margin-sm;
+  }
 }
 
 @media (max-width: @screen-xs-max) {
   .form-container {
+    left: 0;
     padding-bottom: @margin-sm;
   }
 
