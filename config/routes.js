@@ -68,11 +68,12 @@ module.exports.routes = {
   },
 
   '/refer-a-friend': {
-    view: 'refer-friend',
+    view: 'confirmation',
     locals: {
       title: 'Refer a Friend | Shine',
       layout: 'layouts/subpageCustomHeader.layout',
-      headerText: 'Hello, it\'s me.',
+      headerImage: 'images/refer-header.gif',
+      headerText: 'Shine together with friends!',
       bodyText: 'Got friends who would appreciate Shine? Use the form below to spread some motiv-affirmation!'
     }
   },

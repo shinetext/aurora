@@ -5,12 +5,39 @@
 
 <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
   <form action="/refer" method="post">
-    <input class="form-control" name="first_name" placeholder="Your First Name" type="text" value="<%= fname %>" required>
-    <input class="form-control" name="phone" placeholder="Your Phone Number" type="tel" value="<%= phoneNum %>" required>
-    <input class="form-control" name="friends[]" placeholder="Your Friend's Number" type="tel" required>
-    <input class="form-control" name="friends[]" placeholder="Other Friend's Number (optional)" type="tel">
-    <input class="form-control" name="friends[]" placeholder="Other Friend's Number (optional)" type="tel">
-    <input class="form-control" name="friends[]" placeholder="Other Friend's Number (optional)" type="tel">
-    <input class="btn col-xs-8 col-xs-offset-2" type="submit" value="SUBMIT"/>
+    <div class="form-field">
+      <input class="form-control" name="first_name" id="form-first-name" type="text" value="<%= fname %>" required>
+      <label for="form-first-name">Your First Name</label>
+    </div>
+
+    <div class="form-field">
+      <input class="form-control" name="phone" id="form-phone-number" type="tel" value="<%= phoneNum %>" required>
+      <label for="form-phone-number">Your Phone Number</label>
+    </div>
+
+    <div class="form-field">
+      <input class="form-control" name="friends[]" id="form-friend-1" type="tel" value="" required>
+      <label for="form-friend-1">Your Friend's Number</label>
+    </div>
+
+    <div class="form-field">
+      <input class="form-control" name="friends[]" id="form-friend-2" type="tel" value="">
+      <label for="form-friend-2">Friend 2's Number</label>
+    </div>
+
+    <div class="form-field">
+      <input class="form-control" name="friends[]" id="form-friend-3" type="tel" value="">
+      <label for="form-friend-3">Friend 3's Number</label>
+    </div>
+
+    <input type="checkbox" name="send_gifs" id="form-send-gifs"/>
+    <label class="send-gifs-label" for="form-send-gifs">We all like GIFs!</label>
+
+    <input class="btn" type="submit" value="SEND THEM SHINE"/>
+
+    <div class="ctia">
+      Terms and Conditions may apply. By clicking "Sign Up" you
+      are agreeing to allow Shine to send you text messages! YAY!
+    </div>
   </form>
 </div>

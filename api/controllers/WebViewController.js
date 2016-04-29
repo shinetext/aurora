@@ -11,19 +11,20 @@ module.exports = {
    */
   confirmation: function(req, res) {
     let locals = {
-      title: 'Woo! | Shine',
+      title: 'Confirmed! | Shine',
       layout: 'layouts/subpageCustomHeader.layout',
       firstName: req.query.first_name ? req.query.first_name : '',
       phone: req.query.phone ? req.query.phone : '',
       query: req.query
     };
 
+    locals.headerImage = "images/confirmation-header.gif";
     if (req.query.referral) {
-      locals.headerText = "You're a rockstar! Thanks for sharing.";
+      locals.headerText = "Thanks for sharing!";
       locals.bodyText = "Got more friends who would appreciate Shine? Spread some more motiv-affirmation!";
     }
     else {
-      locals.headerText = "You're signed up!";
+      locals.headerText = "You're all signed up!";
       locals.bodyText = "You're now signed up for Shine. Your daily texts will start on the next business day. Spread the motiv-affirmation and share with friends!";
     }
 

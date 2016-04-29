@@ -1,29 +1,23 @@
-header.header-confirmation {
-  background-image: url('https://img1.etsystatic.com/030/0/8666184/il_fullxfull.538318339_63j0.jpg');
-}
-
-header.header-confirmation h1 {
-  font-size: 48px;
-  padding: @margin-lg 0;
+.header {
   text-align: center;
 }
 
-.page-confirmation {
-  background-color: @color-offwhite-bg;
+.header h1 {
+  .font-merriweather-bold;
+
+  font-size: @font-size-header;
+  margin-bottom: @margin-sm;
+}
+
+.content {
+  background-color: white;
   padding: @margin-md 0;
 }
 
-.page-confirmation p {
-  text-align: center;
-}
+.content p {
+  .font-merriweather;
 
-.page-confirmation .form-control {
-  background-color: transparent;
-  border-color: black;
-  border-radius: 0;
-  border-width: 0 0 1px 0;
-  box-shadow: none;
-  color: #333;
+  color: @color-form-primary;
   font-size: @font-size-normal;
-  margin: @margin-sm 0;
+  text-align: center;
 }
