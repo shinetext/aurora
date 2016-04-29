@@ -5,6 +5,8 @@
 .example-img-1 {
   max-height: 910px;
   max-width: 436px;
+  min-height: 565px;
+  min-width: 270px;
   width: 100%;
 }
 
@@ -17,15 +19,42 @@
   width: 55%;
 }
 
+@media (max-width: @screen-xs-max) {
+  .example-img-2 {
+    display: none;
+  }
+}
+
 .example-img-container {
   position: absolute;
 }
 
-.form-container {
-  padding-bottom: 80px;
+@media (max-width: @screen-xs-max) {
+  .example-img-container {
+    margin-bottom: @margin-sm;
+    position: relative;
+    text-align: center;
+  }
 }
+
+.form-container {
+  padding-bottom: @margin-lg;
+}
+
+@media (max-width: @screen-xs-max) {
+  .form-container {
+    padding-bottom: @margin-sm;
+  }
+}
+
 .form-title {
   margin-bottom: @margin-xs;
+}
+
+@media (max-width: @screen-xs-max) {
+  .form-title {
+    text-align: center;
+  }
 }
 
 .friends-signup {
@@ -74,8 +103,15 @@
 }
 
 .friends-signup-container {
+  background-color: black;
   background-image: url('/images/friends.gif');
   background-size: cover;
+}
+
+@media (max-width: @screen-xs-max) {
+  .friends-signup-container {
+    background-image: none;
+  }
 }
 
 @media (min-width: @screen-lg-min) {
@@ -127,19 +163,19 @@
 
 .news-item {
   margin: 20px 0;
-  padding: 0 8px;
+  padding: 0 6px;
   text-align: center;
 }
 
 @media (max-width: @screen-md-min) {
   .news-item {
-    padding: 0 20px;
+    padding: 0 10px;
   }
 }
 
 @media (max-width: @screen-sm-min) {
   .news-item {
-    padding: 0 40px;
+    padding: 0 20px;
   }
 }
 
@@ -168,6 +204,13 @@
   font-size: @font-size-title;
   padding: @margin-md;
   text-align: center;
+}
+
+@media (max-width: @screen-xs-max) {
+  .testimonials p {
+    font-size: @font-size-subtitle;
+    padding: @margin-sm;
+  }
 }
 
 .testimonials .quote-left {
