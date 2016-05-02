@@ -10,21 +10,6 @@
   width: 100%;
 }
 
-.example-img-2 {
-  margin-left: @margin-lg;
-  max-height: 910px;
-  max-width: 308px;
-  min-height: 645px;
-  min-width: 220px;
-  width: 55%;
-}
-
-@media (max-width: @screen-xs-max) {
-  .example-img-2 {
-    display: none;
-  }
-}
-
 .example-img-container {
   position: absolute;
 }
@@ -40,6 +25,7 @@
 .form-container {
   left: -@margin-md;
   padding-bottom: @margin-lg;
+  z-index: 1000;
 }
 
 @media (max-width: @screen-sm-max) {
@@ -78,37 +64,20 @@
 }
 
 .friends-signup {
-  margin-bottom: @margin-lg * 2;
-  margin-top: @margin-lg;
   text-align: center;
 }
 
-@media (min-width: @screen-lg-min) {
-  .friends-signup {
-    margin-bottom: @margin-lg * 4;
-  }
-}
-
 .friends-signup h2 {
-  .font-merriweather-bold;
-
-  color: @color-primary;
-  font-size: @font-size-title;
-  text-transform: uppercase;
-}
-
-.friends-signup p {
   .font-merriweather;
 
   color: white;
-  font-size: @font-size-normal;
-  margin: @margin-sm 0;
+  font-size: @font-size-title;
 }
 
 .friends-signup .btn {
   .font-merriweather-extrabold;
 
-  background-color: @color-primary;
+  background-color: black;
   font-size: @font-size-btn;
   margin-bottom: @margin-md;
   margin-top: @margin-md;
@@ -123,9 +92,9 @@
 }
 
 .friends-signup-container {
-  background-color: black;
-  background-image: url('/images/friends.gif');
-  background-size: cover;
+  background-color: @color-primary;
+  padding-bottom: @margin-lg;
+  padding-top: @margin-lg;
 }
 
 @media (max-width: @screen-xs-max) {
@@ -134,31 +103,79 @@
   }
 }
 
-@media (min-width: @screen-lg-min) {
-  .how-container {
-    margin-top: @margin-md;
+.peer-testimonials {
+  margin-bottom: @margin-sm;
+
+  .testimonial-quote {
+    .font-merriweather;
+
+    color: white;
+    font-size: @font-size-normal;
+    padding-top: @margin-md;
+    padding-left: @margin-sm;
+    padding-right: @margin-sm;
+    text-align: center;
+  }
+
+  .testimonial-source {
+    .font-merriweather-bold;
+
+    color: white;
+    font-size: @font-size-normal;
+    padding: @margin-md;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .quote-left {
+    position: absolute;
+    top: 0;
+    left: -20px;
+  }
+
+  .quote-right {
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+  }
+
+  @media (max-width: @screen-xs-max) {
+    .quote-left {
+      left: 0;
+    }
+
+    .quote-right {
+      right: 0;
+    }
   }
 }
 
 .how-shine-works {
+  padding-top: @margin-lg;
   padding-bottom: @margin-lg;
 }
 
 .how-shine-works h2 {
   .font-merriweather-bold;
 
-  color: white;
+  color: black;
   font-size: @font-size-title;
-  margin-bottom: @margin-md;
-  text-transform: uppercase;
+  margin-bottom: @margin-lg;
+  text-align: center;
 }
 
-.how-shine-works p {
+.how-shine-works img {
+  background-color: @color-primary;
+  margin-bottom: @margin-md;
+}
+
+.how-shine-works li {
   .font-merriweather;
 
-  color: white;
   font-size: @font-size-normal;
-  margin-bottom: @margin-sm;
+  list-style: none;
+  padding: @margin-sm;
+  text-align: center;
 }
 
 .in-the-news {
@@ -208,7 +225,7 @@
 }
 
 .testimonials {
-  margin-bottom: @margin-sm;
+  margin-bottom: @margin-lg;
 }
 
 @media (min-width: @screen-lg-min) {
