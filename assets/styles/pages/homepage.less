@@ -54,41 +54,40 @@
 }
 
 .form-title {
-  margin-bottom: @margin-xs;
-}
+  .font-primary;
 
-@media (max-width: @screen-xs-max) {
-  .form-title {
-    text-align: center;
-  }
+  font-size: @font-size-subtitle;
+  margin-bottom: @margin-xs;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .friends-signup {
   text-align: center;
-}
 
-.friends-signup h2 {
-  .font-merriweather;
+  .-title {
+    .font-primary;
 
-  color: white;
-  font-size: @font-size-title;
-}
+    color: white;
+    font-size: @font-size-header;
+  }
 
-.friends-signup .btn {
-  .font-merriweather-extrabold;
+  .btn {
+    .font-karla-bold;
 
-  background-color: black;
-  font-size: @font-size-btn;
-  margin-bottom: @margin-md;
-  margin-top: @margin-md;
-  padding: 15px;
-  text-transform: uppercase;
-  width: 80%;
-}
+    background-color: black;
+    font-size: @font-size-btn;
+    margin-bottom: @margin-md;
+    margin-top: @margin-md;
+    padding: 15px;
+    text-transform: uppercase;
+    width: 80%;
 
-.friends-signup .btn a {
-  color: white;
-  text-decoration: none;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
 }
 
 .friends-signup-container {
@@ -107,10 +106,10 @@
   margin-bottom: @margin-sm;
 
   .testimonial-quote {
-    .font-merriweather;
+    .font-karla;
 
     color: white;
-    font-size: @font-size-normal;
+    font-size: @font-size-subtitle;
     padding-top: @margin-md;
     padding-left: @margin-sm;
     padding-right: @margin-sm;
@@ -118,10 +117,10 @@
   }
 
   .testimonial-source {
-    .font-merriweather-bold;
+    .font-karla-bold;
 
     color: white;
-    font-size: @font-size-normal;
+    font-size: 20px;
     padding: @margin-md;
     text-align: center;
     text-transform: uppercase;
@@ -153,29 +152,29 @@
 .how-shine-works {
   padding-top: @margin-lg;
   padding-bottom: @margin-lg;
-}
 
-.how-shine-works h2 {
-  .font-merriweather-bold;
+  h2 {
+    .font-primary-bold;
 
-  color: black;
-  font-size: @font-size-title;
-  margin-bottom: @margin-lg;
-  text-align: center;
-}
+    color: black;
+    font-size: 72px;
+    margin-bottom: @margin-lg;
+    text-align: center;
+  }
 
-.how-shine-works img {
-  background-color: @color-primary;
-  margin-bottom: @margin-md;
-}
+  img {
+    background-color: @color-primary;
+    margin-bottom: @margin-md;
+  }
 
-.how-shine-works li {
-  .font-merriweather;
+  .-item {
+    .font-primary;
 
-  font-size: @font-size-normal;
-  list-style: none;
-  padding: @margin-sm;
-  text-align: center;
+    font-size: @font-size-subtitle;
+    list-style: none;
+    padding: @margin-md;
+    text-align: center;
+  }
 }
 
 .in-the-news {
@@ -217,9 +216,9 @@
 }
 
 .tagline {
-  .font-merriweather-bold;
+  .font-primary;
 
-  font-size: @font-size-subtitle;
+  font-size: @font-size-header;
   margin: @margin-md 0;
   text-align: center;
 }
@@ -235,7 +234,7 @@
 }
 
 .testimonials p {
-  .font-merriweather-bold;
+  .font-karla;
 
   color: white;
   font-size: @font-size-title;
@@ -260,11 +259,4 @@
   position: absolute;
   bottom: 0;
   right: 20px;
-}
-
-.text-lg {
-  .font-merriweather-bold;
-
-  font-size: @font-size-title;
-  text-transform: uppercase;
 }
