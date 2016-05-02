@@ -45,7 +45,7 @@ footer .subpages-container {
 
   background-color: black;
   color: white;
-  font-size: @font-size-btn;
+  font-size: @font-size-btn-primary;
   margin-bottom: @margin-sm;
   margin-top: @margin-sm;
   padding: 15px;
@@ -110,10 +110,20 @@ footer .subpages-container {
   border: 2px solid @color-primary;
   margin: @margin-sm 0;
   position: relative;
-}
 
-.form-field label:hover {
-  cursor: text;
+  label:hover {
+    cursor: text;
+  }
+
+  .required-asterisk {
+    .font-karla-bold;
+
+    color: @color-form-primary;
+    font-size: @font-size-subtitle;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
 }
 
 .home-icon {
