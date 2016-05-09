@@ -147,6 +147,14 @@ input[type="checkbox"] {
     display:none;
 }
 
+#send-gifs-box {
+  background-color: white;
+  border: 2px solid @color-primary;
+  position: absolute;
+  height: 22px;
+  width: 22px;
+}
+
 label.send-gifs-label {
   .font-karla-bold;
 
@@ -159,24 +167,14 @@ label.send-gifs-label {
   text-transform: uppercase;
 }
 
-label.send-gifs-label:before, label.send-gifs-label:after {
-  font-family: FontAwesome;
-  font-size: 30px;
-  position: absolute;
-  left: 0;
-  top: -8px;
-}
-
-label.send-gifs-label:before {
-  content: '\f096';
-  color: @color-primary;
-}
-
 label.send-gifs-label:after {
   content: '\f00c';
+  font-family: FontAwesome;
+  font-size: 28px;
   max-width: 0;
   overflow: visible;
-  font-size: 28px;
+  position: absolute;
+  left: 0;
   top: -10px;
   color: black;
   opacity: 0;
