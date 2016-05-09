@@ -73,14 +73,6 @@ module.exports.routes = {
     }
   },
 
-  '/squad': {
-    view: 'squad',
-    locals: {
-      title: 'Squad | Shine',
-      layout: 'layouts/subpage.layout'
-    }
-  },
-
   '/500': {
     view: '500'
   },
