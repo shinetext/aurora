@@ -4,7 +4,8 @@
 
 'use strict';
 
-var request = require('request');
+var Promise = require('bluebird');
+var request = Promise.promisifyAll(require('request'));
 
 module.exports = {
 
@@ -14,6 +15,8 @@ module.exports = {
    * POST /join
    */
   join: function(req, res) {
+
+    // Data for Mobile Commons submission
     let optInPath = 'OP4B1A27AC508266A1F4373419CE1BE391';
     let url = 'https://secure.mcommons.com/profiles/join';
     let data = {
@@ -26,13 +29,45 @@ module.exports = {
     let redirectUrl = '/confirmation?phone=' + req.body.phone + '&first_name='
       + req.body.first_name;
 
-    request.post(url, {form: data}, function(err, response, body) {
-      if (err) {
-        return res.view(500);
-      }
+    // Make the Mobile Commons submission
+    request.postAsync(url, {form: data})
+      .then(function(response) {
+        // Separately make a request to Photon
+        // @todo consider sending this to a queue instead in case Photon is unavailable
+        photonSignup();
 
-      return res.redirect(redirectUrl);
-    });
+        return res.redirect(redirectUrl);
+      })
+      .catch(function(err) {
+        sails.log.error(err);
+        return res.view(500);
+      });
+
+    //
+    // Makes the signup submission to Photon.
+    //
+    function photonSignup() {
+      let photonUrl = process.env.PHOTON_URL || 'http://localhost:1338';
+      let photonRequest = {
+        method: 'POST',
+        uri: photonUrl + '/signup',
+        json: true,
+        body: {
+          firstName: req.body.first_name,
+          phone: req.body.phone,
+          email: req.body.email,
+          // @todo referredByCode
+          // @todo sendGifs?
+        }
+      };
+
+      request.post(photonRequest, function(err, response, body) {
+        if (err) {
+          sails.log.error(err);
+        }
+      });
+    } // end photonSignup()
+
   },
 
   /**
