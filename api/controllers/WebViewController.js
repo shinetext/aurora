@@ -13,9 +13,10 @@ module.exports = {
     let locals = {
       title: 'Confirmed! | Shine',
       layout: 'layouts/subpageCustomHeader.layout',
-      firstName: req.query.first_name ? req.query.first_name : '',
+      firstName: req.query.firstName ? req.query.firstName : '',
       phone: req.query.phone ? req.query.phone : '',
-      query: req.query
+      query: req.query,
+      referralCode: req.query.referralCode ? req.query.referralCode : ''
     };
 
     locals.headerImage = "images/confirmation-header.gif";

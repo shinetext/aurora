@@ -54,47 +54,58 @@ module.exports = {
       'person[email]': req.body.email,
       'person[send_gifs]': typeof req.body.send_gifs === 'undefined' ? 'no' : 'yes'
     };
-    let redirectUrl = '/confirmation?phone=' + req.body.phone + '&first_name='
+    let redirectUrl = '/confirmation?phone=' + req.body.phone + '&firstName='
       + req.body.first_name;
+
+    let photonUrl = process.env.PHOTON_URL || 'http://localhost:1338';
+    let photonRequest = {
+      method: 'POST',
+      uri: photonUrl + '/signup',
+      json: true,
+      body: {
+        firstName: req.body.first_name,
+        phone: req.body.phone,
+        email: req.body.email,
+        // @todo referredByCode
+        // @todo sendGifs?
+      }
+    };
+
+    // Flag indicating the subscription to Mobile Commons was successful
+    let mcSubscribeSuccessful = false;
 
     // Make the Mobile Commons submission
     request.postAsync(url, {form: data})
       .then(function(response) {
-        // Separately make a request to Photon
-        // @todo consider sending this to a queue instead in case Photon is unavailable
-        photonSignup();
+        if (response.statusCode !== 200) {
+          throw new Error();
+        }
+
+        mcSubscribeSuccessful = true;
+
+        // Post the signup to Photon too
+        return request.postAsync(photonRequest);
+      })
+      .then(function(response) {
+        // If available, attach the referralCode to the redirect URL
+        if (response.body && typeof response.body.referralCode === 'string') {
+          redirectUrl += '&referralCode=' + response.body.referralCode;
+        }
 
         return res.redirect(redirectUrl);
       })
       .catch(function(err) {
         sails.log.error(err);
-        return res.view(500);
-      });
 
-    //
-    // Makes the signup submission to Photon.
-    //
-    function photonSignup() {
-      let photonUrl = process.env.PHOTON_URL || 'http://localhost:1338';
-      let photonRequest = {
-        method: 'POST',
-        uri: photonUrl + '/signup',
-        json: true,
-        body: {
-          firstName: req.body.first_name,
-          phone: req.body.phone,
-          email: req.body.email,
-          // @todo referredByCode
-          // @todo sendGifs?
+        // Even on error, display the confirmation screen if at least the Mobile
+        // Commons subscription was successful.
+        if (mcSubscribeSuccessful) {
+          return res.redirect(redirectUrl);
         }
-      };
-
-      request.post(photonRequest, function(err, response, body) {
-        if (err) {
-          sails.log.error(err);
+        else {
+          return res.redirect(500);
         }
       });
-    } // end photonSignup()
 
   },
 
@@ -113,7 +124,7 @@ module.exports = {
       'person[phone]': req.body.phone,
       'friends_opt_in_path': friendsOptInPath,
     };
-    let redirectUrl = '/confirmation?phone=' + req.body.phone + '&first_name='
+    let redirectUrl = '/confirmation?phone=' + req.body.phone + '&firstName='
       + req.body.first_name + '&referral=true';
 
     // Add in the referred friend #s. :\
