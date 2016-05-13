@@ -63,7 +63,7 @@ module.exports.routes = {
   },
 
   '/refer-a-friend': {
-    view: 'confirmation',
+    view: 'refer-friend',
     locals: {
       title: 'Refer a Friend | Shine',
       layout: 'layouts/subpageCustomHeader.layout',
@@ -87,6 +87,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  'get /referral/:phone': 'WebActionsController.getReferralInfo',
   'post /join': 'WebActionsController.join',
   'post /refer': 'WebActionsController.refer',
 };
