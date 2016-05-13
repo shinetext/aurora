@@ -46,7 +46,8 @@ module.exports = {
 
     // Data for Mobile Commons submission
     let optInPath = 'OP4B1A27AC508266A1F4373419CE1BE391';
-    let url = 'https://secure.mcommons.com/profiles/join';
+    let url = sails.config.globals.mcJoinUrl;
+
     let data = {
       'opt_in_path[]': optInPath,
       'person[first_name]': req.body.first_name,
@@ -66,7 +67,7 @@ module.exports = {
         firstName: req.body.first_name,
         phone: req.body.phone,
         email: req.body.email,
-        // @todo referredByCode
+        referredByCode: req.body.referredByCode,
         // @todo sendGifs?
       }
     };
@@ -117,7 +118,8 @@ module.exports = {
   refer: function(req, res) {
     let optInPath = 'OP4B1A27AC508266A1F4373419CE1BE391';
     let friendsOptInPath = 'OPE8B3F738CF07CE0C3AFA3F45A5E155ED';
-    let url = 'https://secure.mcommons.com/profiles/join';
+    let url = sails.config.globals.mcJoinUrl;
+
     let data = {
       'opt_in_path[]': optInPath,
       'person[first_name]': req.body.first_name,

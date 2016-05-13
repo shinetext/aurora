@@ -30,6 +30,11 @@
       </div>
       <div class="row">
         <form action="/join" method="post">
+
+          <% if (referredByCode) { %>
+          <input name="referredByCode" value="<%= referredByCode %>" type="hidden"/>
+          <% } %>
+
           <div class="form-field">
             <input class="form-control" name="first_name" id="form-first-name" type="text" required value="">
             <label for="form-first-name">First Name</label>

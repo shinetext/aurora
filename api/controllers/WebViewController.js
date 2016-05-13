@@ -32,4 +32,15 @@ module.exports = {
     return res.view('confirmation', locals);
   },
 
+  /**
+   * Display the homepage view.
+   */
+  home: function(req, res) {
+    let locals = {
+      referredByCode: req.query.r
+    };
+
+    return res.view('homepage', locals);
+  },
+
 };

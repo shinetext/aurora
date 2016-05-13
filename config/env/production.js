@@ -35,4 +35,9 @@ module.exports = {
   //   level: "silent"
   // }
 
+  globals: {
+    // The Mobile Commons URL to send join requests to
+    mcJoinUrl: 'https://secure.mcommons.com/profiles/join',
+  },
+
 };

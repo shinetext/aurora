@@ -20,7 +20,7 @@
  * http://sailsjs.org/#!/documentation/concepts/Routes/RouteTargetSyntax.html
  */
 
-module.exports.routes = {
+var routes = {
 
   /***************************************************************************
   *                                                                          *
@@ -32,9 +32,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
+  '/': 'WebViewController.home',
 
   '/confirmation': 'WebViewController.confirmation',
 
@@ -91,3 +89,12 @@ module.exports.routes = {
   'post /join': 'WebActionsController.join',
   'post /refer': 'WebActionsController.refer',
 };
+
+/**
+ * Routes that should not exist on production can go here.
+ */
+if (process.env.NODE_ENV !== 'production') {
+  routes['post /mc-join'] = 'TestController.ok';
+}
+
+module.exports.routes = routes;
