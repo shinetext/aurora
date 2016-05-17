@@ -1,0 +1,54 @@
+#referral-count {
+  font-size: @font-size-xl;
+  margin: @margin-sm 0;
+  text-align: center
+}
+
+#referral-info {
+  display: none;
+}
+
+#referral-not-found {
+  display: none;
+  margin: @margin-lg 0;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  .font-primary-bold;
+
+  font-size: @font-size-header;
+  margin-bottom: @margin-sm;
+}
+
+.content {
+  padding: @margin-sm 0;
+  text-align: center;
+}
+
+.content p {
+  .font-primary;
+
+  color: black;
+  font-size: @font-size-normal;
+}
+
+.mini-form {
+  h3 {
+    margin-bottom: @margin-sm;
+  }
+
+  .-desc {
+    min-height: 85px;
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  .mini-form {
+    padding: 0 @margin-lg;
+  }
+}
+

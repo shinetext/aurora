@@ -4,9 +4,37 @@
 
 'use strict';
 
-var request = require('request');
+var Promise = require('bluebird');
+var request = Promise.promisifyAll(require('request'));
 
 module.exports = {
+
+  /**
+   * Forwards the referral request onto Photon.
+   *
+   * GET /referral/:phone
+   */
+  getReferralInfo: function(req, res) {
+    var referralRequest = {
+      method: 'GET',
+      uri: sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
+      json: true
+    };
+
+    request.getAsync(referralRequest)
+      .then(function(response) {
+        if (response.statusCode === 200) {
+          return res.json(response.body);
+        }
+        else {
+          return res.json(response.statusCode, response.body);
+        }
+      })
+      .catch(function(err) {
+        sails.log.error(err);
+        return res.json(500, {});
+      });
+  },
 
   /**
    * Receives a join request and forwards it onto Mobile Commons.
@@ -14,8 +42,11 @@ module.exports = {
    * POST /join
    */
   join: function(req, res) {
+
+    // Data for Mobile Commons submission
     let optInPath = 'OP4B1A27AC508266A1F4373419CE1BE391';
-    let url = 'https://secure.mcommons.com/profiles/join';
+    let url = sails.config.globals.mcJoinUrl;
+
     let data = {
       'opt_in_path[]': optInPath,
       'person[first_name]': req.body.first_name,
@@ -23,16 +54,58 @@ module.exports = {
       'person[email]': req.body.email,
       'person[send_gifs]': typeof req.body.send_gifs === 'undefined' ? 'no' : 'yes'
     };
-    let redirectUrl = '/confirmation?phone=' + req.body.phone + '&first_name='
+    let redirectUrl = '/confirmation?phone=' + req.body.phone + '&firstName='
       + req.body.first_name;
 
-    request.post(url, {form: data}, function(err, response, body) {
-      if (err) {
-        return res.view(500);
+    let photonRequest = {
+      method: 'POST',
+      uri: sails.config.globals.photonApiUrl + '/signup',
+      json: true,
+      body: {
+        firstName: req.body.first_name,
+        phone: req.body.phone,
+        email: req.body.email,
+        referredByCode: req.body.referredByCode,
+        // @todo sendGifs?
       }
+    };
 
-      return res.redirect(redirectUrl);
-    });
+    // Flag indicating the subscription to Mobile Commons was successful
+    let mcSubscribeSuccessful = false;
+
+    // Make the Mobile Commons submission
+    request.postAsync(url, {form: data})
+      .then(function(response) {
+        if (response.statusCode !== 200) {
+          throw new Error();
+        }
+
+        mcSubscribeSuccessful = true;
+
+        // Post the signup to Photon too
+        return request.postAsync(photonRequest);
+      })
+      .then(function(response) {
+        // If available, attach the referralCode to the redirect URL
+        if (response.body && typeof response.body.referralCode === 'string') {
+          redirectUrl += '&referralCode=' + response.body.referralCode;
+        }
+
+        return res.redirect(redirectUrl);
+      })
+      .catch(function(err) {
+        sails.log.error(err);
+
+        // Even on error, display the confirmation screen if at least the Mobile
+        // Commons subscription was successful.
+        if (mcSubscribeSuccessful) {
+          return res.redirect(redirectUrl);
+        }
+        else {
+          return res.redirect(500);
+        }
+      });
+
   },
 
   /**
@@ -43,14 +116,15 @@ module.exports = {
   refer: function(req, res) {
     let optInPath = 'OP4B1A27AC508266A1F4373419CE1BE391';
     let friendsOptInPath = 'OPE8B3F738CF07CE0C3AFA3F45A5E155ED';
-    let url = 'https://secure.mcommons.com/profiles/join';
+    let url = sails.config.globals.mcJoinUrl;
+
     let data = {
       'opt_in_path[]': optInPath,
       'person[first_name]': req.body.first_name,
       'person[phone]': req.body.phone,
       'friends_opt_in_path': friendsOptInPath,
     };
-    let redirectUrl = '/confirmation?phone=' + req.body.phone + '&first_name='
+    let redirectUrl = '/confirmation?phone=' + req.body.phone + '&firstName='
       + req.body.first_name + '&referral=true';
 
     // Add in the referred friend #s. :\
