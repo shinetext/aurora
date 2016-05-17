@@ -15,10 +15,9 @@ module.exports = {
    * GET /referral/:phone
    */
   getReferralInfo: function(req, res) {
-    var baseUrl = process.env.PHOTON_URL || 'http://localhost:1338';
     var referralRequest = {
       method: 'GET',
-      uri: baseUrl + '/referral/' + req.params.phone,
+      uri: sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
       json: true
     };
 
@@ -58,10 +57,9 @@ module.exports = {
     let redirectUrl = '/confirmation?phone=' + req.body.phone + '&firstName='
       + req.body.first_name;
 
-    let photonUrl = process.env.PHOTON_URL || 'http://localhost:1338';
     let photonRequest = {
       method: 'POST',
-      uri: photonUrl + '/signup',
+      uri: sails.config.globals.photonApiUrl + '/signup',
       json: true,
       body: {
         firstName: req.body.first_name,

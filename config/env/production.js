@@ -38,6 +38,9 @@ module.exports = {
   globals: {
     // The Mobile Commons URL to send join requests to
     mcJoinUrl: 'https://secure.mcommons.com/profiles/join',
+
+    // The Photon API URL
+    photonApiUrl: process.env.PHOTON_API_URL,
   },
 
 };
