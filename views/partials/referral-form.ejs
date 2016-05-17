@@ -4,7 +4,7 @@
 %>
 
 <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-  <h3>Invite People Now</h3>
+  <h3><% if (referralCode.length > 0) { %>Or <% } %>Invite People Now</h3>
   <p>You can use this form to send a text message inviting your friends to Shine.</p>
   <form action="/refer" method="post">
     <div class="form-field">
