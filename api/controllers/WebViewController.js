@@ -13,9 +13,10 @@ module.exports = {
     let locals = {
       title: 'Confirmed! | Shine',
       layout: 'layouts/subpageCustomHeader.layout',
-      firstName: req.query.first_name ? req.query.first_name : '',
+      firstName: req.query.firstName ? req.query.firstName : '',
       phone: req.query.phone ? req.query.phone : '',
-      query: req.query
+      query: req.query,
+      referralCode: req.query.referralCode ? req.query.referralCode : ''
     };
 
     locals.headerImage = "images/confirmation-header.gif";
@@ -29,6 +30,17 @@ module.exports = {
     }
 
     return res.view('confirmation', locals);
+  },
+
+  /**
+   * Display the homepage view.
+   */
+  home: function(req, res) {
+    let locals = {
+      referredByCode: req.query.r
+    };
+
+    return res.view('homepage', locals);
   },
 
 };

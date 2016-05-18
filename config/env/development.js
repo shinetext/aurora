@@ -21,4 +21,12 @@ module.exports = {
   //   connection: 'someMongodbServer'
   // }
 
+  globals: {
+    // The Mobile Commons URL to send join requests to
+    mcJoinUrl: 'http://localhost:1337/mc-join',
+
+    // The Photon API URL
+    photonApiUrl: process.env.PHOTON_API_URL || 'http://localhost:1338',
+  },
+
 };
