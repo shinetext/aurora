@@ -20,13 +20,17 @@
       <div class="referral-container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
         <h3>Your Referral Link</h3>
         <p>
-          Here's your unique referral link!<br>
-          <a href="http://www.shinetext.com/?r=<%= referralCode %>" href="" id="referral-url" target="_blank">http://www.shinetext.com/?r=<%= referralCode %></a>
+          Here is your unique referral link!<br>
+          <div class="referral-link-container">
+            <a href="/?r=<%= referralCode %>" href="" id="referral-link-url" target="_blank">www.shinetext.com/?r=<%= referralCode %></a>
+          </div>
+        </p>
+        <p>
+          Get 10 friends to join and earn a Shine sticker! You can check your
+          progress on the <a href="/referrals">Referrals</a> page.
         </p>
       </div>
       <% } %>
-
-      <%- partial ('partials/referral-form.ejs') %>
     </div>
   </div>
 </div>

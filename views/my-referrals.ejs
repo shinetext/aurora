@@ -1,0 +1,49 @@
+<div class="my-referrals-page">
+
+<div class="header">
+  <h1>Shine With Friends!</h1>
+</div>
+
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <% if (! referralInfo) { %>
+      <div id="referral-not-found" class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
+        Sorry. We couldn't find any information for that number. Make sure
+        you're first <a href="/">signed up</a>!
+      </div>
+      <% } else { %>
+      <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <div class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-0">
+          <div id="referral-count">
+            <%= referralInfo.referralCount %>
+          </div>
+        </div>
+        <div class="referral-info-container col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-offset-1">
+          <div><strong>Here is your referral code!</strong></div>
+          <% if (referralInfo.referralCount != 0) { %>
+            <div>
+              <%= referralInfo.referralCount %> of your friends
+              <% if (referralInfo.referralCount == 1) { %> has <% } else { %> have <% } %>
+              joined Shine already. Awesome!
+            </div>
+          <% } else { %>
+            <div>
+              We couldn't find any friends you've referred to Shine. Share your
+              unique link below to start earning some Shine swag!
+            </div>
+          <% } %>
+
+          <div class="referral-link-container">
+            <a id="referral-link-url" href="/?r=<%= referralInfo.referralCode %>">www.shinetext.com/?r=<%= referralInfo.referralCode %></a>
+          </div>
+
+          <div id="next-level-teaser"><%= referralInfo.nextLevelTeaser %></div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+</div>
