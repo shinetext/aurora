@@ -60,15 +60,24 @@ var routes = {
     }
   },
 
-  '/refer-a-friend': {
-    view: 'refer-friend',
+  '/referrals': {
+    view: 'referrals',
     locals: {
-      title: 'Refer a Friend | Shine',
+      title: 'Referrals | Shine',
       layout: 'layouts/subpageCustomHeader.layout',
       headerImage: 'images/refer-header.gif',
       headerText: 'Shine with friends!',
-      bodyText: 'Got friends who would appreciate Shine? Use the form below to spread some motiv-affirmation!'
     }
+  },
+
+  '/referrals/:phone': 'WebViewController.myReferral',
+
+  '/squad': {
+    view: 'squad',
+    locals: {
+      title: 'Squad | Shine',
+      layout: 'layouts/subpage.layout',
+    },
   },
 
   '/500': {
@@ -85,7 +94,6 @@ var routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'get /referral/:phone': 'WebActionsController.getReferralInfo',
   'post /join': 'WebActionsController.join',
   'post /refer': 'WebActionsController.refer',
 };
