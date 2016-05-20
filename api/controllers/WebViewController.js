@@ -4,6 +4,9 @@
 
 'use strict';
 
+var Promise = require('bluebird');
+var request = Promise.promisifyAll(require('request'));
+
 module.exports = {
 
   /**
@@ -41,6 +44,36 @@ module.exports = {
     };
 
     return res.view('homepage', locals);
+  },
+
+  /**
+   * Display the user's referral info .
+   */
+  myReferral: function(req, res) {
+    let locals = {
+      title: 'My Referrals | Shine',
+      layout: 'layouts/subpage.layout',
+    };
+
+    let referralRequest = {
+      method: 'GET',
+      uri: sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
+      json: true
+    };
+
+    request.getAsync(referralRequest)
+      .then(function(response) {
+        if (response.statusCode === 200) {
+          locals.referralInfo = response.body;
+          locals.referralInfo.nextLevelTeaser = ReferralService.getNextLevelTeaser(response.body.referralCount);
+        }
+
+        return res.view('my-referrals', locals);
+      })
+      .catch(function(err) {
+        sails.log.error(err);
+        return res.view(500);
+      });
   },
 
 };

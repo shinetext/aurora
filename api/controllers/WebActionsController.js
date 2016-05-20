@@ -10,33 +10,6 @@ var request = Promise.promisifyAll(require('request'));
 module.exports = {
 
   /**
-   * Forwards the referral request onto Photon.
-   *
-   * GET /referral/:phone
-   */
-  getReferralInfo: function(req, res) {
-    var referralRequest = {
-      method: 'GET',
-      uri: sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
-      json: true
-    };
-
-    request.getAsync(referralRequest)
-      .then(function(response) {
-        if (response.statusCode === 200) {
-          return res.json(response.body);
-        }
-        else {
-          return res.json(response.statusCode, response.body);
-        }
-      })
-      .catch(function(err) {
-        sails.log.error(err);
-        return res.json(500, {});
-      });
-  },
-
-  /**
    * Receives a join request and forwards it onto Mobile Commons.
    *
    * POST /join
