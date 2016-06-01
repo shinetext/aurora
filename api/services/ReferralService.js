@@ -50,6 +50,10 @@ module.exports = {
         return 'Invite ' + numMore + ' more ' + strFriends + ' to get a ' + REWARDS[i].reward + '!';
       }
     }
+
+    // Return empty string for people who've reached the max tier or if there's
+    // some sort of error
+    return '';
   },
 
 };
