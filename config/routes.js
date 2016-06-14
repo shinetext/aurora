@@ -72,6 +72,14 @@ var routes = {
     },
   },
 
+  '/terms-of-service': {
+    view: 'terms-of-service',
+    locals: {
+      title: 'Terms of Service | Shine',
+      layout: 'layouts/subpage.layout',
+    },
+  },
+
   '/500': {
     view: '500'
   },
