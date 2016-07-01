@@ -10,11 +10,11 @@ var REWARDS = [
     reward: 'Shine sticker',
   },
   {
-    count: 50,
+    count: 30,
     reward: 'Shine tote',
   },
   {
-    count: 75,
+    count: 50,
     reward: 'Shine t-shirt',
   },
   {
