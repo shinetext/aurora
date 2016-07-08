@@ -33,6 +33,7 @@ var routes = {
   ***************************************************************************/
 
   '/': 'WebViewController.home',
+  '/home': 'WebViewController.home',
 
   '/confirmation': 'WebViewController.confirmation',
 
@@ -40,6 +41,14 @@ var routes = {
     view: 'faq',
     locals: {
       title: 'FAQ | Shine',
+      layout: 'layouts/subpage.layout'
+    }
+  },
+
+  '/jobs': {
+    view: 'jobs',
+    locals: {
+      title: 'Jobs | Shine',
       layout: 'layouts/subpage.layout'
     }
   },
