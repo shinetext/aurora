@@ -89,6 +89,14 @@ var routes = {
     },
   },
 
+  '/try-messenger': {
+    view: 'try-messenger',
+    locals: {
+      title: 'Try Messenger | Shine',
+      layout: 'layouts/subpage.layout'
+    },
+  },
+
   '/500': {
     view: '500'
   },
