@@ -49,7 +49,12 @@ module.exports = {
     // Make the Mobile Commons submission
     request.postAsync(url, {form: data})
       .then(function(response) {
-        if (response.statusCode !== 200) {
+        // Mobile Commons responds with a 500 error code for numbers from
+        // countries that are not supported by the account.
+        if (response.statusCode == 500) {
+          throw new ErrorMobileCommonsJoin(response.body);
+        }
+        else if (response.statusCode !== 200) {
           throw new Error();
         }
 
@@ -65,6 +70,10 @@ module.exports = {
         }
 
         return res.redirect(redirectUrl);
+      })
+      .catch(ErrorMobileCommonsJoin, function(err) {
+        sails.log.error(err);
+        return res.redirect('try-messenger');
       })
       .catch(function(err) {
         sails.log.error(err);
@@ -127,3 +136,12 @@ module.exports = {
   },
 
 };
+
+/**
+ * Custom error from a Mobile Commons join request.
+ */
+class ErrorMobileCommonsJoin extends Error {
+  constructor(message) {
+    super(message);
+  }
+}
