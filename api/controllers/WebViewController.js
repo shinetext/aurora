@@ -10,6 +10,34 @@ var request = Promise.promisifyAll(require('request'));
 module.exports = {
 
   /**
+   * Display /advice view.
+   */
+  advice: (req, res) => {
+    let locals = {
+      title: 'Get Advice | Shine',
+    };
+
+    const adviceReq = {
+      method: 'GET',
+      uri: sails.config.globals.adviceJsonAllUrl,
+      json: true,
+    };
+
+    request.getAsync(adviceReq)
+      .then((response) => {
+        if (response && response.body) {
+          locals.advice = response.body;
+        }
+
+        return res.view('advice', locals);
+      })
+      .catch((err) => {
+        sails.log.error(err);
+        return res.view(500, locals);
+      });
+  },
+
+  /**
    * Display /confirmation view and pass along any query params.
    */
   confirmation: function(req, res) {
@@ -43,7 +71,24 @@ module.exports = {
       referredByCode: req.query.r
     };
 
-    return res.view('homepage', locals);
+    const adviceReq = {
+      method: 'GET',
+      uri: sails.config.globals.adviceJsonPromotedUrl,
+      json: true,
+    };
+
+    request.getAsync(adviceReq)
+      .then((response) => {
+        if (response && response.body) {
+          locals.advice = response.body;
+        }
+
+        return res.view('homepage', locals);
+      })
+      .catch((err) => {
+        sails.log.error(err);
+        return res.view('homepage', locals);
+      });
   },
 
   /**
