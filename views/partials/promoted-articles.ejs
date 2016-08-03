@@ -15,11 +15,11 @@
         <div class="article-preview col-xs-12 col-sm-4">
         <a href="<%= adviceBaseUrl %><%= articles[i].urlPath %>">
           <div class="-article-photo">
-            <img src="https:<%= articles[i].headerPhoto.file.url %>">
+            <img src="https:<%= articles[i].headerPhoto.file.url %>?w=640">
           </div>
           <% if (articles[i].author.picture && articles[i].author.picture.file) { %>
           <div class="-author-photo">
-            <img src="https:<%= articles[i].author.picture.file.url %>">
+            <img src="https:<%= articles[i].author.picture.file.url %>?w=100&h=100">
           </div>
           <% } %>
           <div class="-text">
