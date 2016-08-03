@@ -15,6 +15,7 @@ module.exports = {
   advice: (req, res) => {
     let locals = {
       title: 'Get Advice | Shine',
+      adviceBaseUrl: sails.config.globals.adviceBaseUrl,
     };
 
     const adviceReq = {
@@ -26,7 +27,7 @@ module.exports = {
     request.getAsync(adviceReq)
       .then((response) => {
         if (response && response.body) {
-          locals.advice = response.body;
+          locals.articles = response.body;
         }
 
         return res.view('advice', locals);
@@ -68,7 +69,8 @@ module.exports = {
    */
   home: function(req, res) {
     let locals = {
-      referredByCode: req.query.r
+      adviceBaseUrl: sails.config.globals.adviceBaseUrl,
+      referredByCode: req.query.r,
     };
 
     const adviceReq = {
@@ -80,7 +82,7 @@ module.exports = {
     request.getAsync(adviceReq)
       .then((response) => {
         if (response && response.body) {
-          locals.advice = response.body;
+          locals.articles = response.body;
         }
 
         return res.view('homepage', locals);

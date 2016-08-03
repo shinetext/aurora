@@ -1,0 +1,45 @@
+<div class="promoted-articles">
+
+<h2>Read Up On Happy Living</h2>
+
+<!-- Only allowing for a maximum of 6 promoted articles -->
+<% for (var i = 0; i < articles.length && i < 6; i++) { %>
+
+  <% // Break up the articles to display 3 per row when larger than screen-md
+  if (i == 0 || i == 3) { %>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+      <div class="row">
+  <% } %>
+
+        <div class="article-preview col-xs-12 col-sm-4">
+        <a href="<%= adviceBaseUrl %><%= articles[i].urlPath %>">
+          <div class="-article-photo">
+            <img src="https:<%= articles[i].headerPhoto.file.url %>">
+          </div>
+          <% if (articles[i].author.picture && articles[i].author.picture.file) { %>
+          <div class="-author-photo">
+            <img src="https:<%= articles[i].author.picture.file.url %>">
+          </div>
+          <% } %>
+          <div class="-text">
+            <div class="-category">
+            <% if (articles[i].category) { %>
+              <%= articles[i].category['en-US'] %>
+            <% } else { %>
+              &nbsp;
+            <% } %>
+            </div>
+            <div class="-title"><%= articles[i].title['en-US'] %></div>
+            <div class="-author-name">By <%= articles[i].author.name %></div>
+          </div>
+          </a>
+        </div>
+
+  <% // Close the .row divs
+  if (i == 2 || i == 5) { %>
+  </div></div></div>
+  <% } %>
+<% } %>
+
+</div>

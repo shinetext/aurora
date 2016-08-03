@@ -36,6 +36,9 @@ module.exports = {
   // }
 
   globals: {
+    // Base URL for advice content
+    adviceBaseUrl: process.env.ADVICE_BASE_URL,
+
     // URLs to JSON arrays of article content
     adviceJsonPromotedUrl: process.env.ADVICE_JSON_PROMOTED_URL,
     adviceJsonAllUrl: process.env.ADVICE_JSON_ALL_URL,

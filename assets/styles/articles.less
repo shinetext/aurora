@@ -1,0 +1,73 @@
+/**
+ * Styles for all things articles related
+ */
+
+.promoted-articles {
+  margin: @margin-lg 0;
+
+  h2 {
+    .font-title;
+
+    font-size: @font-size-header;
+    margin-bottom: @margin-lg;
+    text-align: center;
+  }
+}
+
+.article-preview {
+  background-color: #FCFCFC;
+  margin: @margin-sm 0;
+
+  a {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+  }
+
+  .-article-photo {
+    img {
+      width: 100%;
+    }
+  }
+
+  .-author-photo {
+    left: 50%;
+    margin-left: -30px;
+    margin-top: -30px;
+    position: absolute;
+
+    img {
+      border: 5px solid white;
+      border-radius: 50%;
+      height: 60px;
+      width: 60px;
+    }
+  }
+
+  .-text {
+    background-color: @color-article-preview-background;
+    border-bottom: 4px solid @color-primary;
+    padding: @margin-md @margin-sm @margin-sm @margin-sm;
+    text-align: center;
+
+    .-author-name {
+      .font-karla;
+
+      font-size: @font-size-article-preview-normal;
+    }
+
+    .-category {
+      .font-karla;
+
+      color: @color-primary;
+      font-size: @font-size-article-preview-normal;
+      text-transform: uppercase;
+    }
+
+    .-title {
+      .font-title;
+
+      font-size: @font-size-article-preview-title;
+    }
+  }
+}
