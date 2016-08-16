@@ -13,29 +13,7 @@ module.exports = {
    * Display /advice view.
    */
   advice: (req, res) => {
-    let locals = {
-      title: 'Get Advice | Shine',
-      adviceBaseUrl: sails.config.globals.adviceBaseUrl,
-    };
-
-    const adviceReq = {
-      method: 'GET',
-      uri: sails.config.globals.adviceJsonAllUrl,
-      json: true,
-    };
-
-    request.getAsync(adviceReq)
-      .then((response) => {
-        if (response && response.body) {
-          locals.articles = response.body;
-        }
-
-        return res.view('advice', locals);
-      })
-      .catch((err) => {
-        sails.log.error(err);
-        return res.view(500, locals);
-      });
+    return res.redirect(sails.config.globals.adviceBaseUrl);
   },
 
   /**
@@ -75,7 +53,7 @@ module.exports = {
 
     const adviceReq = {
       method: 'GET',
-      uri: sails.config.globals.adviceJsonPromotedUrl,
+      uri: `${sails.config.globals.adviceBaseUrl}/articles/promoted.json`,
       json: true,
     };
 
