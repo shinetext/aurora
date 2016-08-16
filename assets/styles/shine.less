@@ -1,8 +1,17 @@
 body {
-  .font-title;
+  .font-karla;
 
-  background-image: url('../images/bg-pattern.png');
-  background-repeat: repeat;
+  border-top: 4px solid @color-yellow;
+  background: white;
+
+  a {
+    color: @color-yellow;
+  }
+
+  a:hover {
+    color: @color-article-body;
+    text-decoration: none;
+  }
 }
 
 footer {
@@ -117,7 +126,7 @@ footer .subpages-container {
 }
 
 .form-field {
-  border: 2px solid @color-primary;
+  border: 2px solid @color-yellow;
   margin: @margin-sm 0;
   position: relative;
 
@@ -146,10 +155,6 @@ footer .subpages-container {
   width: 120px;
 }
 
-.topline {
-  border-top: 5px solid @color-primary;
-}
-
 /**
  * Styles for the send-gifs checkbox.
  */
@@ -159,7 +164,7 @@ input[type="checkbox"] {
 
 #send-gifs-box {
   background-color: white;
-  border: 2px solid @color-primary;
+  border: 2px solid @color-yellow;
   position: absolute;
   height: 22px;
   width: 22px;
