@@ -3,29 +3,29 @@
 <h2>Read Up On Happy Living</h2>
 
 <div class="row">
-<!-- Only allowing for a maximum of 6 promoted articles -->
-<% for (var i = 0; i < articles.length && i < 6; i++) { %>
-
-  <div class="article-preview col-xs-12 col-sm-4"
-    data-100-bottom-top="transform: translate3d(0px,25%,0px)"
-    data-bottom-bottom="transform: translate3d(0px,0%,0px)">
-    <a href="<%= adviceBaseUrl %>/<%= articles[i].urlPath %>">
-      <div class="article-photo">
-        <img src="<%= articles[i].headerPhoto.file.url %>?w=640">
-      </div>
-      <div class="author-photo">
-        <img src="<%= articles[i].author.picture.file.url %>?fit=thumb&w=100&h=100">
-      </div>
-      <div class="article-preview-text">
-        <div class="article-title"><%= articles[i].title['en-US'] %></div>
-        <div class="author-name">By <%= articles[i].author.name %></div>
-      </div>
-    </a>
-  </div>
-
-<% } %>
+  <div id="promoted-articles-results"></div>
 </div>
 
 <a href="advice"><div id="read-more">Read More</div></a>
 
 </div>
+
+<!-- Article preview template -->
+<script id="article-preview-template" type="text/template">
+  <div class="article-preview col-xs-12 col-sm-4"
+    data-100-bottom-top="transform: translate3d(0px,25%,0px)"
+    data-bottom-bottom="transform: translate3d(0px,0%,0px)">
+    <a href="<?= article.urlPath ?>">
+      <div class="article-photo">
+        <img src="<?= article.photo ?>">
+      </div>
+      <div class="author-photo">
+        <img src="<?= author.photo ?>">
+      </div>
+      <div class="article-preview-text">
+        <div class="article-title"><?= article.title ?></div>
+        <div class="author-name">By <?= author.name ?></div>
+      </div>
+    </a>
+  </div>
+</script>

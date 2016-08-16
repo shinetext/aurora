@@ -51,24 +51,7 @@ module.exports = {
       referredByCode: req.query.r,
     };
 
-    const adviceReq = {
-      method: 'GET',
-      uri: `${sails.config.globals.adviceBaseUrl}/articles/promoted.json`,
-      json: true,
-    };
-
-    request.getAsync(adviceReq)
-      .then((response) => {
-        if (response && response.body) {
-          locals.articles = response.body;
-        }
-
-        return res.view('homepage', locals);
-      })
-      .catch((err) => {
-        sails.log.error(err);
-        return res.view('homepage', locals);
-      });
+    return res.view('homepage', locals);
   },
 
   /**

@@ -193,3 +193,9 @@
 <%- partial ('partials/footer.ejs') %>
 
 </div> <!-- div class="homepage" -->
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+<!-- The promotedUrl var is used by homepage.js to fetch promoted articles -->
+<script>
+var promotedUrl = '<%= adviceBaseUrl %>/articles/promoted.json';
+</script>
