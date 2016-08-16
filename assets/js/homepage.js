@@ -28,13 +28,13 @@ $(document).ready(function() {
         // Extract data and prep for rendering
         articleData = {
           article: {
-            photo: `http:${data[i].headerPhoto.file.url}?w=640`,
+            photo: data[i].headerPhoto.file.url + '?w=640',
             title: data[i].title['en-US'],
             urlPath: data[i].urlPath,
           },
           author: {
             name: data[i].author.name,
-            photo: `${data[i].author.picture.file.url}?fit=thumb&w=100&h=100`,
+            photo: data[i].author.picture.file.url + '?fit=thumb&w=100&h=100',
           },
         };
 
