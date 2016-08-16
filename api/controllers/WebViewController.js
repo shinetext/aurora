@@ -10,6 +10,13 @@ var request = Promise.promisifyAll(require('request'));
 module.exports = {
 
   /**
+   * Display /advice view.
+   */
+  advice: (req, res) => {
+    return res.redirect(sails.config.globals.adviceBaseUrl);
+  },
+
+  /**
    * Display /confirmation view and pass along any query params.
    */
   confirmation: function(req, res) {
@@ -40,7 +47,8 @@ module.exports = {
    */
   home: function(req, res) {
     let locals = {
-      referredByCode: req.query.r
+      adviceBaseUrl: sails.config.globals.adviceBaseUrl,
+      referredByCode: req.query.r,
     };
 
     return res.view('homepage', locals);

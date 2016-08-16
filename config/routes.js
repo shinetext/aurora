@@ -35,6 +35,8 @@ var routes = {
   '/': 'WebViewController.home',
   '/home': 'WebViewController.home',
 
+  '/advice': 'WebViewController.advice',
+
   '/confirmation': 'WebViewController.confirmation',
 
   '/faq': {
