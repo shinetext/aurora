@@ -67,40 +67,6 @@ h2 {
   text-transform: uppercase;
 }
 
-.how-shine-works {
-  padding-top: @margin-lg;
-  padding-bottom: @margin-lg;
-
-  h2 {
-    .font-section-title;
-
-    color: @color-form-input;
-    margin-bottom: @margin-lg;
-    text-align: center;
-  }
-
-  img {
-    margin-bottom: @margin-md;
-    max-height: 200px;
-  }
-
-  .-item {
-    .font-section-title;
-
-    font-size: 22px;
-    list-style: none;
-    padding: @margin-md;
-    text-align: center;
-  }
-
-  @media (max-width: @screen-xs-max) {
-    h2 {
-      font-size: @font-size-header;
-      margin-bottom: @margin-sm;
-    }
-  }
-}
-
 .in-the-news {
   margin-top: @margin-sm;
 }
@@ -145,6 +111,103 @@ h2 {
   font-size: @font-size-header;
   margin: @margin-md 0;
   text-align: center;
+}
+
+/**
+ * "How Shine Works" section
+ */
+.how-shine-works {
+  background: black;
+  border-top: 4px solid black;
+  padding: 0;
+  position: relative;
+
+  .product-image {
+    height: 840px;
+    text-align: center;
+
+    img {
+      max-width: 90%;
+      position: relative;
+      top: @margin-lg;
+    }
+
+    @media (max-width: @screen-sm-max) {
+      height: 720px;
+
+      img {
+        top: @margin-md
+      }
+    }
+  }
+
+  .product-description {
+    background: white;
+    height: 840px;
+    padding: @margin-lg;
+
+    ol {
+      width: 80%;
+      margin: auto;
+    }
+
+    li {
+      .font-caveat;
+
+      font-size: 48px;
+      margin: @margin-md auto;
+
+      p {
+        .font-karla;
+
+        border-left: 4px solid @color-yellow;
+        display: inline-block;
+        font-size: @font-size-homepage-normal;
+        margin-left: @margin-sm;
+        padding-left: @margin-sm;
+        vertical-align: top;
+      }
+    }
+
+    @media (max-width: @screen-md-max) {
+      padding: @margin-md;
+
+      ol {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: @screen-sm-max) {
+      height: 100%;
+      padding: @margin-md;
+    }
+
+    @media (max-width: @screen-xs-max) {
+      font-size: @font-size-homepage-normal-xs;
+      padding: @margin-sm;
+
+      ol {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      li p {
+        font-size: @font-size-homepage-normal-xs;
+      }
+    }
+  }
+
+  h2 {
+    .font-section-title;
+
+    color: @color-form-input;
+    margin-bottom: @margin-lg;
+    text-align: center;
+
+    @media (max-width: @screen-sm-max) {
+      margin-bottom: @margin-md;
+    }
+  }
 }
 
 /**
@@ -216,4 +279,5 @@ h2 {
   margin-left: -50px;
   margin-top: -50px;
   position: absolute;
+  z-index: 1;
 }
