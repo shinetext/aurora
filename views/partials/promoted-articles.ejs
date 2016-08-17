@@ -13,8 +13,9 @@
 <!-- Article preview template -->
 <script id="article-preview-template" type="text/template">
   <div class="article-preview col-xs-12 col-sm-4"
-    data-100-bottom-top="transform: translate3d(0px,25%,0px)"
-    data-bottom-bottom="transform: translate3d(0px,0%,0px)">
+    data-bottom-top="transform: translateY(5%); opacity: 0.9;"
+    data-bottom-center="transform: translateY(0%);"
+    data-bottom-bottom="opacity: 1;">
     <a href="<%= adviceBaseUrl %>/<?= article.urlPath ?>">
       <div class="article-photo">
         <img src="<?= article.photo ?>">
