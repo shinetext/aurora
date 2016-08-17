@@ -11,7 +11,8 @@ font-size: @font-size-homepage-normal;
 
   .container-signup {
     height: @container-homepage-lead-height;
-    padding: @margin-lg 0;
+    padding-bottom: @margin-lg;
+    padding-top: @margin-sm;
 
     h2 {
       font-size: @font-size-header;
@@ -66,7 +67,7 @@ font-size: @font-size-homepage-normal;
 
     @media (max-width: @screen-sm-max) {
       height: 100%;
-      padding: @margin-md 0;
+      padding-bottom: @margin-md 0;
     }
 
     @media (max-width: @screen-xs-max) {
@@ -84,6 +85,7 @@ font-size: @font-size-homepage-normal;
 
   .homepage-header-image {
     background-image: url('../images/homepage/header-test-background.png');
+    background-position: center;
     background-size: cover;
     height: @container-homepage-lead-height;
 
@@ -136,7 +138,7 @@ font-size: @font-size-homepage-normal;
     img {
       max-width: 90%;
       position: relative;
-      top: @margin-lg;
+      top: @margin-md;
     }
 
     @media (max-width: @screen-sm-max) {
