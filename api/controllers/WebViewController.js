@@ -57,6 +57,7 @@ module.exports = {
     let locals = {
       adviceBaseUrl: sails.config.globals.adviceBaseUrl,
       referredByCode: req.query.r,
+      view: 'homepage',
     };
 
     return res.view('homepage', locals);

@@ -1,4 +1,12 @@
 <footer>
+  <div class="footer-cta">
+    <div class="cta-copy">Get Shine now for daily affirmations on your phone!</div>
+    <% if (typeof view !== 'undefined' && view === 'homepage') { %>
+    <a href="#" onclick="window.scrollTo(0,0);"><div class="signup-button">Sign Up</div></a>
+    <% } else  { %>
+    <a href="/"><div class="signup-button">Sign Up</div></a>
+    <% } %>
+  </div>
   <div class="social-and-footer-nav">
     <div class="-social-icons">
       <a class="-icon-facebook" href="https://www.facebook.com/Shine-Text" target="_blank"></a>
