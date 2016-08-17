@@ -10,10 +10,18 @@ var request = Promise.promisifyAll(require('request'));
 module.exports = {
 
   /**
-   * Display /advice view.
+   * Redirect to the advice page.
    */
   advice: (req, res) => {
     return res.redirect(sails.config.globals.adviceBaseUrl);
+  },
+
+  /**
+   * Articles are hosted on a separate subdomain, but in case people mis-share
+   * a link and don't specify the subdomain, we can try to fix that here.
+   */
+  articlesRedirect: (req, res) => {
+    return res.redirect(`${sails.config.globals.adviceBaseUrl}${req.url}`);
   },
 
   /**
