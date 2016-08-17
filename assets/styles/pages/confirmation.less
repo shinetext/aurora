@@ -2,26 +2,21 @@
   text-align: center;
 
   h1 {
-    .font-title;
+    .font-section-title;
 
     font-size: @font-size-header;
     margin-bottom: @margin-sm;
+    margin-top: @margin-lg;
   }
 }
 
 .content {
+  font-size: @font-size-normal;
   padding: @margin-md 0;
-
-  h3 {
-    text-align: center;
-  }
+  text-align: center;
 
   p {
-    .font-title;
-
     color: @color-form-primary;
-    font-size: @font-size-normal;
-    text-align: center;
   }
 
   .referral-container {
@@ -32,17 +27,14 @@
 
   .referral-link-container {
     border: 2px solid black;
-    margin-bottom: @margin-sm;
-    margin-top: @margin-sm;
-    padding: 10px;
-    text-align: center;
+    margin: @margin-sm 0;
+    padding: @margin-xs;
     width: 100%;
 
     #referral-link-url {
-      font-size: @font-size-normal;
+      color: black;
       height: 40px;
       line-height: 40px;
-      width: 100%;
     }
   }
 }

@@ -1,3 +1,9 @@
+font-size: @font-size-homepage-normal;
+
+h2 {
+  .font-section-title;
+}
+
 .bg-yellow {
   background-color: @color-yellow;
 }
@@ -53,7 +59,7 @@
 }
 
 .form-title {
-  .font-title;
+  .font-section-title;
 
   font-size: @font-size-subtitle;
   margin-bottom: @margin-xs;
@@ -61,92 +67,14 @@
   text-transform: uppercase;
 }
 
-.friends-signup {
-  text-align: center;
-
-  .-title {
-    .font-title;
-
-    color: white;
-    font-size: @font-size-header;
-  }
-
-  .btn {
-    .font-karla-bold;
-
-    background-color: black;
-    font-size: @font-size-btn;
-    margin-bottom: @margin-md;
-    margin-top: @margin-md;
-    padding: 15px;
-    text-transform: uppercase;
-    width: 80%;
-
-    a {
-      color: white;
-      text-decoration: none;
-    }
-  }
-}
-
-.friends-signup-container {
-  background-color: @color-yellow;
-  padding-bottom: @margin-lg;
-  padding-top: @margin-lg;
-}
-
-@media (max-width: @screen-xs-max) {
-  .friends-signup-container {
-    background-image: none;
-  }
-}
-
-.peer-testimonials {
-  margin-bottom: @margin-sm;
-
-  .testimonial-quote {
-    .font-karla;
-
-    color: white;
-    font-size: @font-size-subtitle;
-    padding-top: @margin-md;
-    padding-left: @margin-sm;
-    padding-right: @margin-sm;
-    text-align: center;
-  }
-
-  .quote-left {
-    position: absolute;
-    top: 0;
-    left: -20px;
-  }
-
-  .quote-right {
-    position: absolute;
-    bottom: 0;
-    right: -20px;
-  }
-
-  @media (max-width: @screen-xs-max) {
-    .quote-left {
-      left: 0;
-    }
-
-    .quote-right {
-      right: 0;
-    }
-  }
-}
-
 .how-shine-works {
   padding-top: @margin-lg;
   padding-bottom: @margin-lg;
 
   h2 {
-    .font-title;
+    .font-section-title;
 
     color: @color-form-input;
-    font-size: 72px;
     margin-bottom: @margin-lg;
     text-align: center;
   }
@@ -157,7 +85,7 @@
   }
 
   .-item {
-    .font-title;
+    .font-section-title;
 
     font-size: 22px;
     list-style: none;
@@ -212,47 +140,67 @@
 }
 
 .tagline {
-  .font-title;
+  .font-section-title;
 
   font-size: @font-size-header;
   margin: @margin-md 0;
   text-align: center;
 }
 
-.testimonials {
-  margin-bottom: @margin-lg;
-}
+/**
+ * Testimonial section
+ */
+.testimonial-container {
+  background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),url('../images/homepage/testimonial-test-background.png');
+  background-position: center;
+  background-size: cover;
+  padding-bottom: @margin-lg;
+  padding-top: @margin-lg;
 
-@media (min-width: @screen-lg-min) {
-  .testimonials {
-    margin-top: @margin-md;
+  .testimonial {
+    margin-bottom: @margin-sm;
+    text-align: center;
+
+    p {
+      .font-karla-bold;
+
+      color: white;
+      padding: @margin-md @margin-sm;
+    }
+
+    .divider {
+      border-top: 4px solid @color-yellow;
+      margin: auto;
+      width: 100px;
+    }
+
+    .testimonial-name {
+      .font-karla;
+
+      font-size: @font-size-homepage-testimonial-credit;
+      text-transform: uppercase;
+    }
+
+    .quote-left {
+      position: absolute;
+      top: 0;
+      left: -20px;
+    }
+
+    .quote-right {
+      position: absolute;
+      bottom: 0;
+      right: -20px;
+    }
+
+    @media (max-width: @screen-xs-max) {
+      .quote-left {
+        left: 0;
+      }
+
+      .quote-right {
+        right: 0;
+      }
+    }
   }
-}
-
-.testimonials p {
-  .font-karla;
-
-  color: white;
-  font-size: @font-size-title;
-  padding: @margin-md;
-  text-align: center;
-}
-
-@media (max-width: @screen-xs-max) {
-  .testimonials p {
-    font-size: @font-size-subtitle;
-    padding: @margin-sm;
-  }
-}
-
-.testimonials .quote-left {
-  position: absolute;
-  top: 0;
-  left: 20px;
-}
-
-.testimonials .quote-right {
-  position: absolute;
-  bottom: 0;
-  right: 20px;
 }
