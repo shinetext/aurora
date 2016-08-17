@@ -9,6 +9,8 @@ $(document).ready(function() {
   var skrollrIsMobile = false;
   var skrollrInstance;
 
+  refreshSkrollr();
+
   $.get({
     url: promotedUrl,
     data: null,
