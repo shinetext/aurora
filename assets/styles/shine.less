@@ -114,6 +114,55 @@ h2 {
   }
 }
 
+.referral-link-container {
+  border: 2px solid black;
+  cursor: pointer;
+  margin-top: @margin-sm;
+  padding: 0;
+  width: 100%;
+
+  #referral-link-url {
+    color: black;
+    display: inline-block;
+    font-size: @font-size-normal;
+    height: 40px;
+    line-height: 40px;
+    padding-left: @margin-sm;
+    text-align: left;
+
+    @media (max-width: @screen-xs-max) {
+      font-size: @font-size-sm;
+      padding-left: @margin-xs;
+    }
+  }
+
+  .fa {
+    background-color: black;
+    color: white;
+    float: right;
+    line-height: 40px;
+    padding-left: @margin-sm;
+    padding-right: @margin-sm;
+
+    @media (max-width: @screen-xs-max) {
+      padding-left: @margin-xs;
+      padding-right: @margin-xs;
+    }
+  }
+
+  .fa:hover {
+    color: @color-yellow;
+  }
+}
+
+.referral-link-copied-confirmation {
+  .font-karla-bold;
+
+  color: black;
+  display: none;
+  text-align: right;
+}
+
 /**
  * Styles for the send-gifs checkbox.
  */
