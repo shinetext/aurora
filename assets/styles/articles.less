@@ -154,10 +154,22 @@
     padding: @margin-md @margin-sm @margin-sm @margin-sm;
     text-align: center;
 
+    @media (max-width: @screen-md-max) {
+      padding: @margin-md @margin-xs @margin-xs @margin-xs;
+    }
+
     .author-name {
       .font-karla;
 
       font-size: @font-size-article-preview-normal;
+    }
+
+    .article-category {
+      .font-karla;
+
+      color: @color-yellow;
+      font-size: @font-size-article-preview-normal;
+      text-transform: uppercase;
     }
 
     .article-title {
