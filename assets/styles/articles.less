@@ -161,14 +161,14 @@
     .author-name {
       .font-karla;
 
-      font-size: @font-size-article-preview-normal;
+      font-size: @font-size-article-preview-author;
     }
 
     .article-category {
       .font-karla;
 
       color: @color-yellow;
-      font-size: @font-size-article-preview-normal;
+      font-size: @font-size-article-preview-category;
       text-transform: uppercase;
     }
 
@@ -177,10 +177,6 @@
 
       font-size: @font-size-article-preview-title;
       margin-bottom: @margin-xs;
-
-      @media (max-width: @screen-md-max) {
-        font-size: @font-size-article-preview-title-md;
-      }
     }
   }
 }
@@ -250,11 +246,19 @@
     .article-title {
       .font-karla-bold;
 
-      font-size: @font-size-header;
+      font-size: @font-size-featured-title;
       margin-bottom: @margin-xs;
 
+      @media (max-width: @screen-md-max) {
+        font-size: @font-size-featured-title-md;
+      }
+
       @media (max-width: @screen-sm-max) {
-        font-size:  @font-size-featured-title-sm;
+        font-size: @font-size-featured-title-sm;
+      }
+
+      @media (max-width: @screen-xs-max) {
+        font-size: @font-size-featured-title-xs;
       }
     }
 
