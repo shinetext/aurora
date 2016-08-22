@@ -14,39 +14,8 @@ body {
   }
 }
 
-footer {
-  background-color: @color-footer;
-  padding: @margin-md 0;
-  text-align: center;
-}
-
-footer .social-icons a {
-  text-decoration: none;
-}
-
-footer .social-icons img {
-  height: 74px;
-  width: 74px;
-  padding: 16px;
-}
-
-footer .subpages-container {
-  padding: @margin-sm;
-
-  a {
-    color: black;
-    margin: 0 @margin-sm;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-
-  a:first-child {
-    margin-left: 0;
-  }
-
-  a:last-child {
-    margin-right: 0;
-  }
+h2 {
+  .font-section-title;
 }
 
 .btn {
@@ -55,8 +24,9 @@ footer .subpages-container {
   background-color: black;
   color: white;
   font-size: @font-size-btn;
-  margin-bottom: @margin-sm;
-  margin-top: @margin-sm;
+  letter-spacing: 1.5px;
+  margin-bottom: @margin-xs;
+  margin-top: @margin-xs;
   padding: 15px;
   text-transform: uppercase;
   width: 100%;
@@ -67,21 +37,20 @@ footer .subpages-container {
   color: white;
 }
 
+.fbmessenger {
+  .btn {
+    background-color: white;
+    border: 2px solid @color-fbmessenger;
+    color: @color-fbmessenger;
+    margin-top: 0;
+  }
+}
+
 .ctia {
   .font-karla;
 
   color: @color-form-secondary;
   font-size: @font-size-label-sm;
-}
-
-.fbmessenger {
-  h3 {
-    text-align: center;
-  }
-
-  .btn {
-    background-color: #0984ff;
-  }
 }
 
 .form-control {
@@ -145,14 +114,53 @@ footer .subpages-container {
   }
 }
 
-.home-icon {
+.referral-link-container {
+  border: 2px solid black;
+  cursor: pointer;
+  margin-top: @margin-sm;
+  padding: 0;
   width: 100%;
+
+  #referral-link-url {
+    color: black;
+    display: inline-block;
+    font-size: @font-size-normal;
+    height: 40px;
+    line-height: 40px;
+    padding-left: @margin-sm;
+    text-align: left;
+
+    @media (max-width: @screen-xs-max) {
+      font-size: @font-size-sm;
+      padding-left: @margin-xs;
+    }
+  }
+
+  .fa {
+    background-color: black;
+    color: white;
+    float: right;
+    line-height: 40px;
+    padding-left: @margin-sm;
+    padding-right: @margin-sm;
+
+    @media (max-width: @screen-xs-max) {
+      padding-left: @margin-xs;
+      padding-right: @margin-xs;
+    }
+  }
+
+  .fa:hover {
+    color: @color-yellow;
+  }
 }
 
-.home-icon-container {
-  margin-left: @margin-sm;
-  margin-top: @margin-sm;
-  width: 120px;
+.referral-link-copied-confirmation {
+  .font-karla-bold;
+
+  color: black;
+  display: none;
+  text-align: right;
 }
 
 /**
@@ -180,6 +188,7 @@ label.send-gifs-label {
   padding-left: 40px;
   position: relative;
   text-transform: uppercase;
+  top: -@font-size-normal / 2;
 }
 
 label.send-gifs-label:after {

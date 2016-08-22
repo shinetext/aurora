@@ -1,8 +1,8 @@
 <div class="confirmation-page">
 
-<div class="header">
+<%- partial ('partials/navbar.ejs') %>
 
-  <%- partial ('partials/navbar.ejs') %>
+<div class="header">
 
   <h1><%= headerText %></h1>
 
@@ -17,13 +17,17 @@
       </div>
 
       <% if (referralCode.length > 0) { %>
-      <div class="referral-container col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+      <div class="referral-container col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
         <h3>Your Referral Link</h3>
         <p>
-          Here is your unique referral link!<br>
-          <div class="referral-link-container">
-            <a href="/?r=<%= referralCode %>" href="" id="referral-link-url" target="_blank">www.shinetext.com/?r=<%= referralCode %></a>
+          <div class="referral-link-container"
+            data-clipboard-text="www.shinetext.com/?r=<%= referralCode %>">
+            <div id="referral-link-url">
+              www.shinetext.com/?r=<%= referralCode %>
+            </div>
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
           </div>
+          <div class="referral-link-copied-confirmation">Copied!</div>
         </p>
         <p>
           Get 10 friends to join and earn a Shine sticker! You can check your
@@ -36,3 +40,13 @@
 </div>
 
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+<script>
+// For copying the link to the clipboard
+var clipboard = new Clipboard('.referral-link-container');
+clipboard.on('success', function(e) {
+  $('.referral-link-copied-confirmation').hide().slideDown();
+  e.clearSelection();
+});
+</script>

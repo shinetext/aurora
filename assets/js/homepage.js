@@ -9,6 +9,8 @@ $(document).ready(function() {
   var skrollrIsMobile = false;
   var skrollrInstance;
 
+  refreshSkrollr();
+
   $.get({
     url: promotedUrl,
     data: null,
@@ -28,6 +30,7 @@ $(document).ready(function() {
         // Extract data and prep for rendering
         articleData = {
           article: {
+            category: data[i].category ? data[i].category['en-US'] : undefined,
             photo: data[i].headerPhoto.file.url + '?w=640',
             title: data[i].title['en-US'],
             urlPath: data[i].urlPath,

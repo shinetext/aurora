@@ -20,23 +20,28 @@
           </div>
         </div>
         <div class="referral-info-container col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-offset-1">
-          <div><strong>Copy and share your referral code!</strong></div>
+          <strong>Copy and share your referral code!</strong>
           <% if (referralInfo.referralCount != 0) { %>
-            <div>
+            <p>
               <%= referralInfo.referralCount %> of your friends
               <% if (referralInfo.referralCount == 1) { %> has <% } else { %> have <% } %>
               joined Shine already. Awesome!
-            </div>
+            </p>
           <% } else { %>
-            <div>
+            <p>
               We couldn't find any friends you've referred to Shine. Share your
               unique link below to start earning some Shine swag!
-            </div>
+            </p>
           <% } %>
 
-          <div class="referral-link-container">
-            <a id="referral-link-url" href="/?r=<%= referralInfo.referralCode %>">www.shinetext.com/?r=<%= referralInfo.referralCode %></a>
+          <div class="referral-link-container"
+            data-clipboard-text="www.shinetext.com/?r=<%= referralInfo.referralCode %>">
+            <div id="referral-link-url">
+              www.shinetext.com/?r=<%= referralInfo.referralCode %>
+            </div>
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
           </div>
+          <div class="referral-link-copied-confirmation">Copied!</div>
 
           <div id="next-level-teaser"><%= referralInfo.nextLevelTeaser %></div>
         </div>
@@ -47,3 +52,13 @@
 </div>
 
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+<script>
+// For copying the link to the clipboard
+var clipboard = new Clipboard('.referral-link-container');
+clipboard.on('success', function(e) {
+  $('.referral-link-copied-confirmation').hide().slideDown();
+  e.clearSelection();
+});
+</script>

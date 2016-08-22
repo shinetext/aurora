@@ -1,258 +1,296 @@
-.bg-yellow {
-  background-color: @color-yellow;
+font-size: @font-size-homepage-normal;
+
+/**
+ * Top section of the homepage
+ */
+.container-homepage-lead {
+  @container-homepage-lead-height: 960px;
+
+  padding: 0;
+  position: relative;
+
+  .container-signup {
+    height: @container-homepage-lead-height;
+    padding-bottom: @margin-lg;
+    padding-top: @margin-sm;
+
+    h2 {
+      font-size: @font-size-header;
+      margin: @margin-md auto;
+      text-align: center;
+      width: 60%;
+    }
+
+    form {
+      margin: auto;
+    }
+
+    .ctia {
+      margin: auto;
+      padding-top: @margin-xs;
+    }
+
+    .fbmessenger {
+      margin: auto;
+
+      .description {
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .fbmessenger-icon {
+        background-image: url('../images/fbmessenger-icon.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+        margin-right: 6px;
+        position: relative;
+        top: 6px;
+        height: 25px;
+        width: 25px;
+      }
+    }
+
+    form,
+    .ctia,
+    .fbmessenger {
+      width: 50%;
+      max-width: 400px
+    }
+
+
+    @media (max-width: @screen-md-max) {
+      h2 {
+        width: 80%;
+      }
+    }
+
+    @media (max-width: @screen-sm-max) {
+      height: 100%;
+      padding-bottom: @margin-md 0;
+    }
+
+    @media (max-width: @screen-xs-max) {
+      h2 {
+        width: 100%;
+      }
+
+      form,
+      .ctia,
+      .fbmessenger {
+        width: 80%;
+      }
+    }
+  }
+
+  .homepage-header-image {
+    background-image: url('../images/homepage/header-test-background.png');
+    background-position: center;
+    background-size: cover;
+    height: @container-homepage-lead-height;
+
+    @media (max-width: @screen-sm-max) {
+      height: 400px;
+    }
+  }
+
+  .in-the-news {
+    margin-top: @margin-sm;
+
+    img {
+      max-height: 40px;
+      max-width: 100%;
+      opacity: 0.8;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      transition-property: opacity, -webkit-filter, filter;
+      transition-duration: 0.25s;
+    }
+
+    img:hover {
+      opacity: 1;
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+    }
+
+    .news-item {
+      margin: 10px 0;
+      padding: 0 6px;
+      text-align: center;
+    }
+  }
+
 }
 
-.example-img-1 {
-  max-height: 910px;
-  max-width: 436px;
-  min-height: 565px;
-  min-width: 270px;
-  width: 100%;
-}
+/**
+ * "How Shine Works" section
+ */
+.how-shine-works {
+  background: black;
+  border-top: 4px solid black;
+  padding: 0;
+  position: relative;
 
-.example-img-container {
-  position: absolute;
-}
-
-@media (max-width: @screen-xs-max) {
-  .example-img-container {
-    margin-bottom: @margin-sm;
-    position: relative;
+  .product-image {
+    height: 840px;
     text-align: center;
-  }
-}
 
-.form-container {
-  left: -@margin-md;
-  padding-bottom: @margin-lg;
-}
+    img {
+      max-width: 90%;
+      position: relative;
+      top: @margin-md;
+    }
 
-@media (max-width: @screen-sm-max) {
-  .form-container {
-    left: -@margin-sm;
-  }
-}
+    @media (max-width: @screen-sm-max) {
+      height: 720px;
 
-@media (max-width: @screen-xs-max) {
-  .form-container {
-    left: 0;
-    padding-bottom: @margin-sm;
+      img {
+        top: @margin-md
+      }
+    }
   }
 
-  .form-image-container {
-    position: relative;
+  .product-description {
+    background: white;
+    height: 840px;
+    padding: @margin-lg;
+
+    ol {
+      width: 80%;
+      margin: auto;
+    }
+
+    li {
+      .font-caveat;
+
+      font-size: 48px;
+      margin: @margin-md auto;
+
+      p {
+        .font-karla;
+
+        border-left: 4px solid @color-yellow;
+        display: inline-block;
+        font-size: @font-size-homepage-normal;
+        margin-left: @margin-sm;
+        padding-left: @margin-sm;
+        vertical-align: top;
+      }
+    }
+
+    @media (max-width: @screen-md-max) {
+      padding: @margin-lg @margin-md @margin-md @margin-md;
+
+      ol {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: @screen-sm-max) {
+      height: 100%;
+    }
+
+    @media (max-width: @screen-xs-max) {
+      font-size: @font-size-homepage-normal-xs;
+      padding: @margin-lg @margin-sm @margin-sm @margin-sm;
+
+      ol {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      li p {
+        font-size: @font-size-homepage-normal-xs;
+      }
+    }
   }
 
-  .form-image-container .img-1-xs-bg {
-    background-color: @color-yellow;
-    height: 30%;
-    position: absolute;
-    top: 70%;
-    width: 100%;
-  }
-}
+  h2 {
+    .font-section-title;
 
-.form-title {
-  .font-title;
+    color: @color-form-input;
+    margin-bottom: @margin-lg;
+    text-align: center;
 
-  font-size: @font-size-subtitle;
-  margin-bottom: @margin-xs;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.friends-signup {
-  text-align: center;
-
-  .-title {
-    .font-title;
-
-    color: white;
-    font-size: @font-size-header;
-  }
-
-  .btn {
-    .font-karla-bold;
-
-    background-color: black;
-    font-size: @font-size-btn;
-    margin-bottom: @margin-md;
-    margin-top: @margin-md;
-    padding: 15px;
-    text-transform: uppercase;
-    width: 80%;
-
-    a {
-      color: white;
-      text-decoration: none;
+    @media (max-width: @screen-sm-max) {
+      margin-bottom: @margin-md;
     }
   }
 }
 
-.friends-signup-container {
-  background-color: @color-yellow;
+/**
+ * Testimonial section
+ */
+.testimonial-container {
+  background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),url('../images/homepage/testimonial-test-background.png');
+  background-position: center;
+  background-size: cover;
   padding-bottom: @margin-lg;
   padding-top: @margin-lg;
-}
+  position: relative;
 
-@media (max-width: @screen-xs-max) {
-  .friends-signup-container {
-    background-image: none;
-  }
-}
-
-.peer-testimonials {
-  margin-bottom: @margin-sm;
-
-  .testimonial-quote {
-    .font-karla;
-
-    color: white;
-    font-size: @font-size-subtitle;
-    padding-top: @margin-md;
-    padding-left: @margin-sm;
-    padding-right: @margin-sm;
+  .testimonial {
+    margin-bottom: @margin-sm;
     text-align: center;
-  }
 
-  .quote-left {
-    position: absolute;
-    top: 0;
-    left: -20px;
-  }
+    p {
+      .font-karla-bold;
 
-  .quote-right {
-    position: absolute;
-    bottom: 0;
-    right: -20px;
-  }
+      color: white;
+      padding: @margin-md @margin-sm;
+    }
 
-  @media (max-width: @screen-xs-max) {
+    .divider {
+      border-top: 4px solid @color-yellow;
+      margin: auto;
+      width: 100px;
+    }
+
+    .testimonial-name {
+      .font-karla;
+
+      font-size: @font-size-homepage-testimonial-credit;
+      text-transform: uppercase;
+    }
+
     .quote-left {
-      left: 0;
+      position: absolute;
+      top: 0;
+      left: -20px;
     }
 
     .quote-right {
-      right: 0;
+      position: absolute;
+      bottom: 0;
+      right: -20px;
+    }
+
+    @media (max-width: @screen-xs-max) {
+      p {
+        font-size: @font-size-homepage-normal-xs;
+        padding: @margin-md 0;
+      }
+
+      .quote-left {
+        left: 0;
+      }
+
+      .quote-right {
+        right: 0;
+      }
     }
   }
 }
 
-.how-shine-works {
-  padding-top: @margin-lg;
-  padding-bottom: @margin-lg;
-
-  h2 {
-    .font-title;
-
-    color: @color-form-input;
-    font-size: 72px;
-    margin-bottom: @margin-lg;
-    text-align: center;
-  }
-
-  img {
-    margin-bottom: @margin-md;
-    max-height: 200px;
-  }
-
-  .-item {
-    .font-title;
-
-    font-size: 22px;
-    list-style: none;
-    padding: @margin-md;
-    text-align: center;
-  }
-
-  @media (max-width: @screen-xs-max) {
-    h2 {
-      font-size: @font-size-header;
-      margin-bottom: @margin-sm;
-    }
-  }
-}
-
-.in-the-news {
-  margin-top: @margin-sm;
-}
-
-.in-the-news img {
-  max-height: 80px;
-  max-width: 100%;
-  opacity: 0.8;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  transition-property: opacity, -webkit-filter, filter;
-  transition-duration: 0.25s;
-}
-
-.in-the-news img:hover {
-  opacity: 1;
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
-}
-
-.news-item {
-  margin: 20px 0;
-  padding: 0 6px;
-  text-align: center;
-}
-
-@media (max-width: @screen-md-min) {
-  .news-item {
-    padding: 0 10px;
-  }
-}
-
-@media (max-width: @screen-sm-min) {
-  .news-item {
-    padding: 0 20px;
-  }
-}
-
-.tagline {
-  .font-title;
-
-  font-size: @font-size-header;
-  margin: @margin-md 0;
-  text-align: center;
-}
-
-.testimonials {
-  margin-bottom: @margin-lg;
-}
-
-@media (min-width: @screen-lg-min) {
-  .testimonials {
-    margin-top: @margin-md;
-  }
-}
-
-.testimonials p {
-  .font-karla;
-
-  color: white;
-  font-size: @font-size-title;
-  padding: @margin-md;
-  text-align: center;
-}
-
-@media (max-width: @screen-xs-max) {
-  .testimonials p {
-    font-size: @font-size-subtitle;
-    padding: @margin-sm;
-  }
-}
-
-.testimonials .quote-left {
+.section-arrow {
+  background-image: url('../images/homepage/homepage-section-arrow.png');
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+  left: 50%;
+  top: 100%;
+  margin-left: -50px;
+  margin-top: -50px;
   position: absolute;
-  top: 0;
-  left: 20px;
-}
-
-.testimonials .quote-right {
-  position: absolute;
-  bottom: 0;
-  right: 20px;
+  z-index: 1;
 }

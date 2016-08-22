@@ -1,7 +1,4 @@
 /** Styles for error pages **/
-footer {
-  background-color: @color-footer;
-}
 
 .header-container {
   background-color: @color-footer;
@@ -9,31 +6,25 @@ footer {
 }
 
 .error-img-404 {
-  background-image: url('../images/error/404-maru.gif');
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)),url('../images/error/404-maru.gif');
 }
 
 .error-img-500 {
-  background-image: url('../images/error/500-maru.gif');
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)),url('../images/error/500-maru.gif');
 }
 
 .header-container h1 {
-  .font-title;
+  .font-section-title;
 
   color: @color-yellow;
-  font-size: 64px;
   margin: @margin-md * 4 0;
   text-align: center;
-}
-
-@media(max-width: @screen-xs-max) {
-  .header-container h1 {
-    font-size: 48px;
-  }
 }
 
 .content-error {
   background-color: white;
   color: black;
+  font-size: @font-size-normal;
   padding: @margin-md * 4 0;
   text-align: center;
 }
