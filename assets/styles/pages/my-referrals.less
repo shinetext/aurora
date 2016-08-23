@@ -7,7 +7,7 @@
 #referral-count {
   .font-karla-bold;
 
-  background-color: @color-primary;
+  background-color: @color-yellow;
   border-radius: 75px;
   color: black;
   -moz-border-radius: 75px;
@@ -37,24 +37,14 @@
   padding-bottom: 0;
 }
 
-@media (max-width: @screen-xs-max) {
-  .referral-info-container {
-    margin-top: @margin-md;
+.referral-info-container {
+  p {
+    margin: @margin-sm 0;
   }
 }
 
-.referral-link-container {
-  border: 2px solid black;
-  margin-bottom: @margin-sm;
-  margin-top: @margin-sm;
-  padding: 10px;
-  text-align: center;
-  width: 100%;
-
-  #referral-link-url {
-    font-size: @font-size-normal;
-    height: 40px;
-    line-height: 40px;
-    width: 100%;
+@media (max-width: @screen-xs-max) {
+  .referral-info-container {
+    margin-top: @margin-md;
   }
 }

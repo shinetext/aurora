@@ -14,12 +14,30 @@
  * or any other Grunt tasks you like.)
  */
 
+/**
+ * Variables
+ */
 @import 'variables/colors.less';
 @import 'variables/fonts.less';
 @import 'variables/sizes.less';
 
+/**
+ * Main stylesheet
+ */
 @import 'shine.less';
-@import 'pages/subpage.less';
+
+/**
+ * Partials
+ */
+@import 'navbar.less';
+@import 'footer.less';
+
+/**
+ * Subpages
+ */
+.subpage {
+  @import 'pages/subpage.less';
+}
 
 .confirmation-page {
   @import 'pages/confirmation.less';
@@ -44,3 +62,8 @@
 .homepage {
   @import 'pages/homepage.less';
 }
+
+/**
+ * Subsections
+ */
+@import 'articles.less';

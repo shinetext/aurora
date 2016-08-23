@@ -10,6 +10,21 @@ var request = Promise.promisifyAll(require('request'));
 module.exports = {
 
   /**
+   * Redirect to the advice page.
+   */
+  advice: (req, res) => {
+    return res.redirect(sails.config.globals.adviceBaseUrl);
+  },
+
+  /**
+   * Articles are hosted on a separate subdomain, but in case people mis-share
+   * a link and don't specify the subdomain, we can try to fix that here.
+   */
+  articlesRedirect: (req, res) => {
+    return res.redirect(`${sails.config.globals.adviceBaseUrl}${req.url}`);
+  },
+
+  /**
    * Display /confirmation view and pass along any query params.
    */
   confirmation: function(req, res) {
@@ -40,7 +55,9 @@ module.exports = {
    */
   home: function(req, res) {
     let locals = {
-      referredByCode: req.query.r
+      adviceBaseUrl: sails.config.globals.adviceBaseUrl,
+      referredByCode: req.query.r,
+      view: 'homepage',
     };
 
     return res.view('homepage', locals);

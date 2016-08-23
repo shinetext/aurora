@@ -1,0 +1,33 @@
+<div id="promoted-articles">
+
+<h2>Read Up On Happy Living</h2>
+
+<div class="row">
+  <div id="promoted-articles-results"></div>
+</div>
+
+<a href="advice"><div id="read-more">Read More</div></a>
+
+</div>
+
+<!-- Article preview template -->
+<script id="article-preview-template" type="text/template">
+  <div class="article-preview col-xs-12 col-sm-4"
+    data-bottom-top="transform: translateY(5%); opacity: 0.9;"
+    data-bottom-center="transform: translateY(0%);"
+    data-bottom-bottom="opacity: 1;">
+    <a href="<%= adviceBaseUrl %>/<?= article.urlPath ?>">
+      <div class="article-photo">
+        <img src="<?= article.photo ?>">
+      </div>
+      <div class="author-photo">
+        <img src="<?= author.photo ?>">
+      </div>
+      <div class="article-preview-text">
+        <div class="article-category"><?= article.category ?></div>
+        <div class="article-title"><?= article.title ?></div>
+        <div class="author-name">By <?= author.name ?></div>
+      </div>
+    </a>
+  </div>
+</script>

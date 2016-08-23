@@ -2,47 +2,30 @@
   text-align: center;
 
   h1 {
-    .font-primary-bold;
+    .font-section-title;
 
     font-size: @font-size-header;
     margin-bottom: @margin-sm;
+    margin-top: @margin-lg;
+  }
+
+  img {
+    max-width: 100%;
   }
 }
 
 .content {
+  font-size: @font-size-normal;
   padding: @margin-md 0;
-
-  h3 {
-    text-align: center;
-  }
+  text-align: center;
 
   p {
-    .font-primary;
-
     color: @color-form-primary;
-    font-size: @font-size-normal;
-    text-align: center;
   }
 
   .referral-container {
     border-top: 1px dotted @color-form-primary;
     margin-top: @margin-md;
     padding-top: @margin-md;
-  }
-
-  .referral-link-container {
-    border: 2px solid black;
-    margin-bottom: @margin-sm;
-    margin-top: @margin-sm;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-
-    #referral-link-url {
-      font-size: @font-size-normal;
-      height: 40px;
-      line-height: 40px;
-      width: 100%;
-    }
   }
 }

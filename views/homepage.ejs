@@ -1,193 +1,141 @@
 <div class="homepage">
 
-<%- partial ('partials/header-icon.ejs') %>
+<%- partial ('partials/navbar.ejs') %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-      <div class="tagline">
-        Daily tips for self-fulfillment texted to you every morning
-      </div>
-    </div>
-  </div>
+<div class="container-fluid">
+
 </div>
+<!-- Top sign up section -->
+<div class="container-fluid container-homepage-lead">
+  <div class="col-md-7">
+    <div class="container-signup">
+      <h2>Daily tips for self-fulfillment texted to you every morning.</h2>
+      <form action="/join" method="post">
 
-<div class="container">
-  <!-- Image & Form row -->
-  <div class="form-image-container row">
-    <!--
-      Kinda hacky. Puts a yellow background halfway down the example image on
-      xs sized screens.
-    -->
-    <div class=img-1-xs-bg></div>
+        <% if (referredByCode) { %>
+        <input name="referredByCode" value="<%= referredByCode %>" type="hidden"/>
+        <% } %>
 
-    <!-- Sign Up Form -->
-    <div class="form-container col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-7">
-      <div class="row">
-        <div class="form-title">
-          Get Your Daily Motivation
-        </div>
-      </div>
-      <div class="row">
-        <form action="/join" method="post">
-
-          <% if (referredByCode) { %>
-          <input name="referredByCode" value="<%= referredByCode %>" type="hidden"/>
-          <% } %>
-
-          <div class="form-field">
-            <input class="form-control" name="first_name" id="form-first-name" type="text" required value="">
-            <label for="form-first-name">First Name</label>
-            <span class="required-asterisk">*</span>
-          </div>
-
-          <div class="form-field">
-            <input class="form-control" name="phone" id="form-phone-number" type="tel" required value="">
-            <label for="form-phone-number">Phone Number</label>
-            <span class="required-asterisk">*</span>
-          </div>
-
-          <div class="form-field">
-            <input class="form-control" name="email" id="form-email" type="email" value="">
-            <label for="form-email">Email Address</label>
-          </div>
-
-          <div id="send-gifs-box"></div>
-          <input type="checkbox" name="send_gifs" id="form-send-gifs"/>
-          <label class="send-gifs-label" for="form-send-gifs">I want gifs in my texts!</label>
-
-          <div>
-            <input class="btn" type="submit" value="Sign Up"/>
-          </div>
-
-          <div class="ctia">
-            Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a>
-            & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily message.
-            Message & data rates may apply. Text STOP to opt-out, HELP for help.
-          </div>
-        </form>
-
-        <hr>
-        <div class="fbmessenger">
-          <h3>... now available on Facebook!</h3>
-          <a class="btn" href="https://m.me/ShineText" target="_blank">Message Us</a>
-          <div>
-            You can also sign up to receive our texts on Facebook! Say "hi" to us on Messenger!
-          </div>
+        <div class="form-field">
+          <input class="form-control" name="first_name" id="form-first-name" type="text" required value="">
+          <label for="form-first-name">First Name</label>
+          <span class="required-asterisk">*</span>
         </div>
 
-      </div>
-    </div> <!-- end Sign Up form -->
+        <div class="form-field">
+          <input class="form-control" name="phone" id="form-phone-number" type="tel" required value="">
+          <label for="form-phone-number">Phone Number</label>
+          <span class="required-asterisk">*</span>
+        </div>
 
-    <!-- Example image -->
-    <div class="example-img-container col-xs-10 col-xs-offset-1 col-sm-4">
-      <img class="example-img-1" src="/images/shine-example-1.png">
-    </div>
+        <div class="form-field">
+          <input class="form-control" name="email" id="form-email" type="email" value="">
+          <label for="form-email">Email Address</label>
+        </div>
 
-  </div> <!-- end Image & Form row -->
-</div>
+        <div id="send-gifs-box"></div>
+        <input type="checkbox" name="send_gifs" id="form-send-gifs"/>
+        <label class="send-gifs-label" for="form-send-gifs">I want gifs in my texts!</label>
 
-<div class="container-fluid bg-yellow">
-  <!-- Press -->
-  <div class="row">
-    <div class="in-the-news col-xs-12 col-md-6 col-md-offset-6">
-      <div class="news-item col-xs-4 col-sm-2">
-        <a href="https://news.fastcompany.com/can-an-app-eliminate-the-confidence-gap-4005790" target="_blank">
-          <img src="/images/news/fastco_logo.png">
+        <div>
+          <input class="btn" type="submit" value="Get Shine Texts"/>
+        </div>
+      </form>
+
+      <div class="fbmessenger">
+        <a class="btn" href="https://m.me/ShineText" target="_blank"
+          ga-on="click"
+          ga-event-category="SignUp"
+          ga-event-action="Messenger">
+          FB Message Us
         </a>
+        <div class="description"><span class="fbmessenger-icon"></span>Not in the U.S.? Shine is now on Facebook Messenger!</div>
       </div>
-      <div class="news-item col-xs-4 col-sm-2">
-        <a href="http://mashable.com/2016/05/05/shine-texts/#z1I1WEfmBSqZ" target="_blank">
-          <img src="/images/news/mashable_logo.png">
-        </a>
+
+      <div class="ctia">
+        Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a>
+        & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily message.
+        Message & data rates may apply. Text STOP to opt-out, HELP for help.
       </div>
-      <div class="news-item col-xs-4 col-sm-2">
-        <a href="http://money.cnn.com/2016/01/29/technology/startup-shine-text/index.html" target="_blank">
-          <img src="/images/news/cnnmoney_logo.png">
-        </a>
+
+      <!-- Press -->
+      <div class="row">
+        <div class="in-the-news col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
+          <div class="news-item col-xs-6 col-sm-3">
+            <a href="http://mashable.com/2016/05/05/shine-texts/#z1I1WEfmBSqZ" target="_blank">
+              <img src="/images/news/mashable_logo.png">
+            </a>
+          </div>
+          <div class="news-item col-xs-6 col-sm-3">
+            <a href="http://money.cnn.com/2016/01/29/technology/startup-shine-text/index.html" target="_blank">
+              <img src="/images/news/cnnmoney_logo.png">
+            </a>
+          </div>
+          <div class="news-item col-xs-6 col-sm-3">
+            <a href="https://www.glamour.com/inspired/blogs/the-conversation/2015/12/vacation-career-tips" target="_blank">
+              <img src="/images/news/glamour_logo.png">
+            </a>
+          </div>
+          <div class="news-item col-xs-6 col-sm-3">
+            <a href="https://observer.com/2016/01/shine-a-daily-text-to-help-you-slay-the-day/" target="_blank">
+              <img src="/images/news/observer_logo.png">
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="news-item col-xs-4 col-sm-2">
-        <a href="http://www.teenvogue.com/story/morning-tweaks-start-day-off-right" target="_blank">
-          <img src="/images/news/teenvogue_logo.png">
-        </a>
-      </div>
-      <div class="news-item col-xs-4 col-sm-2">
-        <a href="https://www.glamour.com/inspired/blogs/the-conversation/2015/12/vacation-career-tips" target="_blank">
-          <img src="/images/news/glamour_logo.png">
-        </a>
-      </div>
-      <div class="news-item col-xs-4 col-sm-2">
-        <a href="https://observer.com/2016/01/shine-a-daily-text-to-help-you-slay-the-day/" target="_blank">
-          <img src="/images/news/observer_logo.png">
-        </a>
-      </div>
-    </div>
+    </div> <!-- end .container-signup -->
   </div>
-
-  <!-- Testimonials -->
-  <div class="row">
-    <div class="testimonials col-xs-10 col-xs-offset-1 col-md-5 col-md-offset-6">
-      <img class="quote-left" src="/images/quote-left.png">
-      <img class="quote-right" src="/images/quote-right.png">
-      <p>
-        It's pretty much the only text I look forward to getting at 8:00 AM.
-      </p>
-    </div>
-  </div>
+  <div class="col-md-5 homepage-header-image"></div>
+  <div class="section-arrow"></div>
 </div>
 
 <!-- How Shine Works -->
 <div class="container-fluid how-shine-works">
-  <h2>How Shine Works</h2>
-  <div class="row">
-    <div class="-item col-sm-4">
-      <img src="/images/how-shine-works-1.png">
-      <p>
-        We know some days you feel awesome and others not-so-much. We curate and
-        send daily content that empowers you to slay your day and feel your best
-        self.
-      </p>
-    </div>
-    <div class="-item col-sm-4">
-      <img src="/images/how-shine-works-2.png">
-      <p>
-        Your daily Shine text includes positive affirmations, tactical actions
-        you can do that day and the occasional gif. Trust us, it'll give you all
-        the feels before you even get out of bed.
-      </p>
-    </div>
-    <div class="-item col-sm-4">
-      <img src="/images/how-shine-works-3.png">
-      <p>
-        Share this motiv-affirmation (motivation + affirmation. Yeah, we made up
-        a word) with your friends to give them the boost they need.
-      </p>
-    </div>
+
+  <div class="product-description col-md-7 col-md-push-5">
+    <h2>How Shine Works</h2>
+    <ol
+      data-bottom-top="transform: translateY(30%); opacity: 0.8;"
+      data--150-bottom-center="transform: translateY(0%);"
+      data--150-bottom-bottom="opacity: 1;">
+      <li><p>We curate and create content around how to live each day with more intentionality to reach your work and life goals.</p></li>
+      <li><p>We send you positive affirmations, tactical tips and the occasional gif, our daily Shine Text will give you all the feels.</p></li>
+      <li><p>Share this motiv-affirmation (motivation + affirmation. Yeah, we made up a word) with your friends to give them the boost they need.</p></li>
+    </ol>
   </div>
+  <div class="product-image col-md-5 col-md-pull-7">
+    <img src="/images/shine-example-1.png">
+  </div>
+
 </div>
 
-<div class="container-fluid friends-signup-container">
-  <div class="row">
-    <div class="friends-signup col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-1">
-      <div class="-title">Share Shine with your besties.</div>
-      <a href="/referrals">
-        <div class="btn">Invite Friends</div>
-      </a>
-    </div>
-    <div class="peer-testimonials col-sm-5 col-md-offset-1">
-      <div>
-        <img class="quote-left" src="/images/quote-left.png">
-        <img class="quote-right" src="/images/quote-right.png">
-        <p class="testimonial-quote">
-          EVERYTHING I ever needed to make it through another awkward week of my
-          version of adulting. I'm always twiddling my thumbs waiting for shine to
-          kick my butt back into gear. #dependency
-        </p>
-      </div>
+<!-- Testimonials -->
+<div class="container-fluid testimonial-container">
+  <div class="testimonial col-xs-10 col-xs-offset-1 col-md-5">
+    <div
+      data-bottom-top="transform: translateY(15%); opacity: 0.25;"
+      data--100-bottom-bottom="transform: translateY(0%); opacity: 1;">
+      <p>
+        EVERYTHING I ever needed to make it through another awkward week of my
+        version of adulting. I'm always twiddling my thumbs waiting for shine to
+        kick my butt back into gear. #dependency
+      </p>
+      <div class="divider"></div>
+      <p class="testimonial-name">Brenna - Graduate Student</p>
     </div>
   </div>
+
+  <div class="section-arrow"></div>
 </div>
+
+<%- partial ('partials/promoted-articles') %>
 
 <%- partial ('partials/footer.ejs') %>
 
-</div> <!-- div class="homepage" -->
+</div> <!-- end div class="homepage" -->
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+<!-- The promotedUrl var is used by homepage.js to fetch promoted articles -->
+<script>
+var promotedUrl = '<%= adviceBaseUrl %>/articles/promoted.json';
+</script>
