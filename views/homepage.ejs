@@ -9,7 +9,7 @@
 <div class="container-fluid container-homepage-lead">
   <div class="col-md-7">
     <div class="container-signup">
-      <h2>Motivation Monday, everyday. Start your day on the right text.</h2>
+      <h2>Motivation Monday, every day. Start your day on the right text.</h2>
       <form action="/join" method="post">
 
         <% if (referredByCode) { %>
@@ -29,13 +29,10 @@
         </div>
 
         <div class="form-field">
-          <input class="form-control" name="email" id="form-email" type="email" value="">
+          <input class="form-control" name="email" id="form-email" type="email" required value="">
           <label for="form-email">Email Address</label>
+          <span class="required-asterisk">*</span>
         </div>
-
-        <div id="send-gifs-box"></div>
-        <input type="checkbox" name="send_gifs" id="form-send-gifs"/>
-        <label class="send-gifs-label" for="form-send-gifs">I want gifs in my texts!</label>
 
         <div>
           <input class="btn" type="submit" value="Get Shine Texts"/>

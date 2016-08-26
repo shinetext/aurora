@@ -30,6 +30,12 @@ module.exports = {
 
     // The Photon API URL
     photonApiUrl: process.env.PHOTON_API_URL || 'http://localhost:1338',
+
+    // MailChimp
+    mailchimpApiAuthUser: process.env.MAILCHIMP_API_USER,
+    mailchimpApiAuthPass: process.env.MAILCHIMP_API_PASSWORD,
+    mailchimpApiUrl: process.env.MAILCHIMP_API_URL,
+    mailchimpListId: process.env.MAILCHIMP_LIST_ID,
   },
 
 };
