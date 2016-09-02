@@ -10,6 +10,17 @@
   <div class="col-md-7">
     <div class="container-signup">
       <h2>Motivation Monday, every day. Start your day on the right text.</h2>
+
+      <div class="fbmessenger">
+        <a class="btn" href="https://m.me/ShineText" target="_blank"
+          ga-on="click"
+          ga-event-category="SignUp"
+          ga-event-action="Messenger">
+          Sign Up on Messenger
+        </a>
+        <div class="description"><span class="fbmessenger-icon"></span>Shine is now on Facebook Messenger!</div>
+      </div>
+
       <form action="/join" method="post">
 
         <% if (referredByCode) { %>
@@ -35,19 +46,12 @@
         </div>
 
         <div>
-          <input class="btn" type="submit" value="Get Shine Texts"/>
+          <input class="btn" type="submit" value="Get Shine Texts"
+            ga-on="click"
+            ga-event-category="SignUp"
+            ga-event-action="SMS"/>
         </div>
       </form>
-
-      <div class="fbmessenger">
-        <a class="btn" href="https://m.me/ShineText" target="_blank"
-          ga-on="click"
-          ga-event-category="SignUp"
-          ga-event-action="Messenger">
-          FB Message Us
-        </a>
-        <div class="description"><span class="fbmessenger-icon"></span>Not in the U.S.? Shine is now on Facebook Messenger!</div>
-      </div>
 
       <div class="ctia">
         Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a>
@@ -65,7 +69,7 @@
           </div>
           <div class="news-item col-xs-6 col-sm-3">
             <a href="http://money.cnn.com/2016/01/29/technology/startup-shine-text/index.html" target="_blank">
-              <img src="/images/news/cnnmoney_logo.png">
+              <img src="/images/news/cnn_logo.png">
             </a>
           </div>
           <div class="news-item col-xs-6 col-sm-3">
@@ -74,8 +78,8 @@
             </a>
           </div>
           <div class="news-item col-xs-6 col-sm-3">
-            <a href="https://observer.com/2016/01/shine-a-daily-text-to-help-you-slay-the-day/" target="_blank">
-              <img src="/images/news/observer_logo.png">
+            <a href="http://motto.time.com/4381860/shine-app-millennial-women-data/" target="_blank">
+              <img src="/images/news/time_logo.png">
             </a>
           </div>
         </div>
