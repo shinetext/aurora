@@ -17,7 +17,7 @@ module.exports = {
   join: function(req, res) {
 
     // Data for Mobile Commons submission
-    let optInPath = 'OP4B1A27AC508266A1F4373419CE1BE391';
+    let optInPath = 'OP7C2438EA2BA29A1FE3C7C91C46715DAE';
     let url = sails.config.globals.mcJoinUrl;
 
     let data = {
