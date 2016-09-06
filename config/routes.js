@@ -116,7 +116,6 @@ var routes = {
   ***************************************************************************/
 
   'post /join': 'WebActionsController.join',
-  'post /refer': 'WebActionsController.refer',
 };
 
 /**
