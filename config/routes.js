@@ -41,6 +41,8 @@ var routes = {
 
   '/confirmation': 'WebViewController.confirmation',
 
+  '/daily': 'WebViewController.daily',
+
   '/faq': {
     view: 'faq',
     locals: {
@@ -116,7 +118,6 @@ var routes = {
   ***************************************************************************/
 
   'post /join': 'WebActionsController.join',
-  'post /refer': 'WebActionsController.refer',
 };
 
 /**
