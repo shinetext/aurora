@@ -51,6 +51,13 @@ module.exports = {
   },
 
   /**
+   * Redirect to the Daily Shine homepage.
+   */
+  daily: (req, res) => {
+    return res.redirect(sails.config.globals.dailyShineBaseUrl);
+  },
+
+  /**
    * Display the homepage view.
    */
   home: function(req, res) {

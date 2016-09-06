@@ -41,6 +41,8 @@ var routes = {
 
   '/confirmation': 'WebViewController.confirmation',
 
+  '/daily': 'WebViewController.daily',
+
   '/faq': {
     view: 'faq',
     locals: {
