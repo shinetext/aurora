@@ -32,6 +32,19 @@ var routes = {
   *                                                                          *
   ***************************************************************************/
 
+  /** For prototyping chat tools **/
+  '/drift': {
+    view: 'chat/drift'
+  },
+  '/livechat': {
+    view: 'chat/livechat'
+  },
+  '/zopim': {
+    view: 'chat/zopim'
+  },
+
+  /********************************/
+
   '/': 'WebViewController.home',
   '/home': 'WebViewController.home',
 
