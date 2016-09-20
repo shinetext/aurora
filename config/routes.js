@@ -79,6 +79,16 @@ var routes = {
 
   '/referrals/:phone': 'WebViewController.myReferral',
 
+  '/shinevisor': {
+    view: 'shinevisor',
+    locals: {
+      title: 'Shinevisor | Shine',
+      layout: 'layouts/subpage.layout',
+      hideFooterCta: true,
+      wrapBodyInContainer: false,
+    },
+  },
+
   '/squad': {
     view: 'squad',
     locals: {
