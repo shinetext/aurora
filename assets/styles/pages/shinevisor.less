@@ -1,0 +1,224 @@
+@screen-mobile-breakpoint: 720px;
+
+.container-1 {
+  color: black;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  padding-top: @margin-sm;
+  width: 70%;
+
+  h1 {
+    font-size: 54px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+  }
+
+  h4 {
+    font-size: 24px;
+    padding-top: @margin-sm;
+  }
+
+  ol {
+    color: @color-yellow;
+    padding-left: 12px;
+    padding-top: @margin-sm;
+  }
+
+  li p {
+    color: black;
+    line-height: 28px;
+    margin-left: @margin-sm;
+  }
+
+  .container-text {
+    float: left;
+    width: 45%;
+  }
+
+  .container-image {
+    float: right;
+    text-align: right;
+    width: 50%;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .btn {
+    margin-top: @margin-md;
+  }
+
+  .title {
+    border-bottom: 5px @color-yellow solid;
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 54px;
+    margin-bottom: @margin-sm;
+    padding-top: @margin-sm;
+  }
+
+  .subtitle {
+    font-family: 'Glacial Indifference';
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: @screen-sm-max) {
+    width: 98%;
+
+    .container-text {
+      width: 50%;
+    }
+
+    .container-image {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: @screen-mobile-breakpoint) {
+    h1 {
+      font-size: 42px;
+      line-height: 54px;
+      width: 80%;
+    }
+
+    .container-text {
+      padding: 0 @margin-sm;
+      width: 100%;
+    }
+
+    .container-image {
+      margin-top: @margin-md;
+      width: 100%;
+    }
+
+    .title {
+      font-size: 54px;
+    }
+  }
+}
+
+.container-2 {
+  background-image: url('../images/shinevisor/shinevisor-bg.jpg');
+  background-position: right;
+  background-size: cover;
+  height: 100%;
+  min-height: 860px;
+  margin-top: @margin-lg;
+  padding-top: @margin-lg;
+  text-align: center;
+  width: 100%;
+
+  .container-plans {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    width: 80%;
+  }
+
+  h2 {
+    color: white;
+    font-size: 42px;
+    padding-bottom: @margin-md;
+    text-align: center;
+  }
+
+  .plan {
+    background-color: white;
+    color: black;
+    float: left;
+    padding: @margin-md @margin-sm;
+    text-align: center;
+
+    .btn {
+      margin-top: 30px;
+    }
+
+    .container-price {
+      margin: 30px 0;
+    }
+
+    .type {
+      font-family: 'Glacial Indifference';
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .price {
+      font-family: 'Glacial Indifference';
+      font-size: 54px;
+      line-height: 48px;
+    }
+
+    .sm-text {
+      font-size: 14px;
+    }
+
+    .md-text {
+      font-size: 18px;
+    }
+  }
+
+  .plan.primary {
+    border: 5px @color-yellow solid;
+  }
+
+  .plan.secondary {
+    position: relative;
+    top: 13px;
+
+    .btn {
+      background: white;
+      border: 3px solid black;
+      box-sizing: border-box;
+      color: black;
+    }
+  }
+
+  @media (max-width: @screen-mobile-breakpoint) {
+    padding-bottom: 80px;
+
+    h2 {
+      text-align: left;
+    }
+
+    .plan {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      padding: @margin-md @margin-xs;
+      position: relative;
+      width: 50%;
+    }
+
+    .plan.primary {
+      min-width: 290px;
+      top: -408px;
+      width: 55%;
+    }
+
+    .plan.secondary {
+      min-width: 272px;
+      top: 430px;
+      width: 50%;
+    }
+  }
+}
+
+.section-arrow {
+  background-image: url('../images/homepage/homepage-section-arrow.png');
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+  left: 50%;
+  top: 100%;
+  margin-left: -50px;
+  margin-top: 30px; /* accounts for an 80px margin on .container-2 */
+  position: absolute;
+  z-index: 1;
+}
