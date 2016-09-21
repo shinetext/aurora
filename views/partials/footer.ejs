@@ -1,4 +1,5 @@
 <footer>
+  <% if (typeof hideFooterCta === 'undefined' || ! hideFooterCta) { %>
   <div class="footer-cta">
     <div class="cta-copy">Get Shine now for daily affirmations on your phone!</div>
     <% if (typeof view !== 'undefined' && view === 'homepage') { %>
@@ -7,6 +8,7 @@
     <a href="/"><div class="signup-button">Sign Up</div></a>
     <% } %>
   </div>
+  <% } %>
   <div class="social-and-footer-nav">
     <div class="-social-icons">
       <a class="-icon-facebook" href="https://www.facebook.com/Shine-Text" target="_blank"></a>
@@ -23,3 +25,12 @@
     </div>
   </div>
 </footer>
+
+<!-- @todo HACK: remove the footer's top margin when the footer-cta isn't displayed -->
+<% if (typeof hideFooterCta !== 'undefined' && hideFooterCta) { %>
+<style>
+footer {
+  margin-top: 0;
+}
+</style>
+<% } %>
