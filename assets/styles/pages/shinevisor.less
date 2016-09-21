@@ -46,6 +46,10 @@
     float: right;
     text-align: right;
     width: 50%;
+
+    img {
+      max-width: 100%;
+    }
   }
 
   .btn {
@@ -99,6 +103,10 @@
     .container-image {
       margin-top: @margin-md;
       width: 100%;
+    }
+
+    .title {
+      font-size: 54px;
     }
   }
 }
@@ -191,19 +199,19 @@
       float: none;
       margin-left: auto;
       margin-right: auto;
-      min-width: 220px;
+      padding: @margin-md @margin-xs;
       position: relative;
       width: 50%;
     }
 
     .plan.primary {
-      min-width: 314px;
+      min-width: 290px;
       top: -408px;
       width: 55%;
     }
 
     .plan.secondary {
-      min-width: 284px;
+      min-width: 272px;
       top: 430px;
       width: 50%;
     }
