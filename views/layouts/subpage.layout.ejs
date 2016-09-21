@@ -5,6 +5,9 @@
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <% if (typeof metaDescription === 'string') { %>
+    <meta name="description" content="<%= metaDescription %>" />
+    <% } %>
 
     <meta property="og:url" content="http://www.shinetext.com" />
     <meta property="og:title" content="Shine" />

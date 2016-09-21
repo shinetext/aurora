@@ -123,7 +123,7 @@ module.exports = function(grunt) {
       options: {
         startTag: '<!--STYLES-->',
         endTag: '<!--STYLES END-->',
-        fileTmpl: '<link rel="stylesheet" href="%s?v=1">',
+        fileTmpl: '<link rel="stylesheet" href="%s?v=1.1">',
         appRoot: '.tmp/public'
       },
       files: {
@@ -137,7 +137,7 @@ module.exports = function(grunt) {
       options: {
         startTag: '<!--STYLES-->',
         endTag: '<!--STYLES END-->',
-        fileTmpl: '<link rel="stylesheet" href="%s?v=1">',
+        fileTmpl: '<link rel="stylesheet" href="%s?v=1.1">',
         appRoot: '.tmp/public',
         relative: true
       },
