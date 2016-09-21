@@ -1,3 +1,5 @@
+@screen-mobile-breakpoint: 720px;
+
 .container-1 {
   color: black;
   font-size: 16px;
@@ -81,6 +83,24 @@
       text-align: center;
     }
   }
+
+  @media (max-width: @screen-mobile-breakpoint) {
+    h1 {
+      font-size: 42px;
+      line-height: 54px;
+      width: 80%;
+    }
+
+    .container-text {
+      padding: 0 @margin-sm;
+      width: 100%;
+    }
+
+    .container-image {
+      margin-top: @margin-md;
+      width: 100%;
+    }
+  }
 }
 
 .container-2 {
@@ -157,6 +177,35 @@
       border: 3px solid black;
       box-sizing: border-box;
       color: black;
+    }
+  }
+
+  @media (max-width: @screen-mobile-breakpoint) {
+    padding-bottom: 80px;
+
+    h2 {
+      text-align: left;
+    }
+
+    .plan {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      min-width: 220px;
+      position: relative;
+      width: 50%;
+    }
+
+    .plan.primary {
+      min-width: 314px;
+      top: -408px;
+      width: 55%;
+    }
+
+    .plan.secondary {
+      min-width: 284px;
+      top: 430px;
+      width: 50%;
     }
   }
 }
