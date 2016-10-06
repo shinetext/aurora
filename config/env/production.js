@@ -48,6 +48,9 @@ module.exports = {
     // The Photon API URL
     photonApiUrl: process.env.PHOTON_API_URL,
 
+    // Base URL for the talk / Shinevisor platform
+    talkBaseUrl: process.env.TALK_BASE_URL,
+
     // MailChimp
     mailchimpApiAuthUser: process.env.MAILCHIMP_API_USER,
     mailchimpApiAuthPass: process.env.MAILCHIMP_API_PASSWORD,
