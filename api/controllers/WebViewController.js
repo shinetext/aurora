@@ -9,11 +9,13 @@ var request = Promise.promisifyAll(require('request'));
 
 module.exports = {
 
+  ////////////////////////////// Redirects ///////////////////////////////////
+
   /**
    * Redirect to the advice page.
    */
   advice: (req, res) => {
-    return res.redirect(sails.config.globals.adviceBaseUrl);
+    return res.redirect(301, sails.config.globals.adviceBaseUrl);
   },
 
   /**
@@ -21,8 +23,24 @@ module.exports = {
    * a link and don't specify the subdomain, we can try to fix that here.
    */
   articlesRedirect: (req, res) => {
-    return res.redirect(`${sails.config.globals.adviceBaseUrl}${req.url}`);
+    return res.redirect(301, `${sails.config.globals.adviceBaseUrl}${req.url}`);
   },
+
+  /**
+   * Redirect to the Daily Shine homepage.
+   */
+  daily: (req, res) => {
+    return res.redirect(301, sails.config.globals.dailyShineBaseUrl);
+  },
+
+  /**
+   * Redirect to the Shinevisor page.
+   */
+  talk: (req, res) => {
+    return res.redirect(301, sails.config.globals.talkBaseUrl);
+  },
+
+  ////////////////////////////////////////////////////////////////////////////
 
   /**
    * Display /confirmation view and pass along any query params.
@@ -48,13 +66,6 @@ module.exports = {
     }
 
     return res.view('confirmation', locals);
-  },
-
-  /**
-   * Redirect to the Daily Shine homepage.
-   */
-  daily: (req, res) => {
-    return res.redirect(sails.config.globals.dailyShineBaseUrl);
   },
 
   /**
