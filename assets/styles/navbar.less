@@ -57,13 +57,23 @@
         transition: all 0.25s ease 0s;
       }
 
-      a:hover:before {
+      a:hover:before,a.nav-open:before,a.nav-button:before {
         -webkit-transform: scaleX(1);
         transform: scaleX(1);
       }
 
-      a.nav-open:before {
-        transform: scaleX(1);
+      a.nav-button:before {
+        background-color: @color-yellow;
+        border-radius: 4px;
+        height: 200%;
+        left: -25%;
+        top: -50%;
+        width: 150%;
+        z-index: -1;
+      }
+
+      a.nav-button:hover:before {
+        background-color: #FFE3A3;
       }
     }
 
