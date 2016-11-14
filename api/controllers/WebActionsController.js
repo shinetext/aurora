@@ -6,6 +6,8 @@
 
 var Promise = require('bluebird');
 var request = Promise.promisifyAll(require('request'));
+const Mixpanel = require('mixpanel');
+const mixpanel = Mixpanel.init(process.env.MIXPANEL_TOKEN);
 
 module.exports = {
 
@@ -112,7 +114,13 @@ module.exports = {
         // If available, attach the referralCode to the redirect URL
         if (referralCode.length > 0) {
           redirectUrl += '&referralCode=' + response.body.referralCode;
+
+          // Track sign up and identify with the referral code
+          mixpanel.track('Web Sign Up', {
+            distinct_id: referralCode,
+          });
         }
+
 
         return res.redirect(redirectUrl);
       })
