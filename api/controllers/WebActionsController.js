@@ -116,11 +116,12 @@ module.exports = {
           redirectUrl += '&referralCode=' + response.body.referralCode;
 
           // Track sign up and identify with the referral code
-          mixpanel.track('Web Sign Up', {
+          mixpanel.track('Sign Up', {
             distinct_id: referralCode,
+            platform: 'sms',
+            source: 'web',
           });
         }
-
 
         return res.redirect(redirectUrl);
       })
