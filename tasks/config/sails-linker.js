@@ -27,6 +27,11 @@
  *   https://github.com/Zolmeister/grunt-sails-linker
  *
  */
+
+'use strict';
+
+const packageJson = require('../../package.json');
+
 module.exports = function(grunt) {
 
   grunt.config.set('sails-linker', {
@@ -63,7 +68,7 @@ module.exports = function(grunt) {
       options: {
         startTag: '<!--SCRIPTS-->',
         endTag: '<!--SCRIPTS END-->',
-        fileTmpl: '<script src="%s?v=1"></script>',
+        fileTmpl: `<script src="%s?v=${packageJson.version}"></script>`,
         appRoot: '.tmp/public'
       },
       files: {
@@ -77,7 +82,7 @@ module.exports = function(grunt) {
       options: {
         startTag: '<!--SCRIPTS-->',
         endTag: '<!--SCRIPTS END-->',
-        fileTmpl: '<script src="%s?v=1"></script>',
+        fileTmpl: `<script src="%s?v=${packageJson.version}"></script>`,
         appRoot: '.tmp/public',
         relative: true
       },
@@ -123,7 +128,7 @@ module.exports = function(grunt) {
       options: {
         startTag: '<!--STYLES-->',
         endTag: '<!--STYLES END-->',
-        fileTmpl: '<link rel="stylesheet" href="%s?v=1.1">',
+        fileTmpl: `<link rel="stylesheet" href="%s?v=${packageJson.version}">`,
         appRoot: '.tmp/public'
       },
       files: {
@@ -137,7 +142,7 @@ module.exports = function(grunt) {
       options: {
         startTag: '<!--STYLES-->',
         endTag: '<!--STYLES END-->',
-        fileTmpl: '<link rel="stylesheet" href="%s?v=1.1">',
+        fileTmpl: `<link rel="stylesheet" href="%s?v=${packageJson.version}">`,
         appRoot: '.tmp/public',
         relative: true
       },
