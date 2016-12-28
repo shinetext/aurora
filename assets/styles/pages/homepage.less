@@ -189,16 +189,23 @@ font-size: @font-size-homepage-normal;
     text-align: center;
 
     img {
-      max-width: 90%;
+      max-width: 75%;
       position: relative;
       top: @margin-md;
     }
 
-    @media (max-width: @screen-sm-max) {
+    @media (max-width: @screen-md-max) {
+      img {
+        max-width: 85%;
+        top: @margin-sm;
+      }
+    }
+
+    @media (max-width: 500px) {
       height: 720px;
 
       img {
-        top: @margin-md
+        top: @margin-xs;
       }
     }
   }
@@ -209,7 +216,7 @@ font-size: @font-size-homepage-normal;
     padding: @margin-lg @margin-md @margin-md @margin-md;
 
     ol {
-      width: 85%;
+      width: 75%;
       margin: auto;
     }
 
@@ -229,6 +236,18 @@ font-size: @font-size-homepage-normal;
         padding-left: @margin-sm;
         vertical-align: top;
       }
+    }
+
+    li:nth-of-type(1) p {
+      border-left: 4px solid @color-yellow;
+    }
+
+    li:nth-of-type(2) p {
+      border-left: 4px solid #9E67CE;
+    }
+
+    li:nth-of-type(3) p {
+      border-left: 4px solid #0054FF;
     }
 
     @media (max-width: @screen-md-max) {
