@@ -6,6 +6,7 @@ font-size: @font-size-homepage-normal;
 .container-homepage-lead {
   @container-homepage-lead-height: 960px;
 
+  background-image: linear-gradient(120deg, @color-gradient-blue, @color-gradient-yellow);
   padding: 0;
   position: relative;
 
@@ -15,28 +16,60 @@ font-size: @font-size-homepage-normal;
     padding-top: @margin-sm;
 
     h2 {
+      color: white;
       font-size: @font-size-header;
-      margin: @margin-md auto;
+      margin: @margin-md auto @margin-sm auto;
       text-align: center;
       width: 60%;
     }
 
     form {
       margin: auto;
+
+      /* Overrides form styles from shine.less */
+      .form-field {
+        border: 2px solid white;
+
+        label,
+        .required-asterisk {
+          color: black;
+        }
+
+        .form-control {
+          color: black;
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-control:focus + label {
+          color: #6F6488!important;
+        }
+      }
     }
 
     .ctia {
+      color: white;
       margin: auto;
       padding-top: @margin-xs;
     }
 
     .fbmessenger {
-      border-bottom: 1px solid @color-form-secondary;
+      border-top: 1px solid white;
       margin: auto;
-      margin-bottom: @margin-md;
-      padding-bottom: @margin-md;
+      margin-top: @margin-md;
+      padding-top: @margin-md;
+
+      .btn {
+        background-color: rgba(0,0,0,0);
+        border: 2px solid white;
+        color: white;
+      }
+
+      .btn:hover {
+        background-color: @color-fbmessenger;
+      }
 
       .description {
+        color: white;
         font-size: 12px;
         text-align: center;
       }
@@ -51,6 +84,12 @@ font-size: @font-size-homepage-normal;
         top: 6px;
         height: 25px;
         width: 25px;
+      }
+
+      @media (max-width: @screen-sm-max) {
+        .btn {
+          background-color: @color-fbmessenger;
+        }
       }
     }
 
@@ -75,7 +114,7 @@ font-size: @font-size-homepage-normal;
 
     @media (max-width: @screen-xs-max) {
       h2 {
-        width: 100%;
+        width: 90%%;
       }
 
       form,
@@ -87,31 +126,45 @@ font-size: @font-size-homepage-normal;
   }
 
   .homepage-header-image {
-    background-image: url('../images/homepage/homepage_photo_1.jpg');
-    background-position: top;
-    background-size: cover;
+    position: absolute;
+    background-image: url('../images/homepage/homepage_photo_012017.png');
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    bottom: 0;
     height: @container-homepage-lead-height;
+    right: 0;
+    width: 60%;
+
+    @media (max-width: @screen-md-max) {
+      width: 70%;
+    }
 
     @media (max-width: @screen-sm-max) {
-      height: 400px;
+      width: 80%;
+    }
+
+    @media (max-width: @screen-xs-max) {
+      width: 90%;
     }
   }
 
   .in-the-news {
-    margin-top: @margin-sm;
+    margin-bottom: @margin-sm;
 
     img {
       max-height: 40px;
       max-width: 100%;
       opacity: 0.8;
-      -webkit-filter: grayscale(100%);
-      filter: grayscale(100%);
+      -webkit-filter: contrast(0) brightness(200%);
+      filter: contrast(0) brightness(200%);
       transition-property: opacity, -webkit-filter, filter;
       transition-duration: 0.25s;
     }
 
     img:hover {
       opacity: 1;
+      cursor: pointer;
       -webkit-filter: grayscale(0);
       filter: grayscale(0);
     }
@@ -139,16 +192,23 @@ font-size: @font-size-homepage-normal;
     text-align: center;
 
     img {
-      max-width: 90%;
+      max-width: 75%;
       position: relative;
       top: @margin-md;
     }
 
-    @media (max-width: @screen-sm-max) {
+    @media (max-width: @screen-md-max) {
+      img {
+        max-width: 85%;
+        top: @margin-sm;
+      }
+    }
+
+    @media (max-width: 500px) {
       height: 720px;
 
       img {
-        top: @margin-md
+        top: @margin-xs;
       }
     }
   }
@@ -159,7 +219,7 @@ font-size: @font-size-homepage-normal;
     padding: @margin-lg @margin-md @margin-md @margin-md;
 
     ol {
-      width: 85%;
+      width: 75%;
       margin: auto;
     }
 
@@ -179,6 +239,18 @@ font-size: @font-size-homepage-normal;
         padding-left: @margin-sm;
         vertical-align: top;
       }
+    }
+
+    li:nth-of-type(1) p {
+      border-left: 4px solid @color-yellow;
+    }
+
+    li:nth-of-type(2) p {
+      border-left: 4px solid #9E67CE;
+    }
+
+    li:nth-of-type(3) p {
+      border-left: 4px solid #0054FF;
     }
 
     @media (max-width: @screen-md-max) {
@@ -280,6 +352,19 @@ font-size: @font-size-homepage-normal;
         right: 0;
       }
     }
+  }
+}
+
+/**
+ * Custom style for homepage footer CTA section
+ */
+.footer-cta {
+  background-image: linear-gradient(120deg, @color-gradient-yellow, @color-gradient-blue);
+  padding: 100px 0;
+
+  .signup-button {
+    background: black;
+    color: white;
   }
 }
 
