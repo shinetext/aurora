@@ -54,7 +54,7 @@ var routes = {
   '/jobs': {
     view: 'jobs',
     locals: {
-      title: 'Jobs | Shine',
+      title: 'Careers | Shine',
       layout: 'layouts/subpage.layout'
     }
   },
