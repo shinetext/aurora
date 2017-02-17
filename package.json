@@ -1,10 +1,11 @@
 {
   "name": "shine-aurora",
   "private": true,
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "",
   "keywords": [],
   "dependencies": {
+    "@jonuy/referral-codes": "1.1.0",
     "bluebird": "^3.4.1",
     "dotenv": "^2.0.0",
     "ejs": "2.3.4",
@@ -30,7 +31,8 @@
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "mocha --recursive"
   },
   "main": "app.js"
 }
