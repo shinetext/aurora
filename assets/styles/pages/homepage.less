@@ -114,6 +114,7 @@ font-size: @font-size-homepage-normal;
 
     @media (max-width: @screen-xs-max) {
       h2 {
+        font-size: 32px;
         width: 90%%;
       }
 
@@ -219,7 +220,7 @@ font-size: @font-size-homepage-normal;
     padding: @margin-lg @margin-md @margin-md @margin-md;
 
     ol {
-      width: 75%;
+      width: 80%;
       margin: auto;
     }
 
@@ -253,6 +254,11 @@ font-size: @font-size-homepage-normal;
       border-left: 4px solid #0054FF;
     }
 
+    @media (max-width: @screen-lg-min) {
+      font-size: @font-size-homepage-normal-xs;
+      padding: @margin-lg @margin-sm @margin-sm @margin-sm;
+    }
+
     @media (max-width: @screen-md-max) {
       ol {
         width: 100%;
@@ -264,16 +270,9 @@ font-size: @font-size-homepage-normal;
     }
 
     @media (max-width: @screen-xs-max) {
-      font-size: @font-size-homepage-normal-xs;
-      padding: @margin-lg @margin-sm @margin-sm @margin-sm;
-
       ol {
         list-style: none;
         padding-left: 0;
-      }
-
-      li p {
-        font-size: @font-size-homepage-normal-xs;
       }
     }
   }
