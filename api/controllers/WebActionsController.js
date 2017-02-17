@@ -7,9 +7,38 @@
 var Promise = require('bluebird');
 var request = Promise.promisifyAll(require('request'));
 const Mixpanel = require('mixpanel');
-const mixpanel = Mixpanel.init(process.env.MIXPANEL_TOKEN);
+let mixpanel;
+if (process.env.MIXPANEL_TOKEN) {
+  mixpanel = Mixpanel.init(process.env.MIXPANEL_TOKEN);
+}
+const ReferralCodes = require('@jonuy/referral-codes');
 
 module.exports = {
+
+  /**
+   * Mobile Commons opt-in path to send on sign up.
+   * https://secure.mcommons.com/campaigns/147689/opt_in_paths/222196
+   */
+  MOBILE_COMMONS_OPTIN: 'OPB1AA249928CF5621FE3CA64715CB1B44',
+
+  /**
+   * Prepares a the POST data for the Mobile Commons submission.
+   *
+   * @param req {object}
+   * @return {object}
+   */
+  createMobileCommonsRequest: function(req) {
+    return {
+      form: {
+        'opt_in_path[]': this.MOBILE_COMMONS_OPTIN,
+        'person[first_name]': req.body.first_name,
+        'person[phone]': req.body.phone,
+        'person[email]': req.body.email,
+        'person[send_gifs]': typeof req.body.send_gifs === 'undefined' ? 'no' : 'yes',
+        'person[referral_code]': ReferralCodes.encode(req.body.phone),
+      }
+    };
+  },
 
   /**
    * Receives a join request and forwards it onto Mobile Commons.
@@ -17,20 +46,6 @@ module.exports = {
    * POST /join
    */
   join: function(req, res) {
-
-    // Data for Mobile Commons submission
-    // https://secure.mcommons.com/campaigns/147689/opt_in_paths/222196
-    let optInPath = 'OPB1AA249928CF5621FE3CA64715CB1B44';
-    let url = sails.config.globals.mcJoinUrl;
-
-    let data = {
-      'opt_in_path[]': optInPath,
-      'person[first_name]': req.body.first_name,
-      'person[phone]': req.body.phone,
-      'person[email]': req.body.email,
-      'person[send_gifs]': typeof req.body.send_gifs === 'undefined' ? 'no' : 'yes'
-    };
-
     let redirectUrl = '/confirmation?phone=' + req.body.phone + '&firstName='
       + req.body.first_name;
 
@@ -51,7 +66,7 @@ module.exports = {
     let mcSubscribeSuccessful = false;
 
     // Make the Mobile Commons submission
-    request.postAsync(url, {form: data})
+    request.postAsync(sails.config.globals.mcJoinUrl, this.createMobileCommonsRequest(req))
       .then(function(response) {
         // Mobile Commons responds with a 500 error code for numbers from
         // countries that are not supported by the account.
