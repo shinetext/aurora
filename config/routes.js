@@ -83,7 +83,9 @@ var routes = {
     view: 'squad',
     locals: {
       title: 'Squad | Shine',
-      layout: 'layouts/subpage.layout',
+      metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
+      layout: 'layouts/subpage-fullwidth.layout',
+      hideFooterCta: true,
     },
   },
 
