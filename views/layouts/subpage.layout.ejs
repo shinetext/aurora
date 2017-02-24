@@ -1,43 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%=typeof title == 'undefined' ? 'Shine' : title%></title>
-
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <% if (typeof metaDescription === 'string') { %>
-    <meta name="description" content="<%= metaDescription %>" />
-    <% } %>
-
-    <meta property="og:url" content="http://www.shinetext.com" />
-    <meta property="og:title" content="Shine" />
-    <meta property="og:description" content="Shine sends you daily text messages with motivational quotes, positive affirmations and actions you can take every morning." />
-    <meta property="og:site_name" content="Shine" />
-    <meta property="og:image" content="http://images.contentful.com/awpxl2koull4/8vqZb1ZBiog8QwwuKOAAQ/ad804a91ff4bff3fa96c0db23aca9e0e/shine-fb-link_graphic-01.png" />
-
-    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet" type="text/css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
-    <!--STYLES-->
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
-
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-68971267-1', 'auto');
-
-      // GA autotrack plugins
-      ga('require', 'eventTracker');
-
-      ga('send', 'pageview');
-
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <script async src='https://cdnjs.cloudflare.com/ajax/libs/autotrack/1.0.1/autotrack.js'></script>
-  </head>
+  <%- partial ('../partials/head.ejs') %>
 
   <body class="subpage">
     <%- partial ('../partials/navbar.ejs') %>
