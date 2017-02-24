@@ -12,11 +12,20 @@
   <h1>Invite Friends Now</h1>
   <div class="phone-input-container">
     <div class="form-field">
-      <input class="form-control" name="phone" id="form-phone-number" type="tel" value="">
-      <label for="form-phone-number">Phone Number</label>
+      <input class="form-control get-referral-phone"
+        name="get-referral-phone-1"
+        id="get-referral-phone-1"
+        data-for="get-referral-phone-1"
+        data-error="invalid-number-error-1"
+        type="tel"
+        value="">
+      <label for="get-referral-phone-1">Phone Number</label>
     </div>
-    <button>Get My Code</button>
+    <button class="get-referral-info-btn"
+      data-for="get-referral-phone-1"
+      data-error="invalid-number-error-1">Get My Code</button>
   </div>
+  <div class="phone-validation-error" id="invalid-number-error-1">Please enter a valid cell phone number.</div>
 </div>
 
 <ul class="squad-perks">
@@ -75,11 +84,20 @@
   <h2>Get started now</h2>
   <div class="phone-input-container">
     <div class="form-field">
-      <input class="form-control" name="phone" id="form-phone-number" type="tel" value="">
-      <label for="form-phone-number">Phone Number</label>
+      <input class="form-control get-referral-phone"
+        name="get-referral-phone-2"
+        id="get-referral-phone-2"
+        data-for="get-referral-phone-2"
+        data-error="invalid-number-error-2"
+        type="tel"
+        value="">
+      <label for="get-referral-phone-2">Phone Number</label>
     </div>
-    <button>Get My Code</button>
+    <button class="get-referral-info-btn"
+      data-for="get-referral-phone-2"
+      data-error="invalid-number-error-2">Get My Code</button>
   </div>
+  <div class="phone-validation-error" id="invalid-number-error-2">Please enter a valid cell phone number.</div>
 </section>
 
 </div>
