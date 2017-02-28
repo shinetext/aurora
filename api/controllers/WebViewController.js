@@ -105,6 +105,20 @@ module.exports = {
           locals.referralInfo = response.body;
           locals.referralInfo.nextLevel = ReferralService.getNextLevel(response.body.referralCount);
 
+          // @todo Not sure if this is should be the final solution for handling this
+          if (locals.referralInfo.nextLevel.reward === 'Shine sticker') {
+            locals.referralInfo.rewardImage = 'reward-image-1';
+          }
+          else if (locals.referralInfo.nextLevel.reward === 'Shine tote') {
+            locals.referralInfo.rewardImage = 'reward-image-2';
+          }
+          else if (locals.referralInfo.nextLevel.reward === 'Shine t-shirt') {
+            locals.referralInfo.rewardImage = 'reward-image-3';
+          }
+          else if (locals.referralInfo.nextLevel.reward === 'Shine hoodie') {
+            locals.referralInfo.rewardImage = 'reward-image-4';
+          }
+
           // Create the share URLs
           const shareBody = `Sign up with me to get Shine! A daily text to help you feel your best every morning.`;
           const shareTitle = `Sign up for Shine!`;

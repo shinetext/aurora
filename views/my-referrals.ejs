@@ -9,7 +9,7 @@
 <h1>You've successfully referred<br/><%= referralInfo.referralCount %> friends</h1>
 <div class="referral-info-container">
   <div class="next-reward">
-    <i class=""></i>
+    <i class="<%= referralInfo.rewardImage ? referralInfo.rewardImage : '' %>"></i>
     <% if (typeof referralInfo.nextLevel.count === 'number') { %>
     <div class="next-reward-count"><div><span><%= referralInfo.referralCount %></span> / <%= referralInfo.nextLevel.count %></div></div>
     <% } %>
