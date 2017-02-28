@@ -98,11 +98,22 @@ module.exports = {
           metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
           layout: 'layouts/subpage-fullwidth.layout',
           hideFooterCta: true,
+          shareUrls: {},
         };
 
         if (response.statusCode === 200) {
           locals.referralInfo = response.body;
           locals.referralInfo.nextLevelTeaser = ReferralService.getNextLevelTeaser(response.body.referralCount);
+
+          // Create the share URLs
+          const shareBody = `Sign up with me to get Shine! A daily text to help you feel your best every morning.`;
+          const shareTitle = `Sign up for Shine!`;
+          const shareUrl = `http://www.shinetext.com?r=${response.body.referralCode}`;
+
+          locals.shareUrls.email = `mailto:?subject=${shareTitle}&body=${shareBody} ${shareUrl}`;
+          locals.shareUrls.facebook = `http://www.facebook.com/sharer/sharer.php?u=${shareUrl}&title=${shareTitle}&description=${shareBody}`;
+          locals.shareUrls.sms = `sms:?&body=${shareBody} ${shareUrl}`;
+          locals.shareUrls.twitter = `http://twitter.com/intent/tweet?url=${shareUrl}&text=${shareBody}&via=ShineText`;
         }
 
         return res.view('my-referrals', locals);

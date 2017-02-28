@@ -51,19 +51,19 @@
   <h1>Share Your Code</h1>
   <ul class="social-share-icons">
     <li class="twitter-container">
-      <a href="#"><div class="twitter icon"></div></a>
+      <a href="<%= shareUrls.twitter ? shareUrls.twitter : '#' %>" target="_blank"><div class="twitter icon"></div></a>
       <label>Tweet</label>
     </li>
     <li class="facebook-container">
-      <a href="#"><div class="facebook icon"></div></a>
+      <a href="<%= shareUrls.facebook ? shareUrls.facebook : '#' %>" target="_blank"><div class="facebook icon"></div></a>
       <label>Share</label>
     </li>
     <li class="email-container">
-      <a href="#"><div class="email icon"></div></a>
+      <a href="<%= shareUrls.email ? shareUrls.email : '#' %>" target="_blank"><div class="email icon"></div></a>
       <label>Email</label>
     </li>
     <li class="sms-container">
-      <a href="#"><div class="sms icon"></div></a>
+      <a href="<%= shareUrls.sms ? shareUrls.sms : '#' %>" target="_blank"><div class="sms icon"></div></a>
       <label>Text</label>
     </li>
   </ul>
