@@ -46,3 +46,163 @@
     margin-top: @margin-md;
   }
 }
+
+.social-share {
+  align-items: center;
+  background-image: url("../images/squad-bg-banner.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+
+  h1  {
+    color: white;
+    font-weight: 700;
+  }
+
+  .social-share-icons {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    h1 {
+      padding: 10px 0;
+    }
+
+    label {
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    li {
+      list-style: none;
+      margin: 0 @margin-sm;
+      text-align: center;
+    }
+
+    .icon {
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 50%;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 10px;
+      cursor: pointer;
+      height: 64px;
+      width: 64px;
+    }
+
+    .icon:hover {
+      box-shadow: none;
+    }
+
+    .email {
+      background-image: url("../images/social/ic-share-email.png");
+    }
+
+    .facebook {
+      background-image: url("../images/social/ic-share-facebook.png");
+    }
+
+    .sms {
+      background-image: url("../images/social/ic-share-sms.png");
+    }
+
+    .twitter {
+      background-image: url("../images/social/ic-share-twitter.png");
+    }
+
+    @media (max-width: 400px) {
+      li {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+.referral-rewards {
+  padding: 0 @margin-md;
+  text-align: center;
+
+  h2 {
+    margin: @margin-lg 0;
+  }
+
+  li {
+    float: left;
+    list-style: none;
+    margin: @margin-sm 0 @margin-md 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    width: 33.33333333%;
+
+    @media (max-width: @screen-md-max) {
+      width: 50%;
+    }
+
+    @media (max-width: 620px) {
+      width: 100%;
+    }
+
+    p {
+      margin: @margin-sm auto;
+    }
+
+    .label-container {
+      position: absolute;
+      right: 50%;
+      margin: 0;
+      transform: translateY(-50%);
+      white-space: nowrap;
+
+      h4 {
+        background-color: white;
+        border: 3px solid black;
+        font-family: 'Pangram';
+        font-size: 14px;
+        font-weight: 700;
+        right: -50%;
+        margin: 0;
+        padding: 10px;
+        position: relative;
+        text-transform: uppercase;
+      }
+    }
+
+    .reward-image {
+      background-position: top;
+      background-size: cover;
+      margin: 0 auto;
+      max-width: 300px;
+      height: 200px;
+    }
+
+    .reward-image.-r1 {
+      background-image: url("../images/referrals/referral-reward-1.jpg");
+    }
+
+    .reward-image.-r2 {
+      background-image: url("../images/referrals/referral-reward-2.jpg");
+    }
+
+    .reward-image.-r3 {
+      background-image: url("../images/referrals/referral-reward-3.jpg");
+    }
+
+    .reward-image.-r4 {
+      background-image: url("../images/referrals/referral-reward-4.jpg");
+    }
+
+    .reward-image.-r5 {
+      background-image: url("../images/referrals/referral-reward-5.jpg");
+    }
+
+    .reward-image.-r6 {
+      background-image: url("../images/referrals/referral-reward-6.jpg");
+    }
+  }
+}

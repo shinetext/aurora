@@ -85,11 +85,6 @@ module.exports = {
    * Display the user's referral info .
    */
   myReferral: function(req, res) {
-    let locals = {
-      title: 'My Referrals | Shine',
-      layout: 'layouts/subpage.layout',
-    };
-
     let referralRequest = {
       method: 'GET',
       uri: sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
@@ -98,6 +93,13 @@ module.exports = {
 
     request.getAsync(referralRequest)
       .then(function(response) {
+        let locals = {
+          title: 'My Referrals | Shine',
+          metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
+          layout: 'layouts/subpage-fullwidth.layout',
+          hideFooterCta: true,
+        };
+
         if (response.statusCode === 200) {
           locals.referralInfo = response.body;
           locals.referralInfo.nextLevelTeaser = ReferralService.getNextLevelTeaser(response.body.referralCount);
