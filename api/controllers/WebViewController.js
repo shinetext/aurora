@@ -103,7 +103,7 @@ module.exports = {
 
         if (response.statusCode === 200) {
           locals.referralInfo = response.body;
-          locals.referralInfo.nextLevelTeaser = ReferralService.getNextLevelTeaser(response.body.referralCount);
+          locals.referralInfo.nextLevel = ReferralService.getNextLevel(response.body.referralCount);
 
           // Create the share URLs
           const shareBody = `Sign up with me to get Shine! A daily text to help you feel your best every morning.`;

@@ -1,3 +1,6 @@
+font-size: @font-size-normal;
+padding-top: @margin-lg;
+
 #next-level-teaser {
   .font-main-bold;
 
@@ -21,29 +24,138 @@
 }
 
 #referral-not-found {
-  font-size: @font-size-normal;
-  margin-bottom: @margin-lg;
+  margin: @margin-lg @margin-sm;
   text-align: center;
 }
 
-.content {
-  font-size: @font-size-normal;
-  margin-bottom: @margin-lg * 2;
-}
-
-.header h1 {
-  padding-bottom: 0;
-}
 
 .referral-info-container {
-  p {
-    margin: @margin-sm 0;
-  }
-}
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
 
-@media (max-width: @screen-xs-max) {
-  .referral-info-container {
+  button {
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 14px;
+    height: 55px;
+    letter-spacing: 1.5px;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 130px;
+  }
+
+  h4 {
+    font-family: 'Pangram';
+    font-size: 20px;
+    font-weight: 700;
     margin-top: @margin-md;
+  }
+
+  input {
+    height: 55px;
+    width: 260px;
+    margin-right: 10px;
+  }
+
+  .next-reward {
+    border: 8px solid @color-yellow;
+    border-radius: 50%;
+    height: 300px;
+    margin: 0;
+    position: relative;
+    width: 300px;
+
+    i {
+      background-position: center;
+      background-size: cover;
+      border: 8px solid white;
+      border-radius: 50%;
+      box-sizing: border-box;
+      display: block;
+      filter: brightness(125%);
+      height: 284px;
+      width: 284px;
+
+      background-image: url('https://images.contentful.com/awpxl2koull4/2YdcqTAn4AgCeMS4wgYygc/55d6be58a41e8aa722ba08204f6b94c9/shine-sticker.jpg?w=300');
+    }
+
+    .next-reward-count {
+      background: white;
+      border: 8px solid white;
+      border-radius: 50%;
+      bottom: 0;
+      box-sizing: content-box;
+      height: 132px;
+      position: absolute;
+      right: 0;
+      transform: translate3d(25%, 25%, 0);
+      width: 132px;
+
+      div {
+        align-items: center;
+        border: 8px solid #FFCC45;
+        border-radius: 50%;
+        box-sizing: border-box;
+        display: flex;
+        font-size: 12px;
+        font-weight: 700;
+        height: 132px;
+        justify-content: center;
+        padding-top: 12px;
+        width: 132px;
+
+        span {
+          font-size: 50px;
+          margin-top: -12px;
+        }
+      }
+    }
+  }
+
+  .share-inputs-container {
+    padding-left: @margin-lg;
+
+    #referral-link-url {
+      border: 2px solid @color-tags;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .form-field {
+      border: none;
+      display: flex;
+      margin: 10px 0;
+
+      input  {
+        border: 2px solid @color-yellow;
+      }
+
+      label {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+
+    .next-reward {
+      margin-bottom: @margin-md;
+    }
+
+    .share-inputs-container {
+      padding-left: @margin-sm;
+      padding-right: @margin-sm;
+    }
+  }
+
+  @media (max-width: 460px) {
+    input {
+      width: 200px;
+    }
   }
 }
 
@@ -57,10 +169,11 @@
   height: 300px;
   justify-content: center;
 
-  h1  {
+  h2  {
     color: white;
     font-weight: 700;
     padding: 10px 0;
+    text-align: center;
   }
 
   .social-share-icons {
