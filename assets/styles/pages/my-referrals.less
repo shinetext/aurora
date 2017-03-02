@@ -56,7 +56,6 @@ padding-top: @margin-lg;
 
   input {
     height: 55px;
-    width: 260px;
     margin-right: 10px;
   }
 
@@ -153,10 +152,19 @@ padding-top: @margin-lg;
 
       input  {
         border: 2px solid @color-yellow;
+        margin-right: 0;
       }
 
       label {
         text-transform: capitalize;
+      }
+    }
+
+    .referral-code-container {
+      display: flex;
+
+      input {
+        flex-grow: 1;
       }
     }
   }
@@ -171,12 +179,6 @@ padding-top: @margin-lg;
     .share-inputs-container {
       padding-left: @margin-sm;
       padding-right: @margin-sm;
-    }
-  }
-
-  @media (max-width: 460px) {
-    input {
-      width: 200px;
     }
   }
 }

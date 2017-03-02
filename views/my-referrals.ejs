@@ -16,7 +16,7 @@
   </div>
   <div class="share-inputs-container">
     <h4>Copy your exclusive link:</h4>
-    <div>
+    <div class="referral-code-container">
       <input id="referral-link-url" value="www.shinetext.com/?r=<%= referralInfo.referralCode %>" disabled>
       <button id="copy-referral-link" data-clipboard-text="www.shinetext.com/?r=<%= referralInfo.referralCode %>">Copy Link</button>
       <div class="referral-link-copied-confirmation">Copied!</div>
@@ -30,7 +30,6 @@
         type="tel"
         value="">
       <label for="invite-phone-1">Phone Number</label>
-      <button>Invite</button>
     </div>
 
     <div class="form-field">
@@ -40,7 +39,6 @@
         type="tel"
         value="">
       <label for="invite-phone-2">Phone Number</label>
-      <button>Invite</button>
     </div>
 
     <div class="form-field">
@@ -50,8 +48,10 @@
         type="tel"
         value="">
       <label for="invite-phone-3">Phone Number</label>
-      <button>Invite</button>
     </div>
+
+    <button id="invite-friends">Invite All</button>
+
   </div>
 </div>
 <% } %>
