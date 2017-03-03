@@ -25,4 +25,80 @@ describe('WebActionsController', () => {
     })
   })
 
+  describe('#createMobileCommonsReferralRequest', () => {
+    it('should return false when no phone numbers are provided', () => {
+      const mockRequest = {
+        body: {
+          phone: '3015550100',
+          invitePhone1: null,
+          invitePhone2: '',
+          invitePhone3: undefined,
+        }
+      };
+
+      const data = WebActionsController.createMobileCommonsReferralRequest(mockRequest);
+      assert.equal(data, false);
+    })
+
+    it('should handle building the request for 1 friend referral', () => {
+      const mockRequest = {
+        body: {
+          phone: '3015550100',
+          invitePhone1: '3015550101',
+          invitePhone2: '',
+          invitePhone3: undefined,
+        }
+      };
+
+      const data = WebActionsController.createMobileCommonsReferralRequest(mockRequest);
+      assert.equal(typeof data, 'object');
+      assert.equal(typeof data.form, 'object');
+      assert.equal(data.form['opt_in_path[]'], WebActionsController.MOBILE_COMMONS_INVITE_ALPHA_OPTIN);
+      assert.equal(data.form['friends_opt_in_path'], WebActionsController.MOBILE_COMMONS_INVITE_BETA_OPTIN);
+      assert.equal(data.form['friends[0]'], mockRequest.body.invitePhone1);
+      assert.equal(data.form['friends[1]'], undefined);
+      assert.equal(data.form['friends[2]'], undefined);
+    })
+
+    it('should handle building the request for 2 friend referrals', () => {
+      const mockRequest = {
+        body: {
+          phone: '3015550100',
+          invitePhone1: '3015550101',
+          invitePhone2: '',
+          invitePhone3: '3015550103',
+        }
+      };
+
+      const data = WebActionsController.createMobileCommonsReferralRequest(mockRequest);
+      assert.equal(typeof data, 'object');
+      assert.equal(typeof data.form, 'object');
+      assert.equal(data.form['opt_in_path[]'], WebActionsController.MOBILE_COMMONS_INVITE_ALPHA_OPTIN);
+      assert.equal(data.form['friends_opt_in_path'], WebActionsController.MOBILE_COMMONS_INVITE_BETA_OPTIN);
+      assert.equal(data.form['friends[0]'], mockRequest.body.invitePhone1);
+      assert.equal(data.form['friends[1]'], mockRequest.body.invitePhone3);
+      assert.equal(data.form['friends[2]'], undefined);
+    })
+
+    it('should handle building the request for 3 friend referral', () => {
+      const mockRequest = {
+        body: {
+          phone: '3015550100',
+          invitePhone1: '3015550101',
+          invitePhone2: '3015550102',
+          invitePhone3: '3015550103',
+        }
+      };
+
+      const data = WebActionsController.createMobileCommonsReferralRequest(mockRequest);
+      assert.equal(typeof data, 'object');
+      assert.equal(typeof data.form, 'object');
+      assert.equal(data.form['opt_in_path[]'], WebActionsController.MOBILE_COMMONS_INVITE_ALPHA_OPTIN);
+      assert.equal(data.form['friends_opt_in_path'], WebActionsController.MOBILE_COMMONS_INVITE_BETA_OPTIN);
+      assert.equal(data.form['friends[0]'], mockRequest.body.invitePhone1);
+      assert.equal(data.form['friends[1]'], mockRequest.body.invitePhone2);
+      assert.equal(data.form['friends[2]'], mockRequest.body.invitePhone3);
+    })
+  })
+
 })

@@ -123,6 +123,7 @@ var routes = {
   ***************************************************************************/
 
   'post /join': 'WebActionsController.join',
+  'post /sms-invite': 'WebActionsController.smsInvite',
 };
 
 /**
