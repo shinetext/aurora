@@ -50,7 +50,12 @@
       <label for="invite-phone-3">Phone Number</label>
     </div>
 
+    <div id="invite-friends-success">Your invites are on their way!</div>
+    <div id="invite-friends-error">Uh oh. There was an error sending the invites.</div>
     <button id="invite-friends">Invite All</button>
+    <div id="invite-friends-progress">
+      <%- partial ('./partials/loading-icon.ejs') %>
+    </div>
 
   </div>
 </div>
