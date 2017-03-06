@@ -10,17 +10,25 @@ var REWARDS = [
     reward: 'Shine sticker',
   },
   {
-    count: 30,
+    count: 20,
     reward: 'Shine tote',
   },
   {
-    count: 50,
+    count: 30,
     reward: 'Shine t-shirt',
+  },
+  {
+    count: 50,
+    reward: 'Shine call-out',
   },
   {
     count: 100,
     reward: 'Shine hoodie',
   },
+  {
+    count: 500,
+    reward: 'Shine leggings',
+  }
 ];
 
 module.exports = {

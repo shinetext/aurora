@@ -120,7 +120,7 @@ module.exports = {
           }
 
           // Create the share URLs
-          const shareBody = `Sign up with me to get Shine! A daily text to help you feel your best every morning.`;
+          const shareBody = `Sign up with me to get Shine! A daily text for your self-care and joy.`;
           const shareTitle = `Sign up for Shine!`;
           const shareUrl = `http://www.shinetext.com?r=${response.body.referralCode}`;
 
