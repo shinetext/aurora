@@ -58,6 +58,7 @@ describe('WebActionsController', () => {
       assert.equal(data.form['friends[0]'], mockRequest.body.invitePhone1);
       assert.equal(data.form['friends[1]'], undefined);
       assert.equal(data.form['friends[2]'], undefined);
+      assert.equal(data.form['friends[0][referral_code]'], 'qGl0G4r');
     })
 
     it('should handle building the request for 2 friend referrals', () => {
@@ -78,6 +79,8 @@ describe('WebActionsController', () => {
       assert.equal(data.form['friends[0]'], mockRequest.body.invitePhone1);
       assert.equal(data.form['friends[1]'], mockRequest.body.invitePhone3);
       assert.equal(data.form['friends[2]'], undefined);
+      assert.equal(data.form['friends[0][referral_code]'], 'qGl0G4r');
+      assert.equal(data.form['friends[1][referral_code]'], '8WgrW5A');
     })
 
     it('should handle building the request for 3 friend referral', () => {
@@ -98,6 +101,9 @@ describe('WebActionsController', () => {
       assert.equal(data.form['friends[0]'], mockRequest.body.invitePhone1);
       assert.equal(data.form['friends[1]'], mockRequest.body.invitePhone2);
       assert.equal(data.form['friends[2]'], mockRequest.body.invitePhone3);
+      assert.equal(data.form['friends[0][referral_code]'], 'qGl0G4r');
+      assert.equal(data.form['friends[1][referral_code]'], 'XZgVZpl');
+      assert.equal(data.form['friends[2][referral_code]'], '8WgrW5A');
     })
   })
 

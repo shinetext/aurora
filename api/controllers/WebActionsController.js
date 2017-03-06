@@ -25,13 +25,13 @@ module.exports = {
    * Mobile Commons SMS sent to people who are sending a referral invite.
    * @todo
    */
-  MOBILE_COMMONS_INVITE_ALPHA_OPTIN: '@TODO INVITE ALPHA OPTIN',
+  MOBILE_COMMONS_INVITE_ALPHA_OPTIN: 'OPA4B8A4D073E4E00B797E5BDA9CD5BB2E',
 
   /**
    * Mobile Commons SMS sent to people who are receiving a referral invite.
    * @todo
    */
-  MOBILE_COMMONS_INVITE_BETA_OPTIN: '@TODO INVITE BETA OPTIN',
+  MOBILE_COMMONS_INVITE_BETA_OPTIN: 'OP1B76DB1410D9C07679F422DB5F09E48A',
 
   /**
    * Prepares a the POST data for the Mobile Commons submission.
@@ -192,6 +192,7 @@ module.exports = {
     for (const friend of friends) {
       if (friend) {
         data.form[`friends[${numFriends}]`] = friend;
+        data.form[`friends[${numFriends}][referral_code]`] = ReferralCodes.encode(friend);
         numFriends++;
       }
     }
