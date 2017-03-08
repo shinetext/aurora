@@ -10,17 +10,25 @@ var REWARDS = [
     reward: 'Shine sticker',
   },
   {
-    count: 30,
+    count: 20,
     reward: 'Shine tote',
   },
   {
-    count: 50,
+    count: 30,
     reward: 'Shine t-shirt',
+  },
+  {
+    count: 50,
+    reward: 'Shine call-out',
   },
   {
     count: 100,
     reward: 'Shine hoodie',
   },
+  {
+    count: 500,
+    reward: 'Shine leggings',
+  }
 ];
 
 module.exports = {
@@ -31,7 +39,7 @@ module.exports = {
    * @param count Number of referrals
    * @return String for the teaser text
    */
-  getNextLevelTeaser: function(count) {
+  getNextLevel: function(count) {
     for (let i = 0; i < REWARDS.length; i++) {
       if (count >= REWARDS[i].count) {
         continue;
@@ -39,13 +47,21 @@ module.exports = {
       else {
         let numMore = REWARDS[i].count - count;
         let strFriends = numMore == 1 ? 'friend' : 'friends';
-        return 'Invite ' + numMore + ' more ' + strFriends + ' to get a ' + REWARDS[i].reward + '!';
+        return {
+          message: 'Invite ' + numMore + ' more ' + strFriends + ' to get a ' + REWARDS[i].reward + '!',
+          count: REWARDS[i].count,
+          reward: REWARDS[i].reward,
+        };
       }
     }
 
     // Return empty string for people who've reached the max tier or if there's
     // some sort of error
-    return '';
+    return {
+      message: '',
+      count: undefined,
+      reward: '',
+    };
   },
 
 };

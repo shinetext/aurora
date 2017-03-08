@@ -1,40 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%=typeof title == 'undefined' ? 'Shine' : title%></title>
-
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <meta property="og:url" content="http://www.shinetext.com" />
-    <meta property="og:title" content="Shine" />
-    <meta property="og:description" content="Shine sends you daily text messages with motivational quotes, positive affirmations and actions you can take every morning." />
-    <meta property="og:site_name" content="Shine" />
-    <meta property="og:image" content="http://images.contentful.com/awpxl2koull4/8vqZb1ZBiog8QwwuKOAAQ/ad804a91ff4bff3fa96c0db23aca9e0e/shine-fb-link_graphic-01.png" />
-
-    <link href='https://fonts.googleapis.com/css?family=Caveat+Brush' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
-    <!--STYLES-->
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-68971267-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>
-  </head>
+  <%- partial ('../partials/head.ejs') %>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCRJ54"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <%- body %>
     <%- partial ('../partials/footer.ejs') %>
 
@@ -43,6 +16,7 @@
     <!--SCRIPTS-->
     <script src="/js/ejs.min.js"></script>
     <script src="/js/homepage.js"></script>
+    <script src="/js/my-referrals.js"></script>
     <script src="/js/navbar.js"></script>
     <script src="/js/referrals.js"></script>
     <script src="/js/signup-form.js"></script>
