@@ -14,7 +14,8 @@
     <div class="next-reward-count"><div><span><%= referralInfo.referralCount %></span><% if (typeof referralInfo.nextLevel.count === 'number') { %> / <%= referralInfo.nextLevel.count %><% } %></div></div>
   </div>
   <div class="share-inputs-container">
-    <h4>Copy your exclusive link:</h4>
+    <h4>Share your referral link!</h4>
+    <p>Get friends to sign up with your link to earn swag.</p>
     <div class="referral-code-container">
       <input id="referral-link-url" value="www.shinetext.com/?r=<%= referralInfo.referralCode %>" disabled>
       <button id="copy-referral-link" data-clipboard-text="www.shinetext.com/?r=<%= referralInfo.referralCode %>">Copy Link</button>
@@ -22,7 +23,7 @@
     <div class="referral-link-copied-confirmation">Copied!</div>
 
     <div class="invite-friends-container">
-      <h4>Text 3 friends now</h4>
+      <h4>Or invite 3 friends now:</h4>
       <div class="form-field">
         <input class="form-control invite-phone"
           name="invite-phone-1"
@@ -63,7 +64,7 @@
 <% } %>
 
 <div class="social-share">
-  <h2>Share Your Code</h2>
+  <h2>Share Your Link</h2>
   <ul class="social-share-icons">
     <li class="twitter-container">
       <a href="<%= shareUrls.twitter ? shareUrls.twitter : '#' %>" target="_blank"><div class="twitter icon"></div></a>
@@ -85,7 +86,7 @@
 </div>
 
 <ul class="referral-rewards">
-  <h2>Rewards</h2>
+  <h2>Refer friends. Earn swag.</h2>
 
   <li>
     <div class="label-container">

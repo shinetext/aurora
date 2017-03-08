@@ -1,3 +1,7 @@
+h1,h2 {
+  font-family: 'Pangram';
+}
+
 h2 {
   margin: @margin-sm 0;
   text-align: center;
@@ -81,6 +85,12 @@ section {
 
   .form-field {
     max-width: 250px;
+  }
+
+  @media (max-width: 420px) {
+    button {
+      padding: 10px;
+    }
   }
 }
 
