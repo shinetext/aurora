@@ -85,11 +85,6 @@ module.exports = {
    * Display the user's referral info .
    */
   myReferral: function(req, res) {
-    let locals = {
-      title: 'My Referrals | Shine',
-      layout: 'layouts/subpage.layout',
-    };
-
     let referralRequest = {
       method: 'GET',
       uri: sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
@@ -98,9 +93,50 @@ module.exports = {
 
     request.getAsync(referralRequest)
       .then(function(response) {
+        let locals = {
+          title: 'My Referrals | Shine',
+          metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
+          layout: 'layouts/subpage-fullwidth.layout',
+          hideFooterCta: true,
+          shareUrls: {},
+        };
+
         if (response.statusCode === 200) {
           locals.referralInfo = response.body;
-          locals.referralInfo.nextLevelTeaser = ReferralService.getNextLevelTeaser(response.body.referralCount);
+          locals.referralInfo.nextLevel = ReferralService.getNextLevel(response.body.referralCount);
+
+          // @todo Not sure if this is should be the final solution for handling this
+          if (locals.referralInfo.nextLevel.reward === 'Shine sticker') {
+            locals.referralInfo.rewardImage = 'reward-image-1';
+          }
+          else if (locals.referralInfo.nextLevel.reward === 'Shine tote') {
+            locals.referralInfo.rewardImage = 'reward-image-2';
+          }
+          else if (locals.referralInfo.nextLevel.reward === 'Shine t-shirt') {
+            locals.referralInfo.rewardImage = 'reward-image-3';
+          }
+          else if (locals.referralInfo.nextLevel.reward === 'Shine call-out') {
+            locals.referralInfo.rewardImage = 'reward-image-4';
+          }
+          else if (locals.referralInfo.nextLevel.reward === 'Shine hoodie') {
+            locals.referralInfo.rewardImage = 'reward-image-5';
+          }
+          else if (locals.referralInfo.nextLevel.reward === 'Shine leggings') {
+            locals.referralInfo.rewardImage = 'reward-image-6';
+          }
+          else {
+            locals.referralInfo.rewardImage = 'reward-image-6';
+          }
+
+          // Create the share URLs
+          const shareBody = `Sign up with me to get Shine! A daily text for your self-care and joy.`;
+          const shareTitle = `Sign up for Shine!`;
+          const shareUrl = `http://www.shinetext.com?r=${response.body.referralCode}`;
+
+          locals.shareUrls.email = `mailto:?subject=${shareTitle}&body=${shareBody} ${shareUrl}`;
+          locals.shareUrls.facebook = `http://www.facebook.com/sharer/sharer.php?u=${shareUrl}&title=${shareTitle}&description=${shareBody}`;
+          locals.shareUrls.sms = `sms:?&body=${shareBody} ${shareUrl}`;
+          locals.shareUrls.twitter = `http://twitter.com/intent/tweet?url=${shareUrl}&text=${shareBody}&via=ShineText`;
         }
 
         return res.view('my-referrals', locals);

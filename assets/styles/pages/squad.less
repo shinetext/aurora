@@ -1,5 +1,29 @@
+h2 {
+  margin: @margin-sm 0;
+  text-align: center;
+}
+
+p {
+  font-size: @font-size-normal;
+}
+
+section {
+  margin: @margin-lg auto;
+  max-width: 600px;
+  width: 40%;
+
+  @media (max-width: @screen-md-max) {
+    width: 60%;
+  }
+
+  @media (max-width: @screen-xs-max) {
+    width: 90%;
+  }
+}
+
 .banner-container {
-  margin-bottom: @margin-md;
+  margin: @margin-lg auto;
+  max-width: 800px;
   text-align: center;
 
   img {
@@ -9,6 +33,147 @@
   @media (max-width: @screen-xs-max) {
     img {
       width: 80%;
+    }
+  }
+}
+
+.invite-friends {
+  align-items: center;
+  background-image: url("../images/squad-bg-banner.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+
+  h1  {
+    color: white;
+    font-weight: 700;
+  }
+}
+
+.phone-input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  button {
+    background-color: @color-yellow;
+    border: none;
+    color: black;
+    font-size: @font-size-normal;
+    font-weight: 700;
+    height: 64px;
+    margin: @margin-sm;
+    padding: @margin-sm;
+    text-transform: uppercase;
+  }
+
+  button.alternate {
+    background-color: black;
+    color: white;
+  }
+
+  label {
+    text-transform: capitalize;
+  }
+
+  .form-field {
+    max-width: 250px;
+  }
+}
+
+.phone-validation-error {
+  color: pink;
+  display: none;
+  text-align: center;
+}
+
+.squad-perks {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px;
+  padding: 0 @margin-md;
+  text-align: center;
+
+  h2 {
+    margin: @margin-lg 0;
+  }
+
+  li {
+    float: left;
+    list-style: none;
+    margin: @margin-sm 0 @margin-md 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    width: 33.33333333%;
+
+    @media (max-width: @screen-md-max) {
+      width: 50%;
+    }
+
+    @media (max-width: 620px) {
+      width: 100%;
+    }
+
+    p {
+      height: 60px;
+      margin: @margin-sm auto;
+    }
+
+    .label-container {
+      position: absolute;
+      right: 50%;
+      margin: 0;
+      transform: translateY(-50%);
+      white-space: nowrap;
+
+      h4 {
+        background-color: white;
+        border: 3px solid black;
+        font-family: 'Pangram';
+        font-size: 14px;
+        font-weight: 700;
+        right: -50%;
+        margin: 0;
+        min-width: 250px;
+        padding: 10px;
+        position: relative;
+        text-transform: uppercase;
+      }
+    }
+
+    .perk-image {
+      background-position: top;
+      background-size: cover;
+      margin: 0 auto;
+      height: 200px;
+    }
+
+    .perk-image.-p1 {
+      background-image: url("../images/squad/squad-perks-1.jpg");
+    }
+
+    .perk-image.-p2 {
+      background-image: url("../images/squad/squad-perks-2.jpg");
+    }
+
+    .perk-image.-p3 {
+      background-image: url("../images/squad/squad-perks-3.jpg");
+    }
+
+    .perk-image.-p4 {
+      background-image: url("../images/squad/squad-perks-4.jpg");
+    }
+
+    .perk-image.-p5 {
+      background-image: url("../images/squad/squad-perks-5.jpg");
+    }
+
+    .perk-image.-p6 {
+      background-image: url("../images/squad/squad-perks-6.jpg");
     }
   }
 }

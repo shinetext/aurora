@@ -22,6 +22,18 @@ module.exports = {
   MOBILE_COMMONS_OPTIN: 'OPB1AA249928CF5621FE3CA64715CB1B44',
 
   /**
+   * Mobile Commons SMS sent to people who are sending a referral invite.
+   * @todo
+   */
+  MOBILE_COMMONS_INVITE_ALPHA_OPTIN: 'OPA4B8A4D073E4E00B797E5BDA9CD5BB2E',
+
+  /**
+   * Mobile Commons SMS sent to people who are receiving a referral invite.
+   * @todo
+   */
+  MOBILE_COMMONS_INVITE_BETA_OPTIN: 'OP1B76DB1410D9C07679F422DB5F09E48A',
+
+  /**
    * Prepares a the POST data for the Mobile Commons submission.
    *
    * @param req {object}
@@ -158,6 +170,70 @@ module.exports = {
         }
       });
 
+  },
+
+  /**
+   * Helper to create the request for sending Mobile Commons referral invites.
+   *
+   * @param req {object}
+   * @return {object || false}
+   */
+  createMobileCommonsReferralRequest: function(req) {
+    let data = {
+      form: {
+        'opt_in_path[]': this.MOBILE_COMMONS_INVITE_ALPHA_OPTIN,
+        'person[phone]': req.body.phone,
+        'friends_opt_in_path': this.MOBILE_COMMONS_INVITE_BETA_OPTIN,
+      },
+    };
+
+    let numFriends = 0;
+    const friends = [req.body.invitePhone1, req.body.invitePhone2, req.body.invitePhone3];
+    for (const friend of friends) {
+      if (friend) {
+        data.form[`friends[${numFriends}]`] = friend;
+        data.form[`friends[${numFriends}][referral_code]`] = ReferralCodes.encode(friend);
+        numFriends++;
+      }
+    }
+
+    if (numFriends === 0) {
+      return false;
+    }
+    else {
+      return data;
+    }
+  },
+
+  /**
+   * Uses Mobile Commons to send an SMS invite to friends.
+   *
+   * POST /sms-invite
+   */
+  smsInvite: function(req, res) {
+    const data = this.createMobileCommonsReferralRequest(req);
+
+    if (! data) {
+      return res.json(400, {status: 'No referral phone numbers provided'});
+    }
+
+    request.postAsync(sails.config.globals.mcJoinUrl, mcRequest)
+      .then(response => {
+        if (response.statusCode === 200) {
+          return res.json(200, {status: 'ok'});
+        }
+        else {
+          return res.json(response.statusCode, {
+            error: 'Error sending referral invites',
+          });
+        }
+      })
+      .catch(err => {
+        sails.log.error(err);
+        return res.json(500, {
+          error: 'Error sending referral invites',
+        });
+      });
   },
 
 };

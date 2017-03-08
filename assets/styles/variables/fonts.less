@@ -9,6 +9,17 @@
   src: url('/fonts/GlacialIndifference-Bold.otf');
 }
 
+@font-face {
+  font-family: 'Pangram';
+  src: url('http://shine-assets.s3-website-us-east-1.amazonaws.com/fonts/Pangram-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Pangram';
+  font-weight: 700;
+  src: url('http://shine-assets.s3-website-us-east-1.amazonaws.com/fonts/Pangram-Bold.otf');
+}
+
 /**
  * Font mixins and variables.
  */
@@ -18,13 +29,13 @@
   font-weight: 400;
 }
 
-.font-karla() {
-  font-family: 'Karla';
+.font-main() {
+  font-family: 'Pangram';
   font-weight: 400;
 }
 
-.font-karla-bold() {
-  font-family: 'Karla';
+.font-main-bold() {
+  font-family: 'Pangram';
   font-weight: 700;
 }
 
@@ -50,7 +61,7 @@
 @font-size-xl: 86px;
 @font-size-header: 42px;
 @font-size-subtitle: 24px;
-@font-size-normal: 18px;
+@font-size-normal: 16px;
 @font-size-btn: 18px;
 @font-size-input: 24px;
 @font-size-label: 14px;
@@ -82,5 +93,5 @@
 
 @font-size-homepage-normal: 24px;
 @font-size-homepage-normal-xs: 20px;
-@font-size-homepage-product-description: 22px;
+@font-size-homepage-product-description: 20px;
 @font-size-homepage-testimonial-credit: 20px;

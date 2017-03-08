@@ -1,62 +1,142 @@
 <div class="my-referrals-page">
 
-<div class="header">
-  <h1>Shine With Friends!</h1>
+<% if (typeof referralInfo === 'undefined') { %>
+<div id="referral-not-found">
+  Sorry. We couldn't find any information for that number. Make sure
+  you're first <a href="/">signed up</a>!
 </div>
+<% } else { %>
+<h1>You've successfully referred<br/><%= referralInfo.referralCount %> friends</h1>
+<div class="referral-info-container">
+  <div class="next-reward">
+    <i class="<%= referralInfo.rewardImage ? referralInfo.rewardImage : '' %>"></i>
 
-<div class="content">
-  <div class="container">
-    <div class="row">
-      <% if (typeof referralInfo === 'undefined') { %>
-      <div id="referral-not-found" class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
-        Sorry. We couldn't find any information for that number. Make sure
-        you're first <a href="/">signed up</a>!
-      </div>
-      <% } else { %>
-      <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-        <div class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-0">
-          <div id="referral-count">
-            <%= referralInfo.referralCount %>
-          </div>
-        </div>
-        <div class="referral-info-container col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-offset-1">
-          <strong>Copy and share your referral code!</strong>
-          <% if (referralInfo.referralCount != 0) { %>
-            <p>
-              <%= referralInfo.referralCount %> of your friends
-              <% if (referralInfo.referralCount == 1) { %> has <% } else { %> have <% } %>
-              joined Shine already. Awesome!
-            </p>
-          <% } else { %>
-            <p>
-              We couldn't find any friends you've referred to Shine. Share your
-              unique link below to start earning some Shine swag!
-            </p>
-          <% } %>
-
-          <div class="referral-link-container"
-            data-clipboard-text="www.shinetext.com/?r=<%= referralInfo.referralCode %>">
-            <div id="referral-link-url">
-              www.shinetext.com/?r=<%= referralInfo.referralCode %>
-            </div>
-            <i class="fa fa-clipboard" aria-hidden="true"></i>
-          </div>
-          <div class="referral-link-copied-confirmation">Copied!</div>
-
-          <div id="next-level-teaser"><%= referralInfo.nextLevelTeaser %></div>
-        </div>
-      </div>
-      <% } %>
+    <div class="next-reward-count"><div><span><%= referralInfo.referralCount %></span><% if (typeof referralInfo.nextLevel.count === 'number') { %> / <%= referralInfo.nextLevel.count %><% } %></div></div>
+  </div>
+  <div class="share-inputs-container">
+    <h4>Copy your exclusive link:</h4>
+    <div class="referral-code-container">
+      <input id="referral-link-url" value="www.shinetext.com/?r=<%= referralInfo.referralCode %>" disabled>
+      <button id="copy-referral-link" data-clipboard-text="www.shinetext.com/?r=<%= referralInfo.referralCode %>">Copy Link</button>
     </div>
+    <div class="referral-link-copied-confirmation">Copied!</div>
+
+    <div class="invite-friends-container">
+      <h4>Text 3 friends now</h4>
+      <div class="form-field">
+        <input class="form-control invite-phone"
+          name="invite-phone-1"
+          id="invite-phone-1"
+          type="tel"
+          value="">
+        <label for="invite-phone-1">Phone Number</label>
+      </div>
+
+      <div class="form-field">
+        <input class="form-control invite-phone"
+          name="invite-phone-2"
+          id="invite-phone-2"
+          type="tel"
+          value="">
+        <label for="invite-phone-2">Phone Number</label>
+      </div>
+
+      <div class="form-field">
+        <input class="form-control invite-phone"
+          name="invite-phone-3"
+          id="invite-phone-3"
+          type="tel"
+          value="">
+        <label for="invite-phone-3">Phone Number</label>
+      </div>
+
+      <div id="invite-friends-success">Your invites are on their way!</div>
+      <div id="invite-friends-error">Uh oh. There was an error sending the invites.</div>
+      <button id="invite-friends">Invite All</button>
+      <div id="invite-friends-progress">
+        <%- partial ('./partials/loading-icon.ejs') %>
+      </div>
+    </div>
+
   </div>
 </div>
+<% } %>
 
+<div class="social-share">
+  <h2>Share Your Code</h2>
+  <ul class="social-share-icons">
+    <li class="twitter-container">
+      <a href="<%= shareUrls.twitter ? shareUrls.twitter : '#' %>" target="_blank"><div class="twitter icon"></div></a>
+      <label>Tweet</label>
+    </li>
+    <li class="facebook-container">
+      <a href="<%= shareUrls.facebook ? shareUrls.facebook : '#' %>" target="_blank"><div class="facebook icon"></div></a>
+      <label>Share</label>
+    </li>
+    <li class="email-container">
+      <a href="<%= shareUrls.email ? shareUrls.email : '#' %>" target="_blank"><div class="email icon"></div></a>
+      <label>Email</label>
+    </li>
+    <li class="sms-container">
+      <a href="<%= shareUrls.sms ? shareUrls.sms : '#' %>" target="_blank"><div class="sms icon"></div></a>
+      <label>Text</label>
+    </li>
+  </ul>
 </div>
+
+<ul class="referral-rewards">
+  <h2>Rewards</h2>
+
+  <li>
+    <div class="label-container">
+      <h4>10 Referrals</h4>
+    </div>
+    <div class="reward-image -r1"></div>
+    <p>Shine sticker & VIP invite to the Shine Squad</p>
+  </li>
+  <li>
+    <div class="label-container">
+      <h4>20 Referrals</h4>
+    </div>
+    <div class="reward-image -r2"></div>
+    <p>A Shine tote</p>
+  </li>
+  <li>
+    <div class="label-container">
+      <h4>30 Referrals</h4>
+    </div>
+    <div class="reward-image -r3"></div>
+    <p>A Shine t-shirt</p>
+  </li>
+  <li>
+    <div class="label-container">
+      <h4>50 Referrals</h4>
+    </div>
+    <div class="reward-image -r4"></div>
+    <p>A call-out in the daily Shine Text</p>
+  </li>
+  <li>
+    <div class="label-container">
+      <h4>100 Referrals</h4>
+    </div>
+    <div class="reward-image -r5"></div>
+    <p>A Shine VIP hoodie</p>
+  </li>
+  <li>
+    <div class="label-container">
+      <h4>500 Referrals</h4>
+    </div>
+    <div class="reward-image -r6"></div>
+    <p>A pair of Shine Leggings (!)</p>
+  </li>
+</ul>
+
+</div> <!-- end my-referrals-page -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
 <script>
 // For copying the link to the clipboard
-var clipboard = new Clipboard('.referral-link-container');
+var clipboard = new Clipboard('#copy-referral-link');
 clipboard.on('success', function(e) {
   $('.referral-link-copied-confirmation').hide().slideDown();
   e.clearSelection();
