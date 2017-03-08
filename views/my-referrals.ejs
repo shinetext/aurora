@@ -10,51 +10,52 @@
 <div class="referral-info-container">
   <div class="next-reward">
     <i class="<%= referralInfo.rewardImage ? referralInfo.rewardImage : '' %>"></i>
-    <% if (typeof referralInfo.nextLevel.count === 'number') { %>
-    <div class="next-reward-count"><div><span><%= referralInfo.referralCount %></span> / <%= referralInfo.nextLevel.count %></div></div>
-    <% } %>
+
+    <div class="next-reward-count"><div><span><%= referralInfo.referralCount %></span><% if (typeof referralInfo.nextLevel.count === 'number') { %> / <%= referralInfo.nextLevel.count %><% } %></div></div>
   </div>
   <div class="share-inputs-container">
     <h4>Copy your exclusive link:</h4>
     <div class="referral-code-container">
       <input id="referral-link-url" value="www.shinetext.com/?r=<%= referralInfo.referralCode %>" disabled>
       <button id="copy-referral-link" data-clipboard-text="www.shinetext.com/?r=<%= referralInfo.referralCode %>">Copy Link</button>
-      <div class="referral-link-copied-confirmation">Copied!</div>
     </div>
+    <div class="referral-link-copied-confirmation">Copied!</div>
 
-    <h4>Text 3 friends now</h4>
-    <div class="form-field">
-      <input class="form-control invite-phone"
-        name="invite-phone-1"
-        id="invite-phone-1"
-        type="tel"
-        value="">
-      <label for="invite-phone-1">Phone Number</label>
-    </div>
+    <div class="invite-friends-container">
+      <h4>Text 3 friends now</h4>
+      <div class="form-field">
+        <input class="form-control invite-phone"
+          name="invite-phone-1"
+          id="invite-phone-1"
+          type="tel"
+          value="">
+        <label for="invite-phone-1">Phone Number</label>
+      </div>
 
-    <div class="form-field">
-      <input class="form-control invite-phone"
-        name="invite-phone-2"
-        id="invite-phone-2"
-        type="tel"
-        value="">
-      <label for="invite-phone-2">Phone Number</label>
-    </div>
+      <div class="form-field">
+        <input class="form-control invite-phone"
+          name="invite-phone-2"
+          id="invite-phone-2"
+          type="tel"
+          value="">
+        <label for="invite-phone-2">Phone Number</label>
+      </div>
 
-    <div class="form-field">
-      <input class="form-control invite-phone"
-        name="invite-phone-3"
-        id="invite-phone-3"
-        type="tel"
-        value="">
-      <label for="invite-phone-3">Phone Number</label>
-    </div>
+      <div class="form-field">
+        <input class="form-control invite-phone"
+          name="invite-phone-3"
+          id="invite-phone-3"
+          type="tel"
+          value="">
+        <label for="invite-phone-3">Phone Number</label>
+      </div>
 
-    <div id="invite-friends-success">Your invites are on their way!</div>
-    <div id="invite-friends-error">Uh oh. There was an error sending the invites.</div>
-    <button id="invite-friends">Invite All</button>
-    <div id="invite-friends-progress">
-      <%- partial ('./partials/loading-icon.ejs') %>
+      <div id="invite-friends-success">Your invites are on their way!</div>
+      <div id="invite-friends-error">Uh oh. There was an error sending the invites.</div>
+      <button id="invite-friends">Invite All</button>
+      <div id="invite-friends-progress">
+        <%- partial ('./partials/loading-icon.ejs') %>
+      </div>
     </div>
 
   </div>

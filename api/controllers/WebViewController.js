@@ -115,8 +115,17 @@ module.exports = {
           else if (locals.referralInfo.nextLevel.reward === 'Shine t-shirt') {
             locals.referralInfo.rewardImage = 'reward-image-3';
           }
-          else if (locals.referralInfo.nextLevel.reward === 'Shine hoodie') {
+          else if (locals.referralInfo.nextLevel.reward === 'Shine call-out') {
             locals.referralInfo.rewardImage = 'reward-image-4';
+          }
+          else if (locals.referralInfo.nextLevel.reward === 'Shine hoodie') {
+            locals.referralInfo.rewardImage = 'reward-image-5';
+          }
+          else if (locals.referralInfo.nextLevel.reward === 'Shine leggings') {
+            locals.referralInfo.rewardImage = 'reward-image-6';
+          }
+          else {
+            locals.referralInfo.rewardImage = 'reward-image-1';
           }
 
           // Create the share URLs
