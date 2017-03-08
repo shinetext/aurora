@@ -125,7 +125,7 @@ module.exports = {
             locals.referralInfo.rewardImage = 'reward-image-6';
           }
           else {
-            locals.referralInfo.rewardImage = 'reward-image-1';
+            locals.referralInfo.rewardImage = 'reward-image-6';
           }
 
           // Create the share URLs
