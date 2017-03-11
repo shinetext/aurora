@@ -16,7 +16,7 @@
 
 .content {
   font-size: @font-size-normal;
-  padding: @margin-md 0;
+  padding: @margin-md 0 0 0;
   text-align: center;
 
   h2 {
@@ -26,6 +26,38 @@
 
   section {
     padding: 20px 10px;
+  }
+
+  .join-squad {
+    align-items: center;
+    background-image: url("../images/squad-bg-banner.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: center;
+    margin-top: @margin-md;
+
+    button {
+      background-color: @color-yellow;
+      border: none;
+      color: black;
+      font-size: @font-size-normal;
+      font-weight: 700;
+      height: 64px;
+      letter-spacing: 1.5px;
+      padding: @margin-sm;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      color: white;
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      margin: 0 0 @margin-md 0;
+    }
   }
 
   .phone-input-container {
@@ -40,7 +72,7 @@
       font-size: @font-size-normal;
       height: 64px;
       letter-spacing: 1.5px;
-      margin: @margin-sm;
+      margin: 20px 0 20px 10px;
       padding: @margin-sm;
       text-transform: uppercase;
     }
