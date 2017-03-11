@@ -56,8 +56,7 @@ module.exports = {
    * POST /join
    */
   join: function(req, res) {
-    let redirectUrl = '/confirmation?phone=' + req.body.phone + '&firstName='
-      + req.body.first_name;
+    let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.first_name}`;
 
     let photonRequest = {
       method: 'POST',

@@ -79,6 +79,8 @@ var routes = {
 
   '/referrals/:phone': 'WebViewController.myReferral',
 
+  '/sms-settings': 'WebViewController.smsSettings',
+
   '/squad': {
     view: 'squad',
     locals: {

@@ -10,32 +10,65 @@
 
 </div>
 <div class="content">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
-        <p><%= bodyText %></p>
-      </div>
 
-      <% if (referralCode.length > 0) { %>
-      <div class="referral-container col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-        <h3>Your Referral Link</h3>
-        <p>
-          <div class="referral-link-container"
-            data-clipboard-text="www.shinetext.com/?r=<%= referralCode %>">
-            <div id="referral-link-url">
-              www.shinetext.com/?r=<%= referralCode %>
-            </div>
-            <i class="fa fa-clipboard" aria-hidden="true"></i>
-          </div>
-          <div class="referral-link-copied-confirmation">Copied!</div>
-        </p>
-        <p>
-          Get 10 friends to join & you'll get an invite to our closed VIP group, the Shine Squad (plus swag)! You can check your progress on the <a href="/referrals">Referrals</a> page.
-        </p>
-      </div>
-      <% } %>
+  <p><%- bodyText %></p>
+
+  <% if (referralCode.length > 0) { %>
+
+  <section class="referral-container">
+    <h2>Step 1. Copy your referral link:</h2>
+    <div class="referral-link-container"
+      data-clipboard-text="www.shinetext.com/?r=<%= referralCode %>">
+      <input id="referral-link-url"
+        value="www.shinetext.com/?r=<%= referralCode %>" disabled>
+      <button id="copy-referral-link" data-clipboard-text="www.shinetext.com/?r=<%= referralCode %>">Copy Link</button>
     </div>
-  </div>
+  </section>
+
+  <section class="social-share">
+    <h2>Step 2. Share Away!</h2>
+    <ul class="social-share-icons">
+      <li class="twitter-container">
+        <a href="<%= shareUrls.twitter ? shareUrls.twitter : '#' %>" target="_blank"><div class="twitter icon"></div></a>
+        <label>Tweet</label>
+      </li>
+      <li class="facebook-container">
+        <a href="<%= shareUrls.facebook ? shareUrls.facebook : '#' %>" target="_blank"><div class="facebook icon"></div></a>
+        <label>Share</label>
+      </li>
+      <li class="email-container">
+        <a href="<%= shareUrls.email ? shareUrls.email : '#' %>" target="_blank"><div class="email icon"></div></a>
+        <label>Email</label>
+      </li>
+      <li class="sms-container">
+        <a href="<%= shareUrls.sms ? shareUrls.sms : '#' %>" target="_blank"><div class="sms icon"></div></a>
+        <label>Text</label>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Step 3. Check on your swag!</h2>
+    <div class="phone-input-container">
+      <div class="form-field">
+        <input class="form-control get-referral-phone"
+          name="get-referral-phone-1"
+          id="get-referral-phone-1"
+          data-for="get-referral-phone-1"
+          data-error="invalid-number-error-1"
+          type="tel"
+          value="">
+        <label for="get-referral-phone-1">Phone Number</label>
+      </div>
+      <button class="get-referral-info-btn"
+        data-for="get-referral-phone-1"
+        data-error="invalid-number-error-1">Check</button>
+    </div>
+    <div class="phone-validation-error" id="invalid-number-error-1">Please enter a valid cell phone number.</div>
+  </section>
+
+  <% } %>
+
 </div>
 
 </div>
@@ -45,7 +78,11 @@
 // For copying the link to the clipboard
 var clipboard = new Clipboard('.referral-link-container');
 clipboard.on('success', function(e) {
-  $('.referral-link-copied-confirmation').hide().slideDown();
+  $('#copy-referral-link').html('Copied!');
   e.clearSelection();
+
+  setTimeout(function() {
+    $('#copy-referral-link').html('Copy Link');
+  }, 3000);
 });
 </script>

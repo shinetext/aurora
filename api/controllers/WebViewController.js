@@ -49,10 +49,12 @@ module.exports = {
     let locals = {
       title: 'Confirmed! | Shine',
       layout: 'layouts/subpageCustomHeader.layout',
+      hideFooterCta: true,
       firstName: req.query.firstName ? req.query.firstName : '',
       phone: req.query.phone ? req.query.phone : '',
       query: req.query,
-      referralCode: req.query.referralCode ? req.query.referralCode : ''
+      referralCode: req.query.referralCode ? req.query.referralCode : '',
+      shareUrls: this.makeShareUrls(req.query.referralCode),
     };
 
     locals.headerImage = "images/confirmation-header.gif";
@@ -62,7 +64,7 @@ module.exports = {
     }
     else {
       locals.headerText = "You're all signed up!";
-      locals.bodyText = "You're now signed up for Shine. Your daily texts will start on the next business day. Spread the motiv-affirmation and share with friends!";
+      locals.bodyText = "You know what's even better than Shine texts?<br />Shining with all your best buds and getting free <strong>Shine swag</strong>.";
     }
 
     return res.view('confirmation', locals);
@@ -85,14 +87,17 @@ module.exports = {
    * Display the user's referral info .
    */
   myReferral: function(req, res) {
-    let referralRequest = {
-      method: 'GET',
-      uri: sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
-      json: true
-    };
+    const _this = this;
+    Promise.coroutine(function* () {
+      let referralRequest = {
+        method: 'GET',
+        uri: sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
+        json: true
+      };
 
-    request.getAsync(referralRequest)
-      .then(function(response) {
+      try {
+        const response = yield request.getAsync(referralRequest);
+
         let locals = {
           title: 'My Referrals | Shine',
           metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
@@ -129,22 +134,52 @@ module.exports = {
           }
 
           // Create the share URLs
-          const shareBody = `Sign up with me to get Shine! A daily text for your self-care and joy.`;
-          const shareTitle = `Sign up for Shine!`;
-          const shareUrl = `http://www.shinetext.com?r=${response.body.referralCode}`;
-
-          locals.shareUrls.email = `mailto:?subject=${shareTitle}&body=${shareBody} ${shareUrl}`;
-          locals.shareUrls.facebook = `http://www.facebook.com/sharer/sharer.php?u=${shareUrl}&title=${shareTitle}&description=${shareBody}`;
-          locals.shareUrls.sms = `sms:?&body=${shareBody} ${shareUrl}`;
-          locals.shareUrls.twitter = `http://twitter.com/intent/tweet?url=${shareUrl}&text=${shareBody}&via=ShineText`;
+          locals.shareUrls = _this.makeShareUrls(response.body.referralCode);
         }
 
         return res.view('my-referrals', locals);
-      })
-      .catch(function(err) {
+      }
+      catch(err) {
         sails.log.error(err);
         return res.view(500);
-      });
+      }
+    })();
   },
+
+  /**
+   * View for setting SMS settings. Typically shown immediately after a
+   * sign up and before the confirmation page.
+   */
+  smsSettings: function(req, res) {
+    let locals = {
+      user: {
+        phone: req.query.phone,
+        firstName: req.query.firstName,
+      },
+      layout: 'layouts/subpage-fullwidth.layout',
+      hideFooterCta: true,
+    };
+
+    return res.view('sms-settings', locals);
+  },
+
+  /**
+   * Helper function to make social share URLs.
+   *
+   * @param referralCode {string}
+   * @return {object}
+   */
+  makeShareUrls: function(referralCode) {
+    const shareBody = `Sign up with me to get Shine! A daily text for your self-care and joy.`;
+    const shareTitle = `Sign up for Shine!`;
+    const shareUrl = `http://www.shinetext.com?r=${referralCode}`;
+
+    return {
+      email: `mailto:?subject=${shareTitle}&body=${shareBody} ${shareUrl}`,
+      facebook: `http://www.facebook.com/sharer/sharer.php?u=${shareUrl}&title=${shareTitle}&description=${shareBody}`,
+      sms: `sms:?&body=${shareBody} ${shareUrl}`,
+      twitter: `http://twitter.com/intent/tweet?url=${shareUrl}&text=${shareBody}&via=ShineText`,
+    };
+  }
 
 };
