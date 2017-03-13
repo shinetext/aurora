@@ -56,7 +56,7 @@ module.exports = {
    * POST /join
    */
   join: function(req, res) {
-    let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.first_name}`;
+    let redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
 
     let photonRequest = {
       method: 'POST',
@@ -138,7 +138,7 @@ module.exports = {
 
         // If available, attach the referralCode to the redirect URL
         if (referralCode.length > 0) {
-          redirectUrl += '&referralCode=' + response.body.referralCode;
+          redirectUrl += `&referralCode=${referralCode}`;
 
           // Track sign up and identify with the referral code
           mixpanel.track('Sign Up', {
