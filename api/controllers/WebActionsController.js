@@ -175,11 +175,43 @@ module.exports = {
    * POST /save-settings
    */
   saveSettings: function(req, res) {
-    console.log(req.body);
-    let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.firstName}&referralCode=${req.body.referralCode}`;
-    res.redirect(redirectUrl);
-    // @todo save time pref to db
-    // @todo update profile in mobile commons
+    let birthday = '';
+    if (req.body['bday-month'] && req.body['bday-day'] && req.body['bday-year']) {
+      birthday = `${req.body['bday-year']}-${req.body['bday-month']}-${req.body['bday-day']}`;
+    }
+
+    let updateRequest = {
+      url: `https://secure.mcommons.com/api/profile_update`,
+      auth: {
+        user: sails.config.globals.mobileCommonsUser,
+        pass: sails.config.globals.mobileCommonsPassword,
+      },
+      form: {
+        phone_number: req.body.phone,
+      },
+    };
+
+    if (birthday) {
+      updateRequest.form.birthday = birthday;
+    }
+
+    if (req.body.zipcode) {
+      updateRequest.form.postal_code = req.body.zipcode;
+    }
+
+    if (req.body['pref-time']) {
+      updateRequest.form.pref_time = req.body['pref-time'];
+    }
+
+    request.postAsync(updateRequest)
+      .then(response => {
+        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.firstName}&referralCode=${req.body.referralCode}`;
+        res.redirect(redirectUrl);
+      })
+      .catch(err => {
+        console.error(err);
+        res.redirect(500);
+      });
   },
 
   /**
@@ -227,7 +259,7 @@ module.exports = {
       return res.json(400, {status: 'No referral phone numbers provided'});
     }
 
-    request.postAsync(sails.config.globals.mcJoinUrl, mcRequest)
+    request.postAsync(sails.config.globals.mcJoinUrl, data)
       .then(response => {
         if (response.statusCode === 200) {
           return res.json(200, {status: 'ok'});

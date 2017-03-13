@@ -4,68 +4,88 @@
 
   <p>
     Your daily texts will start on the next business day.<br>
-    Now 2 quick things to personalize the Shine experience for you.
+    Now a few quick things to personalize the Shine experience for you.
   </p>
 
   <form action="/save-settings" method="post">
 
     <fieldset>
-      <div>
+      <div class="label-container">
         <label>When do you want to get your daily text?</label>
         <p>Most prefer it with their morning coffee.</p>
       </div>
-      <div>
-        <select id="time-pref">
-          <option value="600">6:00</option>
-          <option value="630">6:30</option>
-          <option value="700">7:00</option>
-          <option value="730">7:30</option>
-          <option value="800">8:00</option>
-          <option value="830" selected="selected">8:30</option>
-          <option value="900">9:00</option>
-          <option value="930">9:30</option>
-          <option value="1000">10:00</option>
-          <option value="1030">10:30</option>
-          <option value="1100">11:00</option>
-          <option value="1130">11:30</option>
-          <option value="1200">12:00</option>
-        </select>
-        <select>
-          <option value="am">am</option>
-          <option value="pm">pm</option>
+      <div class="input-container">
+        <select id="pref-time" name="pref-time">
+          <option value="6:00">6:00 am</option>
+          <option value="6:30">6:30 am</option>
+          <option value="7:00">7:00 am</option>
+          <option value="7:30">7:30 am</option>
+          <option value="8:00">8:00 am</option>
+          <option value="8:30" selected="selected">8:30 am</option>
+          <option value="9:00">9:00 am</option>
+          <option value="9:30">9:30 am</option>
+          <option value="10:00">10:00 am</option>
+          <option value="10:30">10:30 am</option>
+          <option value="11:00">11:00 am</option>
+          <option value="11:30">11:30 am</option>
+          <option value="12:00">12:00 pm</option>
+          <option value="12:30">12:30 pm</option>
+          <option value="13:00">1:00 pm</option>
+          <option value="13:30">1:30 pm</option>
+          <option value="14:00">2:00 pm</option>
+          <option value="14:30">2:30 pm</option>
+          <option value="15:00">3:00 pm</option>
+          <option value="15:30">3:30 pm</option>
+          <option value="16:00">4:00 pm</option>
+          <option value="16:30">4:30 pm</option>
+          <option value="17:00">5:00 pm</option>
+          <option value="17:30">5:30 pm</option>
+          <option value="18:00">6:00 pm</option>
+          <option value="18:30">6:30 pm</option>
+          <option value="19:00">7:00 pm</option>
+          <option value="19:30">7:30 pm</option>
+          <option value="20:00">8:00 pm</option>
+          <option value="20:30">8:30 pm</option>
+          <option value="21:00">9:00 pm</option>
+          <option value="21:30">9:30 pm</option>
         </select>
       </div>
     </fieldset>
 
     <fieldset>
-      <div>
+      <div class="label-container">
         <label>What is your zipcode?</label>
         <p>It helps us make sure we get you your text at the right time.</p>
       </div>
-      <input name="zipcode" type="text" />
+      <div class="input-container">
+        <input name="zipcode" type="text" maxlength="5" />
+      </div>
     </fieldset>
 
     <fieldset>
-      <div>
+      <div class="label-container">
         <label>When is your birthday?</label>
         <p>True friends never forget!</p>
       </div>
-      <select id="bday-month" name="bday-month">
-        <option value="Jan">Jan</option>
-        <option value="Feb">Feb</option>
-        <option value="Mar">Mar</option>
-        <option value="Apr">Apr</option>
-        <option value="May">May</option>
-        <option value="Jun">Jun</option>
-        <option value="Jul">Jul</option>
-        <option value="Aug">Aug</option>
-        <option value="Sep">Sep</option>
-        <option value="Oct">Oct</option>
-        <option value="Nov">Nov</option>
-        <option value="Dec">Dec</option>
-      </select>
-      <select id="bday-day" name="bday-day"></select>
-      <select id="bday-year" name="bday-year"></select>
+      <div class="input-container">
+        <select id="bday-month" name="bday-month">
+          <option value="" selected="selected">--</option>
+          <option value="1">Jan</option>
+          <option value="2">Feb</option>
+          <option value="3">Mar</option>
+          <option value="4">Apr</option>
+          <option value="5">May</option>
+          <option value="6">Jun</option>
+          <option value="7">Jul</option>
+          <option value="8">Aug</option>
+          <option value="9">Sep</option>
+          <option value="10">Oct</option>
+          <option value="11">Nov</option>
+          <option value="12">Dec</option>
+        </select>
+        <select id="bday-day" name="bday-day"></select>
+        <select id="bday-year" name="bday-year"></select>
+      </div>
     </fieldset>
 
     <input name="firstName" value="<%= user.firstName %>" type="hidden" />

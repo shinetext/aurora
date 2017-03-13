@@ -15,10 +15,78 @@ text-align: center;
 
 #skip-step {
   display: block;
-  margin: @margin-md;
+  margin-bottom: @margin-md;
 }
 
 h1 {
-  margin: @margin-md;
+  margin: @margin-md auto;
   padding: 0;
+}
+
+form {
+  padding: @margin-sm;
+}
+
+fieldset {
+  margin: @margin-md auto;
+  max-width: 600px;
+  text-align: left;
+
+  .label-container {
+    float: left;
+    max-width: 250px;
+
+    label {
+      font-size: 18px;
+    }
+
+    p {
+      color: @color-tags;
+      font-size: 12px;
+    }
+  }
+
+  .input-container {
+    float: right;
+
+    input {
+      border: 2px solid @color-yellow;
+      border-radius: 0;
+      font-size: 18px;
+      font-weight: 700;
+      max-width: 100px;
+      padding: 10px;
+    }
+
+    select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: white;
+      background-image: url('/images/select-caret.png');
+      background-repeat: no-repeat;
+      background-position: 90% center;
+      background-size: 24px;
+      border: 2px solid @color-yellow;
+      border-radius: 0;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 10px 40px 10px 10px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .label-container {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .input-container {
+      float: none;
+      text-align: center;
+    }
+  }
 }
