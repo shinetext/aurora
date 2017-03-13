@@ -153,8 +153,9 @@ module.exports = {
   smsSettings: function(req, res) {
     let locals = {
       user: {
-        phone: req.query.phone,
         firstName: req.query.firstName,
+        phone: req.query.phone,
+        referralCode: req.query.referralCode,
       },
       layout: 'layouts/subpage-fullwidth.layout',
       hideFooterCta: true,

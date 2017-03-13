@@ -170,6 +170,19 @@ module.exports = {
   },
 
   /**
+   * Updates a user's SMS preferences to Mobile Commons.
+   *
+   * POST /save-settings
+   */
+  saveSettings: function(req, res) {
+    console.log(req.body);
+    let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.firstName}&referralCode=${req.body.referralCode}`;
+    res.redirect(redirectUrl);
+    // @todo save time pref to db
+    // @todo update profile in mobile commons
+  },
+
+  /**
    * Helper to create the request for sending Mobile Commons referral invites.
    *
    * @param req {object}

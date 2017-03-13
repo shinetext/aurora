@@ -1,4 +1,83 @@
 <div class="sms-settings-page">
 
-  <a href="/confirmation?phone=<%= user.phone %>&firstName=<%= user.firstName %>">Skip this step</a>
+  <h1>You're almost done!</h1>
+
+  <p>
+    Your daily texts will start on the next business day.<br>
+    Now 2 quick things to personalize the Shine experience for you.
+  </p>
+
+  <form action="/save-settings" method="post">
+
+    <fieldset>
+      <div>
+        <label>When do you want to get your daily text?</label>
+        <p>Most prefer it with their morning coffee.</p>
+      </div>
+      <div>
+        <select id="time-pref">
+          <option value="600">6:00</option>
+          <option value="630">6:30</option>
+          <option value="700">7:00</option>
+          <option value="730">7:30</option>
+          <option value="800">8:00</option>
+          <option value="830" selected="selected">8:30</option>
+          <option value="900">9:00</option>
+          <option value="930">9:30</option>
+          <option value="1000">10:00</option>
+          <option value="1030">10:30</option>
+          <option value="1100">11:00</option>
+          <option value="1130">11:30</option>
+          <option value="1200">12:00</option>
+        </select>
+        <select>
+          <option value="am">am</option>
+          <option value="pm">pm</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div>
+        <label>What is your zipcode?</label>
+        <p>It helps us make sure we get you your text at the right time.</p>
+      </div>
+      <input name="zipcode" type="text" />
+    </fieldset>
+
+    <fieldset>
+      <div>
+        <label>When is your birthday?</label>
+        <p>True friends never forget!</p>
+      </div>
+      <select id="bday-month" name="bday-month">
+        <option value="Jan">Jan</option>
+        <option value="Feb">Feb</option>
+        <option value="Mar">Mar</option>
+        <option value="Apr">Apr</option>
+        <option value="May">May</option>
+        <option value="Jun">Jun</option>
+        <option value="Jul">Jul</option>
+        <option value="Aug">Aug</option>
+        <option value="Sep">Sep</option>
+        <option value="Oct">Oct</option>
+        <option value="Nov">Nov</option>
+        <option value="Dec">Dec</option>
+      </select>
+      <select id="bday-day" name="bday-day"></select>
+      <select id="bday-year" name="bday-year"></select>
+    </fieldset>
+
+    <input name="firstName" value="<%= user.firstName %>" type="hidden" />
+    <input name="phone" value="<%= user.phone %>" type="hidden" />
+    <input name="referralCode" value="<%= user.referralCode %>" type="hidden" />
+
+    <input id="btn-save-settings" type="submit" value="Make It Official"
+      ga-on="click"
+      ga-event-category="Settings"
+      ga-event-action="Save" />
+
+  </form>
+
+  <a id="skip-step" href="/confirmation?phone=<%= user.phone %>&firstName=<%= user.firstName %>&referralCode=<%= user.referralCode %>">Skip this step</a>
 </div>
