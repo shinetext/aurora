@@ -4,14 +4,24 @@
 
 <div class="header">
 
-  <h1><%= headerText %></h1>
+  <h1><% if (fromReferral) { %>
+  Thanks for sharing!
+  <% } else { %>
+  You're all signed up!
+  <% } %></h1>
 
   <img src="<%= headerImage %>">
 
 </div>
 <div class="content">
 
-  <p><%- bodyText %></p>
+  <p><% if (fromReferral) { %>
+  Got more friends who would appreciate Shine?<br />
+  Spread some more motiv-affirmation!
+  <% } else { %>
+  Want to make it even more official?<br />
+  Learn how to get an invite to our <a href="/squad">VIP group</a> and earn free <a href="/referrals">swag</a>.
+  <% } %></p>
 
   <% if (referralCode.length > 0) { %>
 

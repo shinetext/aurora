@@ -49,23 +49,15 @@ module.exports = {
     let locals = {
       title: 'Confirmed! | Shine',
       layout: 'layouts/subpageCustomHeader.layout',
+      headerImage: 'images/confirmation-header.gif',
       hideFooterCta: true,
       firstName: req.query.firstName ? req.query.firstName : '',
+      fromReferral: req.query.referral ? true : false,
       phone: req.query.phone ? req.query.phone : '',
       query: req.query,
       referralCode: req.query.referralCode ? req.query.referralCode : '',
       shareUrls: this.makeShareUrls(req.query.referralCode),
     };
-
-    locals.headerImage = "images/confirmation-header.gif";
-    if (req.query.referral) {
-      locals.headerText = "Thanks for sharing!";
-      locals.bodyText = "Got more friends who would appreciate Shine? Spread some more motiv-affirmation!";
-    }
-    else {
-      locals.headerText = "You're all signed up!";
-      locals.bodyText = "You know what's even better than Shine texts?<br />Shining with all your best buds and getting free <strong>Shine swag</strong>.";
-    }
 
     return res.view('confirmation', locals);
   },
