@@ -1,0 +1,103 @@
+<div class="sms-settings-page">
+
+  <h1>You're almost done!</h1>
+
+  <p>
+    Your daily texts will start on the next business day.<br>
+    Now a few quick things to personalize the Shine experience for you.
+  </p>
+
+  <form action="/save-settings" method="post">
+
+    <fieldset>
+      <div class="label-container">
+        <label>When do you want to get your daily text?</label>
+        <p>Most prefer it with their morning coffee.</p>
+      </div>
+      <div class="input-container">
+        <select id="pref-time" name="pref-time">
+          <option value="6:00">6:00 am</option>
+          <option value="6:30">6:30 am</option>
+          <option value="7:00">7:00 am</option>
+          <option value="7:30">7:30 am</option>
+          <option value="8:00">8:00 am</option>
+          <option value="8:30" selected="selected">8:30 am</option>
+          <option value="9:00">9:00 am</option>
+          <option value="9:30">9:30 am</option>
+          <option value="10:00">10:00 am</option>
+          <option value="10:30">10:30 am</option>
+          <option value="11:00">11:00 am</option>
+          <option value="11:30">11:30 am</option>
+          <option value="12:00">12:00 pm</option>
+          <option value="12:30">12:30 pm</option>
+          <option value="13:00">1:00 pm</option>
+          <option value="13:30">1:30 pm</option>
+          <option value="14:00">2:00 pm</option>
+          <option value="14:30">2:30 pm</option>
+          <option value="15:00">3:00 pm</option>
+          <option value="15:30">3:30 pm</option>
+          <option value="16:00">4:00 pm</option>
+          <option value="16:30">4:30 pm</option>
+          <option value="17:00">5:00 pm</option>
+          <option value="17:30">5:30 pm</option>
+          <option value="18:00">6:00 pm</option>
+          <option value="18:30">6:30 pm</option>
+          <option value="19:00">7:00 pm</option>
+          <option value="19:30">7:30 pm</option>
+          <option value="20:00">8:00 pm</option>
+          <option value="20:30">8:30 pm</option>
+          <option value="21:00">9:00 pm</option>
+          <option value="21:30">9:30 pm</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="label-container">
+        <label>What is your zipcode?</label>
+        <p>It helps us make sure we get you your text at the right time.</p>
+      </div>
+      <div class="input-container">
+        <input name="zipcode" type="text" maxlength="5" />
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="label-container">
+        <label>When is your birthday?</label>
+        <p>True friends never forget!</p>
+      </div>
+      <div class="input-container">
+        <select id="bday-month" name="bday-month">
+          <option value="" selected="selected">--</option>
+          <option value="1">Jan</option>
+          <option value="2">Feb</option>
+          <option value="3">Mar</option>
+          <option value="4">Apr</option>
+          <option value="5">May</option>
+          <option value="6">Jun</option>
+          <option value="7">Jul</option>
+          <option value="8">Aug</option>
+          <option value="9">Sep</option>
+          <option value="10">Oct</option>
+          <option value="11">Nov</option>
+          <option value="12">Dec</option>
+        </select>
+        <select id="bday-day" name="bday-day"></select>
+        <select id="bday-year" name="bday-year"></select>
+      </div>
+    </fieldset>
+
+    <input name="firstName" value="<%= user.firstName %>" type="hidden" />
+    <input name="phone" value="<%= user.phone %>" type="hidden" />
+    <input name="referralCode" value="<%= user.referralCode %>" type="hidden" />
+
+    <input id="btn-save-settings" type="submit" value="Make It Official"
+      ga-on="click"
+      ga-event-category="Settings"
+      ga-event-action="Save" />
+
+  </form>
+
+  <a id="skip-step" href="/confirmation?phone=<%= user.phone %>&firstName=<%= user.firstName %>&referralCode=<%= user.referralCode %>">Skip this step</a>
+</div>

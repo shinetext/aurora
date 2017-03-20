@@ -45,6 +45,10 @@ module.exports = {
     // The Mobile Commons URL to send join requests to
     mcJoinUrl: 'https://secure.mcommons.com/profiles/join',
 
+    // Mobile Commons auth
+    mobileCommonsUser: process.env.MOBILECOMMONS_USER,
+    mobileCommonsPassword: process.env.MOBILECOMMONS_PASSWORD,
+
     // The Photon API URL
     photonApiUrl: process.env.PHOTON_API_URL,
 
