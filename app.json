@@ -3,7 +3,25 @@
   "scripts": {
   },
   "env": {
+    "MIXPANEL_TOKEN": {
+      "required": true
+    },
+    "MOBILECOMMONS_PASSWORD": {
+      "required": true
+    },
+    "MOBILECOMMONS_USER": {
+      "required": true
+    },
+    "NEW_RELIC_LICENSE_KEY": {
+      "required": true
+    },
     "NEW_RELIC_APP_NAME": {
+      "required": true
+    },
+    "NPM_TOKEN": {
+      "required": true
+    },
+    "PHOTON_API_URL": {
       "required": true
     }
   },

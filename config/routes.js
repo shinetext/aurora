@@ -79,6 +79,8 @@ var routes = {
 
   '/referrals/:phone': 'WebViewController.myReferral',
 
+  '/sms-settings': 'WebViewController.smsSettings',
+
   '/squad': {
     view: 'squad',
     locals: {
@@ -123,6 +125,7 @@ var routes = {
   ***************************************************************************/
 
   'post /join': 'WebActionsController.join',
+  'post /save-settings': 'WebActionsController.saveSettings',
   'post /sms-invite': 'WebActionsController.smsInvite',
 };
 
