@@ -71,6 +71,8 @@ module.exports = {
       }
     };
 
+    const joinByReferral = typeof req.body.referredByCode === 'string' && req.body.referredByCode.length > 0;
+
     // Flag indicating the subscription to Mobile Commons was successful
     let mcSubscribeSuccessful = false;
 
@@ -144,7 +146,7 @@ module.exports = {
           mixpanel.track('Sign Up', {
             distinct_id: referralCode,
             platform: 'sms',
-            source: 'web',
+            source: joinByReferral ? 'web-referral' : 'web',
           });
         }
 
