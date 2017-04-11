@@ -22,6 +22,13 @@ describe('WebActionsController', () => {
       assert.equal(data.form['person[email]'], mockRequest.body.email);
       assert.equal(data.form['person[send_gifs]'], 'no');
       assert.equal(data.form['person[referral_code]'], 'qGl0G4r');
+
+      // Mobile Commons will only save the date portion of the string, so that's
+      // all we'll test for here.
+      assert.equal(convertToDate(data.form['person[date_signed_up]']), convertToDate((new Date()).toISOString()));
+      function convertToDate(date) {
+        return date.substr(0, date.indexOf('T'));
+      }
     })
   })
 
