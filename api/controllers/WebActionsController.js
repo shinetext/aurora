@@ -46,6 +46,7 @@ module.exports = {
         'person[email]': req.body.email,
         'person[send_gifs]': typeof req.body.send_gifs === 'undefined' ? 'no' : 'yes',
         'person[referral_code]': ReferralCodes.encode(req.body.phone),
+        'person[date_signed_up]': (new Date()).toISOString(),
       }
     };
   },
