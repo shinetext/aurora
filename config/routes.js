@@ -39,6 +39,8 @@ var routes = {
   '/articles': 'WebViewController.advice',
   '/articles/*': 'WebViewController.articlesRedirect',
 
+  '/careers': 'WebViewController.careers',
+
   '/confirmation': 'WebViewController.confirmation',
 
   '/daily': 'WebViewController.daily',
