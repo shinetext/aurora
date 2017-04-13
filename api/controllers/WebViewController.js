@@ -26,6 +26,10 @@ module.exports = {
     return res.redirect(301, `${sails.config.globals.adviceBaseUrl}${req.url}`);
   },
 
+  careers: (req, res) => {
+    return res.redirect(301, '/jobs');
+  },
+
   /**
    * Redirect to the Daily Shine homepage.
    */
