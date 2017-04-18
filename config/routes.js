@@ -118,6 +118,9 @@ var routes = {
 
   '/year1' : {
     view: 'year1',
+    locals: {
+      layout: 'layouts/scalable.layout',
+    },
   },
 
   /***************************************************************************
