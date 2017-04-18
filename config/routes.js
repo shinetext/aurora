@@ -116,6 +116,13 @@ var routes = {
     view: '500'
   },
 
+  '/year1' : {
+    view: 'year1',
+    locals: {
+      layout: 'layouts/scalable.layout',
+    },
+  },
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
