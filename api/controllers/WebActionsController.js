@@ -144,11 +144,21 @@ module.exports = {
           redirectUrl += `&referralCode=${referralCode}`;
 
           // Track sign up and identify with the referral code
-          mixpanel.track('Sign Up', {
+          let trackingData = {
             distinct_id: referralCode,
             platform: 'sms',
             source: joinByReferral ? 'web-referral' : 'web',
-          });
+          };
+
+          if (req.body.utmSource) {
+            trackingData.utm_source = req.body.utmSource;
+          }
+
+          if (req.body.utmMedium) {
+            trackingData.utm_medium = req.body.utmMedium;
+          }
+
+          mixpanel.track('Sign Up', trackingData);
         }
 
         return res.redirect(redirectUrl);
