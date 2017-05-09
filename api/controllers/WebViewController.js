@@ -73,6 +73,8 @@ module.exports = {
     let locals = {
       adviceBaseUrl: sails.config.globals.adviceBaseUrl,
       referredByCode: req.query.r,
+      utmSource: req.query.utm_source,
+      utmMedium: req.query.utm_medium,
       view: 'homepage',
     };
 

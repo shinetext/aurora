@@ -42,9 +42,9 @@
 
       <form action="/join" method="post">
 
-        <% if (referredByCode) { %>
-        <input name="referredByCode" value="<%= referredByCode %>" type="hidden"/>
-        <% } %>
+        <% if (referredByCode) { %><input name="referredByCode" value="<%= referredByCode %>" type="hidden"/><% } %>
+        <% if (utmSource) { %><input name="utmSource" value="<%= utmSource %>" type="hidden"/><% } %>
+        <% if (utmMedium) { %><input name="utmMedium" value="<%= utmMedium %>" type="hidden"/><% } %>
 
         <div class="form-field">
           <input class="form-control" name="first_name" id="form-first-name" type="text" required value="">
