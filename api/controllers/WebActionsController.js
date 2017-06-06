@@ -215,6 +215,14 @@ module.exports = {
     if (req.body['pref-time']) {
       updateRequest.form.pref_time = req.body['pref-time'];
     }
+    
+    if (req.body['intention-category']) {
+      updateRequest.form.intention_category = req.body['intention-category'];
+    }
+    
+    if (req.body['intention-focus']) {
+      updateRequest.form.intention_focus = req.body['intention-focus'];
+    }
 
     request.postAsync(updateRequest)
       .then(response => {

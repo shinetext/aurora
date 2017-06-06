@@ -61,7 +61,7 @@
         <p>This will help us lock in your timezone.</p>
       </div>
       <div class="input-container">
-        <input name="zipcode" type="text" maxlength="5" />
+        <input class="width-sm" name="zipcode" type="text" maxlength="5" />
       </div>
     </fieldset>
 
@@ -88,6 +88,32 @@
         </select>
         <select id="bday-day" name="bday-day"></select>
         <select id="bday-year" name="bday-year"></select>
+      </div>
+    </fieldset>
+    
+    <fieldset>
+      <div class="label-container">
+        <label>What's one thing you want to work on most?</label>
+        <p>Focusing on ONE area is key.</p>
+      </div>
+      <div class="input-container">
+        <select id="intention-category" name="intention-category">
+          <option value="presence" selected="selected">Joy & Presence</option>
+          <option value="body">Health</option>
+          <option value="confidence">Confidence</option>
+          <option value="productivity">Productivity</option>
+          <option value="creativity">Creativity</option>
+        </select>
+      </div>
+    </fieldset>
+    
+    <fieldset>
+      <div class="label-container">
+        <label>In less than 5 words, get specific on your intention.</label>
+        <p>Avoid words like 'stop' or 'quit'.</p>
+      </div>
+      <div class="input-container">
+        <input class="width-md" name="intention-focus" type="text" />
       </div>
     </fieldset>
 
