@@ -232,10 +232,6 @@ module.exports = {
       updateRequest.form.intention_category = req.body['intention-category'];
     }
 
-    if (req.body['intention-focus']) {
-      updateRequest.form.intention_focus = req.body['intention-focus'];
-    }
-
     request
       .postAsync(updateRequest)
       .then(response => {
