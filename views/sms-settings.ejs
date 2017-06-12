@@ -14,6 +14,22 @@
 
     <fieldset>
       <div class="label-container">
+        <label>What's one area you could use the most support with?</label>
+        <p>We call this your 'intention' and will give you a different action you can take to work on it each day</p>
+      </div>
+      <div class="input-container">
+        <select id="intention-category" name="intention-category">
+          <option value="presence" selected="selected">Joy & Presence</option>
+          <option value="body">Health</option>
+          <option value="confidence">Confidence</option>
+          <option value="productivity">Productivity</option>
+          <option value="creativity">Creativity</option>
+        </select>
+      </div>
+    </fieldset>
+    
+    <fieldset>
+      <div class="label-container">
         <label>When do you want to get your daily text?</label>
         <p>Most prefer it with their morning coffee.</p>
       </div>
@@ -90,6 +106,8 @@
         <select id="bday-year" name="bday-year"></select>
       </div>
     </fieldset>
+    
+    
 
     <input name="firstName" value="<%= user.firstName %>" type="hidden" />
     <input name="phone" value="<%= user.phone %>" type="hidden" />
