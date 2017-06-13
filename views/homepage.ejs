@@ -43,6 +43,8 @@
       <form action="/join" method="post">
 
         <% if (referredByCode) { %><input name="referredByCode" value="<%= referredByCode %>" type="hidden"/><% } %>
+        <% if (utmCampaign) { %><input name="utmCampaign" value="<%= utmCampaign %>" type="hidden"/><% } %>
+        <% if (utmContent) { %><input name="utmContent" value="<%= utmContent %>" type="hidden"/><% } %>
         <% if (utmSource) { %><input name="utmSource" value="<%= utmSource %>" type="hidden"/><% } %>
         <% if (utmMedium) { %><input name="utmMedium" value="<%= utmMedium %>" type="hidden"/><% } %>
 
