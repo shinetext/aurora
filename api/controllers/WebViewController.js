@@ -8,7 +8,6 @@ var Promise = require('bluebird');
 var request = Promise.promisifyAll(require('request'));
 
 module.exports = {
-
   ////////////////////////////// Redirects ///////////////////////////////////
 
   /**
@@ -73,6 +72,8 @@ module.exports = {
     let locals = {
       adviceBaseUrl: sails.config.globals.adviceBaseUrl,
       referredByCode: req.query.r,
+      utmCampaign: req.query.utm_campaign,
+      utmContent: req.query.utm_content,
       utmSource: req.query.utm_source,
       utmMedium: req.query.utm_medium,
       view: 'homepage',
@@ -86,11 +87,13 @@ module.exports = {
    */
   myReferral: function(req, res) {
     const _this = this;
-    Promise.coroutine(function* () {
+    Promise.coroutine(function*() {
       let referralRequest = {
         method: 'GET',
-        uri: sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
-        json: true
+        uri: sails.config.globals.photonApiUrl +
+          '/referral/' +
+          req.params.phone,
+        json: true,
       };
 
       try {
@@ -106,28 +109,28 @@ module.exports = {
 
         if (response.statusCode === 200) {
           locals.referralInfo = response.body;
-          locals.referralInfo.nextLevel = ReferralService.getNextLevel(response.body.referralCount);
+          locals.referralInfo.nextLevel = ReferralService.getNextLevel(
+            response.body.referralCount
+          );
 
           // @todo Not sure if this is should be the final solution for handling this
           if (locals.referralInfo.nextLevel.reward === 'Shine sticker') {
             locals.referralInfo.rewardImage = 'reward-image-1';
-          }
-          else if (locals.referralInfo.nextLevel.reward === 'Shine tote') {
+          } else if (locals.referralInfo.nextLevel.reward === 'Shine tote') {
             locals.referralInfo.rewardImage = 'reward-image-2';
-          }
-          else if (locals.referralInfo.nextLevel.reward === 'Shine t-shirt') {
+          } else if (locals.referralInfo.nextLevel.reward === 'Shine t-shirt') {
             locals.referralInfo.rewardImage = 'reward-image-3';
-          }
-          else if (locals.referralInfo.nextLevel.reward === 'Shine call-out') {
+          } else if (
+            locals.referralInfo.nextLevel.reward === 'Shine call-out'
+          ) {
             locals.referralInfo.rewardImage = 'reward-image-4';
-          }
-          else if (locals.referralInfo.nextLevel.reward === 'Shine hoodie') {
+          } else if (locals.referralInfo.nextLevel.reward === 'Shine hoodie') {
             locals.referralInfo.rewardImage = 'reward-image-5';
-          }
-          else if (locals.referralInfo.nextLevel.reward === 'Shine leggings') {
+          } else if (
+            locals.referralInfo.nextLevel.reward === 'Shine leggings'
+          ) {
             locals.referralInfo.rewardImage = 'reward-image-6';
-          }
-          else {
+          } else {
             locals.referralInfo.rewardImage = 'reward-image-6';
           }
 
@@ -136,8 +139,7 @@ module.exports = {
         }
 
         return res.view('my-referrals', locals);
-      }
-      catch(err) {
+      } catch (err) {
         sails.log.error(err);
         return res.view(500);
       }
@@ -179,6 +181,5 @@ module.exports = {
       sms: `sms:?&body=${shareBody} ${shareUrl}`,
       twitter: `http://twitter.com/intent/tweet?url=${shareUrl}&text=${shareBody}&via=ShineText`,
     };
-  }
-
+  },
 };
