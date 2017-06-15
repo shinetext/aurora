@@ -1,0 +1,77 @@
+font-size: @font-size-homepage-normal;
+
+.container-partners-lead {
+  @container-partner-lead-height: 960px;
+
+  padding: 0;
+  position: relative;
+
+  .container-signup {
+
+    h2 {
+      font-size: @font-size-header;
+      margin: @margin-md auto @margin-sm auto;
+      text-align: center;
+      width: 60%;
+    }
+    
+    h4 {
+      text-align: center;
+      padding: @margin-sm
+    }
+
+    form {
+      margin: auto;
+    }
+
+    .ctia {
+      margin: auto;
+      padding-top: @margin-xs;
+      padding-bottom: @margin-md;
+    }
+
+    form,
+    .ctia {
+      width: 50%;
+      max-width: 400px
+    }
+
+    @media (max-width: @screen-md-max) {
+      h2 {
+        width: 80%;
+      }
+    }
+
+    @media (max-width: @screen-sm-max) {
+      height: 100%;
+      padding-bottom: @margin-md 0;
+    }
+
+    @media (max-width: @screen-xs-max) {
+      h2 {
+        font-size: 32px;
+        width: 90%%;
+      }
+
+      form,
+      .ctia,
+      .fbmessenger {
+        width: 80%;
+      }
+    }
+  }
+
+  .partner-header-image {
+    display: inline-block;
+    float: right;
+    padding: 0;
+    object-fit: cover;
+
+
+    @media (max-width: @screen-sm-max) {
+      height: 400px;
+    }
+  }
+
+}
+
