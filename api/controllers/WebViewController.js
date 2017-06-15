@@ -54,13 +54,25 @@ module.exports = {
    * Display /confirmation view and pass along any query params.
    */
   confirmation: function(req, res) {
+    let headerImage, headerText;
+    if (req.query.partner) {
+      const partnerConfirmation = PartnerService.getPartner(req.query.partner).confirmation;
+      headerImage = partnerConfirmation.image;
+      headerText = partnerConfirmation.copy;
+    } else {
+      headerImage = 'images/confirmation-header.gif';
+      headerText = req.query.referral ? `Thanks for sharing!` : `You're all signed up!`
+    }
+    
     let locals = {
       title: 'Confirmed! | Shine',
       layout: 'layouts/subpageCustomHeader.layout',
-      headerImage: 'images/confirmation-header.gif',
+      headerText: headerText,
+      headerImage: headerImage,
       hideFooterCta: true,
       firstName: req.query.firstName ? req.query.firstName : '',
       fromReferral: req.query.referral ? true : false,
+      fromPartner: req.query.partner ? true : false,
       phone: req.query.phone ? req.query.phone : '',
       query: req.query,
       referralCode: req.query.referralCode ? req.query.referralCode : '',

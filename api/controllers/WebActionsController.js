@@ -7,7 +7,6 @@
 var Promise = require('bluebird');
 var request = Promise.promisifyAll(require('request'));
 const Mixpanel = require('mixpanel');
-const PartnerService = require('../services/PartnerService');
 let mixpanel;
 
 if (process.env.MIXPANEL_TOKEN) {
@@ -74,7 +73,7 @@ module.exports = {
     // redirect directly to confirmation page
 
     if (req.body.partner) {
-      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.firstName}`;
+      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.firstName}&partner=${req.body.partner}`;
     } else {
       redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
     }
