@@ -7,7 +7,9 @@
 var Promise = require('bluebird');
 var request = Promise.promisifyAll(require('request'));
 const Mixpanel = require('mixpanel');
+const PartnerService = require('../services/PartnerService');
 let mixpanel;
+
 if (process.env.MIXPANEL_TOKEN) {
   mixpanel = Mixpanel.init(process.env.MIXPANEL_TOKEN);
 }
@@ -37,9 +39,17 @@ module.exports = {
    * @return {object}
    */
   createMobileCommonsRequest: function(req) {
+    let optInPath;
+
+    if (req.body.partner) {
+      optInPath = PartnerService.getOptInPath(req.body.partner);      
+    } else {
+      optInPath = this.MOBILE_COMMONS_OPTIN
+    }
+    
     return {
       form: {
-        'opt_in_path[]': this.MOBILE_COMMONS_OPTIN,
+        'opt_in_path[]': optInPath,
         'person[first_name]': req.body.first_name,
         'person[phone]': req.body.phone,
         'person[email]': req.body.email,
@@ -58,7 +68,16 @@ module.exports = {
    * POST /join
    */
   join: function(req, res) {
-    let redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
+    let redirectUrl;
+    
+    // if signing up through partner landing pages, 
+    // redirect directly to confirmation page
+
+    if (req.body.partner) {
+      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.firstName}`;
+    } else {
+      redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
+    }
 
     let photonRequest = {
       method: 'POST',

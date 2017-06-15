@@ -4,8 +4,13 @@
 
 'use strict';
 
-var Promise = require('bluebird');
-var request = Promise.promisifyAll(require('request'));
+import Promise from 'bluebird';
+import request from 'request';
+import PartnerService from '../services/PartnerService';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server'
+import PartnerApp from '../../views/components/PartnerApp';
+Promise.promisifyAll(request);
 
 module.exports = {
   ////////////////////////////// Redirects ///////////////////////////////////
@@ -162,6 +167,28 @@ module.exports = {
     };
 
     return res.view('sms-settings', locals);
+  },
+  
+  /**
+   * View for partner/influencer microsite
+   * 
+   */
+  partners: function(req, res) {
+    try {
+      const partner = PartnerService.getPartner(req.params.partner);
+      const partnerComponentMarkup = ReactDOMServer.renderToString(<PartnerApp {...partner} partnerId={req.params.partner}/>);
+      const locals = {
+        layout: 'layouts/subpage-fullwidth.layout',
+        partnerComponent: partnerComponentMarkup,
+        hideFooterCta: true
+      };
+      return res.view('partner-signup', locals);
+    }
+    
+    catch(err) {
+      sails.log.error(err);
+      return res.view(404);
+    }
   },
 
   /**
