@@ -6,7 +6,7 @@ class PartnerApp extends React.Component {
   render() {
     const { name, imageUrl, partnerId } = this.props;
     const formDetails = {
-      header: `Hi, Im ${name}.`,
+      header: `Hi, I'm ${name}.`,
       subhead: `Get daily tips for self-fulfillment texted to you every morning.`,
       partner: partnerId
     }
@@ -14,8 +14,8 @@ class PartnerApp extends React.Component {
     
     return (
       <div className="container-partners-lead">
-        <Image src={imageUrl} />
         <SignUpForm  {...formDetails }/>
+        <Image src={imageUrl} />
       </div>
     );
   }

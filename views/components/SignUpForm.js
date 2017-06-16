@@ -5,13 +5,12 @@ const SignUpForm = props => {
   const { header, subhead, partner } = props;
   
   return (
-    <div className="col-md-7">
-      <div className="container-signup">
+      <div className="container-signup col-md-7">
       
         <h2>{header}</h2>
         <h4>{subhead}</h4>
         
-        <form action="/join" method="post">
+        <form class="signup-form" action="/join" method="post">
           <FormField isRequired label='First Name' type="text" fieldName='first_name'/>
           <FormField isRequired label='Phone Number' type="tel" fieldName='phone'/>
           <FormField type="hidden" fieldName='partner' value={ props.partner ? props.partner : null } />
@@ -29,11 +28,8 @@ const SignUpForm = props => {
           & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily message.
           Message & data rates may apply. Text STOP to opt-out, HELP for help.
         </div>
-
       </div>
-    </div>
   );
-  
 }
   
 export default SignUpForm;
