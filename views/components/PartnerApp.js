@@ -6,8 +6,8 @@ class PartnerApp extends React.Component {
   render() {
     const { name, imageUrl, partnerId } = this.props;
     const formDetails = {
-      header: `Hi, I'm ${name}.`,
-      subhead: `Get daily tips for self-fulfillment texted to you every morning.`,
+      header: `${name}`,
+      subhead: `Lorem ipsum dolor sit amet, proin metus morbi nonummy, vitae dictum, aliquam integer molestie commodo elementum. Ac aliquet placerat tempus ligula, suspendisse vestibulum consequat ac praesent, sodales in nulla, sed potenti.`,
       partner: partnerId
     }
 

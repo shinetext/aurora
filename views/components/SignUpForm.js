@@ -8,11 +8,11 @@ const SignUpForm = props => {
       <div className="container-signup col-md-7">
       
         <h2>{header}</h2>
-        <h4>{subhead}</h4>
+        <p>{subhead}</p>
         
         <form class="signup-form" action="/join" method="post">
-          <FormField isRequired label='First Name' type="text" fieldName='first_name'/>
-          <FormField isRequired label='Phone Number' type="tel" fieldName='phone'/>
+          <FormField isRequired label='First Name' type="text" fieldName='first_name' value=""/>
+          <FormField isRequired label='Phone Number' type="tel" fieldName='phone' value=""/>
           <FormField type="hidden" fieldName='partner' value={ props.partner ? props.partner : null } />
           <div>
             <input className="btn" type="submit" value="Get Shine Texts"

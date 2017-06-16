@@ -18,7 +18,7 @@ const partnersData = {
     campaignKey: 'Victoria Mobile Commons key'
   },
   test: {
-    name: 'Test',
+    name: 'Lorem ipsum dolor',
     imageUrl: 'https://raw.githubusercontent.com/shinetext/aurora/d5310f7f5e2a9119d4537e917bdcd2dcfbf9efe2/assets/images/homepage/homepage_photo_1.jpg',
     confirmation: {
       image: 'https://raw.githubusercontent.com/shinetext/aurora/d5310f7f5e2a9119d4537e917bdcd2dcfbf9efe2/assets/images/homepage/homepage_photo_1.jpg',
