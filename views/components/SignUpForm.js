@@ -15,11 +15,11 @@ const SignUpForm = props => {
           <FormField isRequired label='Phone Number' type="tel" fieldName='phone' value=""/>
           <FormField type="hidden" fieldName='partner' value={ partnerId ? partnerId : null } />
           <div>
-            <input className="btn" type="submit" value="Get Shine Texts"
+            <input is class="btn" type="submit" value="Get Shine Texts"
               ga-on="click"
               ga-event-category="SignUp"
               ga-event-action="SMS"
-              ga-event-label="<%- partnerId %>"/>
+              ga-event-label={partnerId} />
           </div>
         </form>
 
