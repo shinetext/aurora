@@ -1,32 +1,19 @@
-const partnersData = {
-  lillysingh: {
-    name: 'Lilly Singh',
-    imageUrl: 'https://pbs.twimg.com/media/CaYZlrZW0AIUCrN.jpg',
-    confirmation: {
-      image: 'https://pbs.twimg.com/media/CaYZlrZW0AIUCrN.jpg',
-      copy: 'Woohoo from Lilly!'
-    },
-    campaignKey: 'Lilly Mobile Commons key'
-  },
-  victoriajustice: {
-    name: 'Victoria Justice',
-    imageUrl: 'https://images-production.global.ssl.fastly.net/uploads/posts/image/68527/victoria-justice.jpg',
-    confirmation: {
-      image: 'https://images-production.global.ssl.fastly.net/uploads/posts/image/68527/victoria-justice.jpg',
-      copy: 'Woohoo from Victoria!'
-    },
-    campaignKey: 'Victoria Mobile Commons key'
-  },
-  test: {
-    name: 'Lorem ipsum dolor',
-    imageUrl: 'https://raw.githubusercontent.com/shinetext/aurora/d5310f7f5e2a9119d4537e917bdcd2dcfbf9efe2/assets/images/homepage/homepage_photo_1.jpg',
-    confirmation: {
-      image: 'https://raw.githubusercontent.com/shinetext/aurora/d5310f7f5e2a9119d4537e917bdcd2dcfbf9efe2/assets/images/homepage/homepage_photo_1.jpg',
-      copy: 'Woohoo from Victoria!'
-    },
-    campaignKey: 'test mobile commons key'
-  }
-};
+/**
+ * Partner Microsite Configs
+ * 
+ * To add new partner, add new key with following data structure:
+ *
+ * [PARTNER_NAME_ROUTE_PARAM]: {
+ *  name: 'Partner name',
+ *    imageUrl: 'http://partner_image_url_string',
+ *   confirmation: {
+ *     image: 'http://partner_confirmation_image_url_string',
+ *     copy: 'confirmation copy'
+ *   },
+ *   campaignKey: 'Mobile Commons partner opt-in path key'
+ * }
+ **/
+const partnersData = {};
 
 export default partnersData;
 
