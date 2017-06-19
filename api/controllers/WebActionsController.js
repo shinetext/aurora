@@ -73,7 +73,7 @@ module.exports = {
     // redirect directly to confirmation page
 
     if (req.body.partner) {
-      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.firstName}&partner=${req.body.partner}`;
+      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.first_name}&partner=${req.body.partner}`;
     } else {
       redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
     }

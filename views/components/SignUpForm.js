@@ -2,7 +2,7 @@ import React from 'react';
 import FormField from './FormField';
 
 const SignUpForm = props => {
-  const { header, subhead, partner } = props;
+  const { header, subhead, partnerId } = props;
   
   return (
       <div className="container-signup col-md-7">
@@ -13,13 +13,13 @@ const SignUpForm = props => {
         <form class="signup-form" action="/join" method="post">
           <FormField isRequired label='First Name' type="text" fieldName='first_name' value=""/>
           <FormField isRequired label='Phone Number' type="tel" fieldName='phone' value=""/>
-          <FormField type="hidden" fieldName='partner' value={ props.partner ? props.partner : null } />
+          <FormField type="hidden" fieldName='partner' value={ partnerId ? partnerId : null } />
           <div>
             <input className="btn" type="submit" value="Get Shine Texts"
               ga-on="click"
               ga-event-category="SignUp"
               ga-event-action="SMS"
-              ga-event-label="<%- partnerName %>"/>
+              ga-event-label="<%- partnerId %>"/>
           </div>
         </form>
 
