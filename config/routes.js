@@ -60,6 +60,9 @@ var routes = {
       layout: 'layouts/subpage.layout'
     }
   },
+  
+  '/p/:partner': 'WebViewController.partners',
+  '/partners/:partner': 'WebViewController.partners',
 
   '/privacy-policy': {
     view: 'privacy-policy',
