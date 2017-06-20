@@ -5,6 +5,8 @@
   "description": "",
   "keywords": [],
   "dependencies": {
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
     "@jonuy/referral-codes": "1.1.0",
     "bluebird": "^3.4.1",
     "dotenv": "^2.0.0",
@@ -39,8 +41,6 @@
   },
   "main": "app.js",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-env": "^1.5.2",
-    "babel-preset-react": "^6.24.1"
+    "babel-cli": "^6.24.1"
   }
 }
