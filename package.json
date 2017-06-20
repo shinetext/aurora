@@ -5,6 +5,8 @@
   "description": "",
   "keywords": [],
   "dependencies": {
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
     "@jonuy/referral-codes": "1.1.0",
     "bluebird": "^3.4.1",
     "dotenv": "^2.0.0",
@@ -25,14 +27,20 @@
     "mixpanel": "^0.5.0",
     "newrelic": "^1.26.2",
     "rc": "1.0.1",
+    "react": "^15.6.0",
+    "react-dom": "^15.6.0",
     "request": "^2.72.0",
     "sails": "~0.12.3",
-    "sails-disk": "~0.10.9"
+    "sails-disk": "~0.10.9",
+    "sails-hook-babel": "^6.0.3"
   },
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
     "test": "NODE_ENV=test mocha test/bootstrap.test.js test/integration/**/*.test.js"
   },
-  "main": "app.js"
+  "main": "app.js",
+  "devDependencies": {
+    "babel-cli": "^6.24.1"
+  }
 }

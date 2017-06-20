@@ -6,18 +6,14 @@
 
 <div class="header">
 
-  <h1><% if (fromReferral) { %>
-  Thanks for sharing!
-  <% } else { %>
-  You're all signed up!
-  <% } %></h1>
+  <h1><%= headerText %></h1>
 
-  <img src="<%= headerImage %>">
+  <img class="header-image" src="<%= headerImage %>">
 
 </div>
 <div class="content">
 
-  <p><% if (fromReferral) { %>
+  <p><% if (fromReferral || fromPartner) { %>
   Got more friends who would appreciate Shine?<br />
   Spread some more motiv-affirmation!
   <% } else { %>

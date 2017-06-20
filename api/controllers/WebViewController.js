@@ -4,8 +4,13 @@
 
 'use strict';
 
-var Promise = require('bluebird');
-var request = Promise.promisifyAll(require('request'));
+import Promise from 'bluebird';
+import request from 'request';
+import PartnerService from '../services/PartnerService';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server'
+import PartnerApp from '../../views/components/PartnerApp';
+Promise.promisifyAll(request);
 
 module.exports = {
   ////////////////////////////// Redirects ///////////////////////////////////
@@ -49,13 +54,25 @@ module.exports = {
    * Display /confirmation view and pass along any query params.
    */
   confirmation: function(req, res) {
+    let headerImage, headerText;
+    if (req.query.partner) {
+      const partnerConfirmation = PartnerService.getPartner(req.query.partner).confirmation;
+      headerImage = partnerConfirmation.imageUrl;
+      headerText = partnerConfirmation.copy;
+    } else {
+      headerImage = 'images/confirmation-header.gif';
+      headerText = req.query.referral ? `Thanks for sharing!` : `You're all signed up!`
+    }
+    
     let locals = {
       title: 'Confirmed! | Shine',
       layout: 'layouts/subpageCustomHeader.layout',
-      headerImage: 'images/confirmation-header.gif',
+      headerText: headerText,
+      headerImage: headerImage,
       hideFooterCta: true,
       firstName: req.query.firstName ? req.query.firstName : '',
       fromReferral: req.query.referral ? true : false,
+      fromPartner: req.query.partner ? true : false,
       phone: req.query.phone ? req.query.phone : '',
       query: req.query,
       referralCode: req.query.referralCode ? req.query.referralCode : '',
@@ -162,6 +179,28 @@ module.exports = {
     };
 
     return res.view('sms-settings', locals);
+  },
+  
+  /**
+   * View for partner/influencer microsite
+   * 
+   */
+  partners: function(req, res) {
+    try {
+      const partner = PartnerService.getPartner(req.params.partner);
+      const partnerComponentMarkup = ReactDOMServer.renderToString(<PartnerApp {...partner} partnerId={req.params.partner}/>);
+      const locals = {
+        layout: 'layouts/subpage-fullwidth.layout',
+        partnerComponent: partnerComponentMarkup,
+        hideFooterCta: true
+      };
+      return res.view('partner-signup', locals);
+    }
+    
+    catch(err) {
+      sails.log.error(err);
+      return res.view(404);
+    }
   },
 
   /**
