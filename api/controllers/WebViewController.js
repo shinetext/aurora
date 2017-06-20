@@ -57,7 +57,7 @@ module.exports = {
     let headerImage, headerText;
     if (req.query.partner) {
       const partnerConfirmation = PartnerService.getPartner(req.query.partner).confirmation;
-      headerImage = partnerConfirmation.image;
+      headerImage = partnerConfirmation.imageUrl;
       headerText = partnerConfirmation.copy;
     } else {
       headerImage = 'images/confirmation-header.gif';

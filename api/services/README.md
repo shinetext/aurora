@@ -7,6 +7,7 @@ const partnersData = {
   [PARTNER_NAME_ROUTE_PARAM]: {
     name: 'Partner name',
     imageUrl: 'http://partner_image_url_string',
+    copy: 'Landing page copy',
     confirmation: {
       image: 'http://partner_confirmation_image_url_string',
       copy: 'confirmation copy'

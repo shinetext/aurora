@@ -4,17 +4,16 @@ import SignUpForm from './SignUpForm';
 
 class PartnerApp extends React.Component {
   render() {
-    const { name, imageUrl, partnerId } = this.props;
+    const { name, imageUrl, copy, partnerId } = this.props;
     const formDetails = {
       header: `${name}`,
-      subhead: `Lorem ipsum dolor sit amet, proin metus morbi nonummy, vitae dictum, aliquam integer molestie commodo elementum. Ac aliquet placerat tempus ligula, suspendisse vestibulum consequat ac praesent, sodales in nulla, sed potenti.`,
-      partnerId: partnerId
-    }
+      subhead: `${copy}`,
+      partnerId: partnerId,
+    };
 
-    
     return (
       <div className="container-partners-lead">
-        <SignUpForm  {...formDetails }/>
+        <SignUpForm {...formDetails} />
         <Image src={imageUrl} />
       </div>
     );
@@ -22,8 +21,3 @@ class PartnerApp extends React.Component {
 }
 
 export default PartnerApp;
-
-
-// Form Component
-      // input component
-      // button component
