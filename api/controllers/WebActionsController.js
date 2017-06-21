@@ -199,7 +199,7 @@ module.exports = {
         if (mcSubscribeSuccessful) {
           return res.redirect(redirectUrl);
         } else {
-          return res.redirect(500);
+          return res.redirect('500');
         }
       });
   },
@@ -250,7 +250,7 @@ module.exports = {
       })
       .catch(err => {
         console.error(err);
-        res.redirect(500);
+        res.redirect('500');
       });
   },
 
