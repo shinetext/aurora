@@ -23,7 +23,7 @@ const partnersData = {
       imageUrl: 'https://media.giphy.com/media/YZZJNDPNPrq0w/giphy.gif',
       copy: 'You\'re all signed up!'
     },
-    campaignKey: 'OP24B7502371F978D24E98DD74A6D2281D'
+    campaignKey: process.env.RYDEL_MOBILECOMMONS_KEY
   }
 };
 
