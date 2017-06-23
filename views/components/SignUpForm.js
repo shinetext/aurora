@@ -3,12 +3,16 @@ import FormField from './FormField';
 
 const SignUpForm = props => {
   const { header, subhead, partnerId } = props;
+  let subHeadView;
+  if (subhead) {
+    subHeadView = <p>{subhead}</p>
+  }
   
   return (
       <div className="container-signup col-md-7">
       
         <h2>{header}</h2>
-        <p>{subhead}</p>
+        {subHeadView}
         
         <form class="signup-form" action="/join" method="post">
           <FormField isRequired label='First Name' type="text" fieldName='first_name' value=""/>
