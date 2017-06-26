@@ -57,6 +57,7 @@ font-size: @font-size-homepage-normal;
         .btn {
           background-color: @color-fbmessenger;
           color: white;
+          font-size: 15px;
         }
       }
     }
@@ -135,7 +136,7 @@ font-size: @font-size-homepage-normal;
 
   .product-description {
     background: white;
-    height: 840px;
+    height: 880px;
     padding: @margin-lg @margin-md @margin-md @margin-md;
 
     ol {
@@ -162,7 +163,6 @@ font-size: @font-size-homepage-normal;
     }
 
     @media (max-width: @screen-md-max) {
-      // height: 1000px;
       height: 900px;
       ol {
         width: 100%;
@@ -170,12 +170,11 @@ font-size: @font-size-homepage-normal;
     }
 
     @media (max-width: @screen-sm-max) {
-      // height: 1200px;
       height: 900px;
     }
 
     @media (max-width: @screen-xs-max) {
-      height: 1250px;
+      height: 1400px;
       ol {
         list-style: none;
         padding-left: 0;
@@ -195,6 +194,19 @@ font-size: @font-size-homepage-normal;
     }
   }
   
+  .border {
+    border-top: 1px solid #AAA;
+    width: 84%;
+    margin: auto;
+    margin-top: 7%;      
+    
+    @media (max-width: @screen-xs-max) {
+      width: 90%;
+      margin-top: 10%;
+    }
+  }
+
+  
   .in-the-news {
     margin-top: @margin-md;
     margin-bottom: @margin-xs;
@@ -204,7 +216,7 @@ font-size: @font-size-homepage-normal;
     img {
       max-height: 40px;
       max-width: 100%;
-      opacity: 0.8;
+      opacity: 0.7;
       -webkit-filter: grayscale(100%);
       filter: grayscale(100%);
       transition-property: opacity, -webkit-filter, filter;
@@ -222,10 +234,43 @@ font-size: @font-size-homepage-normal;
       filter: grayscale(0);
     }
     
+    .row {
+      margin: auto;
+      margin-left: 15px;
+    }
+    
     .news-item {
       margin: 10px 0;
       padding: 0 6px;
       text-align: center;
+      
+      .time-logo {
+        max-height: 30px;
+      }
+      
+      .hello-giggles-logo {
+        max-height: 60px;
+        margin-top: -8px;
+        margin-left: 20px;
+        
+        @media (min-width: @screen-lg-min) {
+          margin-left: 30%;
+        }
+        
+        @media (max-width: @screen-xs-max) {
+          margin-left: -40px;
+          max-width: 200px;
+        }
+      }
+      
+      .pop-sugar-logo {
+        max-height: 20px;
+        @media (min-width: @screen-lg-min) {
+          max-width: 190px;
+          margin-left: 50%;
+        }
+        
+      }
     }
     
     @media (max-width: @screen-xs-max) {
