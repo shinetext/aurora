@@ -23,7 +23,7 @@
 
   <script>
     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', 'UA-68971267-1', 'auto');
+    ga('create', '<%= process.env.GA_TRACKINGID %>', 'auto');
 
     // GA autotrack plugins
     ga('require', 'eventTracker');
