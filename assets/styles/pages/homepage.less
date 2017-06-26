@@ -6,7 +6,6 @@ font-size: @font-size-homepage-normal;
 .container-homepage-lead {
   @container-homepage-lead-height: 960px;
 
-  background-image: linear-gradient(120deg, @color-gradient-blue, @color-gradient-yellow);
   padding: 0;
   position: relative;
 
@@ -16,60 +15,28 @@ font-size: @font-size-homepage-normal;
     padding-top: @margin-sm;
 
     h2 {
-      color: white;
       font-size: @font-size-header;
-      margin: @margin-md auto @margin-sm auto;
+      margin: @margin-md auto @margin-md auto;
       text-align: center;
       width: 60%;
     }
 
     form {
       margin: auto;
-
-      /* Overrides form styles from shine.less */
-      .form-field {
-        border: 2px solid white;
-
-        label,
-        .required-asterisk {
-          color: black;
-        }
-
-        .form-control {
-          color: black;
-          background-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .form-control:focus + label {
-          color: #6F6488!important;
-        }
-      }
     }
 
     .ctia {
-      color: white;
       margin: auto;
       padding-top: @margin-xs;
     }
 
     .fbmessenger {
-      border-top: 1px solid white;
+      border-top: 1px solid @color-form-secondary;
       margin: auto;
       margin-top: @margin-md;
       padding-top: @margin-md;
 
-      .btn {
-        background-color: rgba(0,0,0,0);
-        border: 2px solid white;
-        color: white;
-      }
-
-      .btn:hover {
-        background-color: @color-fbmessenger;
-      }
-
       .description {
-        color: white;
         font-size: 12px;
         text-align: center;
       }
@@ -89,6 +56,8 @@ font-size: @font-size-homepage-normal;
       @media (max-width: @screen-sm-max) {
         .btn {
           background-color: @color-fbmessenger;
+          color: white;
+          font-size: 15px;
         }
       }
     }
@@ -97,7 +66,7 @@ font-size: @font-size-homepage-normal;
     .ctia,
     .fbmessenger {
       width: 50%;
-      max-width: 400px
+      max-width: 400px;
     }
 
 
@@ -114,8 +83,7 @@ font-size: @font-size-homepage-normal;
 
     @media (max-width: @screen-xs-max) {
       h2 {
-        font-size: 32px;
-        width: 90%%;
+        font-size: @font-size-header-xs;
       }
 
       form,
@@ -127,56 +95,16 @@ font-size: @font-size-homepage-normal;
   }
 
   .homepage-header-image {
-    position: absolute;
-    background-image: url('../images/homepage/homepage_photo_032017.png');
-    background-position: bottom 0px left 100px;
-    background-repeat: no-repeat;
-    background-size: @container-homepage-lead-height;
-    bottom: 0;
+    background-image: url('../images/homepage/homepage_photo_1.png');
+    background-position: top;
+    background-size: cover;
     height: @container-homepage-lead-height;
-    right: 0;
-    width: 60%;
-
-    @media (max-width: @screen-md-max) {
-      width: 70%;
-    }
 
     @media (max-width: @screen-sm-max) {
-      width: 80%;
+      height: 400px;
     }
 
-    @media (max-width: @screen-xs-max) {
-      width: 90%;
-    }
   }
-
-  .in-the-news {
-    margin-bottom: @margin-sm;
-
-    img {
-      max-height: 40px;
-      max-width: 100%;
-      opacity: 0.8;
-      -webkit-filter: contrast(0) brightness(200%);
-      filter: contrast(0) brightness(200%);
-      transition-property: opacity, -webkit-filter, filter;
-      transition-duration: 0.25s;
-    }
-
-    img:hover {
-      opacity: 1;
-      cursor: pointer;
-      -webkit-filter: grayscale(0);
-      filter: grayscale(0);
-    }
-
-    .news-item {
-      margin: 10px 0;
-      padding: 0 6px;
-      text-align: center;
-    }
-  }
-
 }
 
 /**
@@ -193,30 +121,22 @@ font-size: @font-size-homepage-normal;
     text-align: center;
 
     img {
-      max-width: 75%;
+      max-width: 90%;
       position: relative;
       top: @margin-md;
     }
 
-    @media (max-width: @screen-md-max) {
-      img {
-        max-width: 85%;
-        top: @margin-sm;
-      }
-    }
-
-    @media (max-width: 500px) {
+    @media (max-width: @screen-sm-max) {
       height: 720px;
-
       img {
-        top: @margin-xs;
+        top: @margin-md;
       }
     }
   }
 
   .product-description {
     background: white;
-    height: 840px;
+    height: 880px;
     padding: @margin-lg @margin-md @margin-md @margin-md;
 
     ol {
@@ -242,34 +162,19 @@ font-size: @font-size-homepage-normal;
       }
     }
 
-    li:nth-of-type(1) p {
-      border-left: 4px solid @color-yellow;
-    }
-
-    li:nth-of-type(2) p {
-      border-left: 4px solid #9E67CE;
-    }
-
-    li:nth-of-type(3) p {
-      border-left: 4px solid #0054FF;
-    }
-
-    @media (max-width: @screen-lg-min) {
-      font-size: @font-size-homepage-normal-xs;
-      padding: @margin-lg @margin-sm @margin-sm @margin-sm;
-    }
-
     @media (max-width: @screen-md-max) {
+      height: 900px;
       ol {
         width: 100%;
       }
     }
 
     @media (max-width: @screen-sm-max) {
-      height: 100%;
+      height: 900px;
     }
 
     @media (max-width: @screen-xs-max) {
+      height: 1400px;
       ol {
         list-style: none;
         padding-left: 0;
@@ -280,12 +185,90 @@ font-size: @font-size-homepage-normal;
   h2 {
     .font-section-title;
 
-    color: @color-form-input;
+    color: @color-black;
     margin-bottom: @margin-lg;
     text-align: center;
 
     @media (max-width: @screen-sm-max) {
       margin-bottom: @margin-md;
+    }
+  }
+  
+  .border {
+    border-top: 1px solid #AAA;
+    width: 84%;
+    margin: auto;
+    margin-top: 7%;      
+    
+    @media (max-width: @screen-xs-max) {
+      width: 90%;
+      margin-top: 10%;
+    }
+  }
+
+  
+  .in-the-news {
+    margin-top: @margin-md;
+    margin-bottom: @margin-xs;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    img {
+      max-height: 40px;
+      max-width: 100%;
+      opacity: 0.7;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      transition-property: opacity, -webkit-filter, filter;
+      transition-duration: 0.25s;
+      
+      @media (max-width: @screen-xs-max) {
+        max-height: 35px;
+      }
+    }
+
+    img:hover {
+      opacity: 1;
+      cursor: pointer;
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+    }
+    
+    .row {
+      margin: auto;
+      margin-left: 15px;
+    }
+    
+    .news-item {
+      margin: 10px 0;
+      padding: 0 6px;
+      text-align: center;
+      
+      .time-logo {
+        max-height: 25px;
+      }
+      
+      .hello-giggles-logo {
+        max-height: 60px;
+        margin-top: -8px;
+        margin-left: 20px;
+        
+        @media (max-width: @screen-xs-max) {
+          margin-left: -40px;
+          max-width: 200px;
+        }
+      }
+      
+      .pop-sugar-logo {
+        max-height: 20px;
+        @media (min-width: @screen-lg-min) {
+          max-width: 190px;
+        }
+      }
+    }
+    
+    @media (max-width: @screen-xs-max) {
+      margin-top: @margin-xs;
     }
   }
 }
