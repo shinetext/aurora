@@ -7,5 +7,19 @@
  */
 
 module.exports.babel = {
-  polyfill: true
+  polyfill: true,
+  presets: [
+    [ "env", {
+      "targets": {
+        "node": "current"
+      },
+      "debug": true
+    }],
+    ["react"]
+  ],
+  plugins: [
+    ["babel-plugin-transform-builtin-extend", {
+        "globals": ["Error", "Array"]
+    }]
+  ]
 };

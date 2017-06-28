@@ -6,4 +6,7 @@ module.exports = {
   ok: function(req, res) {
     res.ok();
   },
+  mcJoinError: function(req, res) {
+    res.send(500);
+  }
 }
