@@ -1,8 +1,9 @@
 'use strict';
 
 $(document).ready(function() {
-
-  if (typeof promotedUrl === 'undefined') { return; }
+  if (typeof promotedUrl === 'undefined') {
+    return;
+  }
 
   // Helpers for managing the skrollr lib
   var skrollrInitialized = false;
@@ -16,7 +17,9 @@ $(document).ready(function() {
     data: null,
     dataType: 'json',
     success: function(data) {
-      if (! data || data.length === 0) { return; }
+      if (!data || data.length === 0) {
+        return;
+      }
 
       var MAX_PROMOTED_ARTICLES = 6;
       var articleData;
@@ -30,22 +33,27 @@ $(document).ready(function() {
         // Extract data and prep for rendering
         articleData = {
           article: {
-            category: data[i].category ? data[i].category['en-US'] : undefined,
-            photo: data[i].headerPhoto.file.url + '?w=640',
-            title: data[i].title['en-US'],
-            urlPath: data[i].urlPath,
+            category: data[i].category,
+            photo: data[i].headerPhoto.fields.file.url + '?w=640',
+            title: data[i].title,
+            slug: data[i].slug,
           },
           author: {
-            name: data[i].author.name,
-            photo: data[i].author.picture.file.url + '?fit=thumb&w=100&h=100',
+            name: data[i].author.fields.name,
+            photo: data[i].author.fields.picture.fields.file.url +
+              '?fit=thumb&w=100&h=100',
           },
         };
 
         // Render template with data
-        renderedHtml = ejs.render(template, articleData, {delimiter: '?'});
+        renderedHtml = ejs.render(template, articleData, { delimiter: '?' });
 
         // Add content to the page
-        $('#promoted-articles-results').append(renderedHtml).children(':last').hide().fadeIn(500);
+        $('#promoted-articles-results')
+          .append(renderedHtml)
+          .children(':last')
+          .hide()
+          .fadeIn(500);
       }
 
       // Now that articles are in place, can enable the parallax scrolling
@@ -57,7 +65,7 @@ $(document).ready(function() {
    * Initialize/refresh skrollr for when parallax elements get added to the DOM.
    */
   function refreshSkrollr() {
-    if (! skrollrInitialized) {
+    if (!skrollrInitialized) {
       skrollrInitialized = true;
 
       skrollrInstance = skrollr.init();
@@ -65,10 +73,8 @@ $(document).ready(function() {
         skrollrIsMobile = true;
         skrollrInstance.destroy();
       }
-    }
-    else if (! skrollrIsMobile) {
+    } else if (!skrollrIsMobile) {
       skrollrInstance.refresh();
     }
   }
-
 });
