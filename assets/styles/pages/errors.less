@@ -17,6 +17,11 @@
   text-align: center;
 }
 
+.subheader {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
 .header-image {
   max-width: 100%;
   display: block;
@@ -44,3 +49,21 @@
   margin-bottom: @margin-sm;
   text-align: center;
 }
+
+.fbmessenger {
+  text-align: center;
+  
+  .btn {
+    width: 70%;
+  }
+
+  @media (max-width: @screen-sm-max) {
+    .btn {
+      background-color: @color-fbmessenger;
+      color: white;
+      font-size: 1em;
+      width: 95%;
+    }
+  }
+}
+
