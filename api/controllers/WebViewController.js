@@ -8,7 +8,7 @@ import Promise from 'bluebird';
 import request from 'request';
 import PartnerService from '../services/PartnerService';
 import React from 'react';
-import ReactDOMServer from 'react-dom/server'
+import ReactDOMServer from 'react-dom/server';
 import PartnerApp from '../../views/components/PartnerApp';
 Promise.promisifyAll(request);
 
@@ -50,20 +50,34 @@ module.exports = {
 
   ////////////////////////////////////////////////////////////////////////////
 
+  squad: (req, res) => {
+    let locals = {
+      title: 'Squad | Shine',
+      metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
+      layout: 'layouts/subpage-fullwidth.layout',
+      hideFooterCta: true,
+      adviceBaseUrl: sails.config.globals.adviceBaseUrl,
+    };
+    return res.view('squad', locals);
+  },
+
   /**
    * Display /confirmation view and pass along any query params.
    */
   confirmation: function(req, res) {
     let headerImage, headerText;
     if (req.query.partner) {
-      const partnerConfirmation = PartnerService.getPartner(req.query.partner).confirmation;
+      const partnerConfirmation = PartnerService.getPartner(req.query.partner)
+        .confirmation;
       headerImage = partnerConfirmation.imageUrl;
       headerText = partnerConfirmation.copy;
     } else {
       headerImage = 'images/confirmation-header.gif';
-      headerText = req.query.referral ? `Thanks for sharing!` : `You're all signed up!`
+      headerText = req.query.referral
+        ? `Thanks for sharing!`
+        : `You're all signed up!`;
     }
-    
+
     let locals = {
       title: 'Confirmed! | Shine',
       layout: 'layouts/subpageCustomHeader.layout',
@@ -180,7 +194,7 @@ module.exports = {
 
     return res.view('sms-settings', locals);
   },
-  
+
   /**
    * View for partner/influencer microsite
    * 
@@ -188,16 +202,16 @@ module.exports = {
   partners: function(req, res) {
     try {
       const partner = PartnerService.getPartner(req.params.partner);
-      const partnerComponentMarkup = ReactDOMServer.renderToString(<PartnerApp {...partner} partnerId={req.params.partner}/>);
+      const partnerComponentMarkup = ReactDOMServer.renderToString(
+        <PartnerApp {...partner} partnerId={req.params.partner} />
+      );
       const locals = {
         layout: 'layouts/subpage-fullwidth.layout',
         partnerComponent: partnerComponentMarkup,
-        hideFooterCta: true
+        hideFooterCta: true,
       };
       return res.view('partner-signup', locals);
-    }
-    
-    catch(err) {
+    } catch (err) {
       sails.log.error(err);
       return res.view(404);
     }
