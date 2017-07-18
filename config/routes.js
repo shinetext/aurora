@@ -21,7 +21,6 @@
  */
 
 var routes = {
-
   /***************************************************************************
   *                                                                          *
   * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
@@ -49,18 +48,18 @@ var routes = {
     view: 'faq',
     locals: {
       title: 'FAQ | Shine',
-      layout: 'layouts/subpage.layout'
-    }
+      layout: 'layouts/subpage.layout',
+    },
   },
 
   '/jobs': {
     view: 'jobs',
     locals: {
       title: 'Careers | Shine',
-      layout: 'layouts/subpage.layout'
-    }
+      layout: 'layouts/subpage.layout',
+    },
   },
-  
+
   '/p/:partner': 'WebViewController.partners',
   '/partners/:partner': 'WebViewController.partners',
 
@@ -68,8 +67,8 @@ var routes = {
     view: 'privacy-policy',
     locals: {
       title: 'Privacy Policy | Shine',
-      layout: 'layouts/subpage.layout'
-    }
+      layout: 'layouts/subpage.layout',
+    },
   },
 
   '/referrals': {
@@ -79,22 +78,14 @@ var routes = {
       layout: 'layouts/subpageCustomHeader.layout',
       headerImage: 'images/refer-header.gif',
       headerText: 'Shine with friends!',
-    }
+    },
   },
 
   '/referrals/:phone': 'WebViewController.myReferral',
 
   '/sms-settings': 'WebViewController.smsSettings',
 
-  '/squad': {
-    view: 'squad',
-    locals: {
-      title: 'Squad | Shine',
-      metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
-      layout: 'layouts/subpage-fullwidth.layout',
-      hideFooterCta: true,
-    },
-  },
+  '/squad': 'WebViewController.squad',
 
   '/shinevisor*': 'WebViewController.talk',
   '/talk*': 'WebViewController.talk',
@@ -111,15 +102,15 @@ var routes = {
     view: 'try-messenger',
     locals: {
       title: 'Try Messenger | Shine',
-      layout: 'layouts/subpage.layout'
+      layout: 'layouts/subpage.layout',
     },
   },
 
   '/500': {
-    view: '500'
+    view: '500',
   },
 
-  '/year1' : {
+  '/year1': {
     view: 'year1',
     locals: {
       layout: 'layouts/scalable.layout',
