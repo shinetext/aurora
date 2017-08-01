@@ -6,10 +6,12 @@
 
 import Promise from 'bluebird';
 import request from 'request';
+import CampaignService from '../services/CampaignService';
 import PartnerService from '../services/PartnerService';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import PartnerApp from '../../views/components/PartnerApp';
+import CampaignApp from '../../views/components/campaigns/CampaignApp';
 Promise.promisifyAll(request);
 
 module.exports = {
@@ -197,7 +199,7 @@ module.exports = {
 
   /**
    * View for partner/influencer microsite
-   * 
+   *
    */
   partners: function(req, res) {
     try {
@@ -211,6 +213,28 @@ module.exports = {
         hideFooterCta: true,
       };
       return res.view('partner-signup', locals);
+    } catch (err) {
+      sails.log.error(err);
+      return res.view(404);
+    }
+  },
+
+  /**
+   * View for campaign/influencer microsite
+   *
+   */
+  campaigns: function(req, res) {
+    try {
+      const campaign = CampaignService.getCampaign(req.params.campaign);
+      const campaignComponentMarkup = ReactDOMServer.renderToString(
+        <CampaignApp {...campaign} campaignId={req.params.campaign}/>
+      );
+      const locals = {
+        layout: 'layouts/subpage-fullwidth.layout',
+        campaignComponent: campaignComponentMarkup,
+        hideFooterCta: true,
+      };
+      return res.view('campaign-signup', locals);
     } catch (err) {
       sails.log.error(err);
       return res.view(404);

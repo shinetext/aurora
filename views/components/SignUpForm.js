@@ -2,22 +2,22 @@ import React from 'react';
 import FormField from './FormField';
 
 const SignUpForm = props => {
-  const { header, subhead, partnerId } = props;
+  const { header, subhead, partnerId, campaignId } = props;
   let subHeadView;
   if (subhead) {
     subHeadView = <p>{subhead}</p>
   }
-  
+
   return (
       <div className="container-signup col-md-7">
-      
+
         <h2>{header}</h2>
         {subHeadView}
-        
+
         <form class="signup-form" action="/join" method="post">
           <FormField isRequired label='First Name' type="text" fieldName='first_name' value=""/>
           <FormField isRequired label='Phone Number' type="tel" fieldName='phone' value=""/>
-          <FormField type="hidden" fieldName='partner' value={ partnerId ? partnerId : null } />
+          <FormField type="hidden" fieldName={partnerId ? 'partner' : campaignId ? 'campaign' : null } value={ partnerId ? partnerId : campaignId ? campaignId : null } />
           <div>
             <input is class="btn" type="submit" value="Get Shine Texts"
               ga-on="click"
@@ -35,5 +35,5 @@ const SignUpForm = props => {
       </div>
   );
 }
-  
+
 export default SignUpForm;
