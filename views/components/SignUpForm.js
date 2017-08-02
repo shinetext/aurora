@@ -23,7 +23,7 @@ const SignUpForm = props => {
               ga-on="click"
               ga-event-category="SignUp"
               ga-event-action="SMS"
-              ga-event-label={partnerId} />
+              ga-event-label={partnerId ? partnerId : campaignId } />
           </div>
         </form>
 
