@@ -10,7 +10,7 @@ module.exports = {
    */
   getCampaign: id => {
     if (!campaigns[id]) {
-      throw new Error('no partner found');
+      throw new Error('no campaign found');
     }
     return campaigns[id];
   },
