@@ -12,12 +12,12 @@ const SignUpForm = props => {
 
   let alphaView;
   if (!hideAlpha) {
-    alphaView = <AlphaSignUpForm />;
+    alphaView = <AlphaSignUpForm optin={PartnerService.getOptInPath(partnerId)} />;
   }
 
   let betaView;
   if (showBeta) {
-    betaView = <BetaSignUpForm />;
+    betaView = <BetaSignUpForm optin={PartnerService.getBetaOptInPath(partnerId)} />;
   }
 
   return (

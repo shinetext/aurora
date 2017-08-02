@@ -13,7 +13,7 @@
  *    },
  *    campaignKey: 'Mobile Commons partner opt-in path key'
  * }
- **/
+ */
 const partnersData = {
   rydel: {
     name: 'Sign up for confidence and positivity tips from Rydel!',
@@ -36,7 +36,8 @@ const partnersData = {
       copy: "You're all signed up!",
     },
     campaignKey: 'OPABC123',
-    requiresBetas: true,
+    campaignKeyBeta: 'OPQWERTY456',
+    showBetaForm: true,
   },
 };
 

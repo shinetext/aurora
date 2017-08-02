@@ -16,6 +16,7 @@ const BetaSignUpForm = props => {
         <FormField isRequired label="Name #3" type="text" fieldName="beta_name_3" value="" />
         <FormField isRequired label="Phone #3" type="tel" fieldName="beta_phone_3" value="" />
       </fieldset>
+      <FormField type="hidden" fieldName="friends_opt_in_path" value={props.optin} />
     </div>
   );
 };
