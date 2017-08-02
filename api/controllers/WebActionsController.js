@@ -39,6 +39,16 @@ module.exports = {
    */
   createMobileCommonsRequest: function(req) {
     let data = {
+    let optInPath;
+    if (req.body.partner) {
+      optInPath = PartnerService.getOptInPath(req.body.partner);
+    } else if (req.body.campaign) {
+      optInPath = CampaignService.getOptInPath(req.body.campaign);
+    } else {
+      optInPath = this.MOBILE_COMMONS_OPTIN;
+    }
+
+    return {
       form: {
         'opt_in_path[]': req.body.opt_in_path || this.MOBILE_COMMONS_OPTIN,
         'person[first_name]': req.body.first_name,
@@ -80,13 +90,26 @@ module.exports = {
   join: function(req, res) {
     let redirectUrl;
 
-    // If signing up through partner landing pages, redirect directly to
-    // confirmation page.
-
+    // If signing up through partner landing pages,
+    // redirect directly to confirmation page
+    // Else if user signs up through a campaign redirect to referral form.
     if (req.body.partner) {
-      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.first_name}&partner=${req.body.partner}`;
+      redirectUrl = `/confirmation` +
+        `?phone=${req.body.phone}` +
+        `&firstName=${req.body.first_name}` +
+        `&partner=${req.body.partner}`;
+    } else if (req.body.campaign) {
+      // Redirect user to referral page if user comes from a campaign
+      let { phone, first_name, campaign } = req.body;
+      let referralCode = ReferralCodes.encode(phone);
+      redirectUrl = `/campaigns/${campaign}/share` +
+        `?phone=${phone}` +
+        `&firstName=${first_name}` +
+        `&campaign=${campaign}` +
+        `&referralCode=${referralCode}`;
     } else {
-      redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
+      redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body
+        .first_name}`;
     }
 
     let photonRequest = {
@@ -136,7 +159,8 @@ module.exports = {
           // @todo Not currently handling failed API calls
           const mailchimpRequest = {
             method: 'POST',
-            uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals.mailchimpListId}/members`,
+            uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config
+              .globals.mailchimpListId}/members`,
             json: true,
             auth: {
               user: sails.config.globals.mailchimpApiAuthUser,
@@ -214,8 +238,14 @@ module.exports = {
    */
   saveSettings: function(req, res) {
     let birthday = '';
-    if (req.body['bday-month'] && req.body['bday-day'] && req.body['bday-year']) {
-      birthday = `${req.body['bday-year']}-${req.body['bday-month']}-${req.body['bday-day']}`;
+    if (
+      req.body['bday-month'] &&
+      req.body['bday-day'] &&
+      req.body['bday-year']
+    ) {
+      birthday = `${req.body['bday-year']}-${req.body['bday-month']}-${req.body[
+        'bday-day'
+      ]}`;
     }
 
     let updateRequest = {
@@ -244,7 +274,8 @@ module.exports = {
     request
       .postAsync(updateRequest)
       .then(response => {
-        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.firstName}&referralCode=${req.body.referralCode}`;
+        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req
+          .body.firstName}&referralCode=${req.body.referralCode}`;
         res.redirect(redirectUrl);
       })
       .catch(err => {

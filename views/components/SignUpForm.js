@@ -4,7 +4,7 @@ import BetaSignUpForm from './BetaSignUpForm';
 import FormField from './FormField';
 
 const SignUpForm = props => {
-  const { header, subhead, partnerId, hideAlpha, showBeta } = props;
+  const { header, subhead, partnerId, hideAlpha, showBeta, campaignId } = props;
   let subHeadView;
   if (subhead) {
     subHeadView = <p>{subhead}</p>;
