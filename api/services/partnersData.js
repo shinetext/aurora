@@ -1,6 +1,6 @@
 /**
  * Partner Microsite Configs
- * 
+ *
  * To add new partner, add new key with following data structure:
  *
  * [PARTNER_NAME_ROUTE_PARAM]: {
@@ -21,11 +21,23 @@ const partnersData = {
     copy: '',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/YZZJNDPNPrq0w/giphy.gif',
-      copy: 'You\'re all signed up!'
+      copy: "You're all signed up!",
     },
-    campaignKey: process.env.RYDEL_MOBILECOMMONS_KEY
-  }
+    campaignKey: process.env.RYDEL_MOBILECOMMONS_KEY,
+  },
+
+  // @TODO
+  scholarship: {
+    name: 'Sign you and 3 friends up for a chance to win a scholarship!',
+    imageUrl: 'https://images.contentful.com/awpxl2koull4/5kHOQsIZTUMyuguSK2MCW2/ec0dbcbe4aac6a18854465c4a7e518cc/shutterstock_510187267.jpg?w=1920',
+    copy: 'Lorem ipsum dolor sit amet.',
+    confirmation: {
+      imageUrl: 'https://media.giphy.com/media/YZZJNDPNPrq0w/giphy.gif',
+      copy: "You're all signed up!",
+    },
+    campaignKey: 'OPABC123',
+    requiresBetas: true,
+  },
 };
 
 export default partnersData;
-
