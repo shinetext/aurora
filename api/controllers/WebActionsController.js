@@ -38,7 +38,6 @@ module.exports = {
    * @return {object}
    */
   createMobileCommonsRequest: function(req) {
-    let data = {
     let optInPath;
     if (req.body.partner) {
       optInPath = PartnerService.getOptInPath(req.body.partner);
@@ -48,7 +47,7 @@ module.exports = {
       optInPath = this.MOBILE_COMMONS_OPTIN;
     }
 
-    return {
+    let data = {
       form: {
         'opt_in_path[]': req.body.opt_in_path || this.MOBILE_COMMONS_OPTIN,
         'person[first_name]': req.body.first_name,

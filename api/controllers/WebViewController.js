@@ -235,6 +235,27 @@ module.exports = {
       return res.view(404);
     }
   },
+  /**
+   * View for campaign/influencer microsite
+   *
+   */
+  campaignShare: function(req, res) {
+    try {
+      const campaign = CampaignService.getCampaign(req.params.campaign);
+      const campaignComponentMarkup = ReactDOMServer.renderToString(
+        <CampaignApp {...campaign} campaignId={req.params.campaign} />
+      );
+      const locals = {
+        layout: 'layouts/subpage-fullwidth.layout',
+        campaignComponent: campaignComponentMarkup,
+        hideFooterCta: true,
+      };
+      return res.view('campaign-signup', locals);
+    } catch (err) {
+      sails.log.error(err);
+      return res.view(404);
+    }
+  },
 
   /**
    * Helper function to make social share URLs.

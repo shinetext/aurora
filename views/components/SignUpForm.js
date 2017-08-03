@@ -4,10 +4,14 @@ import BetaSignUpForm from './BetaSignUpForm';
 import FormField from './FormField';
 
 const SignUpForm = props => {
-  const { header, subhead, partnerId, hideAlpha, showBeta, campaignId } = props;
+  const { header, subhead, partnerId, hideAlpha, showBeta } = props;
   let subHeadView;
   if (subhead) {
-    subHeadView = <p>{subhead}</p>;
+    subHeadView = (
+      <p>
+        {subhead}
+      </p>
+    );
   }
 
   let alphaView;
@@ -22,8 +26,9 @@ const SignUpForm = props => {
 
   return (
     <div className="container-signup col-md-7">
-
-      <h2>{header}</h2>
+      <h2>
+        {header}
+      </h2>
       {subHeadView}
 
       <form class="signup-form" action="/join" method="post">
@@ -46,11 +51,9 @@ const SignUpForm = props => {
       </form>
 
       <div className="ctia">
-        Signing up means you agree to our{' '}
-        <a href="/terms-of-service">Terms of Service</a>
-        & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily
-        message.
-        Message & data rates may apply. Text STOP to opt-out, HELP for help.
+        Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a>
+        & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily message. Message &
+        data rates may apply. Text STOP to opt-out, HELP for help.
       </div>
     </div>
   );
