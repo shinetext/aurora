@@ -4,7 +4,7 @@ import FormField from './FormField';
 const BetaSignUpForm = props => {
   return (
     <div className="BetaSignUpForm">
-      <h4>Friend invites:</h4>
+      <label>Friend invites:</label>
       <div className="friend-fields-container">
         <FormField
           isRequired
