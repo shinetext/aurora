@@ -1,3 +1,50 @@
 .BetaSignUpForm {
 
+  .friend-fields-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .form-control + label + .required-asterisk {
+    font-size: 14px;
+
+    top: 5px;
+    right: 20px;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+  }
+
+  .form-control[value=""] + label + .required-asterisk {
+    font-size: 24px;
+    top: 20px;
+  }
+
+  .form-control:focus + label + .required-asterisk {
+    color: @color-form-secondary!important;
+    font-size: 14px!important;
+    top: 5px!important;
+  }
+
+  .form-field {
+    flex-grow: 1;
+    margin: 10px;
+
+    input {
+      font-size: 20px;
+    }
+  }
+
+  .form-field:first-child {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  .form-field:last-child {
+    margin-left: 10px;
+    margin-right: 0;
+  }
 }
