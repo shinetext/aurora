@@ -28,9 +28,9 @@ const partnersData = {
 
   // @TODO
   scholarship: {
-    name: 'Sign you and 3 friends up for a chance to win a scholarship!',
-    imageUrl: 'https://images.contentful.com/awpxl2koull4/5kHOQsIZTUMyuguSK2MCW2/ec0dbcbe4aac6a18854465c4a7e518cc/shutterstock_510187267.jpg?w=1920',
-    copy: 'Lorem ipsum dolor sit amet.',
+    name: 'Sign up with 3 friends for a chance to win a $6 scholarship!',
+    imageUrl: 'https://media.licdn.com/media-proxy/ext?w=800&h=800&hash=d0gdH2%2FtWTo%2FrQhUVEizeQ53JdQ%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6nlh8Tw1It6a2FowGz60oISJLOTW3hGTrbi6DxERaYCLauCMPQ1QJlCV1w4X5FGqjXJE64bOfvbPaLDJYP78ChWuSNfyofOUkbsUxVwOUdMDcAnMecMtroThl82cJfIyWtNA',
+    copy: 'Because 🏫 costs 💰💰💰💰💰💰.',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/YZZJNDPNPrq0w/giphy.gif',
       copy: "You're all signed up!",
@@ -38,6 +38,13 @@ const partnersData = {
     campaignKey: 'OPABC123',
     campaignKeyBeta: 'OPQWERTY456',
     showBetaForm: true,
+    additionalFields: [
+      {
+        type: 'textarea',
+        name: 'why',
+        label: 'Why is this important to you?',
+      },
+    ],
   },
 };
 
