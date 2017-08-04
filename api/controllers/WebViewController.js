@@ -244,8 +244,9 @@ module.exports = {
   campaignReferral: function(req, res) {
     try {
       const campaign = CampaignService.getCampaign(req.params.campaign);
+      let referer = req.query.referralCode;
       const campaignComponentMarkup = ReactDOMServer.renderToString(
-        <CampaignReferral {...campaign} campaignId={req.params.campaign} />
+        <CampaignReferral {...campaign} campaignId={req.params.campaign} referrerInfo={req.query} />
       );
       const locals = {
         layout: 'layouts/subpage-fullwidth.layout',
