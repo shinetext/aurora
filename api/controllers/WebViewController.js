@@ -12,6 +12,7 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import PartnerApp from '../../views/components/PartnerApp';
 import CampaignApp from '../../views/components/campaigns/CampaignApp';
+import CampaignReferral from '../../views/components/campaigns/CampaignReferral';
 Promise.promisifyAll(request);
 
 module.exports = {
@@ -229,28 +230,29 @@ module.exports = {
         campaignComponent: campaignComponentMarkup,
         hideFooterCta: true,
       };
-      return res.view('campaign-signup', locals);
+      return res.view('campaign', locals);
     } catch (err) {
       sails.log.error(err);
       return res.view(404);
     }
   },
+
   /**
-   * View for campaign/influencer microsite
+   * View for campaign referrals component
    *
    */
-  campaignShare: function(req, res) {
+  campaignReferral: function(req, res) {
     try {
       const campaign = CampaignService.getCampaign(req.params.campaign);
       const campaignComponentMarkup = ReactDOMServer.renderToString(
-        <CampaignApp {...campaign} campaignId={req.params.campaign} />
+        <CampaignReferral {...campaign} campaignId={req.params.campaign} />
       );
       const locals = {
         layout: 'layouts/subpage-fullwidth.layout',
         campaignComponent: campaignComponentMarkup,
         hideFooterCta: true,
       };
-      return res.view('campaign-signup', locals);
+      return res.view('campaign', locals);
     } catch (err) {
       sails.log.error(err);
       return res.view(404);

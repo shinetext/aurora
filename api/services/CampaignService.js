@@ -17,5 +17,15 @@ module.exports = {
 
   getOptInPath: id => {
     return campaigns[id].campaignKey;
-  }
+  },
+
+  /**
+   * Gets opt-in path ID for beta users invited to Shine through this Campaign.
+   *
+   * @param id {string} Campaign ID
+   * @return {string | undefined}
+   */
+  getBetaOptInPath: id => {
+    return campaigns[id].campaignKeyBeta;
+  },
 };

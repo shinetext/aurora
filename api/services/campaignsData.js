@@ -23,7 +23,8 @@
        imageUrl: 'https://media.giphy.com/media/UatRnEUNX8iCQ/giphy.gif',
        copy: 'You\'re all signed up!'
      },
-     campaignKey: process.env.FLIPSIDE_MOBILECOMMONS_KEY
+     campaignKey: process.env.FLIPSIDE_MOBILECOMMONS_KEY,
+     campaignKeyBeta: 'RANDO-NUMERO-GENERO', // Key to recognize the campaign userrs we referred from 🤔
    }
  };
 
