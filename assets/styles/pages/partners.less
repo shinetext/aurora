@@ -3,11 +3,16 @@ font-size: @font-size-homepage-normal;
 .container-partners-lead {
   @container-partner-lead-height: 960px;
   clear: both;
+  display: flex;
   padding: 0;
   position: relative;
 
+  @media (max-width: @screen-sm-max) {
+    display: block;
+  }
+
   .container-signup {
-    height: @container-partner-lead-height;
+    min-height: @container-partner-lead-height;
     padding-top: @margin-sm;
     padding-bottom: @margin-sm;
 
@@ -17,7 +22,7 @@ font-size: @font-size-homepage-normal;
       text-align: center;
       width: 60%;
     }
-    
+
     p {
       text-align: center;
       padding: @margin-xs;
@@ -37,8 +42,7 @@ font-size: @font-size-homepage-normal;
 
     form,
     .ctia {
-      width: 50%;
-      max-width: 400px
+      max-width: 480px
     }
 
     @media (max-width: @screen-md-max) {
@@ -49,6 +53,7 @@ font-size: @font-size-homepage-normal;
 
     @media (max-width: @screen-sm-max) {
       height: 100%;
+      min-height: 100%;
       padding-bottom: @margin-md 0;
     }
 
@@ -69,13 +74,14 @@ font-size: @font-size-homepage-normal;
     float: right;
     padding: 0;
     object-fit: cover;
-    height: @container-partner-lead-height;
+    min-height: @container-partner-lead-height;
 
 
     @media (max-width: @screen-sm-max) {
       display: block;
       width: 100%;
       height: 400px;
+      min-height: 400px;
     }
   }
 }

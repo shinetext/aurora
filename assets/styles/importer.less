@@ -36,11 +36,12 @@
 /**
  * Subpages
  */
- 
- .partner-page {
+
+ // Reuse styles from partner-page on campaign-page
+ .campaign-page, .partner-page {
    @import 'pages/partners.less';
  }
- 
+
 .subpage {
   @import 'pages/subpage.less';
 }
@@ -77,3 +78,9 @@
  * Subsections
  */
 @import 'articles.less';
+
+/**
+ * React Components
+ */
+@import 'components/beta-signup-form.less';
+@import 'components/form-field.less';

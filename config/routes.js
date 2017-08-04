@@ -63,6 +63,9 @@ var routes = {
   '/p/:partner': 'WebViewController.partners',
   '/partners/:partner': 'WebViewController.partners',
 
+  '/campaigns/:campaign': 'WebViewController.campaigns',
+  '/campaigns/:campaign/share': 'WebViewController.campaignReferral',
+
   '/privacy-policy': {
     view: 'privacy-policy',
     locals: {

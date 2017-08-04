@@ -39,26 +39,46 @@ module.exports = {
    */
   createMobileCommonsRequest: function(req) {
     let optInPath;
-
     if (req.body.partner) {
-      optInPath = PartnerService.getOptInPath(req.body.partner);      
+      optInPath = PartnerService.getOptInPath(req.body.partner);
+    } else if (req.body.campaign) {
+      optInPath = CampaignService.getOptInPath(req.body.campaign);
     } else {
-      optInPath = this.MOBILE_COMMONS_OPTIN
+      optInPath = this.MOBILE_COMMONS_OPTIN;
     }
-    
-    return {
+
+    let data = {
       form: {
-        'opt_in_path[]': optInPath,
+        'opt_in_path[]': req.body.opt_in_path || this.MOBILE_COMMONS_OPTIN,
         'person[first_name]': req.body.first_name,
         'person[phone]': req.body.phone,
         'person[email]': req.body.email,
-        'person[send_gifs]': typeof req.body.send_gifs === 'undefined'
-          ? 'no'
-          : 'yes',
+        'person[send_gifs]': typeof req.body.send_gifs === 'undefined' ? 'no' : 'yes',
         'person[referral_code]': ReferralCodes.encode(req.body.phone),
         'person[date_signed_up]': new Date().toISOString(),
       },
     };
+
+    // If an array of friends and opt-in path for them are provided, add it to
+    // the submission data.
+    if (req.body.friends_opt_in_path && req.body.friends.length > 0) {
+      data.form['friends_opt_in_path'] = req.body.friends_opt_in_path;
+
+      let friendCounter = 0;
+      for (const friend of req.body.friends) {
+        if (typeof friend === 'object' && friend.first_name && friend.phone) {
+          const code = ReferralCodes.encode(friend.phone);
+
+          data.form[`friends[${friendCounter}]`] = friend.phone;
+          data.form[`friends[${friendCounter}][first_name]`] = friend.first_name;
+          data.form[`friends[${friendCounter}][referral_code]`] = code;
+
+          friendCounter++;
+        }
+      }
+    }
+
+    return data;
   },
 
   /**
@@ -68,14 +88,27 @@ module.exports = {
    */
   join: function(req, res) {
     let redirectUrl;
-    
-    // if signing up through partner landing pages, 
-    // redirect directly to confirmation page
 
+    // If signing up through partner landing pages,
+    // redirect directly to confirmation page
+    // Else if user signs up through a campaign redirect to referral form.
     if (req.body.partner) {
-      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.first_name}&partner=${req.body.partner}`;
+      redirectUrl = `/confirmation` +
+        `?phone=${req.body.phone}` +
+        `&firstName=${req.body.first_name}` +
+        `&partner=${req.body.partner}`;
+    } else if (req.body.campaign) {
+      // Redirect user to referral page if user comes from a campaign
+      let { phone, first_name, campaign } = req.body;
+      let referralCode = ReferralCodes.encode(phone);
+      redirectUrl = `/campaigns/${campaign}/share` +
+        `?phone=${phone}` +
+        `&firstName=${first_name}` +
+        `&campaign=${campaign}` +
+        `&referralCode=${referralCode}`;
     } else {
-      redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
+      redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body
+        .first_name}`;
     }
 
     let photonRequest = {
@@ -87,23 +120,18 @@ module.exports = {
         phone: req.body.phone,
         email: req.body.email,
         referredByCode: req.body.referredByCode,
-        // @todo sendGifs?
       },
     };
 
     const joinByReferral =
-      typeof req.body.referredByCode === 'string' &&
-      req.body.referredByCode.length > 0;
+      typeof req.body.referredByCode === 'string' && req.body.referredByCode.length > 0;
 
     // Flag indicating the subscription to Mobile Commons was successful
     let mcSubscribeSuccessful = false;
 
     // Make the Mobile Commons submission
     request
-      .postAsync(
-        sails.config.globals.mcJoinUrl,
-        this.createMobileCommonsRequest(req)
-      )
+      .postAsync(sails.config.globals.mcJoinUrl, this.createMobileCommonsRequest(req))
       .then(function(response) {
         // Mobile Commons responds with a 500 error code for numbers from
         // countries that are not supported by the account.
@@ -130,7 +158,8 @@ module.exports = {
           // @todo Not currently handling failed API calls
           const mailchimpRequest = {
             method: 'POST',
-            uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals.mailchimpListId}/members`,
+            uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config
+              .globals.mailchimpListId}/members`,
             json: true,
             auth: {
               user: sails.config.globals.mailchimpApiAuthUser,
@@ -151,15 +180,11 @@ module.exports = {
             .postAsync(mailchimpRequest)
             .then(response => {
               if (!response || !response.body) {
-                sails.log.error(
-                  'Invalid response received from MailChimp subscribe call.'
-                );
+                sails.log.error('Invalid response received from MailChimp subscribe call.');
               } else {
                 sails.log.info('Successful MailChimp subscribe');
                 sails.log.info(`  id: ${response.body.id}`);
-                sails.log.info(
-                  `  unique_email_id: ${response.body.unique_email_id}`
-                );
+                sails.log.info(`  unique_email_id: ${response.body.unique_email_id}`);
               }
             })
             .catch(err => {
@@ -174,6 +199,7 @@ module.exports = {
           // Track sign up and identify with the referral code
           let trackingData = {
             distinct_id: referralCode,
+            partner: req.body.partner,
             platform: 'sms',
             source: joinByReferral ? 'web-referral' : 'web',
             utm_campaign: req.body.utmCampaign,
@@ -216,7 +242,9 @@ module.exports = {
       req.body['bday-day'] &&
       req.body['bday-year']
     ) {
-      birthday = `${req.body['bday-year']}-${req.body['bday-month']}-${req.body['bday-day']}`;
+      birthday = `${req.body['bday-year']}-${req.body['bday-month']}-${req.body[
+        'bday-day'
+      ]}`;
     }
 
     let updateRequest = {
@@ -245,7 +273,8 @@ module.exports = {
     request
       .postAsync(updateRequest)
       .then(response => {
-        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.firstName}&referralCode=${req.body.referralCode}`;
+        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req
+          .body.firstName}&referralCode=${req.body.referralCode}`;
         res.redirect(redirectUrl);
       })
       .catch(err => {
@@ -270,17 +299,11 @@ module.exports = {
     };
 
     let numFriends = 0;
-    const friends = [
-      req.body.invitePhone1,
-      req.body.invitePhone2,
-      req.body.invitePhone3,
-    ];
+    const friends = [req.body.invitePhone1, req.body.invitePhone2, req.body.invitePhone3];
     for (const friend of friends) {
       if (friend) {
         data.form[`friends[${numFriends}]`] = friend;
-        data.form[
-          `friends[${numFriends}][referral_code]`
-        ] = ReferralCodes.encode(friend);
+        data.form[`friends[${numFriends}][referral_code]`] = ReferralCodes.encode(friend);
         numFriends++;
       }
     }

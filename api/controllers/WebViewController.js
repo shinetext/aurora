@@ -6,10 +6,13 @@
 
 import Promise from 'bluebird';
 import request from 'request';
+import CampaignService from '../services/CampaignService';
 import PartnerService from '../services/PartnerService';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import PartnerApp from '../../views/components/PartnerApp';
+import CampaignApp from '../../views/components/campaigns/CampaignApp';
+import CampaignReferral from '../../views/components/campaigns/CampaignReferral';
 Promise.promisifyAll(request);
 
 module.exports = {
@@ -53,7 +56,8 @@ module.exports = {
   squad: (req, res) => {
     let locals = {
       title: 'Squad | Shine',
-      metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
+      metaDescription:
+        "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
       layout: 'layouts/subpage-fullwidth.layout',
       hideFooterCta: true,
       adviceBaseUrl: sails.config.globals.adviceBaseUrl,
@@ -67,15 +71,16 @@ module.exports = {
   confirmation: function(req, res) {
     let headerImage, headerText;
     if (req.query.partner) {
-      const partnerConfirmation = PartnerService.getPartner(req.query.partner)
-        .confirmation;
+      const partnerConfirmation = PartnerService.getPartner(req.query.partner).confirmation;
       headerImage = partnerConfirmation.imageUrl;
       headerText = partnerConfirmation.copy;
+    } else if (req.query.campaign) {
+      const campaignConfirmation = CampaignService.getCampaign(req.query.campaign).confirmation;
+      headerImage = campaignConfirmation.imageUrl;
+      headerText = campaignConfirmation.copy;
     } else {
       headerImage = 'images/confirmation-header.gif';
-      headerText = req.query.referral
-        ? `Thanks for sharing!`
-        : `You're all signed up!`;
+      headerText = req.query.referral ? `Thanks for sharing!` : `You're all signed up!`;
     }
 
     let locals = {
@@ -121,9 +126,7 @@ module.exports = {
     Promise.coroutine(function*() {
       let referralRequest = {
         method: 'GET',
-        uri: sails.config.globals.photonApiUrl +
-          '/referral/' +
-          req.params.phone,
+        uri: sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
         json: true,
       };
 
@@ -132,7 +135,8 @@ module.exports = {
 
         let locals = {
           title: 'My Referrals | Shine',
-          metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
+          metaDescription:
+            "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
           layout: 'layouts/subpage-fullwidth.layout',
           hideFooterCta: true,
           shareUrls: {},
@@ -140,9 +144,7 @@ module.exports = {
 
         if (response.statusCode === 200) {
           locals.referralInfo = response.body;
-          locals.referralInfo.nextLevel = ReferralService.getNextLevel(
-            response.body.referralCount
-          );
+          locals.referralInfo.nextLevel = ReferralService.getNextLevel(response.body.referralCount);
 
           // @todo Not sure if this is should be the final solution for handling this
           if (locals.referralInfo.nextLevel.reward === 'Shine sticker') {
@@ -151,15 +153,11 @@ module.exports = {
             locals.referralInfo.rewardImage = 'reward-image-2';
           } else if (locals.referralInfo.nextLevel.reward === 'Shine t-shirt') {
             locals.referralInfo.rewardImage = 'reward-image-3';
-          } else if (
-            locals.referralInfo.nextLevel.reward === 'Shine call-out'
-          ) {
+          } else if (locals.referralInfo.nextLevel.reward === 'Shine call-out') {
             locals.referralInfo.rewardImage = 'reward-image-4';
           } else if (locals.referralInfo.nextLevel.reward === 'Shine hoodie') {
             locals.referralInfo.rewardImage = 'reward-image-5';
-          } else if (
-            locals.referralInfo.nextLevel.reward === 'Shine leggings'
-          ) {
+          } else if (locals.referralInfo.nextLevel.reward === 'Shine leggings') {
             locals.referralInfo.rewardImage = 'reward-image-6';
           } else {
             locals.referralInfo.rewardImage = 'reward-image-6';
@@ -197,7 +195,7 @@ module.exports = {
 
   /**
    * View for partner/influencer microsite
-   * 
+   *
    */
   partners: function(req, res) {
     try {
@@ -211,6 +209,51 @@ module.exports = {
         hideFooterCta: true,
       };
       return res.view('partner-signup', locals);
+    } catch (err) {
+      sails.log.error(err);
+      return res.view(404);
+    }
+  },
+
+  /**
+   * View for campaign/influencer microsite
+   *
+   */
+  campaigns: function(req, res) {
+    try {
+      const campaign = CampaignService.getCampaign(req.params.campaign);
+      const campaignComponentMarkup = ReactDOMServer.renderToString(
+        <CampaignApp {...campaign} campaignId={req.params.campaign} />
+      );
+      const locals = {
+        layout: 'layouts/subpage-fullwidth.layout',
+        campaignComponent: campaignComponentMarkup,
+        hideFooterCta: true,
+      };
+      return res.view('campaign', locals);
+    } catch (err) {
+      sails.log.error(err);
+      return res.view(404);
+    }
+  },
+
+  /**
+   * View for campaign referrals component
+   *
+   */
+  campaignReferral: function(req, res) {
+    try {
+      const campaign = CampaignService.getCampaign(req.params.campaign);
+      let referer = req.query.referralCode;
+      const campaignComponentMarkup = ReactDOMServer.renderToString(
+        <CampaignReferral {...campaign} campaignId={req.params.campaign} referrerInfo={req.query} />
+      );
+      const locals = {
+        layout: 'layouts/subpage-fullwidth.layout',
+        campaignComponent: campaignComponentMarkup,
+        hideFooterCta: true,
+      };
+      return res.view('campaign', locals);
     } catch (err) {
       sails.log.error(err);
       return res.view(404);
