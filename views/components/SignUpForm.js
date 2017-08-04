@@ -4,7 +4,7 @@ import BetaSignUpForm from './BetaSignUpForm';
 import FormField from './FormField';
 
 const SignUpForm = props => {
-  const { header, subhead, partnerId, hideAlpha, showBeta } = props;
+  const { header, subhead, partnerId, hideAlpha, showBeta, extras } = props;
   let subHeadView;
   if (subhead) {
     subHeadView = (
@@ -24,36 +24,57 @@ const SignUpForm = props => {
     betaView = <BetaSignUpForm optin={PartnerService.getBetaOptInPath(partnerId)} />;
   }
 
+  let extrasView = [];
+  if (extras) {
+    let count = 0;
+    for (const extra of extras) {
+      extrasView.push(
+        <FormField
+          key={`extras-${count}`}
+          type={extra.type}
+          fieldName={extra.name}
+          label={extra.label}
+          value={extra.value}
+        />
+      );
+      count++;
+    }
+  }
+
   return (
-    <div className="container-signup col-md-7">
-      <h2>
-        {header}
-      </h2>
-      {subHeadView}
+    <div className="SignUpForm col-md-7">
+      <div className="container-signup">
 
-      <form class="signup-form" action="/join" method="post">
-        {alphaView}
-        {betaView}
+        <h2>{header}</h2>
+        {subHeadView}
 
-        <FormField type="hidden" fieldName="partner" value={partnerId ? partnerId : null} />
-        <div>
-          <input
-            is
-            class="btn"
-            type="submit"
-            value="Get Shine Texts"
-            ga-on="click"
-            ga-event-category="SignUp"
-            ga-event-action="SMS"
-            ga-event-label={partnerId}
-          />
+        <form class="signup-form" action="/join" method="post">
+          {alphaView}
+          {betaView}
+          {extrasView}
+
+          <FormField type="hidden" fieldName="partner" value={partnerId ? partnerId : null} />
+          <div>
+            <input
+              is
+              class="btn"
+              type="submit"
+              value="Get Shine Texts"
+              ga-on="click"
+              ga-event-category="SignUp"
+              ga-event-action="SMS"
+              ga-event-label={partnerId}
+            />
+          </div>
+        </form>
+
+        <div className="ctia">
+          Signing up means you agree to our{' '}
+          <a href="/terms-of-service">Terms of Service</a>
+          & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily
+          message.
+          Message & data rates may apply. Text STOP to opt-out, HELP for help.
         </div>
-      </form>
-
-      <div className="ctia">
-        Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a>
-        & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily message. Message &
-        data rates may apply. Text STOP to opt-out, HELP for help.
       </div>
     </div>
   );
