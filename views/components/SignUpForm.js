@@ -4,7 +4,7 @@ import BetaSignUpForm from './BetaSignUpForm';
 import FormField from './FormField';
 
 const SignUpForm = props => {
-  const { header, subhead, partnerId, hideAlpha, showBeta, extras } = props;
+  const { header, subhead, partnerId, hideAlpha, betaOptInPath, extras } = props;
   let subHeadView;
   if (subhead) {
     subHeadView = <p>{subhead}</p>;
@@ -16,8 +16,8 @@ const SignUpForm = props => {
   }
 
   let betaView;
-  if (showBeta) {
-    betaView = <BetaSignUpForm optin={PartnerService.getBetaOptInPath(partnerId)} />;
+  if (betaOptInPath) {
+    betaView = <BetaSignUpForm optin={betaOptInPath} />;
   }
 
   let extrasView = [];

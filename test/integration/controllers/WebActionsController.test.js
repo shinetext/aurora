@@ -33,7 +33,22 @@ describe('WebActionsController', () => {
       }
     });
 
-    it('should add extras as custom fields to the user signing up', () => {});
+    it('should add extras as custom fields to the user signing up', () => {
+      const mockRequest = {
+        body: {
+          first_name: 'TEST_FNAME',
+          phone: '3015550100',
+          extras: {
+            key1: 'value 1',
+            key2: 'value 2',
+          },
+        },
+      };
+
+      const data = WebActionsController.createMobileCommonsRequest(mockRequest);
+      assert.equal(data.form['person[key1]'], mockRequest.body.extras.key1);
+      assert.equal(data.form['person[key2]'], mockRequest.body.extras.key2);
+    });
 
     it('should handle a sign up with friends', () => {
       const mockRequest = {
@@ -66,7 +81,19 @@ describe('WebActionsController', () => {
       assert.equal(data.form['friends[2][referral_code]'], '8WgrW5A');
     });
 
-    it('should not add friends to the request if the friends_opt_in_path is missing', () => {});
+    it('should not add friends to the request if the friends_opt_in_path is missing', () => {
+      const mockRequest = {
+        body: {
+          first_name: 'TEST_FNAME',
+          phone: '3015550100',
+          opt_in_path: 'ALPHA_OIP',
+          friends: [{ first_name: 'BETA1', phone: '3015550101' }],
+        },
+      };
+
+      const data = WebActionsController.createMobileCommonsRequest(mockRequest);
+      assert.equal(data.form['friends[0]'], undefined);
+    });
   });
 
   describe('#createMobileCommonsReferralRequest', () => {

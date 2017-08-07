@@ -24,14 +24,4 @@ module.exports = {
   getOptInPath: id => {
     return partners[id].campaignKey;
   },
-
-  /**
-   * Gets opt-in path ID for beta users invited to Shine through this Partner.
-   *
-   * @param id {string} Partner ID
-   * @return {string | undefined}
-   */
-  getBetaOptInPath: id => {
-    return partners[id].campaignKeyBeta;
-  },
 };

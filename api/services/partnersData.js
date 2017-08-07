@@ -37,11 +37,10 @@ const partnersData = {
     },
     campaignKey: 'OPABC123',
     campaignKeyBeta: 'OPQWERTY456',
-    showBetaForm: true,
     additionalFields: [
       {
         type: 'textarea',
-        name: 'why',
+        name: 'scholarship_why_important',
         label: 'Why is this important to you?',
       },
     ],

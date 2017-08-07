@@ -4,12 +4,12 @@ import SignUpForm from './SignUpForm';
 
 class PartnerApp extends React.Component {
   render() {
-    const { name, imageUrl, copy, partnerId, showBetaForm, additionalFields } = this.props;
+    const { name, imageUrl, copy, partnerId, campaignKeyBeta, additionalFields } = this.props;
     const formDetails = {
       header: `${name}`,
       subhead: `${copy}`,
       partnerId: partnerId,
-      showBeta: showBetaForm,
+      betaOptInPath: campaignKeyBeta,
       extras: additionalFields,
     };
 
