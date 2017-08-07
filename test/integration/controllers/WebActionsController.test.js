@@ -70,13 +70,13 @@ describe('WebActionsController', () => {
       assert.equal(data.form['person[first_name]'], mockRequest.body.first_name);
       assert.equal(data.form['person[referral_code]'], 'JkjrkLr');
       assert.equal(data.form['friends_opt_in_path'], mockRequest.body.friends_opt_in_path);
-      assert.equal(data.form['friends[0]'], mockRequest.body.friends[0].phone);
+      assert.equal(data.form['friends[0][phone]'], mockRequest.body.friends[0].phone);
       assert.equal(data.form['friends[0][first_name]'], mockRequest.body.friends[0].first_name);
       assert.equal(data.form['friends[0][referral_code]'], 'qGl0G4r');
-      assert.equal(data.form['friends[1]'], mockRequest.body.friends[1].phone);
+      assert.equal(data.form['friends[1][phone]'], mockRequest.body.friends[1].phone);
       assert.equal(data.form['friends[1][first_name]'], mockRequest.body.friends[1].first_name);
       assert.equal(data.form['friends[1][referral_code]'], 'XZgVZpl');
-      assert.equal(data.form['friends[2]'], mockRequest.body.friends[2].phone);
+      assert.equal(data.form['friends[2][phone]'], mockRequest.body.friends[2].phone);
       assert.equal(data.form['friends[2][first_name]'], mockRequest.body.friends[2].first_name);
       assert.equal(data.form['friends[2][referral_code]'], '8WgrW5A');
     });

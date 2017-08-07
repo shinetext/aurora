@@ -35,8 +35,8 @@ const partnersData = {
       imageUrl: 'https://media.giphy.com/media/YZZJNDPNPrq0w/giphy.gif',
       copy: "You're all signed up!",
     },
-    campaignKey: 'OPABC123',
-    campaignKeyBeta: 'OPQWERTY456',
+    campaignKey: 'OPF103C6C3AE571FD2082D4B7F18929F5B',
+    campaignKeyBeta: 'OP3969113B4E740F300A09B3D2D1D05CB8',
     additionalFields: [
       {
         type: 'textarea',
