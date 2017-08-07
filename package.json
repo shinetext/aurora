@@ -38,7 +38,7 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "test": "NODE_ENV=test ./node_modules/.bin/mocha test/bootstrap.test.js test/integration/**/*.test.js"
+    "test": "NODE_ENV=test mocha test/bootstrap.test.js test/integration/**/*.test.js"
   },
   "main": "app.js",
   "devDependencies": {
