@@ -50,6 +50,13 @@ module.exports = {
       },
     };
 
+    if (req.body.extras) {
+      const keys = Object.keys(req.body.extras);
+      for (const key of keys) {
+        data.form[`person[${key}]`] = req.body.extras[key];
+      }
+    }
+
     // If an array of friends and opt-in path for them are provided, add it to
     // the submission data.
     if (req.body.friends_opt_in_path && req.body.friends.length > 0) {

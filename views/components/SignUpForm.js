@@ -28,7 +28,7 @@ const SignUpForm = props => {
         <FormField
           key={`extras-${count}`}
           type={extra.type}
-          fieldName={extra.name}
+          fieldName={`extras[${extra.name}]`}
           label={extra.label}
           value={extra.value}
         />
