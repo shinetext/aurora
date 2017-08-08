@@ -92,6 +92,16 @@ module.exports = {
 
     if (req.body.partner) {
       redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.first_name}&partner=${req.body.partner}`;
+    } else if (req.body.campaign) {
+      // Redirect user to referral page if user comes from a campaign
+      let { phone, first_name, campaign } = req.body;
+      let referralCode = ReferralCodes.encode(phone);
+      redirectUrl =
+        `/campaigns/${campaign}/share` +
+        `?phone=${phone}` +
+        `&firstName=${first_name}` +
+        `&campaign=${campaign}` +
+        `&referralCode=${referralCode}`;
     } else {
       redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
     }
