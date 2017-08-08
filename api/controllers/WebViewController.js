@@ -74,6 +74,10 @@ module.exports = {
       const partnerConfirmation = PartnerService.getPartner(req.query.partner).confirmation;
       headerImage = partnerConfirmation.imageUrl;
       headerText = partnerConfirmation.copy;
+    } else if (req.query.campaign) {
+      const campaignConfirmation = CampaignService.getCampaign(req.query.campaign).confirmation;
+      headerImage = campaignConfirmation.imageUrl;
+      headerText = campaignConfirmation.copy;
     } else {
       headerImage = 'images/confirmation-header.gif';
       headerText = req.query.referral ? `Thanks for sharing!` : `You're all signed up!`;
