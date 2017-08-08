@@ -4,7 +4,16 @@ import BetaSignUpForm from './BetaSignUpForm';
 import FormField from './FormField';
 
 const SignUpForm = props => {
-  const { header, subhead, partnerId, hideAlpha, betaOptInPath, extras } = props;
+  const {
+    header,
+    subhead,
+    partnerId,
+    hideAlpha,
+    betaOptInPath,
+    extras,
+    additionalLink,
+  } = props;
+
   let subHeadView;
   if (subhead) {
     subHeadView = <p>{subhead}</p>;
@@ -12,7 +21,9 @@ const SignUpForm = props => {
 
   let alphaView;
   if (!hideAlpha) {
-    alphaView = <AlphaSignUpForm optin={PartnerService.getOptInPath(partnerId)} />;
+    alphaView = (
+      <AlphaSignUpForm optin={PartnerService.getOptInPath(partnerId)} />
+    );
   }
 
   let betaView;
@@ -37,6 +48,15 @@ const SignUpForm = props => {
     }
   }
 
+  let additionalLinkView;
+  if (additionalLink) {
+    additionalLinkView = (
+      <a className="additional-link" href={additionalLink.link}>
+        {additionalLink.label}
+      </a>
+    );
+  }
+
   return (
     <div className="SignUpForm col-md-7">
       <div className="container-signup">
@@ -49,7 +69,11 @@ const SignUpForm = props => {
           {betaView}
           {extrasView}
 
-          <FormField type="hidden" fieldName="partner" value={partnerId ? partnerId : null} />
+          <FormField
+            type="hidden"
+            fieldName="partner"
+            value={partnerId ? partnerId : null}
+          />
           <div>
             <input
               is
@@ -67,10 +91,12 @@ const SignUpForm = props => {
         <div className="ctia">
           Signing up means you agree to our{' '}
           <a href="/terms-of-service">Terms of Service</a>
-          & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily
-          message.
+          & <a href="/privacy-policy">Privacy Policy</a>
+          and to receive our daily message.
           Message & data rates may apply. Text STOP to opt-out, HELP for help.
         </div>
+
+        {additionalLinkView}
       </div>
     </div>
   );

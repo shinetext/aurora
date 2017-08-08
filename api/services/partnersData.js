@@ -44,6 +44,10 @@ const partnersData = {
         label: 'Why is this important to you?',
       },
     ],
+    additionalFormLink: {
+      label: 'Scholarship Rules',
+      link: '/images/shine-1-year.jpg',
+    },
   },
 };
 
