@@ -89,19 +89,25 @@ module.exports = {
 
     // If signing up through partner landing pages, redirect directly to
     // confirmation page.
-
     if (req.body.partner) {
       redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.first_name}&partner=${req.body.partner}`;
     } else if (req.body.campaign) {
-      // Redirect user to referral page if user comes from a campaign
+      // Redirect user to referral page if user comes from a campaign page
+      // or redirects user to confirmation page if user comes from referral page
       let { phone, first_name, campaign } = req.body;
       let referralCode = ReferralCodes.encode(phone);
-      redirectUrl =
+      // If a user has entered friend referral information redirect to confirmation page
+      if (req.body.friends) {
+        redirectUrl = `/confirmation?campaign=${campaign}&referralCode=${referralCode}`
+      }
+      else {
+        redirectUrl =
         `/campaigns/${campaign}/share` +
         `?phone=${phone}` +
         `&firstName=${first_name}` +
         `&campaign=${campaign}` +
         `&referralCode=${referralCode}`;
+      }
     } else {
       redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
     }

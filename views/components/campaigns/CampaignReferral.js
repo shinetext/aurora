@@ -7,27 +7,25 @@ export default ({ campaignId, campaignKeyBeta, campaignKey, referrerInfo, referr
     <section className="container-partners-lead">
       <div className="container-signup col-md-6 col-md-offset-3">
         <div id="campaign-referral-container">
-          <h3 className="-header">{referralInfo.header}</h3>
-          <p className="-copy">{referralInfo.copy}
+          <h3 className="-header">
+            {referralInfo.header}
+          </h3>
+          <p className="-copy">
+            {referralInfo.copy}
           </p>
           <form
             class="signup-form"
-            action="https://secure.mcommons.com/profiles/join"
+            action="/join"
             method="post"
           >
-            <FormField
-              type="hidden"
-              fieldName="redirect_to"
-              value={`http://localhost:1337/confirmation?campaign=flipside&referralCode=${referrerInfo.referralCode}`}
-            />
-            <FormField type="hidden" fieldName="referer" value={referrerInfo.referralCode} />
             <FormField
               type="hidden"
               fieldName="person[first_name]"
               value={referrerInfo.firstName}
             />
             <FormField type="hidden" fieldName="person[phone]" value={referrerInfo.phone} />
-            <BetaSignUpForm showBeta={true} optin={campaignKey} />
+            <FormField type="hidden" fieldName="campaign" value={campaignId ? campaignId : null} />
+            <BetaSignUpForm showBeta={true} optin={campaignKeyBeta} />
             <div>
               <input
                 is
