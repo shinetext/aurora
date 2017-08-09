@@ -21,10 +21,10 @@ export default ({ campaignId, campaignKeyBeta, campaignKey, referrerInfo, referr
           >
             <FormField
               type="hidden"
-              fieldName="person[first_name]"
+              fieldName="first_name"
               value={referrerInfo.firstName}
             />
-            <FormField type="hidden" fieldName="person[phone]" value={referrerInfo.phone} />
+            <FormField type="hidden" fieldName="phone" value={referrerInfo.phone} />
             <FormField type="hidden" fieldName="campaign" value={campaignId ? campaignId : null} />
             <BetaSignUpForm showBeta={true} optin={campaignKeyBeta} />
             <div>
