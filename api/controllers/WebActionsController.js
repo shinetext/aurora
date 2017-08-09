@@ -98,15 +98,14 @@ module.exports = {
       let referralCode = ReferralCodes.encode(phone);
       // If a user has entered friend referral information redirect to confirmation page
       if (req.body.friends) {
-        redirectUrl = `/confirmation?campaign=${campaign}&referralCode=${referralCode}`
+        redirectUrl = `/confirmation?campaign=${campaign}`
       }
       else {
         redirectUrl =
         `/campaigns/${campaign}/share` +
         `?phone=${phone}` +
         `&firstName=${first_name}` +
-        `&campaign=${campaign}` +
-        `&referralCode=${referralCode}`;
+        `&campaign=${campaign}`;
       }
     } else {
       redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
