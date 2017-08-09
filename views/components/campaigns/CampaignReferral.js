@@ -1,6 +1,7 @@
 import React from 'react';
 import BetaSignUpForm from '../BetaSignUpForm';
 import FormField from '../FormField';
+import Disclaimer from '../Disclaimer';
 
 export default ({ campaignId, campaignKeyBeta, campaignKey, referrerInfo, referralInfo }) => {
   return (
@@ -31,13 +32,14 @@ export default ({ campaignId, campaignKeyBeta, campaignKey, referrerInfo, referr
                 is
                 class="btn"
                 type="submit"
-                value="Share the Love"
+                value="Enter"
                 ga-on="click"
                 ga-event-category="Refer"
                 ga-event-action="SMS"
                 ga-event-label={campaignId}
               />
             </div>
+            <Disclaimer scholarship />
           </form>
         </div>
       </div>
