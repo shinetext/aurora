@@ -35,7 +35,7 @@ const campaignData = {
       copy: 'Need money for school? Share to win the scholarship.'
     },
     campaignKey: 'OP37A9AF3490ABBAD085C12FD8901BE2BD',
-    campaignKeyBeta: 'OP37A9AF3490ABBAD085C12FD8901BE2BD',
+    campaignKeyBeta: 'OP4D3451D383C6A2D6A4C0D209985B7D60',
   },
 };
 
