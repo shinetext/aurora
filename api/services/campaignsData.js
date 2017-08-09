@@ -34,8 +34,8 @@ const campaignData = {
       header: 'You\'re signed up!' ,
       copy: 'Need money for school? Share to win the scholarship.'
     },
-    campaignKey: process.env.FLIPSIDE_MOBILECOMMONS_KEY,
-    campaignKeyBeta: 'RANDO-NUMERO-GENERO', // Key to recognize the campaign userrs we referred from 🤔
+    campaignKey: 'OP37A9AF3490ABBAD085C12FD8901BE2BD',
+    campaignKeyBeta: 'OP37A9AF3490ABBAD085C12FD8901BE2BD',
   },
 };
 
