@@ -31,9 +31,28 @@ const campaignData = {
       copy: "You're all set!",
     },
     referralInfo: {
-      header: 'You\'re signed up!' ,
-      copy: 'Need money for school? Share to win the scholarship.'
+      header: "You're signed up!",
+      copy: 'Need money for school? Share to win the scholarship.',
     },
+    partners: [
+      {
+        name: 'Her Campus',
+        logo: 'http://www.hercampus.com/sites/all/themes/hcxo/images/HerCampusLogo.jpg',
+      },
+      {
+        name: 'Shine',
+        logo: 'http://www.themixedexperience.com/wp-content/uploads/2016/09/shine-logo.png',
+      },
+      {
+        name: 'Ric & Morty',
+        logo:
+          'https://vignette4.wikia.nocookie.net/rickandmorty/images/f/f4/Rick_and_Morty_Logo_and_Image.png/revision/latest?cb=20151017201849&format=original',
+      },
+      {
+        name: 'Her Campus',
+        logo: 'http://www.hercampus.com/sites/all/themes/hcxo/images/HerCampusLogo.jpg',
+      },
+    ],
     campaignKey: 'OP37A9AF3490ABBAD085C12FD8901BE2BD',
     campaignKeyBeta: 'OP4D3451D383C6A2D6A4C0D209985B7D60',
   },

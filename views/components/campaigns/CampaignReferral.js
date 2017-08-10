@@ -3,6 +3,9 @@ import BetaSignUpForm from '../BetaSignUpForm';
 import FormField from '../FormField';
 import Disclaimer from '../Disclaimer';
 
+/**
+ * Campaign Referral page
+ */
 export default ({ campaignId, campaignKeyBeta, campaignKey, referrerInfo, referralInfo }) => {
   return (
     <section className="container-partners-lead">
