@@ -30,7 +30,7 @@ export default ({ campaignId, campaignKeyBeta, referrerInfo, referralInfo }) => 
                 is
                 class="btn"
                 type="submit"
-                value="Enter"
+                value="Share The Flip Side"
                 ga-on="click"
                 ga-event-category="Refer"
                 ga-event-action="SMS"

@@ -65,6 +65,8 @@ var routes = {
 
   '/campaigns/:campaign': 'WebViewController.campaigns',
   '/campaigns/:campaign/share': 'WebViewController.campaignReferral',
+  '/c/:campaign': 'WebViewController.campaigns',
+  '/c/:campaign/share': 'WebViewController.campaignReferral',
 
   '/privacy-policy': {
     view: 'privacy-policy',

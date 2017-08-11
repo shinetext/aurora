@@ -221,7 +221,8 @@ module.exports = {
    */
   campaigns: function(req, res) {
     try {
-      const campaign = CampaignService.getCampaign(req.params.campaign);
+      let campaignName = req.params.campaign.toLowerCase();
+      const campaign = CampaignService.getCampaign(campaignName);
       const campaignComponentMarkup = ReactDOMServer.renderToString(
         <CampaignApp {...campaign} campaignId={req.params.campaign} />
       );

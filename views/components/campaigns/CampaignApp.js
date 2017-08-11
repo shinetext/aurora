@@ -10,7 +10,7 @@ import Disclaimer from '../Disclaimer';
  */
 export default class CampaignApp extends Component {
   render() {
-    const { name: header, imageUrl, copy: subhead, campaignId, partners } = this.props;
+    const { name: header, imageUrl, copy: subhead, campaignId, partners, campaignKey } = this.props;
     let subHeadView;
     if (subhead) {
       subHeadView = (
@@ -19,7 +19,7 @@ export default class CampaignApp extends Component {
         </p>
       );
     }
-    const alphaView = <AlphaSignUpForm optin={CampaignService.getOptInPath(campaignId)} />;
+    const alphaView = <AlphaSignUpForm optin={campaignKey} />;
     return (
       <section className="container-campaigns-lead">
         <div className="container-signup col-md-7">
@@ -35,7 +35,7 @@ export default class CampaignApp extends Component {
                 is
                 class="btn"
                 type="submit"
-                value="Get Shine Texts"
+                value="Sign Up"
                 ga-on="click"
                 ga-event-category="SignUp"
                 ga-event-action="SMS"
@@ -45,7 +45,7 @@ export default class CampaignApp extends Component {
           </form>
           <Disclaimer ctia />
           <div className="campaign-partner-logo-container">
-            {partners.map((partner, key) => (<PartnerLogo key={key} src={partner.logo} />))}
+            {partners.map((partner, key) => (<a href={partner.link} key={key} target="_blank"><PartnerLogo src={partner.logo} /></a>))}
           </div>
         </div>
         <Image src={imageUrl} />
