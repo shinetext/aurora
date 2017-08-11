@@ -65,7 +65,7 @@ module.exports = {
         }
       }
     }
-
+    console.log(data)
     return data;
   },
 
@@ -345,9 +345,8 @@ class ErrorMobileCommonsJoin extends Error {
  * Form data depends on if a user is opting in themselves or referring friends
  */
 function createMobileCommonsFormData(formData) {
-  return formData.campaign
+  return formData.campaign && formData.friends
     ? {
-        'person[first_name]': formData.first_name,
         'person[phone]': formData.phone,
       }
     : {
