@@ -6,7 +6,7 @@ import Disclaimer from '../Disclaimer';
 /**
  * Campaign Referral page
  */
-export default ({ campaignId, campaignKeyBeta, campaignKey, referrerInfo, referralInfo }) => {
+export default ({ campaignId, campaignKeyBeta, referrerInfo, referralInfo }) => {
   return (
     <section className="container-partners-lead">
       <div className="container-signup col-md-6 col-md-offset-3">
@@ -22,11 +22,6 @@ export default ({ campaignId, campaignKeyBeta, campaignKey, referrerInfo, referr
             action="/join"
             method="post"
           >
-            <FormField
-              type="hidden"
-              fieldName="first_name"
-              value={referrerInfo.firstName}
-            />
             <FormField type="hidden" fieldName="phone" value={referrerInfo.phone} />
             <FormField type="hidden" fieldName="campaign" value={campaignId ? campaignId : null} />
             <BetaSignUpForm showBeta={true} optin={campaignKeyBeta} />

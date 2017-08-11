@@ -53,8 +53,8 @@ const campaignData = {
         logo: 'http://www.hercampus.com/sites/all/themes/hcxo/images/HerCampusLogo.jpg',
       },
     ],
-    campaignKey: 'OP37A9AF3490ABBAD085C12FD8901BE2BD',
-    campaignKeyBeta: 'OP4D3451D383C6A2D6A4C0D209985B7D60',
+    campaignKey: 'OP7DD1D17EA7893F17223937FB3428696C',
+    campaignKeyBeta: 'OPFEC9FC9D0E3894D4A6BD4522FD2F2683',
   },
 };
 
