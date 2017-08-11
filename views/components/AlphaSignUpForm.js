@@ -6,14 +6,14 @@ const AlphaSignUpForm = props => {
     <div className="AlphaSignUpForm">
       <FormField
         isRequired
-        label="Your Name"
+        label="Name"
         type="text"
         fieldName="first_name"
         value=""
       />
       <FormField
         isRequired
-        label="Your Cell Number"
+        label="Cell Number"
         type="tel"
         fieldName="phone"
         value=""

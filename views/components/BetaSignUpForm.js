@@ -4,18 +4,18 @@ import FormField from './FormField';
 const BetaSignUpForm = props => {
   return (
     <div className="BetaSignUpForm">
-      <h4>Friend invites:</h4>
+      <h4>Share Shine with 3 Friends:</h4>
       <div className="friend-fields-container">
         <FormField
           isRequired
-          label="Friend's Name"
+          label="Friend 1's Name"
           type="text"
           fieldName="friends[0][first_name]"
           value=""
         />
         <FormField
           isRequired
-          label="Friend's Cell Number"
+          label="Friend 1's Cell Number"
           type="tel"
           fieldName="friends[0][phone]"
           value=""
@@ -24,14 +24,14 @@ const BetaSignUpForm = props => {
       <div className="friend-fields-container">
         <FormField
           isRequired
-          label="Friend's Name"
+          label="Friend 2's Name"
           type="text"
           fieldName="friends[1][first_name]"
           value=""
         />
         <FormField
           isRequired
-          label="Friend's Cell Number"
+          label="Friend 2's Cell Number"
           type="tel"
           fieldName="friends[1][phone]"
           value=""
@@ -40,14 +40,14 @@ const BetaSignUpForm = props => {
       <div className="friend-fields-container">
         <FormField
           isRequired
-          label="Friend's Name"
+          label="Friend 3's Name"
           type="text"
           fieldName="friends[2][first_name]"
           value=""
         />
         <FormField
           isRequired
-          label="Friend's Cell Number"
+          label="Friend 3's Cell Number"
           type="tel"
           fieldName="friends[2][phone]"
           value=""

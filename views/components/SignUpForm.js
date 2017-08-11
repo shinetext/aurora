@@ -6,7 +6,7 @@ import FormField from './FormField';
 const SignUpForm = props => {
   const {
     header,
-    subhead,
+    info,
     partnerId,
     hideAlpha,
     betaOptInPath,
@@ -14,9 +14,11 @@ const SignUpForm = props => {
     additionalLink,
   } = props;
 
-  let subHeadView;
-  if (subhead) {
-    subHeadView = <p>{subhead}</p>;
+  let infoView;
+  if (info) {
+    infoView = (
+      <div className="info" dangerouslySetInnerHTML={{ __html: info }} />
+    );
   }
 
   let alphaView;
@@ -62,7 +64,7 @@ const SignUpForm = props => {
       <div className="container-signup">
 
         <h2>{header}</h2>
-        {subHeadView}
+        {infoView}
 
         <form class="signup-form" action="/join" method="post">
           {alphaView}

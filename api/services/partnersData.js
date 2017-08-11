@@ -25,15 +25,13 @@ const partnersData = {
     },
     campaignKey: process.env.RYDEL_MOBILECOMMONS_KEY,
   },
-
-  // @TODO
   scholarship: {
-    name: 'Sign up with 3 friends for a chance to win a $6 scholarship!',
-    imageUrl: 'https://media.licdn.com/media-proxy/ext?w=800&h=800&hash=d0gdH2%2FtWTo%2FrQhUVEizeQ53JdQ%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6nlh8Tw1It6a2FowGz60oISJLOTW3hGTrbi6DxERaYCLauCMPQ1QJlCV1w4X5FGqjXJE64bOfvbPaLDJYP78ChWuSNfyofOUkbsUxVwOUdMDcAnMecMtroThl82cJfIyWtNA',
-    copy: 'Because 🏫 costs 💰💰💰💰💰💰.',
+    name: '$1,000 Easy No Essay Self-Care Scholarship',
+    imageUrl: '/images/partners/scholarship/scholarship-2017-photo.jpg',
+    copy: '<p>School can be stressful. We want to make it less stressful by giving you a free daily text message to help you practice self care, PLUS a chance to win cash for school.</p><p>To enter, sign up for daily texts from <a href="http://www.shinetext.com/?utm_source=Shine&utm_medium=Scholarship">Shine</a> & share with 3 friends for the chance to win a $1,000 scholarship. (Helping your friends + the chance to win a scholarship? Win-win!)</p>',
     confirmation: {
-      imageUrl: 'https://media.giphy.com/media/YZZJNDPNPrq0w/giphy.gif',
-      copy: "You're all signed up!",
+      imageUrl: '/images/partners/scholarship/confirmation.gif',
+      copy: 'You’ve entered the Self-Care Scholarship!',
     },
     campaignKey: 'OPF103C6C3AE571FD2082D4B7F18929F5B',
     campaignKeyBeta: 'OP3969113B4E740F300A09B3D2D1D05CB8',
@@ -41,12 +39,12 @@ const partnersData = {
       {
         type: 'textarea',
         name: 'scholarship_why_important',
-        label: 'Why is this important to you?',
+        label: 'Why is self-care important to you?',
       },
     ],
     additionalFormLink: {
-      label: 'Scholarship Rules',
-      link: '/images/shine-1-year.jpg',
+      label: 'Official Scholarship Rules',
+      link: '/files/scholarship-rules-2017.pdf',
     },
   },
 };

@@ -15,7 +15,7 @@ class PartnerApp extends React.Component {
     } = this.props;
     const formDetails = {
       header: `${name}`,
-      subhead: `${copy}`,
+      info: `${copy}`,
       partnerId: partnerId,
       betaOptInPath: campaignKeyBeta,
       extras: additionalFields,
