@@ -38,17 +38,7 @@ module.exports = {
    * @return {object}
    */
   createMobileCommonsRequest: function(req) {
-    let data = {
-      form: {
-        'opt_in_path[]': req.body.opt_in_path || this.MOBILE_COMMONS_OPTIN,
-        'person[first_name]': req.body.first_name,
-        'person[phone]': req.body.phone,
-        'person[email]': req.body.email,
-        'person[send_gifs]': typeof req.body.send_gifs === 'undefined' ? 'no' : 'yes',
-        'person[referral_code]': ReferralCodes.encode(req.body.phone),
-        'person[date_signed_up]': new Date().toISOString(),
-      },
-    };
+    let data = { form: createMobileCommonsFormData(req.body) };
 
     if (req.body.extras) {
       const keys = Object.keys(req.body.extras);
@@ -75,7 +65,7 @@ module.exports = {
         }
       }
     }
-
+    console.log(data)
     return data;
   },
 
@@ -90,7 +80,8 @@ module.exports = {
     // If signing up through partner landing pages, redirect directly to
     // confirmation page.
     if (req.body.partner) {
-      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.first_name}&partner=${req.body.partner}`;
+      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body
+        .first_name}&partner=${req.body.partner}`;
     } else if (req.body.campaign) {
       // Redirect user to referral page if user comes from a campaign page
       // or redirects user to confirmation page if user comes from referral page
@@ -98,14 +89,13 @@ module.exports = {
       let referralCode = ReferralCodes.encode(phone);
       // If a user has entered friend referral information redirect to confirmation page
       if (req.body.friends) {
-        redirectUrl = `/confirmation?campaign=${campaign}`
-      }
-      else {
+        redirectUrl = `/confirmation?campaign=${campaign}`;
+      } else {
         redirectUrl =
-        `/campaigns/${campaign}/share` +
-        `?phone=${phone}` +
-        `&firstName=${first_name}` +
-        `&campaign=${campaign}`;
+          `/campaigns/${campaign}/share` +
+          `?phone=${phone}` +
+          `&firstName=${first_name}` +
+          `&campaign=${campaign}`;
       }
     } else {
       redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
@@ -158,7 +148,8 @@ module.exports = {
           // @todo Not currently handling failed API calls
           const mailchimpRequest = {
             method: 'POST',
-            uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals.mailchimpListId}/members`,
+            uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals
+              .mailchimpListId}/members`,
             json: true,
             auth: {
               user: sails.config.globals.mailchimpApiAuthUser,
@@ -266,7 +257,8 @@ module.exports = {
     request
       .postAsync(updateRequest)
       .then(response => {
-        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.firstName}&referralCode=${req.body.referralCode}`;
+        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body
+          .firstName}&referralCode=${req.body.referralCode}`;
         res.redirect(redirectUrl);
       })
       .catch(err => {
@@ -346,4 +338,24 @@ class ErrorMobileCommonsJoin extends Error {
   constructor(message) {
     super(message);
   }
+}
+
+/**
+ * Create initial form data for Mobile Commons join request
+ * Form data depends on if a user is opting in themselves or referring friends
+ */
+function createMobileCommonsFormData(formData) {
+  return formData.campaign && formData.friends
+    ? {
+        'person[phone]': formData.phone,
+      }
+    : {
+        'opt_in_path[]': formData.opt_in_path || this.MOBILE_COMMONS_OPTIN,
+        'person[first_name]': formData.first_name,
+        'person[phone]': formData.phone,
+        'person[email]': formData.email,
+        'person[send_gifs]': typeof formData.send_gifs === 'undefined' ? 'no' : 'yes',
+        'person[referral_code]': ReferralCodes.encode(formData.phone),
+        'person[date_signed_up]': new Date().toISOString(),
+      };
 }

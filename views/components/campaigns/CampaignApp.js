@@ -4,9 +4,13 @@ import AlphaSignUpForm from '../AlphaSignUpForm';
 import FormField from '../FormField';
 import PartnerLogo from './PartnerLogo';
 import Disclaimer from '../Disclaimer';
+
+/**
+ * Campaign Landing page
+ */
 export default class CampaignApp extends Component {
   render() {
-    const { name: header, imageUrl, copy: subhead, campaignId } = this.props;
+    const { name: header, imageUrl, copy: subhead, campaignId, partners } = this.props;
     let subHeadView;
     if (subhead) {
       subHeadView = (
@@ -41,10 +45,7 @@ export default class CampaignApp extends Component {
           </form>
           <Disclaimer ctia />
           <div className="campaign-partner-logo-container">
-            <PartnerLogo src="http://www.hercampus.com/sites/all/themes/hcxo/images/HerCampusLogo.jpg" />
-            <PartnerLogo src="http://www.themixedexperience.com/wp-content/uploads/2016/09/shine-logo.png" />
-            <PartnerLogo src="http://www.themixedexperience.com/wp-content/uploads/2016/09/shine-logo.png" />
-            <PartnerLogo src="https://vignette4.wikia.nocookie.net/rickandmorty/images/f/f4/Rick_and_Morty_Logo_and_Image.png/revision/latest?cb=20151017201849&format=original" />
+            {partners.map((partner, key) => (<PartnerLogo key={key} src={partner.logo} />))}
           </div>
         </div>
         <Image src={imageUrl} />
