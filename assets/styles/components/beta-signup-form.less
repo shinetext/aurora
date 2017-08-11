@@ -53,9 +53,22 @@
     margin-right: 0;
   }
 
-  @media (max-width: 400px) {
-    .form-control + label + .required-asterisk {
-      right: 10px;
+  @media (max-width: 600px) {
+    .friend-fields-container {
+      flex-direction: column;
+    }
+
+    .form-control + label + .required-asterisk,
+    .form-control:focus + label + .required-asterisk {
+      top: 18px;
+    }
+
+    .FormField:first-child .form-field {
+      margin-right: 0;
+    }
+
+    .FormField:last-child .form-field {
+      margin-left: 0;
     }
   }
 
