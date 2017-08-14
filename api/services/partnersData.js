@@ -26,7 +26,7 @@ const partnersData = {
     campaignKey: process.env.RYDEL_MOBILECOMMONS_KEY,
   },
   scholarship: {
-    name: '$1,000 Easy No Essay Self-Care Scholarship',
+    name: '$1,000 Easy No Essay Self-Care Scholarship - Fall 2017',
     imageUrl: '/images/partners/scholarship/scholarship-2017-photo.jpg',
     copy: '<p>School can be stressful.</p><p>Sign up to get a free daily text message to help you practice self-care AND get a chance to earn cash for school.</p><p>To enter the $1,000 scholarship, sign up for Shine texts below & share with 3 friends.</p>',
     confirmation: {
@@ -39,7 +39,7 @@ const partnersData = {
       {
         type: 'textarea',
         name: 'scholarship_why_important',
-        label: '(Optional) Why is self-care important to you?',
+        label: 'Why is self-care important to you? (optional)',
       },
     ],
     additionalFormLink: {
