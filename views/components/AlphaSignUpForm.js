@@ -6,7 +6,7 @@ const AlphaSignUpForm = props => {
     <div className="AlphaSignUpForm">
       <FormField
         isRequired
-        label="Name"
+        label="First Name"
         type="text"
         fieldName="first_name"
         value=""

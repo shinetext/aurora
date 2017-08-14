@@ -28,10 +28,10 @@ const partnersData = {
   scholarship: {
     name: '$1,000 Easy No Essay Self-Care Scholarship',
     imageUrl: '/images/partners/scholarship/scholarship-2017-photo.jpg',
-    copy: '<p>School can be stressful. We want to make it less stressful by giving you a free daily text message to help you practice self care, PLUS a chance to win cash for school.</p><p>To enter, sign up for daily texts from <a href="http://www.shinetext.com/?utm_source=Shine&utm_medium=Scholarship">Shine</a> & share with 3 friends for the chance to win a $1,000 scholarship. (Helping your friends + the chance to win a scholarship? Win-win!)</p>',
+    copy: '<p>School can be stressful.</p><p>Sign up to get a free daily text message to help you practice self-care AND get a chance to earn cash for school.</p><p>To enter the $1,000 scholarship, sign up for Shine texts below & share with 3 friends.</p>',
     confirmation: {
       imageUrl: '/images/partners/scholarship/confirmation.gif',
-      copy: 'You’ve entered the Self-Care Scholarship!',
+      copy: 'You’ve entered the Shine Self-Care Scholarship!',
     },
     campaignKey: 'OPF103C6C3AE571FD2082D4B7F18929F5B',
     campaignKeyBeta: 'OP3969113B4E740F300A09B3D2D1D05CB8',
@@ -39,7 +39,7 @@ const partnersData = {
       {
         type: 'textarea',
         name: 'scholarship_why_important',
-        label: 'Why is self-care important to you?',
+        label: '(Optional) Why is self-care important to you?',
       },
     ],
     additionalFormLink: {

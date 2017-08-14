@@ -8,7 +8,7 @@ const BetaSignUpForm = props => {
       <div className="friend-fields-container">
         <FormField
           isRequired
-          label="Friend 1's Name"
+          label="Friend 1's First Name"
           type="text"
           fieldName="friends[0][first_name]"
           value=""
@@ -24,7 +24,7 @@ const BetaSignUpForm = props => {
       <div className="friend-fields-container">
         <FormField
           isRequired
-          label="Friend 2's Name"
+          label="Friend 2's First Name"
           type="text"
           fieldName="friends[1][first_name]"
           value=""
@@ -40,7 +40,7 @@ const BetaSignUpForm = props => {
       <div className="friend-fields-container">
         <FormField
           isRequired
-          label="Friend 3's Name"
+          label="Friend 3's First Name"
           type="text"
           fieldName="friends[2][first_name]"
           value=""
