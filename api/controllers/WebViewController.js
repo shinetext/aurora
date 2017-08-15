@@ -69,7 +69,7 @@ module.exports = {
    * Display /confirmation view and pass along any query params.
    */
   confirmation: function(req, res) {
-    let headerImage, headerText;
+    let headerImage, headerText, bodyCopy;
     if (req.query.partner) {
       const partnerConfirmation = PartnerService.getPartner(req.query.partner).confirmation;
       headerImage = partnerConfirmation.imageUrl;
@@ -77,7 +77,8 @@ module.exports = {
     } else if (req.query.campaign) {
       const campaignConfirmation = CampaignService.getCampaign(req.query.campaign).confirmation;
       headerImage = campaignConfirmation.imageUrl;
-      headerText = campaignConfirmation.copy;
+      headerText = campaignConfirmation.header;
+      bodyCopy = campaignConfirmation.copy;
     } else {
       headerImage = 'images/confirmation-header.gif';
       headerText = req.query.referral ? `Thanks for sharing!` : `You're all signed up!`;
@@ -88,10 +89,12 @@ module.exports = {
       layout: 'layouts/subpageCustomHeader.layout',
       headerText: headerText,
       headerImage: headerImage,
+      bodyCopy: bodyCopy ? bodyCopy : null,
       hideFooterCta: true,
       firstName: req.query.firstName ? req.query.firstName : '',
       fromReferral: req.query.referral ? true : false,
       fromPartner: req.query.partner ? true : false,
+      fromCampaign: req.query.campaign ? true : false,
       phone: req.query.phone ? req.query.phone : '',
       query: req.query,
       referralCode: req.query.referralCode ? req.query.referralCode : '',

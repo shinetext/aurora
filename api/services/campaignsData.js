@@ -29,7 +29,8 @@ const campaignData = {
     buttonCopy: 'Sign Up',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/UatRnEUNX8iCQ/giphy.gif',
-      copy: "You're all set!",
+      header: "You're all set!",
+      copy: "lorem Ipsum Dolores Umbridge"
     },
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
@@ -77,7 +78,8 @@ const campaignData = {
     buttonCopy: 'Sign Up',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/UatRnEUNX8iCQ/giphy.gif',
-      copy: "You're all set!",
+      header: "You're all set!",
+      copy: "lorem Ipsum Dolores Umbridge"
     },
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
