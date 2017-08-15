@@ -1,7 +1,7 @@
 {
   "name": "shine-aurora",
   "private": true,
-  "version": "1.4.3",
+  "version": "1.5.0",
   "description": "",
   "keywords": [],
   "dependencies": {
@@ -42,6 +42,7 @@
   },
   "main": "app.js",
   "devDependencies": {
-    "babel-cli": "^6.24.1"
+    "babel-cli": "^6.24.1",
+    "mocha": "^3.5.0"
   }
 }
