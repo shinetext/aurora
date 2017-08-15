@@ -26,13 +26,20 @@ const campaignData = {
       'https://image.shutterstock.com/z/stock-photo-girl-with-cell-phone-and-books-304379273.jpg',
     copy:
       'Sign up for texts to show the flip side of the things that stress you out about going back to school.',
+    buttonCopy: 'Sign Up',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/UatRnEUNX8iCQ/giphy.gif',
       copy: "You're all set!",
     },
     referralInfo: {
-      header: "You’ve signed up for The Flip Side! ",
-      copy: 'Enter to win a $1,000 scholarship by sharing The Flip Side with friends. (Money for school = one less thing you should have to stress out about this semester.)',
+      header: 'You’ve signed up for The Flip Side! ',
+      copy:
+        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+      buttonCopy: 'Share The Flip Side',
+    },
+    additionalFormLink: {
+      label: 'Official Scholarship Rules',
+      link: '/files/scholarship-rules-2017.pdf',
     },
     partners: [
       {
@@ -43,7 +50,8 @@ const campaignData = {
       },
       {
         name: 'Shine',
-        logo: 'http://www.themixedexperience.com/wp-content/uploads/2016/09/shine-logo.png',
+        logo:
+          'http://www.themixedexperience.com/wp-content/uploads/2016/09/shine-logo.png',
         link: '#',
       },
       {
@@ -54,7 +62,8 @@ const campaignData = {
       },
       {
         name: 'Her Campus',
-        logo: 'http://www.hercampus.com/sites/all/themes/hcxo/images/HerCampusLogo.jpg',
+        logo:
+          'http://www.hercampus.com/sites/all/themes/hcxo/images/HerCampusLogo.jpg',
         link: '#',
       },
     ],
@@ -63,17 +72,22 @@ const campaignData = {
   },
   umd: {
     name: 'The Flip Side',
-    imageUrl:
-      'https://www.provost.umd.edu/images/umdimg10.jpg?w=800&h=800',
-    copy:
-      `Join other students from UMD & sign up for texts to show the flip side of the things that stress you out about going back to school.`,
+    imageUrl: 'https://www.provost.umd.edu/images/umdimg10.jpg?w=800&h=800',
+    copy: `Join other students from UMD & sign up for texts to show the flip side of the things that stress you out about going back to school.`,
+    buttonCopy: 'Sign Up',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/UatRnEUNX8iCQ/giphy.gif',
       copy: "You're all set!",
     },
     referralInfo: {
-      header: "You’ve signed up for The Flip Side! ",
-      copy: 'Enter to win a $1,000 scholarship by sharing The Flip Side with friends. (Money for school = one less thing you should have to stress out about this semester.)',
+      header: 'You’ve signed up for The Flip Side! ',
+      copy:
+        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends. (Money for school = one less thing you should have to stress out about this semester.)',
+      buttonCopy: 'Share The Flip Side',
+    },
+    additionalFormLink: {
+      label: 'Official Scholarship Rules',
+      link: '/files/scholarship-rules-2017.pdf',
     },
     partners: [
       {
@@ -84,7 +98,8 @@ const campaignData = {
       },
       {
         name: 'Shine',
-        logo: 'http://www.themixedexperience.com/wp-content/uploads/2016/09/shine-logo.png',
+        logo:
+          'http://www.themixedexperience.com/wp-content/uploads/2016/09/shine-logo.png',
         link: '#',
       },
       {
@@ -95,7 +110,8 @@ const campaignData = {
       },
       {
         name: 'Her Campus',
-        logo: 'http://www.hercampus.com/sites/all/themes/hcxo/images/HerCampusLogo.jpg',
+        logo:
+          'http://www.hercampus.com/sites/all/themes/hcxo/images/HerCampusLogo.jpg',
         link: '#',
       },
     ],

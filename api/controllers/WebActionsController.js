@@ -58,14 +58,14 @@ module.exports = {
           const code = ReferralCodes.encode(friend.phone);
 
           data.form[`friends[${friendCounter}][phone]`] = friend.phone;
-          data.form[`friends[${friendCounter}][first_name]`] = friend.first_name;
+          data.form[`friends[${friendCounter}][first_name]`] =
+            friend.first_name;
           data.form[`friends[${friendCounter}][referral_code]`] = code;
 
           friendCounter++;
         }
       }
     }
-    console.log(data)
     return data;
   },
 
@@ -88,17 +88,16 @@ module.exports = {
       let { phone, first_name, campaign } = req.body;
       let referralCode = ReferralCodes.encode(phone);
       // If a user has entered friend referral information redirect to confirmation page
-      if (req.body.friends) {
-        redirectUrl = `/confirmation?campaign=${campaign}`;
-      } else {
-        redirectUrl =
-          `/campaigns/${campaign}/share` +
-          `?phone=${phone}` +
-          `&firstName=${first_name}` +
-          `&campaign=${campaign}`;
-      }
+      req.body.friends
+        ? (redirectUrl = `/confirmation?campaign=${campaign}`)
+        : (redirectUrl =
+            `/campaigns/${campaign}/share` +
+            `?phone=${phone}` +
+            `&firstName=${first_name}` +
+            `&campaign=${campaign}`);
     } else {
-      redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
+      redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body
+        .first_name}`;
     }
 
     let photonRequest = {
@@ -114,14 +113,18 @@ module.exports = {
     };
 
     const joinByReferral =
-      typeof req.body.referredByCode === 'string' && req.body.referredByCode.length > 0;
+      typeof req.body.referredByCode === 'string' &&
+      req.body.referredByCode.length > 0;
 
     // Flag indicating the subscription to Mobile Commons was successful
     let mcSubscribeSuccessful = false;
 
     // Make the Mobile Commons submission
     request
-      .postAsync(sails.config.globals.mcJoinUrl, this.createMobileCommonsRequest(req))
+      .postAsync(
+        sails.config.globals.mcJoinUrl,
+        this.createMobileCommonsRequest(req)
+      )
       .then(function(response) {
         // Mobile Commons responds with a 500 error code for numbers from
         // countries that are not supported by the account.
@@ -148,8 +151,8 @@ module.exports = {
           // @todo Not currently handling failed API calls
           const mailchimpRequest = {
             method: 'POST',
-            uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals
-              .mailchimpListId}/members`,
+            uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config
+              .globals.mailchimpListId}/members`,
             json: true,
             auth: {
               user: sails.config.globals.mailchimpApiAuthUser,
@@ -170,11 +173,15 @@ module.exports = {
             .postAsync(mailchimpRequest)
             .then(response => {
               if (!response || !response.body) {
-                sails.log.error('Invalid response received from MailChimp subscribe call.');
+                sails.log.error(
+                  'Invalid response received from MailChimp subscribe call.'
+                );
               } else {
                 sails.log.info('Successful MailChimp subscribe');
                 sails.log.info(`  id: ${response.body.id}`);
-                sails.log.info(`  unique_email_id: ${response.body.unique_email_id}`);
+                sails.log.info(
+                  `  unique_email_id: ${response.body.unique_email_id}`
+                );
               }
             })
             .catch(err => {
@@ -227,8 +234,14 @@ module.exports = {
    */
   saveSettings: function(req, res) {
     let birthday = '';
-    if (req.body['bday-month'] && req.body['bday-day'] && req.body['bday-year']) {
-      birthday = `${req.body['bday-year']}-${req.body['bday-month']}-${req.body['bday-day']}`;
+    if (
+      req.body['bday-month'] &&
+      req.body['bday-day'] &&
+      req.body['bday-year']
+    ) {
+      birthday = `${req.body['bday-year']}-${req.body['bday-month']}-${req.body[
+        'bday-day'
+      ]}`;
     }
 
     let updateRequest = {
@@ -257,8 +270,8 @@ module.exports = {
     request
       .postAsync(updateRequest)
       .then(response => {
-        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body
-          .firstName}&referralCode=${req.body.referralCode}`;
+        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req
+          .body.firstName}&referralCode=${req.body.referralCode}`;
         res.redirect(redirectUrl);
       })
       .catch(err => {
@@ -283,11 +296,17 @@ module.exports = {
     };
 
     let numFriends = 0;
-    const friends = [req.body.invitePhone1, req.body.invitePhone2, req.body.invitePhone3];
+    const friends = [
+      req.body.invitePhone1,
+      req.body.invitePhone2,
+      req.body.invitePhone3,
+    ];
     for (const friend of friends) {
       if (friend) {
         data.form[`friends[${numFriends}]`] = friend;
-        data.form[`friends[${numFriends}][referral_code]`] = ReferralCodes.encode(friend);
+        data.form[
+          `friends[${numFriends}][referral_code]`
+        ] = ReferralCodes.encode(friend);
         numFriends++;
       }
     }
@@ -354,7 +373,8 @@ function createMobileCommonsFormData(formData) {
         'person[first_name]': formData.first_name,
         'person[phone]': formData.phone,
         'person[email]': formData.email,
-        'person[send_gifs]': typeof formData.send_gifs === 'undefined' ? 'no' : 'yes',
+        'person[send_gifs]':
+          typeof formData.send_gifs === 'undefined' ? 'no' : 'yes',
         'person[referral_code]': ReferralCodes.encode(formData.phone),
         'person[date_signed_up]': new Date().toISOString(),
       };
