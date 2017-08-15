@@ -7,6 +7,7 @@
 var Promise = require('bluebird');
 var request = Promise.promisifyAll(require('request'));
 const Mixpanel = require('mixpanel');
+const validatePhoneNumber = require('../services/validatePhoneNumber');
 let mixpanel;
 
 if (process.env.MIXPANEL_TOKEN) {
@@ -57,7 +58,8 @@ module.exports = {
         if (typeof friend === 'object' && friend.first_name && friend.phone) {
           const code = ReferralCodes.encode(friend.phone);
 
-          data.form[`friends[${friendCounter}][phone]`] = friend.phone;
+          // Check if phone number is a valid US number
+          data.form[`friends[${friendCounter}][phone]`] = validatePhoneNumber(friend.phone, req.body.phone);
           data.form[`friends[${friendCounter}][first_name]`] =
             friend.first_name;
           data.form[`friends[${friendCounter}][referral_code]`] = code;
