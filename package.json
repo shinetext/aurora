@@ -42,6 +42,7 @@
   },
   "main": "app.js",
   "devDependencies": {
-    "babel-cli": "^6.24.1"
+    "babel-cli": "^6.24.1",
+    "mocha": "^3.5.0"
   }
 }

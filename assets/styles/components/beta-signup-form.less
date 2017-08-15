@@ -1,0 +1,47 @@
+.BetaSignUpForm {
+
+  h4 {
+    .font-main-bold();
+    font-size: 22px;
+  }
+
+  .friend-fields-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .form-field {
+    flex-grow: 1;
+    margin: 10px;
+
+    input {
+      font-size: 18px;
+    }
+  }
+
+  .FormField:first-child .form-field {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  .FormField:last-child .form-field {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+
+  @media (max-width: 600px) {
+    .friend-fields-container {
+      flex-direction: column;
+    }
+
+    .FormField:first-child .form-field {
+      margin-right: 0;
+    }
+
+    .FormField:last-child .form-field {
+      margin-left: 0;
+    }
+  }
+
+}
