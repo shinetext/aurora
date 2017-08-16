@@ -43,6 +43,8 @@
   "main": "app.js",
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babelify": "^7.3.0",
+    "grunt-browserify": "^5.1.0",
     "mocha": "^3.5.0"
   }
 }

@@ -203,7 +203,7 @@ module.exports = {
     try {
       const partner = PartnerService.getPartner(req.params.partner);
       const partnerComponentMarkup = ReactDOMServer.renderToString(
-        <PartnerApp {...partner} partnerId={req.params.partner} />
+        <PartnerApp />
       );
       const locals = {
         layout: 'layouts/subpage-fullwidth.layout',

@@ -2,6 +2,7 @@ import React from 'react';
 import AlphaSignUpForm from './AlphaSignUpForm';
 import BetaSignUpForm from './BetaSignUpForm';
 import FormField from './FormField';
+import PartnerService from '../../api/services/PartnerService';
 
 const SignUpForm = props => {
   const {
@@ -66,7 +67,7 @@ const SignUpForm = props => {
         <h2>{header}</h2>
         {infoView}
 
-        <form class="signup-form" action="/join" method="post">
+        <form is class="signup-form" action="/join" method="post">
           {alphaView}
           {betaView}
           {extrasView}

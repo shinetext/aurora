@@ -28,7 +28,7 @@ const FormField = props => {
           required={isRequired}
           value={value}
         />
-        <label for={fieldName}>{label}</label>
+        <label is for={fieldName}>{label}</label>
         {requiredField}
       </div>
     );
