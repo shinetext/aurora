@@ -31,7 +31,7 @@ export default class CampaignApp extends Component {
             {header}
           </h2>
           {subHeadView}
-          <form class="signup-form" action="/join" method="post">
+          <form class="signup-form" id="alpha-signup" action="/join" method="post">
             {alphaView}
             <FormField
               type="hidden"

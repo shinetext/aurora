@@ -32,7 +32,7 @@ export default ({
             className="-copy"
             dangerouslySetInnerHTML={{ __html: referralInfo.copy }}
           />
-          <form class="signup-form" action="/join" method="post">
+          <form class="signup-form" id="beta-signup" action="/join" method="post">
             <FormField
               type="hidden"
               fieldName="phone"

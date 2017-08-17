@@ -68,7 +68,7 @@ const SignUpForm = props => {
         </h2>
         {infoView}
 
-        <form class="signup-form" action="/join" method="post">
+        <form class="signup-form" id="alpha-signup" action="/join" method="post">
           {alphaView}
           {betaView}
           {extrasView}
