@@ -1,7 +1,7 @@
 font-size: @font-size-homepage-normal;
 
 .container-campaigns-lead {
-  @container-campaign-lead-height: 800px;
+  @container-campaign-lead-height: 900px;
   clear: both;
   display: flex;
   padding: 0;
@@ -93,13 +93,15 @@ font-size: @font-size-homepage-normal;
     float: right;
     padding: 0;
     object-fit: cover;
+    height: -webkit-fill-available;
     min-height: @container-campaign-lead-height;
-
     @media (max-width: @screen-sm-max) {
       display: block;
+      height: 1200px;
       width: 100%;
-      height: 400px;
-      min-height: 400px;
+    }
+    @media (max-width: @screen-xs-max) {
+      height: -webkit-fill-available;
     }
   }
 }

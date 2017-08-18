@@ -8,7 +8,7 @@
  * form. Else prompt the user to try again with a valid number
  */
 var submitAlpha = function(event) {
-  let formData = $('#alpha-signup')
+  var formData = $('#alpha-signup')
     .serializeArray()
     .reduce(function(obj, item) {
       obj[item.name] = item.value;
@@ -34,8 +34,8 @@ var submitAlpha = function(event) {
  * Returns a clean number free of all non numeric values
  */
 function validatePhoneNumber(phoneNumber) {
-  let validNumber = false;
-  let resultNumber = phoneNumber.replace(/[\W_+a-zA-Z]+/g, '');
+  var validNumber = false;
+  var resultNumber = phoneNumber.replace(/[\W_+a-zA-Z]+/g, '');
 
   return resultNumber.length === 10
     ? resultNumber
@@ -47,7 +47,7 @@ function validatePhoneNumber(phoneNumber) {
  * Alert users of by changing the color of the input field
  */
 function validateAllBetaNumbers(alphaNumber) {
-  let validBetas = true;
+  var validBetas = true;
   $('.BetaSignUpForm input[type=tel]').each(function() {
     if (!validatePhoneNumber(this.value)) {
       $(this).css('background-color', '#EF5350');

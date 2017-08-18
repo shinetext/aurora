@@ -89,7 +89,7 @@ module.exports = {
       layout: 'layouts/subpageCustomHeader.layout',
       headerText: headerText,
       headerImage: headerImage,
-      bodyCopy: bodyCopy ? bodyCopy : null,
+      bodyCopy: bodyCopy ? bodyCopy : '',
       hideFooterCta: true,
       firstName: req.query.firstName ? req.query.firstName : '',
       fromReferral: req.query.referral ? true : false,
@@ -227,7 +227,7 @@ module.exports = {
       let campaignName = req.params.campaign.toLowerCase();
       const campaign = CampaignService.getCampaign(campaignName);
       const campaignComponentMarkup = ReactDOMServer.renderToString(
-        <CampaignApp {...campaign} campaignId={req.params.campaign} />
+        <CampaignApp {...campaign} campaignId={campaignName} />
       );
       const locals = {
         layout: 'layouts/subpage-fullwidth.layout',
@@ -247,9 +247,10 @@ module.exports = {
    */
   campaignReferral: function(req, res) {
     try {
-      const campaign = CampaignService.getCampaign(req.params.campaign.toLowerCase());
+      let campaignName = req.params.campaign.toLowerCase();
+      const campaign = CampaignService.getCampaign(campaignName);
       const campaignComponentMarkup = ReactDOMServer.renderToString(
-        <CampaignReferral {...campaign} campaignId={req.params.campaign} referrerInfo={req.query} />
+        <CampaignReferral {...campaign} campaignId={campaignName} referrerInfo={req.query} />
       );
       const locals = {
         layout: 'layouts/subpage-fullwidth.layout',
