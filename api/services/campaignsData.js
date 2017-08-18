@@ -46,25 +46,13 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/4sZbeZsrhuMcQSkcISyGeU/57c66cea9677da03b45a4d26e27a05b4/kik_logo_green__1_.svg',
+          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: '#',
       },
       {
         name: 'Shine',
         logo:
           'http://www.themixedexperience.com/wp-content/uploads/2016/09/shine-logo.png',
-        link: '#',
-      },
-      {
-        name: 'Ric & Morty',
-        logo:
-          'https://vignette4.wikia.nocookie.net/rickandmorty/images/f/f4/Rick_and_Morty_Logo_and_Image.png/revision/latest?cb=20151017201849&format=original',
-        link: '#',
-      },
-      {
-        name: 'Her Campus',
-        logo:
-          'http://www.hercampus.com/sites/all/themes/hcxo/images/HerCampusLogo.jpg',
         link: '#',
       },
     ],
@@ -95,14 +83,14 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://files.slack.com/files-tmb/T09B4PP5M-F6QA22K9T-d1df9f4365/add_aheading_360.png',
-        link: '#',
+          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+        link: '#', //TODO Get link for kik
       },
       {
         name: 'Shine',
         logo:
           'http://www.themixedexperience.com/wp-content/uploads/2016/09/shine-logo.png',
-        link: '#',
+        link: 'www.shinetext.com/?utm_source=Shine&utm_medium=FlipsidePage',
       }
     ],
     campaignKey: 'OP7DD1D17EA7893F17223937FB3428696C',

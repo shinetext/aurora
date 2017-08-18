@@ -57,7 +57,6 @@ module.exports = {
         if (typeof friend === 'object' && friend.first_name && friend.phone) {
           const code = ReferralCodes.encode(friend.phone);
 
-          // Check if phone number is a valid US number
           data.form[`friends[${friendCounter}][phone]`] = friend.phone;
           data.form[`friends[${friendCounter}][first_name]`] =
             friend.first_name;
@@ -77,7 +76,7 @@ module.exports = {
    */
   join: function(req, res) {
     let redirectUrl;
-    
+
     // If signing up through partner landing pages, redirect directly to
     // confirmation page.
     if (req.body.partner) {

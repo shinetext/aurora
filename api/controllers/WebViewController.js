@@ -75,7 +75,7 @@ module.exports = {
       headerImage = partnerConfirmation.imageUrl;
       headerText = partnerConfirmation.copy;
     } else if (req.query.campaign) {
-      const campaignConfirmation = CampaignService.getCampaign(req.query.campaign).confirmation;
+      const campaignConfirmation = CampaignService.getCampaign(req.query.campaign.toLowerCase()).confirmation;
       headerImage = campaignConfirmation.imageUrl;
       headerText = campaignConfirmation.header;
       bodyCopy = campaignConfirmation.copy;
@@ -247,7 +247,7 @@ module.exports = {
    */
   campaignReferral: function(req, res) {
     try {
-      const campaign = CampaignService.getCampaign(req.params.campaign);
+      const campaign = CampaignService.getCampaign(req.params.campaign.toLowerCase());
       const campaignComponentMarkup = ReactDOMServer.renderToString(
         <CampaignReferral {...campaign} campaignId={req.params.campaign} referrerInfo={req.query} />
       );

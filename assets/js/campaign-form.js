@@ -14,61 +14,58 @@ var submitAlpha = function(event) {
       obj[item.name] = item.value;
       return obj;
     }, {});
+  // Return early if alpha phone number doesn't match US phone number format
   if (!validatePhoneNumber(formData.phone)) {
     event.preventDefault();
-    $('.AlphaSignUpForm').append(
-      "<p style='color:red;' >Looks like this input is not ok FIX it Now Or else</p>"
-    );
-  } else if(formData["friends[0][first_name]"]) {
+    $('#alpha-signup input[type=tel]:first').css('background-color', '#EF5350');
+    return;
+  } else if (formData['friends[0][first_name]']) {
     // if the form has any beta numbers attached check if all numbers are valid
-    validateAllBetaNumbers(formData)
-  } else {
-    return true;
+    if (!validateAllBetaNumbers(formData.phone)) {
+      event.preventDefault();
+      return;
+    }
   }
+  return;
 };
 
-/**
- * Submit beta users
- * Checks if a beta phone numbera follow the USA format and then checks all
- * beta numbers against the alpha's phone number. If all checks pass submit form
- * else prompt the user to try again with valid phone numbers
+/*
+ * Check if a phone number is a valid US number
+ * Returns a clean number free of all non numeric values
  */
-var submitBeta = function(event) {
-  event.preventDefault();
-  let formData = $('#beta-signup').serializeArray().reduce(function(obj, item) {
-    obj[item.name] = item.value;
-    return obj;
-  }, {});
-  // Validate all referred numbers
-  validateAllBetaNumbers(formData.phone);
-};
-
-// Helper Functions
-
-function validatePhoneNumber(betaPhoneNumber) {
+function validatePhoneNumber(phoneNumber) {
   let validNumber = false;
-  let resultNumber = betaPhoneNumber.replace(/[\W_+a-zA-Z]+/g, '');
+  let resultNumber = phoneNumber.replace(/[\W_+a-zA-Z]+/g, '');
 
   return resultNumber.length === 10
     ? resultNumber
     : resultNumber[0] == 1 && resultNumber.length === 11 ? resultNumber : false;
 }
 
+/*
+ * Checks if an array phone numbers are valid US numbers
+ * Alert users of by changing the color of the input field
+ */
 function validateAllBetaNumbers(alphaNumber) {
-  $('#beta-signup input[type=tel]').each(function() {
-    !validatePhoneNumber(this.value) ||
-    !duplicateNumber(this.value, alphaNumber)
-      ? $(this).css('background-color', 'red')
-      : null;
+  let validBetas = true;
+  $('.BetaSignUpForm input[type=tel]').each(function() {
+    if (!validatePhoneNumber(this.value)) {
+      $(this).css('background-color', '#EF5350');
+      validBetas = false;
+    } else if (duplicateNumber(this.value, alphaNumber)) {
+      $(this).css('background-color', '#EF5350');
+      validBetas = false;
+    }
   });
+  return validBetas;
 }
 
+/*
+ * Checks if a referred/beta phone number is the same as the referer/alpha user &
+ * returns false if numbers match
+ */
 function duplicateNumber(betaPhoneNumber, alphaPhoneNumber) {
-  if (betaPhoneNumber === alphaPhoneNumber) {
-    return false;
-  }
-  return true;
+  return betaPhoneNumber === alphaPhoneNumber;
 }
 
 $('#alpha-signup').submit(submitAlpha);
-$('#beta-signup').submit(submitBeta);
