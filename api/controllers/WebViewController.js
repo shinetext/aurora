@@ -7,9 +7,12 @@
 import Promise from 'bluebird';
 import request from 'request';
 import PartnerService from '../services/PartnerService';
+import CampaignService from '../services/CampaignService';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import PartnerApp from '../../views/components/PartnerApp';
+import CampaignApp from '../../views/components/campaigns/CampaignApp';
+import CampaignReferral from '../../views/components/campaigns/CampaignReferral';
 Promise.promisifyAll(request);
 
 module.exports = {
@@ -53,7 +56,8 @@ module.exports = {
   squad: (req, res) => {
     let locals = {
       title: 'Squad | Shine',
-      metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
+      metaDescription:
+        "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
       layout: 'layouts/subpage-fullwidth.layout',
       hideFooterCta: true,
       adviceBaseUrl: sails.config.globals.adviceBaseUrl,
@@ -65,12 +69,19 @@ module.exports = {
    * Display /confirmation view and pass along any query params.
    */
   confirmation: function(req, res) {
-    let headerImage, headerText;
+    let headerImage, headerText, bodyCopy;
     if (req.query.partner) {
       const partnerConfirmation = PartnerService.getPartner(req.query.partner)
         .confirmation;
       headerImage = partnerConfirmation.imageUrl;
       headerText = partnerConfirmation.copy;
+    } else if (req.query.campaign) {
+      const campaignConfirmation = CampaignService.getCampaign(
+        req.query.campaign.toLowerCase()
+      ).confirmation;
+      headerImage = campaignConfirmation.imageUrl;
+      headerText = campaignConfirmation.header;
+      bodyCopy = campaignConfirmation.copy;
     } else {
       headerImage = 'images/confirmation-header.gif';
       headerText = req.query.referral
@@ -83,10 +94,12 @@ module.exports = {
       layout: 'layouts/subpageCustomHeader.layout',
       headerText: headerText,
       headerImage: headerImage,
+      bodyCopy: bodyCopy ? bodyCopy : '',
       hideFooterCta: true,
       firstName: req.query.firstName ? req.query.firstName : '',
       fromReferral: req.query.referral ? true : false,
       fromPartner: req.query.partner ? true : false,
+      fromCampaign: req.query.campaign ? true : false,
       phone: req.query.phone ? req.query.phone : '',
       query: req.query,
       referralCode: req.query.referralCode ? req.query.referralCode : '',
@@ -121,9 +134,8 @@ module.exports = {
     Promise.coroutine(function*() {
       let referralRequest = {
         method: 'GET',
-        uri: sails.config.globals.photonApiUrl +
-          '/referral/' +
-          req.params.phone,
+        uri:
+          sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
         json: true,
       };
 
@@ -132,7 +144,8 @@ module.exports = {
 
         let locals = {
           title: 'My Referrals | Shine',
-          metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
+          metaDescription:
+            "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
           layout: 'layouts/subpage-fullwidth.layout',
           hideFooterCta: true,
           shareUrls: {},
@@ -197,7 +210,7 @@ module.exports = {
 
   /**
    * View for partner/influencer microsite
-   * 
+   *
    */
   partners: function(req, res) {
     try {
@@ -211,6 +224,57 @@ module.exports = {
         hideFooterCta: true,
       };
       return res.view('partner-signup', locals);
+    } catch (err) {
+      sails.log.error(err);
+      return res.view(404);
+    }
+  },
+
+  /**
+   * View for campaign/influencer microsite
+   *
+   */
+  campaigns: function(req, res) {
+    try {
+      let campaignName = req.params.campaign.toLowerCase();
+      const campaign = CampaignService.getCampaign(campaignName);
+      const campaignComponentMarkup = ReactDOMServer.renderToString(
+        <CampaignApp {...campaign} campaignId={campaignName} />
+      );
+      const locals = {
+        layout: 'layouts/subpage-fullwidth.layout',
+        campaignComponent: campaignComponentMarkup,
+        hideFooterCta: true,
+      };
+      return res.view('campaign', locals);
+    } catch (err) {
+      sails.log.error(err);
+      return res.view(404);
+    }
+  },
+
+  /**
+   * View for campaign referrals component
+   *
+   */
+  campaignReferral: function(req, res) {
+    try {
+      let campaignName = req.params.campaign.toLowerCase();
+      const campaign = CampaignService.getCampaign(campaignName);
+      const campaignComponentMarkup = ReactDOMServer.renderToString(
+        <CampaignReferral
+          {...campaign}
+          campaignId={campaignName}
+          referrerInfo={req.query}
+          betasOnly={true}
+        />
+      );
+      const locals = {
+        layout: 'layouts/subpage-fullwidth.layout',
+        campaignComponent: campaignComponentMarkup,
+        hideFooterCta: true,
+      };
+      return res.view('campaign', locals);
     } catch (err) {
       sails.log.error(err);
       return res.view(404);
