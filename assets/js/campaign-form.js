@@ -17,10 +17,18 @@ var submitAlpha = function(event) {
   // Return early if alpha phone number doesn't match US phone number format
   if (!validatePhoneNumber(formData.phone)) {
     event.preventDefault();
+    // Change background color of input fields and label colors to notify user
+    // of required changes
     $('#alpha-signup input[type=tel]:first').css('background-color', '#EF5350');
+    $(
+      '#alpha-signup > div.AlphaSignUpForm > div:nth-child(2) > div > label'
+    ).css('color', '#333');
+    $(
+      '#alpha-signup > div.AlphaSignUpForm > div:nth-child(2) > div > span'
+    ).css('color', '#333');
     return;
   } else if (formData['friends[0][first_name]']) {
-    // if the form has any beta numbers attached check if all numbers are valid
+    // If the form has any beta numbers attached check if all numbers are valid
     if (!validateAllBetaNumbers(formData.phone)) {
       event.preventDefault();
       return;
@@ -49,11 +57,14 @@ function validatePhoneNumber(phoneNumber) {
 function validateAllBetaNumbers(alphaNumber) {
   var validBetas = true;
   $('.BetaSignUpForm input[type=tel]').each(function() {
-    if (!validatePhoneNumber(this.value)) {
+    if (
+      !validatePhoneNumber(
+        this.value || duplicateNumber(this.value, alphaNumber)
+      )
+    ) {
       $(this).css('background-color', '#EF5350');
-      validBetas = false;
-    } else if (duplicateNumber(this.value, alphaNumber)) {
-      $(this).css('background-color', '#EF5350');
+      $(this).parent().find('label').css('color', '#333');
+      $(this).parent().find('span').css('color', '#333');
       validBetas = false;
     }
   });
