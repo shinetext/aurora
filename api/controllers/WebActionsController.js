@@ -39,7 +39,6 @@ module.exports = {
    */
   createMobileCommonsRequest: function(req) {
     let data = { form: createMobileCommonsFormData(req.body) };
-
     if (req.body.extras) {
       const keys = Object.keys(req.body.extras);
       for (const key of keys) {

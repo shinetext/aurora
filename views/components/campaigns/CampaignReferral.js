@@ -13,6 +13,7 @@ export default ({
   referralInfo,
   additionalFormLink,
   betasOnly,
+  scholarshipInfo,
 }) => {
   let additionalLinkView;
   if (additionalFormLink) {
@@ -20,6 +21,16 @@ export default ({
       <a className="additional-link" href={additionalFormLink.link}>
         {additionalFormLink.label}
       </a>
+    );
+  }
+  let scholarshipOptIn;
+  if (scholarshipInfo.hasScholarship) {
+    scholarshipOptIn = (
+      <FormField
+        type={scholarshipInfo.type}
+        fieldName={`extras[${scholarshipInfo.fieldName}]`}
+        value={true}
+      />
     );
   }
   return (
@@ -65,6 +76,7 @@ export default ({
             </div>
             <Disclaimer />
             {additionalLinkView}
+            {scholarshipOptIn}
           </form>
         </div>
       </div>
