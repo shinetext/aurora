@@ -16,6 +16,9 @@
   <p><% if (fromReferral || fromPartner) { %>
   Got more friends who would appreciate Shine?<br />
   Spread some more motiv-affirmation!
+  <% } else if (fromCampaign) { %>
+  <%= bodyCopy %><br />
+  Learn how to get an invite to our <a href="/squad">VIP group</a> and earn free <a href="/referrals">swag</a>.
   <% } else { %>
   Want to make it even more official?<br />
   Learn how to get an invite to our <a href="/squad">VIP group</a> and earn free <a href="/referrals">swag</a>.
