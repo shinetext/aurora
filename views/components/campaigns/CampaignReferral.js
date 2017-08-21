@@ -12,6 +12,7 @@ export default ({
   referrerInfo,
   referralInfo,
   additionalFormLink,
+  betasOnly,
 }) => {
   let additionalLinkView;
   if (additionalFormLink) {
@@ -32,12 +33,18 @@ export default ({
             className="-copy"
             dangerouslySetInnerHTML={{ __html: referralInfo.copy }}
           />
-          <form class="signup-form" id="alpha-signup" action="/join" method="post">
+          <form
+            class="signup-form"
+            id="alpha-signup"
+            action="/join"
+            method="post"
+          >
             <FormField
               type="hidden"
               fieldName="phone"
               value={referrerInfo.phone}
             />
+            <FormField type="hidden" fieldName="betasOnly" value={betasOnly} />
             <FormField
               type="hidden"
               fieldName="campaign"

@@ -85,16 +85,13 @@ module.exports = {
     } else if (req.body.campaign) {
       // Redirect user to referral page if user comes from a campaign page
       // or redirects user to confirmation page if user comes from referral page
-      let { phone, first_name, campaign } = req.body;
-      let referralCode = ReferralCodes.encode(phone);
+      let { phone, campaign } = req.body;
       // If a user has entered friend referral information redirect to confirmation page
-      req.body.friends
-        ? (redirectUrl = `/confirmation?campaign=${campaign}`)
-        : (redirectUrl =
-            `/campaigns/${campaign}/share` +
-            `?phone=${phone}` +
-            `&firstName=${first_name}` +
-            `&campaign=${campaign}`);
+      if (req.body.friends) {
+        redirectUrl = `/confirmation?campaign=${campaign}`;
+      } else {
+        redirectUrl = `/campaigns/${campaign}/share?phone=${phone}&campaign=${campaign}`;
+      }
     } else {
       redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body
         .first_name}`;
@@ -364,18 +361,18 @@ class ErrorMobileCommonsJoin extends Error {
  * Form data depends on if a user is opting in themselves or referring friends
  */
 function createMobileCommonsFormData(formData) {
-  return formData.campaign && formData.friends
-    ? {
-        'person[phone]': formData.phone,
-      }
-    : {
-        'opt_in_path[]': formData.opt_in_path || this.MOBILE_COMMONS_OPTIN,
-        'person[first_name]': formData.first_name,
-        'person[phone]': formData.phone,
-        'person[email]': formData.email,
-        'person[send_gifs]':
-          typeof formData.send_gifs === 'undefined' ? 'no' : 'yes',
-        'person[referral_code]': ReferralCodes.encode(formData.phone),
-        'person[date_signed_up]': new Date().toISOString(),
-      };
+  if (formData.betasOnly) {
+    return { 'person[phone]': formData.phone };
+  } else {
+    return {
+      'opt_in_path[]': formData.opt_in_path || this.MOBILE_COMMONS_OPTIN,
+      'person[first_name]': formData.first_name,
+      'person[phone]': formData.phone,
+      'person[email]': formData.email,
+      'person[send_gifs]':
+        typeof formData.send_gifs === 'undefined' ? 'no' : 'yes',
+      'person[referral_code]': ReferralCodes.encode(formData.phone),
+      'person[date_signed_up]': new Date().toISOString(),
+    };
+  }
 }

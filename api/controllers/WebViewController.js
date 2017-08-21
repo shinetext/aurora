@@ -71,17 +71,22 @@ module.exports = {
   confirmation: function(req, res) {
     let headerImage, headerText, bodyCopy;
     if (req.query.partner) {
-      const partnerConfirmation = PartnerService.getPartner(req.query.partner).confirmation;
+      const partnerConfirmation = PartnerService.getPartner(req.query.partner)
+        .confirmation;
       headerImage = partnerConfirmation.imageUrl;
       headerText = partnerConfirmation.copy;
     } else if (req.query.campaign) {
-      const campaignConfirmation = CampaignService.getCampaign(req.query.campaign.toLowerCase()).confirmation;
+      const campaignConfirmation = CampaignService.getCampaign(
+        req.query.campaign.toLowerCase()
+      ).confirmation;
       headerImage = campaignConfirmation.imageUrl;
       headerText = campaignConfirmation.header;
       bodyCopy = campaignConfirmation.copy;
     } else {
       headerImage = 'images/confirmation-header.gif';
-      headerText = req.query.referral ? `Thanks for sharing!` : `You're all signed up!`;
+      headerText = req.query.referral
+        ? `Thanks for sharing!`
+        : `You're all signed up!`;
     }
 
     let locals = {
@@ -129,7 +134,8 @@ module.exports = {
     Promise.coroutine(function*() {
       let referralRequest = {
         method: 'GET',
-        uri: sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
+        uri:
+          sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
         json: true,
       };
 
@@ -147,7 +153,9 @@ module.exports = {
 
         if (response.statusCode === 200) {
           locals.referralInfo = response.body;
-          locals.referralInfo.nextLevel = ReferralService.getNextLevel(response.body.referralCount);
+          locals.referralInfo.nextLevel = ReferralService.getNextLevel(
+            response.body.referralCount
+          );
 
           // @todo Not sure if this is should be the final solution for handling this
           if (locals.referralInfo.nextLevel.reward === 'Shine sticker') {
@@ -156,11 +164,15 @@ module.exports = {
             locals.referralInfo.rewardImage = 'reward-image-2';
           } else if (locals.referralInfo.nextLevel.reward === 'Shine t-shirt') {
             locals.referralInfo.rewardImage = 'reward-image-3';
-          } else if (locals.referralInfo.nextLevel.reward === 'Shine call-out') {
+          } else if (
+            locals.referralInfo.nextLevel.reward === 'Shine call-out'
+          ) {
             locals.referralInfo.rewardImage = 'reward-image-4';
           } else if (locals.referralInfo.nextLevel.reward === 'Shine hoodie') {
             locals.referralInfo.rewardImage = 'reward-image-5';
-          } else if (locals.referralInfo.nextLevel.reward === 'Shine leggings') {
+          } else if (
+            locals.referralInfo.nextLevel.reward === 'Shine leggings'
+          ) {
             locals.referralInfo.rewardImage = 'reward-image-6';
           } else {
             locals.referralInfo.rewardImage = 'reward-image-6';
@@ -250,7 +262,12 @@ module.exports = {
       let campaignName = req.params.campaign.toLowerCase();
       const campaign = CampaignService.getCampaign(campaignName);
       const campaignComponentMarkup = ReactDOMServer.renderToString(
-        <CampaignReferral {...campaign} campaignId={campaignName} referrerInfo={req.query} />
+        <CampaignReferral
+          {...campaign}
+          campaignId={campaignName}
+          referrerInfo={req.query}
+          betasOnly={true}
+        />
       );
       const locals = {
         layout: 'layouts/subpage-fullwidth.layout',
