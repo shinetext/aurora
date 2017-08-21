@@ -56,10 +56,14 @@ module.exports = {
         if (typeof friend === 'object' && friend.first_name && friend.phone) {
           const code = ReferralCodes.encode(friend.phone);
 
-          data.form[`friends[${friendCounter}][phone]`] = friend.phone;
-          data.form[`friends[${friendCounter}][first_name]`] =
-            friend.first_name;
-          data.form[`friends[${friendCounter}][referral_code]`] = code;
+          data.form[`friend[${friendCounter}]`] = {
+            'person[first_name]': friend.first_name,
+            'person[phone]': friend.phone,
+            'person[referral_code]': code,
+          };
+          // data.form[`friends[${friendCounter}][first_name]`] =
+          //   friend.first_name;
+          // data.form[`friends[${friendCounter}][referral_code]`] = code;
 
           friendCounter++;
         }
