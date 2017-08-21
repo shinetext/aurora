@@ -53,19 +53,40 @@ module.exports = {
 
       let friendCounter = 0;
       for (const friend of req.body.friends) {
-        if (typeof friend === 'object' && friend.first_name && friend.phone) {
-          const code = ReferralCodes.encode(friend.phone);
-
-          data.form[`friends[${friendCounter}][phone]`] = friend.phone;
-          data.form[`friends[${friendCounter}][first_name]`] =
-            friend.first_name;
-          data.form[`friends[${friendCounter}][referral_code]`] = code;
-
+        if (typeof friend === 'object' && friend.phone) {
+          data.form[`friends[${friendCounter}]`] = friend.phone;
           friendCounter++;
         }
       }
     }
     return data;
+  },
+
+  /**
+   * Helper method for updating friend profiles after they've been invited
+   * from an Alpha's join request.
+   * 
+   * @param {array} friends
+   */
+  updateFriendProfiles: function(friends) {
+    for (const friend of friends) {
+      if (typeof friend === 'object' && friend.first_name && friend.phone) {
+        const friendUpdateRequest = {
+          url: `https://secure.mcommons.com/api/profile_update`,
+          auth: {
+            user: sails.config.globals.mobileCommonsUser,
+            pass: sails.config.globals.mobileCommonsPassword,
+          },
+          form: {
+            phone_number: friend.phone,
+            first_name: friend.first_name,
+            referral_code: ReferralCodes.encode(friend.phone),
+          },
+        };
+
+        request.postAsync(friendUpdateRequest);
+      }
+    }
   },
 
   /**
@@ -116,6 +137,7 @@ module.exports = {
     let mcSubscribeSuccessful = false;
 
     // Make the Mobile Commons submission
+    let that = this;
     request
       .postAsync(
         sails.config.globals.mcJoinUrl,
@@ -131,6 +153,13 @@ module.exports = {
         }
 
         mcSubscribeSuccessful = true;
+
+        // Since we can't update friend names and phone numbers in the /join
+        // request, we're updating their profiles here immediately after
+        // the /join.
+        if (req.body.friends) {
+          that.updateFriendProfiles(req.body.friends);
+        }
 
         // Post the signup to Photon too
         return request.postAsync(photonRequest);
