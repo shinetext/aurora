@@ -4,8 +4,9 @@
 
 'use strict';
 
-var Promise = require('bluebird');
-var request = Promise.promisifyAll(require('request'));
+const Promise = require('bluebird');
+const request = Promise.promisifyAll(require('request'));
+const xml2js = Promise.promisifyAll(require('xml2js'));
 const Mixpanel = require('mixpanel');
 let mixpanel;
 
@@ -91,39 +92,91 @@ module.exports = {
    * @param {array} friends Data on the invitees
    */
   updateFriendProfiles: function(phone, friends) {
+    // Maximum number of times retry a profile check
+    const MAX_MC_PROFILE_CHECK_RETRIES = 5;
+    // Time delay between retries
+    const MC_PROFILE_CHECK_RETRY_DELAY = 2500;
+
     for (const friend of friends) {
       if (typeof friend === 'object' && friend.first_name && friend.phone) {
-        // Update the user profiles on Mobile Commons
-        const mobilecommonsRequest = {
-          url: `https://secure.mcommons.com/api/profile_update`,
-          auth: {
-            user: sails.config.globals.mobileCommonsUser,
-            pass: sails.config.globals.mobileCommonsPassword,
-          },
-          form: {
-            phone_number: friend.phone,
-            first_name: friend.first_name,
-            referral_code: ReferralCodes.encode(friend.phone),
-          },
-        };
-
-        request.postAsync(mobilecommonsRequest);
-
-        // Upsert the user profiles on our own Photon backed
-        // Particularly necessary for tracking the referred_by value properly.
-        let photonRequest = {
-          method: 'POST',
-          uri: sails.config.globals.photonApiUrl + '/signup',
-          json: true,
-          body: {
-            firstName: friend.first_name,
-            phone: friend.phone,
-            referredByCode: ReferralCodes.encode(phone),
-          },
-        };
-
-        request.postAsync(photonRequest);
+        safeMCProfileUpdate({
+          friend: friend,
+          retriesRemaining: MAX_MC_PROFILE_CHECK_RETRIES,
+        });
       }
+    }
+
+    //
+    // Checks for the existence of a user on Mobile Commons before
+    //
+    // @param context {object}
+    //
+    function safeMCProfileUpdate(context) {
+      console.log('PARAMS:', context);
+
+      Promise.coroutine(function*() {
+        // Check Mobile Commons if the profile exists
+        const profileResponse = yield queryProfileAPI(context.friend.phone);
+        const profile = yield xml2js.parseStringAsync(profileResponse);
+        const foundProfile = profile.response.$.success === 'true';
+
+        if (!foundProfile && context.retriesRemaining > 0) {
+          // If it doesn't exist, then try again after a short delay
+          context.retriesRemaining--;
+          setTimeout(
+            safeMCProfileUpdate.bind(undefined, context),
+            MC_PROFILE_CHECK_RETRY_DELAY
+          );
+        } else {
+          // But if it is there, then we can safely update the profile
+          const updateRequest = {
+            url: `https://secure.mcommons.com/api/profile_update`,
+            auth: {
+              user: sails.config.globals.mobileCommonsUser,
+              pass: sails.config.globals.mobileCommonsPassword,
+            },
+            form: {
+              phone_number: context.friend.phone,
+              first_name: context.friend.first_name,
+              referral_code: ReferralCodes.encode(context.friend.phone),
+            },
+          };
+
+          request.postAsync(updateRequest);
+        }
+
+        //
+        // Queries the Mobile Commons profile API for a specific phone number.
+        //
+        // @param {string} phone
+        // @return Promise
+        //
+        function queryProfileAPI(phone) {
+          return new Promise((resolve, reject) => {
+            const url = `https://secure.mcommons.com/api/profiles?phone_number=${phone}`;
+            const options = {
+              auth: {
+                user: sails.config.globals.mobileCommonsUser,
+                pass: sails.config.globals.mobileCommonsPassword,
+              },
+            };
+
+            request.get(url, options, function(err, response, body) {
+              if (err) {
+                reject(err);
+              } else if (response && response.statusCode !== 200) {
+                reject(
+                  new Error(
+                    `Error querying Mobile Commons profile API: ${response.statusCode}`
+                  )
+                );
+              } else {
+                resolve(body);
+              }
+            });
+          });
+        }
+      })();
     }
   },
 
