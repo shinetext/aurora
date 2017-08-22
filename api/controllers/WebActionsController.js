@@ -38,7 +38,7 @@ module.exports = {
    * @return {object}
    */
   createMobileCommonsRequest: function(req) {
-    let data = { form: createMobileCommonsFormData(req.body) };
+    let data = { form: this.createMobileCommonsFormData(req.body) };
     if (req.body.extras) {
       const keys = Object.keys(req.body.extras);
       for (const key of keys) {
@@ -60,6 +60,27 @@ module.exports = {
       }
     }
     return data;
+  },
+
+  /**
+   * Create initial form data for Mobile Commons join request
+   * Form data depends on if a user is opting in themselves or referring friends
+   */
+  createMobileCommonsFormData: function(formData) {
+    if (formData.betasOnly) {
+      return { 'person[phone]': formData.phone };
+    } else {
+      return {
+        'opt_in_path[]': formData.opt_in_path || this.MOBILE_COMMONS_OPTIN,
+        'person[first_name]': formData.first_name,
+        'person[phone]': formData.phone,
+        'person[email]': formData.email,
+        'person[send_gifs]':
+          typeof formData.send_gifs === 'undefined' ? 'no' : 'yes',
+        'person[referral_code]': ReferralCodes.encode(formData.phone),
+        'person[date_signed_up]': new Date().toISOString(),
+      };
+    }
   },
 
   /**
@@ -381,26 +402,5 @@ module.exports = {
 class ErrorMobileCommonsJoin extends Error {
   constructor(message) {
     super(message);
-  }
-}
-
-/**
- * Create initial form data for Mobile Commons join request
- * Form data depends on if a user is opting in themselves or referring friends
- */
-function createMobileCommonsFormData(formData) {
-  if (formData.betasOnly) {
-    return { 'person[phone]': formData.phone };
-  } else {
-    return {
-      'opt_in_path[]': formData.opt_in_path || this.MOBILE_COMMONS_OPTIN,
-      'person[first_name]': formData.first_name,
-      'person[phone]': formData.phone,
-      'person[email]': formData.email,
-      'person[send_gifs]':
-        typeof formData.send_gifs === 'undefined' ? 'no' : 'yes',
-      'person[referral_code]': ReferralCodes.encode(formData.phone),
-      'person[date_signed_up]': new Date().toISOString(),
-    };
   }
 }
