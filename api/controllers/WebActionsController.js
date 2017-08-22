@@ -67,7 +67,6 @@ module.exports = {
    * Form data depends on if a user is opting in themselves or referring friends
    */
   createMobileCommonsFormData: function(formData) {
-    console.log(ReferralCodes.encode(formData.phone));
     if (formData.betasOnly) {
       return { 'person[phone]': formData.phone };
     } else {

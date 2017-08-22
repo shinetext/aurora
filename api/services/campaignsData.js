@@ -707,7 +707,7 @@ const campaignData = {
   },
   vanderbilt: {
     name: 'The Flip Side',
-    imageUrl: '/images/campaigns/flipside/anderson-university.png',
+    imageUrl: '/images/campaigns/flipside/vanderbilt-university.png',
     copy:
       'Join other students from Vanderbilt University & sign up to get 5 days of texts to help you see the flip side of things we all stress out about when heading to school. ',
     buttonCopy: 'Sign Up',
