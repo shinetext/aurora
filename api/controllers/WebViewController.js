@@ -214,9 +214,10 @@ module.exports = {
    */
   partners: function(req, res) {
     try {
-      const partner = PartnerService.getPartner(req.params.partner);
+      const partnerName = req.params.partner.toLowerCase();
+      const partner = PartnerService.getPartner(partnerName);
       const partnerComponentMarkup = ReactDOMServer.renderToString(
-        <PartnerApp {...partner} partnerId={req.params.partner} />
+        <PartnerApp {...partner} partnerId={partnerName} />
       );
       const locals = {
         layout: 'layouts/subpage-fullwidth.layout',
