@@ -54,7 +54,7 @@ module.exports = {
       let friendCounter = 0;
       for (const friend of req.body.friends) {
         if (typeof friend === 'object' && friend.phone) {
-          data.form[`friends[${friendCounter}]`] = friend.phone;
+          data.form[`friends[${friendCounter}][phone]`] = friend.phone;
           friendCounter++;
         }
       }
