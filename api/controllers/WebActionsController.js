@@ -67,6 +67,7 @@ module.exports = {
    * Form data depends on if a user is opting in themselves or referring friends
    */
   createMobileCommonsFormData: function(formData) {
+    console.log(ReferralCodes.encode(formData.phone));
     if (formData.betasOnly) {
       return { 'person[phone]': formData.phone };
     } else {
@@ -86,7 +87,7 @@ module.exports = {
   /**
    * Helper method for updating friend profiles after they've been invited
    * from an Alpha's join request.
-   * 
+   *
    * @param {array} friends
    */
   updateFriendProfiles: function(friends) {
@@ -238,11 +239,14 @@ module.exports = {
         // If available, attach the referralCode to the redirect URL
         if (referralCode.length > 0) {
           redirectUrl += `&referralCode=${referralCode}`;
-
+          // Get partner/campaign name to identify where a user signed up
+          let partnerOrCampaign = req.body.partner
+            ? req.body.partner
+            : req.body.campaign ? req.body.campaign : undefined;
           // Track sign up and identify with the referral code
           let trackingData = {
             distinct_id: referralCode,
-            partner: req.body.partner,
+            partner: partnerOrCampaign,
             platform: 'sms',
             source: joinByReferral ? 'web-referral' : 'web',
             utm_campaign: req.body.utmCampaign,

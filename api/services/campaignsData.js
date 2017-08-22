@@ -35,7 +35,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -73,7 +73,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -111,7 +111,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -149,7 +149,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -187,7 +187,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -225,7 +225,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -264,7 +264,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -302,7 +302,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -340,7 +340,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -378,7 +378,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -416,7 +416,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -443,7 +443,7 @@ const campaignData = {
     name: 'The Flip Side',
     imageUrl: '/images/campaigns/flipside/morgan-state.png',
     copy:
-      'Join other students from Morgan state & sign up to get 5 days of texts to help you see the flip side of things we all stress out about when heading to school. ',
+      'Join other students from Morgan State & sign up to get 5 days of texts to help you see the flip side of things we all stress out about when heading to school. ',
     buttonCopy: 'Sign Up',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/UatRnEUNX8iCQ/giphy.gif',
@@ -454,7 +454,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -481,7 +481,7 @@ const campaignData = {
     name: 'The Flip Side',
     imageUrl: '/images/campaigns/flipside/chicago-academy-high-school.png',
     copy:
-      'Join other students from Chicago Academy High school & sign up to get 5 days of texts to help you see the flip side of things we all stress out about when heading to school. ',
+      'Join other students from Chicago Academy High School & sign up to get 5 days of texts to help you see the flip side of things we all stress out about when heading to school. ',
     buttonCopy: 'Sign Up',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/UatRnEUNX8iCQ/giphy.gif',
@@ -492,7 +492,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -530,7 +530,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -568,7 +568,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -606,7 +606,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -644,7 +644,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -682,7 +682,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -720,7 +720,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -758,7 +758,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -796,7 +796,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -834,7 +834,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -872,7 +872,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -910,7 +910,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -949,7 +949,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -987,7 +987,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -1025,7 +1025,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -1063,7 +1063,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
