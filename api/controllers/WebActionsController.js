@@ -238,14 +238,11 @@ module.exports = {
         // If available, attach the referralCode to the redirect URL
         if (referralCode.length > 0) {
           redirectUrl += `&referralCode=${referralCode}`;
-          // Get partner/campaign name to identify where a user signed up
-          let partnerOrCampaign = req.body.partner
-            ? req.body.partner
-            : req.body.campaign ? req.body.campaign : undefined;
+
           // Track sign up and identify with the referral code
           let trackingData = {
             distinct_id: referralCode,
-            partner: partnerOrCampaign,
+            partner: req.body.partner || req.body.campaign,
             platform: 'sms',
             source: joinByReferral ? 'web-referral' : 'web',
             utm_campaign: req.body.utmCampaign,
