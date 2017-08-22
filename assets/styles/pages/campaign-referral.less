@@ -1,0 +1,41 @@
+// Campaign Referral page styles
+#campaign-referral-container {
+  margin-top: @margin-md;
+  margin-bottom: @margin-lg;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  form {
+    max-width: 480px;
+  }
+  .-header {
+    .font-section-title;
+    text-align: center;
+    padding: 0;
+  }
+  .-copy {
+    .font-section-subtitle;
+    text-align: center;
+    font-size: 22px;
+    padding: @margin-sm 0px;
+  }
+  .additional-link {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  @media (max-width: @screen-sm-max) {
+    .BetaSignUpForm {
+      .friend-fields-container {
+        flex-direction: column;
+        margin-top: @margin-sm;
+      }
+      .form-field {
+        margin: 10px 0;
+      }
+    }
+  }
+}

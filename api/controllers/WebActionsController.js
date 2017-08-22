@@ -38,18 +38,7 @@ module.exports = {
    * @return {object}
    */
   createMobileCommonsRequest: function(req) {
-    let data = {
-      form: {
-        'opt_in_path[]': req.body.opt_in_path || this.MOBILE_COMMONS_OPTIN,
-        'person[first_name]': req.body.first_name,
-        'person[phone]': req.body.phone,
-        'person[email]': req.body.email,
-        'person[send_gifs]': typeof req.body.send_gifs === 'undefined' ? 'no' : 'yes',
-        'person[referral_code]': ReferralCodes.encode(req.body.phone),
-        'person[date_signed_up]': new Date().toISOString(),
-      },
-    };
-
+    let data = { form: createMobileCommonsFormData(req.body) };
     if (req.body.extras) {
       const keys = Object.keys(req.body.extras);
       for (const key of keys) {
@@ -64,19 +53,40 @@ module.exports = {
 
       let friendCounter = 0;
       for (const friend of req.body.friends) {
-        if (typeof friend === 'object' && friend.first_name && friend.phone) {
-          const code = ReferralCodes.encode(friend.phone);
-
-          data.form[`friends[${friendCounter}][phone]`] = friend.phone;
-          data.form[`friends[${friendCounter}][first_name]`] = friend.first_name;
-          data.form[`friends[${friendCounter}][referral_code]`] = code;
-
+        if (typeof friend === 'object' && friend.phone) {
+          data.form[`friends[${friendCounter}]`] = friend.phone;
           friendCounter++;
         }
       }
     }
-
     return data;
+  },
+
+  /**
+   * Helper method for updating friend profiles after they've been invited
+   * from an Alpha's join request.
+   * 
+   * @param {array} friends
+   */
+  updateFriendProfiles: function(friends) {
+    for (const friend of friends) {
+      if (typeof friend === 'object' && friend.first_name && friend.phone) {
+        const friendUpdateRequest = {
+          url: `https://secure.mcommons.com/api/profile_update`,
+          auth: {
+            user: sails.config.globals.mobileCommonsUser,
+            pass: sails.config.globals.mobileCommonsPassword,
+          },
+          form: {
+            phone_number: friend.phone,
+            first_name: friend.first_name,
+            referral_code: ReferralCodes.encode(friend.phone),
+          },
+        };
+
+        request.postAsync(friendUpdateRequest);
+      }
+    }
   },
 
   /**
@@ -89,11 +99,22 @@ module.exports = {
 
     // If signing up through partner landing pages, redirect directly to
     // confirmation page.
-
     if (req.body.partner) {
-      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.first_name}&partner=${req.body.partner}`;
+      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body
+        .first_name}&partner=${req.body.partner}`;
+    } else if (req.body.campaign) {
+      // Redirect user to referral page if user comes from a campaign page
+      // or redirects user to confirmation page if user comes from referral page
+      let { phone, campaign } = req.body;
+      // If a user has entered friend referral information redirect to confirmation page
+      if (req.body.friends) {
+        redirectUrl = `/confirmation?campaign=${campaign}`;
+      } else {
+        redirectUrl = `/campaigns/${campaign}/share?phone=${phone}&campaign=${campaign}`;
+      }
     } else {
-      redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body.first_name}`;
+      redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body
+        .first_name}`;
     }
 
     let photonRequest = {
@@ -109,14 +130,19 @@ module.exports = {
     };
 
     const joinByReferral =
-      typeof req.body.referredByCode === 'string' && req.body.referredByCode.length > 0;
+      typeof req.body.referredByCode === 'string' &&
+      req.body.referredByCode.length > 0;
 
     // Flag indicating the subscription to Mobile Commons was successful
     let mcSubscribeSuccessful = false;
 
     // Make the Mobile Commons submission
+    let that = this;
     request
-      .postAsync(sails.config.globals.mcJoinUrl, this.createMobileCommonsRequest(req))
+      .postAsync(
+        sails.config.globals.mcJoinUrl,
+        this.createMobileCommonsRequest(req)
+      )
       .then(function(response) {
         // Mobile Commons responds with a 500 error code for numbers from
         // countries that are not supported by the account.
@@ -127,6 +153,13 @@ module.exports = {
         }
 
         mcSubscribeSuccessful = true;
+
+        // Since we can't update friend names and phone numbers in the /join
+        // request, we're updating their profiles here immediately after
+        // the /join.
+        if (req.body.friends) {
+          that.updateFriendProfiles(req.body.friends);
+        }
 
         // Post the signup to Photon too
         return request.postAsync(photonRequest);
@@ -143,7 +176,8 @@ module.exports = {
           // @todo Not currently handling failed API calls
           const mailchimpRequest = {
             method: 'POST',
-            uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals.mailchimpListId}/members`,
+            uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config
+              .globals.mailchimpListId}/members`,
             json: true,
             auth: {
               user: sails.config.globals.mailchimpApiAuthUser,
@@ -164,11 +198,15 @@ module.exports = {
             .postAsync(mailchimpRequest)
             .then(response => {
               if (!response || !response.body) {
-                sails.log.error('Invalid response received from MailChimp subscribe call.');
+                sails.log.error(
+                  'Invalid response received from MailChimp subscribe call.'
+                );
               } else {
                 sails.log.info('Successful MailChimp subscribe');
                 sails.log.info(`  id: ${response.body.id}`);
-                sails.log.info(`  unique_email_id: ${response.body.unique_email_id}`);
+                sails.log.info(
+                  `  unique_email_id: ${response.body.unique_email_id}`
+                );
               }
             })
             .catch(err => {
@@ -221,8 +259,14 @@ module.exports = {
    */
   saveSettings: function(req, res) {
     let birthday = '';
-    if (req.body['bday-month'] && req.body['bday-day'] && req.body['bday-year']) {
-      birthday = `${req.body['bday-year']}-${req.body['bday-month']}-${req.body['bday-day']}`;
+    if (
+      req.body['bday-month'] &&
+      req.body['bday-day'] &&
+      req.body['bday-year']
+    ) {
+      birthday = `${req.body['bday-year']}-${req.body['bday-month']}-${req.body[
+        'bday-day'
+      ]}`;
     }
 
     let updateRequest = {
@@ -251,7 +295,8 @@ module.exports = {
     request
       .postAsync(updateRequest)
       .then(response => {
-        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body.firstName}&referralCode=${req.body.referralCode}`;
+        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req
+          .body.firstName}&referralCode=${req.body.referralCode}`;
         res.redirect(redirectUrl);
       })
       .catch(err => {
@@ -276,11 +321,17 @@ module.exports = {
     };
 
     let numFriends = 0;
-    const friends = [req.body.invitePhone1, req.body.invitePhone2, req.body.invitePhone3];
+    const friends = [
+      req.body.invitePhone1,
+      req.body.invitePhone2,
+      req.body.invitePhone3,
+    ];
     for (const friend of friends) {
       if (friend) {
         data.form[`friends[${numFriends}]`] = friend;
-        data.form[`friends[${numFriends}][referral_code]`] = ReferralCodes.encode(friend);
+        data.form[
+          `friends[${numFriends}][referral_code]`
+        ] = ReferralCodes.encode(friend);
         numFriends++;
       }
     }
@@ -330,5 +381,26 @@ module.exports = {
 class ErrorMobileCommonsJoin extends Error {
   constructor(message) {
     super(message);
+  }
+}
+
+/**
+ * Create initial form data for Mobile Commons join request
+ * Form data depends on if a user is opting in themselves or referring friends
+ */
+function createMobileCommonsFormData(formData) {
+  if (formData.betasOnly) {
+    return { 'person[phone]': formData.phone };
+  } else {
+    return {
+      'opt_in_path[]': formData.opt_in_path || this.MOBILE_COMMONS_OPTIN,
+      'person[first_name]': formData.first_name,
+      'person[phone]': formData.phone,
+      'person[email]': formData.email,
+      'person[send_gifs]':
+        typeof formData.send_gifs === 'undefined' ? 'no' : 'yes',
+      'person[referral_code]': ReferralCodes.encode(formData.phone),
+      'person[date_signed_up]': new Date().toISOString(),
+    };
   }
 }
