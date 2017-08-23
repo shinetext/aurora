@@ -1,14 +1,14 @@
 {
   "name": "shine-aurora",
   "private": true,
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "",
   "keywords": [],
   "dependencies": {
+    "@jonuy/referral-codes": "1.1.0",
     "babel-plugin-transform-builtin-extend": "^1.1.2",
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
-    "@jonuy/referral-codes": "1.1.0",
     "bluebird": "^3.4.1",
     "dotenv": "^2.0.0",
     "ejs": "2.3.4",
@@ -33,7 +33,8 @@
     "request": "^2.72.0",
     "sails": "~0.12.3",
     "sails-disk": "~0.10.9",
-    "sails-hook-babel": "^6.0.3"
+    "sails-hook-babel": "^6.0.3",
+    "xml2js": "^0.4.19"
   },
   "scripts": {
     "debug": "node debug app.js",
