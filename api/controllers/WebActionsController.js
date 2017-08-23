@@ -95,7 +95,7 @@ module.exports = {
     // Maximum number of times retry a profile check
     const MAX_MC_PROFILE_CHECK_RETRIES = 5;
     // Time delay between retries
-    const MC_PROFILE_CHECK_RETRY_DELAY = 2500;
+    const MC_PROFILE_CHECK_RETRY_DELAY = 5000;
 
     for (const friend of friends) {
       if (typeof friend === 'object' && friend.first_name && friend.phone) {
