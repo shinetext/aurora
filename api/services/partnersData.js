@@ -46,6 +46,7 @@ const partnersData = {
       label: 'Official Scholarship Rules',
       link: '/files/scholarship-rules-2017.pdf',
     },
+    referralCount: 1,
   },
 };
 
