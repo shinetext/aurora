@@ -310,7 +310,7 @@ module.exports = {
           // Track sign up and identify with the referral code
           let trackingData = {
             distinct_id: referralCode,
-            partner: req.body.partner,
+            partner: req.body.partner || req.body.campaign,
             platform: 'sms',
             source: joinByReferral ? 'web-referral' : 'web',
             utm_campaign: req.body.utmCampaign,

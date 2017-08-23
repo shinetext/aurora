@@ -35,7 +35,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -55,8 +55,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   umd: {
     name: 'The Flip Side',
@@ -73,7 +73,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -93,8 +93,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   wts: {
     name: 'The Flip Side',
@@ -111,7 +111,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -131,8 +131,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   ucla: {
     name: 'The Flip Side',
@@ -149,7 +149,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -169,8 +169,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   psuga: {
     name: 'The Flip Side',
@@ -187,7 +187,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -207,8 +207,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   ballstate: {
     name: 'The Flip Side',
@@ -225,7 +225,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -245,8 +245,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   utm: {
     name: 'The Flip Side',
@@ -264,7 +264,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -284,8 +284,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   lonestar: {
     name: 'The Flip Side',
@@ -302,7 +302,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -322,8 +322,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   niu: {
     name: 'The Flip Side',
@@ -340,7 +340,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -360,8 +360,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   uva: {
     name: 'The Flip Side',
@@ -378,7 +378,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -398,8 +398,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   willamette: {
     name: 'The Flip Side',
@@ -416,7 +416,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -436,14 +436,14 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   morgan: {
     name: 'The Flip Side',
     imageUrl: '/images/campaigns/flipside/morgan-state.png',
     copy:
-      'Join other students from Morgan state & sign up to get 5 days of texts to help you see the flip side of things we all stress out about when heading to school. ',
+      'Join other students from Morgan State & sign up to get 5 days of texts to help you see the flip side of things we all stress out about when heading to school. ',
     buttonCopy: 'Sign Up',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/UatRnEUNX8iCQ/giphy.gif',
@@ -454,7 +454,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -474,14 +474,14 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   cahs: {
     name: 'The Flip Side',
     imageUrl: '/images/campaigns/flipside/chicago-academy-high-school.png',
     copy:
-      'Join other students from Chicago Academy High school & sign up to get 5 days of texts to help you see the flip side of things we all stress out about when heading to school. ',
+      'Join other students from Chicago Academy High School & sign up to get 5 days of texts to help you see the flip side of things we all stress out about when heading to school. ',
     buttonCopy: 'Sign Up',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/UatRnEUNX8iCQ/giphy.gif',
@@ -492,7 +492,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -512,8 +512,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   waynestate: {
     name: 'The Flip Side',
@@ -530,7 +530,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -550,8 +550,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   anderson: {
     name: 'The Flip Side',
@@ -568,7 +568,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -588,8 +588,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   concordia: {
     name: 'The Flip Side',
@@ -606,7 +606,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -626,8 +626,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   wvc: {
     name: 'The Flip Side',
@@ -644,7 +644,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -664,8 +664,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   illini: {
     name: 'The Flip Side',
@@ -682,7 +682,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -702,12 +702,12 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   vanderbilt: {
     name: 'The Flip Side',
-    imageUrl: '/images/campaigns/flipside/anderson-university.png',
+    imageUrl: '/images/campaigns/flipside/vanderbilt-university.png',
     copy:
       'Join other students from Vanderbilt University & sign up to get 5 days of texts to help you see the flip side of things we all stress out about when heading to school. ',
     buttonCopy: 'Sign Up',
@@ -720,7 +720,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -740,8 +740,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   rollins: {
     name: 'The Flip Side',
@@ -758,7 +758,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -778,8 +778,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   tcnj: {
     name: 'The Flip Side',
@@ -796,7 +796,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -816,8 +816,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   txwu: {
     name: 'The Flip Side',
@@ -834,7 +834,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -854,8 +854,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   harcum: {
     name: 'The Flip Side',
@@ -872,7 +872,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -892,8 +892,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   buddyproject: {
     name: 'The Flip Side',
@@ -910,7 +910,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -930,8 +930,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   mwsu: {
     name: 'The Flip Side',
@@ -949,7 +949,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -969,8 +969,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   csu: {
     name: 'The Flip Side',
@@ -987,7 +987,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -1007,8 +1007,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   rit: {
     name: 'The Flip Side',
@@ -1025,7 +1025,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -1045,8 +1045,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
   upenn: {
     name: 'The Flip Side',
@@ -1063,7 +1063,7 @@ const campaignData = {
     referralInfo: {
       header: 'You’ve signed up for The Flip Side! ',
       copy:
-        'Enter to win a $1,000 scholarship by sharing The Flip Side with friends.</br>(Money for school = one less thing you should have to stress out about this semester.)',
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
       buttonCopy: 'Share The Flip Side',
     },
     additionalFormLink: {
@@ -1083,8 +1083,8 @@ const campaignData = {
       type: 'hidden',
       fieldName: 'flipside_scholarship_entry',
     },
-    campaignKey: 'OP0D8691F57C03FCAAA3DAE2E72D8EDC58',
-    campaignKeyBeta: 'OPFF3D22E738C6D9897A5F6855BFB80138',
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
 };
 
