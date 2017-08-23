@@ -12,6 +12,9 @@
  *      copy: 'confirmation copy'
  *    },
  *    campaignKey: 'Mobile Commons partner opt-in path key'
+ *    campaignKeyBeta: 'Optional key for signing up beta users',
+ *     referralCount: Number controling the amount of referral inputs to display,
+ *    },
  * }
  */
 const partnersData = {
