@@ -112,8 +112,6 @@ module.exports = {
     // @param context {object}
     //
     function safeMCProfileUpdate(context) {
-      console.log('PARAMS:', context);
-
       Promise.coroutine(function*() {
         // Check Mobile Commons if the profile exists
         const profileResponse = yield queryProfileAPI(context.friend.phone);
@@ -144,39 +142,39 @@ module.exports = {
 
           request.postAsync(updateRequest);
         }
-
-        //
-        // Queries the Mobile Commons profile API for a specific phone number.
-        //
-        // @param {string} phone
-        // @return Promise
-        //
-        function queryProfileAPI(phone) {
-          return new Promise((resolve, reject) => {
-            const url = `https://secure.mcommons.com/api/profiles?phone_number=${phone}`;
-            const options = {
-              auth: {
-                user: sails.config.globals.mobileCommonsUser,
-                pass: sails.config.globals.mobileCommonsPassword,
-              },
-            };
-
-            request.get(url, options, function(err, response, body) {
-              if (err) {
-                reject(err);
-              } else if (response && response.statusCode !== 200) {
-                reject(
-                  new Error(
-                    `Error querying Mobile Commons profile API: ${response.statusCode}`
-                  )
-                );
-              } else {
-                resolve(body);
-              }
-            });
-          });
-        }
       })();
+    }
+
+    //
+    // Queries the Mobile Commons profile API for a specific phone number.
+    //
+    // @param {string} phone
+    // @return Promise
+    //
+    function queryProfileAPI(phone) {
+      return new Promise((resolve, reject) => {
+        const url = `https://secure.mcommons.com/api/profiles?phone_number=${phone}`;
+        const options = {
+          auth: {
+            user: sails.config.globals.mobileCommonsUser,
+            pass: sails.config.globals.mobileCommonsPassword,
+          },
+        };
+
+        request.get(url, options, function(err, response, body) {
+          if (err) {
+            reject(err);
+          } else if (response && response.statusCode !== 200) {
+            reject(
+              new Error(
+                `Error querying Mobile Commons profile API: ${response.statusCode}`
+              )
+            );
+          } else {
+            resolve(body);
+          }
+        });
+      });
     }
   },
 
