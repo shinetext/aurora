@@ -12,7 +12,7 @@ class PartnerApp extends React.Component {
       campaignKeyBeta,
       additionalFields,
       additionalFormLink,
-      referralCount,
+      betaCount,
     } = this.props;
     const formDetails = {
       header: `${name}`,
@@ -21,7 +21,7 @@ class PartnerApp extends React.Component {
       betaOptInPath: campaignKeyBeta,
       extras: additionalFields,
       additionalLink: additionalFormLink,
-      betaCount: referralCount,
+      betaCount: betaCount,
     };
 
     return (

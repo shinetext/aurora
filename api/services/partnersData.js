@@ -13,7 +13,7 @@
  *    },
  *    campaignKey: 'Mobile Commons partner opt-in path key'
  *    campaignKeyBeta: 'Optional key for signing up beta users',
- *     referralCount: Number controling the amount of referral inputs to display,
+ *     betaCount: Number controling the amount of referral input fields to display,
  *    },
  * }
  */
@@ -49,7 +49,7 @@ const partnersData = {
       label: 'Official Scholarship Rules',
       link: '/files/scholarship-rules-2017.pdf',
     },
-    referralCount: 1,
+    betaCount: 3,
   },
 };
 
