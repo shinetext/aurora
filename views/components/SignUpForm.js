@@ -13,6 +13,7 @@ const SignUpForm = props => {
     betaOptInPath,
     extras,
     additionalLink,
+    betaCount
   } = props;
 
   let infoView;
@@ -31,7 +32,7 @@ const SignUpForm = props => {
 
   let betaView;
   if (betaOptInPath) {
-    betaView = <BetaSignUpForm optin={betaOptInPath} />;
+    betaView = <BetaSignUpForm betaCount={betaCount} optin={betaOptInPath} />;
   }
 
   let extrasView = [];
