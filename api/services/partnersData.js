@@ -12,6 +12,9 @@
  *      copy: 'confirmation copy'
  *    },
  *    campaignKey: 'Mobile Commons partner opt-in path key'
+ *    campaignKeyBeta: 'Optional key for signing up beta users',
+ *     betaCount: Number controling the amount of referral input fields to display,
+ *    },
  * }
  */
 const partnersData = {
@@ -28,7 +31,7 @@ const partnersData = {
   'self-care-scholarship-2017': {
     name: '$1,000 Easy Self-Care Scholarship - Fall 2017',
     imageUrl: '/images/partners/scholarship/scholarship-2017-photo.jpg',
-    copy: '<p>School can be stressful.</p><p>Sign up to get a free daily text message to help you practice self-care AND get a chance to earn cash for school.</p><p>To enter the $1,000 scholarship, sign up for <a href="/?utm_source=Shine&utm_medium=Scholarship">Shine</a> texts below & share with 3 friends.</p>',
+    copy: '<p>School can be stressful.</p><p>Sign up to get a free daily text message to help you practice self-care AND get a chance to earn cash for school.</p><p>To enter the $1,000 scholarship, sign up for <a href="/?utm_source=Shine&utm_medium=Scholarship">Shine</a> texts below & share with a friend.</p>',
     confirmation: {
       imageUrl: '/images/partners/scholarship/confirmation.gif',
       copy: 'You’ve entered the Shine Self-Care Scholarship!',
@@ -46,6 +49,7 @@ const partnersData = {
       label: 'Official Scholarship Rules',
       link: '/files/scholarship-rules-2017.pdf',
     },
+    betaCount: 1,
   },
 };
 

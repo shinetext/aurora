@@ -86,7 +86,7 @@ module.exports = {
   /**
    * Helper method for updating friend profiles after they've been invited
    * from an Alpha's join request.
-   * 
+   *
    * @param {string} phone Phone number of the inviter
    * @param {array} friends Data on the invitees
    */
