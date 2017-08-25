@@ -38,13 +38,6 @@ const partnersData = {
     },
     campaignKey: 'OPF103C6C3AE571FD2082D4B7F18929F5B',
     campaignKeyBeta: 'OP3969113B4E740F300A09B3D2D1D05CB8',
-    additionalFields: [
-      {
-        type: 'textarea',
-        name: 'scholarship_why_important',
-        label: 'Why is self-care important to you? (optional)',
-      },
-    ],
     additionalFormLink: {
       label: 'Official Scholarship Rules',
       link: '/files/scholarship-rules-2017.pdf',
