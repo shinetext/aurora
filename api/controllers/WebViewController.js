@@ -10,6 +10,7 @@ import PartnerService from '../services/PartnerService';
 import CampaignService from '../services/CampaignService';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+import CustomReferralInvite from '../../views/components/invites/CustomReferralInvite';
 import PartnerApp from '../../views/components/PartnerApp';
 import CampaignApp from '../../views/components/campaigns/CampaignApp';
 import CampaignReferral from '../../views/components/campaigns/CampaignReferral';
@@ -208,6 +209,37 @@ module.exports = {
     return res.view('sms-settings', locals);
   },
 
+  /**
+   * View for partner/influencer microsite
+   *
+   */
+  invites: function(req, res) {
+    const _this = this;
+    const customUrl = req.params.customUrl;
+    Promise.coroutine(function*() {
+      let referralRequest = {
+        method: 'GET',
+        uri: sails.config.globals.photonApiUrl + '/invites/' + customUrl,
+        json: true,
+      };
+      try {
+        const response = yield request.getAsync(referralRequest);
+        const referer = ReferralService.getRefererInfo(response);
+        const referralComponentMarkup = ReactDOMServer.renderToString(
+          <CustomReferralInvite {...referer} inviteId={customUrl} />
+        );
+        const locals = {
+          layout: 'layouts/subpage-fullwidth.layout',
+          referralComponent: referralComponentMarkup,
+          hideFooterCta: true,
+        };
+        return res.view('invites', locals);
+      } catch (err) {
+        sails.log.error(err);
+        return res.view(404);
+      }
+    })();
+  },
   /**
    * View for partner/influencer microsite
    *
