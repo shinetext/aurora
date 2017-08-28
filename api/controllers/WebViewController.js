@@ -210,7 +210,7 @@ module.exports = {
   },
 
   /**
-   * View for partner/influencer microsite
+   * View for custom referral page
    *
    */
   invites: function(req, res) {
@@ -225,8 +225,9 @@ module.exports = {
       try {
         const response = yield request.getAsync(referralRequest);
         const referer = ReferralService.getRefererInfo(response);
+        const rewardInfo = ReferralService.getNextLevel(referer.referralCount);
         const referralComponentMarkup = ReactDOMServer.renderToString(
-          <CustomReferralInvite {...referer} inviteId={customUrl} />
+          <CustomReferralInvite {...referer} {...rewardInfo} inviteId={customUrl}  />
         );
         const locals = {
           layout: 'layouts/subpage-fullwidth.layout',
