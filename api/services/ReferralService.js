@@ -72,7 +72,7 @@ module.exports = {
     let refererInfo = response.body;
     // If Url doesn't exist throw an error
     if (response.statusCode !== 200) {
-      throw new Error();
+      throw new Error('Can\'t find a user associate with that url');
     } else {
       return refererInfo;
     }
