@@ -224,10 +224,10 @@ module.exports = {
       };
       try {
         const response = yield request.getAsync(referralRequest);
-        const referer = ReferralService.getRefererInfo(response);
-        const rewardInfo = ReferralService.getNextLevel(referer.referralCount);
+        const referrer = ReferralService.getReferrerInfo(response);
+        const rewardInfo = ReferralService.getNextLevel(referrer.referralCount);
         const referralComponentMarkup = ReactDOMServer.renderToString(
-          <CustomReferralInvite {...referer} {...rewardInfo} inviteId={customUrl}  />
+          <CustomReferralInvite {...referrer} {...rewardInfo} inviteId={customUrl}  />
         );
         const locals = {
           layout: 'layouts/subpage-fullwidth.layout',

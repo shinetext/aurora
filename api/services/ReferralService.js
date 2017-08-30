@@ -68,13 +68,13 @@ module.exports = {
       reward: '',
     };
   },
-  getRefererInfo: function(response) {
-    let refererInfo = response.body;
+  getReferrerInfo: function(response) {
+    let referrerInfo = response.body;
     // If Url doesn't exist throw an error
     if (response.statusCode !== 200) {
       throw new Error('Can\'t find a user associate with that url');
     } else {
-      return refererInfo;
+      return referrerInfo;
     }
   },
 };
