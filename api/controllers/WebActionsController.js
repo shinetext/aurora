@@ -68,7 +68,7 @@ module.exports = {
    */
   createMobileCommonsFormData: function(formData) {
     if (formData.betasOnly) {
-      return { 'person[phone]': formData.phone };
+      return { 'person[referral_code]': ReferralCodes.encode(formData.phone) };
     } else {
       return {
         'opt_in_path[]': formData.opt_in_path || this.MOBILE_COMMONS_OPTIN,
@@ -90,39 +90,21 @@ module.exports = {
    * @param {string} phone Phone number of the inviter
    * @param {array} friends Data on the invitees
    */
-  updateFriendProfiles: function(phone, friends) {
+  updateFriendProfiles: function(phone, opt_in_path, friends) {
     for (const friend of friends) {
       if (typeof friend === 'object' && friend.first_name && friend.phone) {
         // Update the user profiles on Mobile Commons
         const mobilecommonsRequest = {
-          url: `https://secure.mcommons.com/api/profile_update`,
-          auth: {
-            user: sails.config.globals.mobileCommonsUser,
-            pass: sails.config.globals.mobileCommonsPassword,
-          },
+          url: `https://secure.mcommons.com/profiles/join`,
           form: {
-            phone_number: friend.phone,
-            first_name: friend.first_name,
-            referral_code: ReferralCodes.encode(friend.phone),
+            'person[phone]': friend.phone,
+            'person[first_name]': friend.first_name,
+            opt_in_path: opt_in_path,
+            'person[referral_code]': ReferralCodes.encode(friend.phone),
+            'person[referred_by_code]': ReferralCodes.encode(phone),
           },
         };
-
         request.postAsync(mobilecommonsRequest);
-
-        // Upsert the user profiles on our own Photon backed
-        // Particularly necessary for tracking the referred_by value properly.
-        let photonRequest = {
-          method: 'POST',
-          uri: sails.config.globals.photonApiUrl + '/signup',
-          json: true,
-          body: {
-            firstName: friend.first_name,
-            phone: friend.phone,
-            referredByCode: ReferralCodes.encode(phone),
-          },
-        };
-
-        request.postAsync(photonRequest);
       }
     }
   },
@@ -196,7 +178,11 @@ module.exports = {
         // request, we're updating their profiles here immediately after
         // the /join.
         if (req.body.friends) {
-          that.updateFriendProfiles(req.body.phone, req.body.friends);
+          that.updateFriendProfiles(
+            req.body.phone,
+            req.body['friends_opt_in_path'],
+            req.body.friends
+          );
         }
 
         // Post the signup to Photon too
