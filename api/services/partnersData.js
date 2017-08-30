@@ -37,12 +37,10 @@ const partnersData = {
       copy: 'You’ve entered the Shine Self-Care Scholarship!',
     },
     campaignKey: 'OPF103C6C3AE571FD2082D4B7F18929F5B',
-    campaignKeyBeta: 'OP3969113B4E740F300A09B3D2D1D05CB8',
     additionalFormLink: {
       label: 'Official Scholarship Rules',
       link: '/files/scholarship-rules-2017.pdf',
     },
-    betaCount: 1,
   },
 };
 
