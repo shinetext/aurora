@@ -44,13 +44,6 @@ module.exports = {
     return res.redirect(301, sails.config.globals.dailyShineBaseUrl);
   },
 
-  /**
-   * Redirect to the Shinevisor page.
-   */
-  talk: (req, res) => {
-    return res.redirect(301, sails.config.globals.talkBaseUrl);
-  },
-
   ////////////////////////////////////////////////////////////////////////////
 
   squad: (req, res) => {

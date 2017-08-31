@@ -92,9 +92,6 @@ var routes = {
 
   '/squad': 'WebViewController.squad',
 
-  '/shinevisor*': 'WebViewController.talk',
-  '/talk*': 'WebViewController.talk',
-
   '/terms-of-service': {
     view: 'terms-of-service',
     locals: {
