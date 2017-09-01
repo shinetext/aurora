@@ -1086,6 +1086,44 @@ const campaignData = {
     campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
     campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
   },
+  wsu: {
+    name: 'The Flip Side',
+    imageUrl: '/images/campaigns/flipside/washington-state-university-tri-cities.png',
+    copy:
+      'Join other students from Washington State University Tri-Cities sign up to get 5 days of texts to help you see the flip side of things we all stress out about when heading to school.',
+    buttonCopy: 'Sign Up',
+    confirmation: {
+      imageUrl: 'https://media.giphy.com/media/UatRnEUNX8iCQ/giphy.gif',
+      header: 'You’ve entered the scholarship!',
+      copy:
+        'Earn free Shine swag (think, hoodies & leggings!) for sharing your unique referral link.',
+    },
+    referralInfo: {
+      header: 'You’ve signed up for The Flip Side! ',
+      copy:
+        'Money for school = one less thing you should have to stress out about this semester.</br></br>Enter to win a $1,000 scholarship by sharing The Flip Side with friends.',
+      buttonCopy: 'Share The Flip Side',
+    },
+    additionalFormLink: {
+      label: 'Official Scholarship Rules',
+      link: '/files/scholarship-rules-2017.pdf',
+    },
+    partners: [
+      {
+        name: 'KiK',
+        logo:
+          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+        link: 'https://www.kik.com/bots/shinetext/',
+      },
+    ],
+    scholarshipInfo: {
+      hasScholarship: true,
+      type: 'hidden',
+      fieldName: 'flipside_scholarship_entry',
+    },
+    campaignKey: 'OP52EB808356971C15C03BD2577DA62DD6',
+    campaignKeyBeta: 'OPFB3F780A3CC49AF7048362002A3A8F5E',
+  },
 };
 
 export default campaignData;
