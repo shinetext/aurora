@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CustomReferralInvite = ({ firstName, count, reward, referralCount }) => {
+const CustomReferralInvite = ({ user, count, reward, referralCount }) => {
   let rewardImageSrc;
   if (count < 10) {
     rewardImageSrc = 'referral-reward-1.png';
@@ -8,10 +8,10 @@ const CustomReferralInvite = ({ firstName, count, reward, referralCount }) => {
   return (
     <div>
       <h1>
-        {firstName} Invites you to join shine
+        {user.firstName} Invites you to join shine
       </h1>
       <h2>
-        Help {firstName} win a {reward}
+        Help {user.firstName} win a {reward}
       </h2>
       <div class="next-reward">
         <i class={rewardImageSrc}></i>
