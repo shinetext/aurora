@@ -164,6 +164,7 @@ module.exports = {
         phone: req.body.phone,
         email: req.body.email,
         referredByCode: req.body.referredByCode,
+        referredByCodeV2: req.body.referredByCodeV2,
       },
     };
 
