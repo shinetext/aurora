@@ -11,7 +11,6 @@
  */
 
 module.exports = {
-
   /***************************************************************************
    * Set the default database connection for models in the development       *
    * environment (see config/connections.js and config/models.js )           *
@@ -38,14 +37,10 @@ module.exports = {
     // The Photon API URL
     photonApiUrl: process.env.PHOTON_API_URL || 'http://localhost:1338',
 
-    // Base URL for the talk / Shinevisor platform
-    talkBaseUrl: process.env.TALK_BASE_URL,
-
     // MailChimp
     mailchimpApiAuthUser: process.env.MAILCHIMP_API_USER,
     mailchimpApiAuthPass: process.env.MAILCHIMP_API_PASSWORD,
     mailchimpApiUrl: process.env.MAILCHIMP_API_URL,
     mailchimpListId: process.env.MAILCHIMP_LIST_ID,
   },
-
 };
