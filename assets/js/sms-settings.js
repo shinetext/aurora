@@ -9,7 +9,7 @@ if (document.getElementById('bday-day')) {
 if (document.getElementById('bday-year')) {
   var date = new Date();
   var lastYear = date.getFullYear() - 13;
-  var firstYear = lastYear - 60;
+  var firstYear = lastYear - 87;
 
   var bdayYear = $('#bday-year');
   bdayYear.append('<option value="" selected="selected">--</option>');
