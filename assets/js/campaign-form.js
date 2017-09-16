@@ -72,7 +72,7 @@ function validateAllBetaNumbers(alphaNumber) {
 }
 
 /*
- * Checks if a referred/beta phone number is the same as the referer/alpha user &
+ * Checks if a referred/beta phone number is the same as the referrer/alpha user &
  * returns false if numbers match
  */
 function duplicateNumber(betaPhoneNumber, alphaPhoneNumber) {

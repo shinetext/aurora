@@ -28,11 +28,10 @@ var REWARDS = [
   {
     count: 500,
     reward: 'Shine leggings',
-  }
+  },
 ];
 
 module.exports = {
-
   /**
    * Gets the text to display that to tease the next level of rewards.
    *
@@ -43,12 +42,18 @@ module.exports = {
     for (let i = 0; i < REWARDS.length; i++) {
       if (count >= REWARDS[i].count) {
         continue;
-      }
-      else {
+      } else {
         let numMore = REWARDS[i].count - count;
         let strFriends = numMore == 1 ? 'friend' : 'friends';
         return {
-          message: 'Invite ' + numMore + ' more ' + strFriends + ' to get a ' + REWARDS[i].reward + '!',
+          message:
+            'Invite ' +
+            numMore +
+            ' more ' +
+            strFriends +
+            ' to get a ' +
+            REWARDS[i].reward +
+            '!',
           count: REWARDS[i].count,
           reward: REWARDS[i].reward,
         };
@@ -63,5 +68,13 @@ module.exports = {
       reward: '',
     };
   },
-
+  getReferrerInfo: function(response) {
+    let referrerInfo = response.body;
+    // If Url doesn't exist throw an error
+    if (response.statusCode !== 200) {
+      throw new Error('Can\'t find a user associate with that url');
+    } else {
+      return referrerInfo;
+    }
+  },
 };

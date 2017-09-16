@@ -60,6 +60,8 @@ var routes = {
     },
   },
 
+  '/invites/:customUrl' : 'WebViewController.invites',
+
   '/p/:partner': 'WebViewController.partners',
   '/partners/:partner': 'WebViewController.partners',
 
