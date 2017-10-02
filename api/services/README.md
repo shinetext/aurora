@@ -6,10 +6,10 @@ To add a new partner/influencer microsite, add a new key to `partnersData` in `s
 const partnersData = {
   [PARTNER_NAME_ROUTE_PARAM]: {
     name: 'Partner name',
-    imageUrl: 'http://partner_image_url_string',
+    imageUrl: 'https://partner_image_url_string',
     copy: 'Landing page copy',
     confirmation: {
-      image: 'http://partner_confirmation_image_url_string',
+      image: 'https://partner_confirmation_image_url_string',
       copy: 'confirmation copy'
     },
     campaignKey: 'Mobile Commons partner opt-in path key'
@@ -20,6 +20,6 @@ const partnersData = {
 ##Test Partner Route
 
 ```
-http://SHINETEXT_BASE_URL/partners/partnername
-http://SHINETEXT_BASE_URL/p/partnername
+https://SHINETEXT_BASE_URL/partners/partnername
+https://SHINETEXT_BASE_URL/p/partnername
 ```

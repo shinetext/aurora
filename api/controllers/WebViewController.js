@@ -284,13 +284,13 @@ module.exports = {
   makeShareUrls: function(referralCode) {
     const shareBody = `Sign up with me to get Shine! A daily text for your self-care and joy.`;
     const shareTitle = `Sign up for Shine!`;
-    const shareUrl = `http://www.shinetext.com?r=${referralCode}`;
+    const shareUrl = `https://www.shinetext.com?r=${referralCode}`;
 
     return {
       email: `mailto:?subject=${shareTitle}&body=${shareBody} ${shareUrl}`,
-      facebook: `http://www.facebook.com/sharer/sharer.php?u=${shareUrl}&title=${shareTitle}&description=${shareBody}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}&title=${shareTitle}&description=${shareBody}`,
       sms: `sms:?&body=${shareBody} ${shareUrl}`,
-      twitter: `http://twitter.com/intent/tweet?url=${shareUrl}&text=${shareBody}&via=ShineText`,
+      twitter: `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareBody}&via=ShineText`,
     };
   },
 };

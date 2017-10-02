@@ -3,10 +3,10 @@
  * Add keys to objects to create new campaigns
  * [Campaign Route Params]: {
  *  name: 'Campaign name',
- *    imageUrl: 'http://campaign_image_url_string',
+ *    imageUrl: 'https://campaign_image_url_string',
  *    copy: 'Landing page copy',
  *    confirmation: {
- *      imageUrl: 'http://campaign_confirmation_image_url_string',
+ *      imageUrl: 'https://campaign_confirmation_image_url_string',
  *      copy: 'confirmation copy'
  *    },
  *    referralInfo: {
@@ -1088,7 +1088,8 @@ const campaignData = {
   },
   wsu: {
     name: 'The Flip Side',
-    imageUrl: '/images/campaigns/flipside/washington-state-university-tri-cities.png',
+    imageUrl:
+      '/images/campaigns/flipside/washington-state-university-tri-cities.png',
     copy:
       'Join other students from Washington State University Tri-Cities sign up to get 5 days of texts to help you see the flip side of things we all stress out about when heading to school.',
     buttonCopy: 'Sign Up',
