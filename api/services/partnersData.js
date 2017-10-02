@@ -5,10 +5,10 @@
  *
  * [PARTNER_NAME_ROUTE_PARAM]: {
  *  name: 'Partner name',
- *    imageUrl: 'http://partner_image_url_string',
+ *    imageUrl: 'https://partner_image_url_string',
  *    copy: 'Landing page copy',
  *    confirmation: {
- *      imageUrl: 'http://partner_confirmation_image_url_string',
+ *      imageUrl: 'https://partner_confirmation_image_url_string',
  *      copy: 'confirmation copy'
  *    },
  *    campaignKey: 'Mobile Commons partner opt-in path key'
