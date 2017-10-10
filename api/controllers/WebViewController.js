@@ -10,6 +10,7 @@ import PartnerService from '../services/PartnerService';
 import CampaignService from '../services/CampaignService';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+import SplashPage from '../../views/components/splashpage/SplashPage';
 import PartnerApp from '../../views/components/PartnerApp';
 import CampaignApp from '../../views/components/campaigns/CampaignApp';
 import CampaignReferral from '../../views/components/campaigns/CampaignReferral';
@@ -218,6 +219,27 @@ module.exports = {
         hideFooterCta: true,
       };
       return res.view('partner-signup', locals);
+    } catch (err) {
+      sails.log.error(err);
+      return res.view(404);
+    }
+  },
+
+  /**
+   * View for mobile app splash
+   *
+   */
+  splash: function(req, res) {
+    try {
+      const splashComponentMarkup = ReactDOMServer.renderToString(
+        <SplashPage />
+      );
+      const locals = {
+        layout: 'layouts/subpage-fullwidth.layout',
+        splashComponent: splashComponentMarkup,
+        hideFooterCta: true
+      };
+      return res.view('splash-page', locals);
     } catch (err) {
       sails.log.error(err);
       return res.view(404);
