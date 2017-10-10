@@ -1,12 +1,22 @@
-font-size: @font-size-homepage-normal;
 @container-splash-lead-height: 847pt;
 @container-splash-lead-width: 1280pt;
 @container-splash-lead-height-mobi: 667pt;
 @container-splash-lead-width-mobi: 375pt;
 
+@font-size-label: 20pt;
+@font-size-label-sm: 12pt;
+@font-size-splash-header: 42pt;
+@font-size-splash-subtitle: 14pt;
+@font-size-splash-input: 16pt;
+
+@color-label-sm: #e4a100;
+@color-label: #8d8d8d;
+
+@margin-splash-sm: 38pt;
+
 .container-splash-lead {
   padding: 0;
-  max-height: @container-splash-lead-height-mobi;
+  margin-bottom: 0;
   background-image: url('https://images.contentful.com/awpxl2koull4/6wra1o2DV6WcUUCO6oWa4U/bcab07fedbc8dac93c808711160b2f96/Mobile-background.png');
   background-position: bottom;
   background-repeat: no-repeat;
@@ -20,45 +30,53 @@ font-size: @font-size-homepage-normal;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 19px;
-    margin-right: 19px;
+    margin-left: @margin-splash-sm;
+    margin-right: @margin-splash-sm;
     .splash-logo {
-      padding-top: 12.5px;
-      padding-bottom: 13.5px;
+      margin-top: 84pt;
+      margin-bottom: 24.7pt;
     }
     .splash-header {
-      padding-bottom: 0;
+      .font-Poppins;
+      margin-top: 0;
       margin-bottom: 10pt !important;
-      padding-bottom: 0 !important;
-      font-size: 42pt;
-      line-height: 30px;
+      font-size: @font-size-splash-header;
+      line-height: 60pt;
+      @media (max-width: 320px) {
+        font-size: 36px;
+      }
     }
     .splash-subtitle {
-      font-size: 14pt;
+      .font-work-sans-regular;
+      font-size: @font-size-splash-subtitle;
     }
+    margin-bottom: 30pt;
   }
 
   .splash-signup-form {
     max-width: 300pt;
+    margin-left: @margin-splash-sm;
   }
 
   .splash-form-control {
+    outline: none !important;
     width: 100%;
     border: none;
     border-radius: 0;
-    line-height: 12.5px;
+    line-height: 25pt;
     box-shadow: none;
-    font-size: @font-size-input;
+    font-size: @font-size-splash-input;
+    .font-work-sans-medium;
   }
 
   .splash-form-control + label {
-    .font-main-bold;
-    color: @color-form-secondary;
+    .font-work-sans-semi;
+    color: @color-label-sm;
     pointer-events: none;
     position: absolute;
     font-size: @font-size-label-sm;
-    top: 5px;
-    left: 10px;
+    top: -15px;
+    left: 0px;
     margin: 0;
     text-transform: uppercase;
 
@@ -68,48 +86,68 @@ font-size: @font-size-homepage-normal;
     -ms-transition: all 0.3s ease;
   }
 
-  .splash-form-control[value=''] + label {
-    color: #8d8d8d;
-    font-size: 20px;
-    top: 10px;
-  }
-
   .splash-form-control:focus + label {
-    color: #e4a100 !important;
-    line-height: 15px;
-    font-size: 12px !important;
-    top: 5px !important;
+    color: @color-label-sm !important;
+    font-size: @font-size-label-sm !important;
+    top: -15px !important;
+  }
+  .splash-form-control[value=''] + label {
+    .font-work-sans-regular;
+    color: @color-label;
+    font-size: @font-size-label;
+    top: -9px;
   }
 
   .splash-form-field {
-    border-bottom: 2px solid @color-yellow!important;
+    border-bottom: 2px solid @color-label-sm!important;
     margin: @margin-sm 0;
+    margin-right: @margin-splash-sm;
     position: relative;
 
     label:hover {
       cursor: text;
     }
-
     .required-asterisk {
-      .font-main-bold;
-      color: @color-form-primary;
-      font-size: @font-size-subtitle;
+      color: @color-label;
+      font-size: @font-size-splash-subtitle;
       position: absolute;
-      top: 18px;
+      top: -8px;
       right: 20px;
     }
   }
   .splash-bottom {
+    margin-top: 43.5pt;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     .splash-button {
-      flex-basis: 60%;
+      flex-basis: 45%;
+      height: 45pt;
+      background-color: black;
+      border-radius: 5pt;
+      button {
+        font-size: 14pt;
+        color: white;
+        border: none;
+        background-color: black;
+        line-height: 20pt;
+        text-align: center;
+        width: 100%;
+        max-width: 148pt;
+        height: 29pt;
+        margin-top: 8pt;
+        margin-bottom: 8pt;
+        letter-spacing: 0.5pt;
+      }
     }
     .splash-image {
-      img {
-        width: 100%;
-      }
+      flex-basis: 55%;
+      background-image: url('https://images.contentful.com/awpxl2koull4/lft3VDE880QcSQ8wUOcii/eea71b6dd07eaf9934681c0759c9af7b/Mobile-figure.png');
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      background-size: cover;
+      height: 250pt;
+      width: 158pt;
     }
   }
 }
