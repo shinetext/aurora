@@ -3,16 +3,16 @@
 @container-splash-lead-height-mobi: 667pt;
 @container-splash-lead-width-mobi: 375pt;
 
-@font-size-label: 20pt;
-@font-size-label-sm: 12pt;
-@font-size-splash-header: 42pt;
-@font-size-splash-subtitle: 14pt;
+@font-size-label: 1.6em;
+@font-size-label-sm: 1em;
+@font-size-splash-header: 3.55em;
+@font-size-splash-subtitle: 1.2em;
 @font-size-splash-input: 16pt;
 
 @color-label-sm: #e4a100;
 @color-label: #8d8d8d;
 
-@margin-splash-sm: 38pt;
+@margin-splash-sm: 28pt;
 
 .container-splash-lead {
   padding: 0;
@@ -42,9 +42,9 @@
       margin-bottom: 10pt !important;
       font-size: @font-size-splash-header;
       line-height: 60pt;
-      @media (max-width: 320px) {
-        font-size: 36px;
-      }
+      // @media (max-width: 320px) {
+      //   font-size: 36px;
+      // }
     }
     .splash-subtitle {
       .font-work-sans-regular;
@@ -126,7 +126,7 @@
       background-color: black;
       border-radius: 5pt;
       button {
-        font-size: 14pt;
+        font-size: 1.2em;
         color: white;
         border: none;
         background-color: black;
@@ -149,5 +149,9 @@
       height: 250pt;
       width: 158pt;
     }
+  }
+
+  .container-splash-desktop {
+    display: none;
   }
 }

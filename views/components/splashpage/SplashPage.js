@@ -55,6 +55,9 @@ export default class SplashPage extends React.Component {
             </form>
           </div>
         </div>
+        <div className="container-splash-desktop">
+
+        </div>
       </div>
     );
   }
