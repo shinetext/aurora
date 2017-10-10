@@ -5,47 +5,45 @@ font-size: @font-size-homepage-normal;
 @container-splash-lead-width-mobi: 375pt;
 
 .container-splash-lead {
-  clear: both;
-  display: flex;
   padding: 0;
-  position: relative;
+  max-height: @container-splash-lead-height-mobi;
+  background-image: url('https://images.contentful.com/awpxl2koull4/6wra1o2DV6WcUUCO6oWa4U/bcab07fedbc8dac93c808711160b2f96/Mobile-background.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
   .container-splash {
-    max-height: @container-splash-lead-height-mobi;
-    display: block;
-    margin-left: 19px;
-    margin-right: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   // Header
   .splash-top {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 19px;
+    margin-right: 19px;
     .splash-logo {
       padding-top: 12.5px;
       padding-bottom: 13.5px;
-      margin: 0;
     }
     .splash-header {
       padding-bottom: 0;
-      margin-bottom: 0!important;
-      padding-bottom: 0!important;
-      font-size: 21xp;
+      margin-bottom: 10pt !important;
+      padding-bottom: 0 !important;
+      font-size: 42pt;
       line-height: 30px;
     }
     .splash-subtitle {
-      font-size: 7px;
+      font-size: 14pt;
     }
   }
 
   .splash-signup-form {
-    form {
-      margin: auto;
-      padding-top: @margin-xs;
-      padding-bottom: @margin-xs;
-    }
+    max-width: 300pt;
   }
 
   .splash-form-control {
+    width: 100%;
     border: none;
     border-radius: 0;
     line-height: 12.5px;
@@ -55,7 +53,6 @@ font-size: @font-size-homepage-normal;
 
   .splash-form-control + label {
     .font-main-bold;
-
     color: @color-form-secondary;
     pointer-events: none;
     position: absolute;
@@ -102,9 +99,17 @@ font-size: @font-size-homepage-normal;
       right: 20px;
     }
   }
-
-  @media (max-width: @screen-sm-max) {
-    display: block;
-    max-height: @container-splash-lead-height-mobi;
+  .splash-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .splash-button {
+      flex-basis: 60%;
+    }
+    .splash-image {
+      img {
+        width: 100%;
+      }
+    }
   }
 }

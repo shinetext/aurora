@@ -235,7 +235,7 @@ module.exports = {
         <SplashPage />
       );
       const locals = {
-        layout: 'layouts/subpage-fullwidth.layout',
+        layout: 'layouts/subpage-fullwidth-no-header.layout',
         splashComponent: splashComponentMarkup,
         hideFooterCta: true
       };

@@ -48,6 +48,14 @@ export default class SplashPage extends React.Component {
                 />
                 <label for="email">Email</label>
               </div>
+              <div className="splash-bottom">
+                <div className="splash-button">
+                  <button type="submit" className="get-notified">Button</button>
+                </div>
+                <div className="splash-image">
+                  <img src="https://images.contentful.com/awpxl2koull4/lft3VDE880QcSQ8wUOcii/eea71b6dd07eaf9934681c0759c9af7b/Mobile-figure.png" />
+                </div>
+              </div>
             </form>
           </div>
         </div>
