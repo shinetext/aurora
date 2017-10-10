@@ -35,6 +35,8 @@
     .splash-logo {
       margin-top: 84pt;
       margin-bottom: 24.7pt;
+      height: 31.6pt;
+      width: 50pt;
     }
     .splash-header {
       .font-Poppins;
@@ -42,9 +44,6 @@
       margin-bottom: 10pt !important;
       font-size: @font-size-splash-header;
       line-height: 60pt;
-      // @media (max-width: 320px) {
-      //   font-size: 36px;
-      // }
     }
     .splash-subtitle {
       .font-work-sans-regular;
@@ -153,5 +152,51 @@
 
   .container-splash-desktop {
     display: none;
+  }
+
+  @media (min-width: @screen-xs-max) {
+    .container-splash {
+      display: none;
+    }
+    .container-splash-desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 130pt;
+      .desktop-image {
+        flex-basis: 70%;
+        background-image: url('https://images.contentful.com/awpxl2koull4/1dP5HW8lm6q8sUc2EkecAY/001b39bbcd108db239cb38c6819684a2/Web-background.png');
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: flex-end;
+        img {
+          height: 758pt;
+          width: 534pt;
+        }
+      }
+      .desktop-container-splash {
+        flex-basis: 30%;
+        max-width: 300pt;
+        .desktop-splash-top {
+          margin-top: 150pt;
+          .desktop-splash-logo {
+            margin-bottom: 56.7pt;
+            height: 47.3pt;
+            width: 75pt;
+          }
+          .desktop-splash-header {
+            .font-Poppins;
+            font-size: @font-size-splash-header;
+            margin-bottom: 13pt;
+          }
+          .desktop-splash-subtitle {
+            .font-work-sans-medium;
+            font-size: @font-size-splash-subtitle;
+            margin-bottom: 34pt;
+          }
+        }
+      }
+    }
+    background-image: none;
   }
 }
