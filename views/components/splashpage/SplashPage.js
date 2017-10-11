@@ -7,7 +7,10 @@ export default class SplashPage extends React.Component {
       <div className="container-splash-lead">
         <div className="container-splash">
           <div className="splash-top">
-            <img src="/images/shine-logo.png" className="splash-logo" />
+            <img
+              src="/images/shine-logo-original.png"
+              className="splash-logo"
+            />
             <div className="splash-header">Listen Up!</div>
             <div className="splash-subtitle">
               We've got a new product launching soon. Sign up to be the first to
@@ -15,37 +18,54 @@ export default class SplashPage extends React.Component {
             </div>
           </div>
           <div className="splash-signup-form">
-            <form>
+            <form
+              action="https://herokuapp.us16.list-manage.com/subscribe/post?u=c425e0f0036c8419c743da9f9&amp;id=a5df199522"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              class="validate"
+              target="_blank"
+              novalidate
+            >
               <div className="splash-form-field">
                 <input
-                  className="splash-form-control"
-                  name="first-name"
+                  className="form-control"
                   type="text"
-                  value=""
+                  value=''
+                  name="FNAME"
+                  id="mce-FNAME"
                 />
-                <label for="first-name">First Name</label>
+                <label for="FNAME">First Name</label>
               </div>
               <div className="splash-form-field">
                 <input
-                  className="splash-form-control"
-                  name="phone-number"
-                  type="text"
-                  value=""
+                  className="form-control required email"
+                  value=''
+                  type="email"
+                  name="EMAIL"
+                  id="mce-EMAIL"
                 />
-                <label for="phone-number">Phone Number</label>
+                <label for="EMAIL">Email</label>
               </div>
               <div className="splash-form-field">
                 <input
-                  className="splash-form-control"
-                  name="email"
+                  className="form-control"
                   type="text"
-                  value=""
+                  name="MMERGE2"
+                  value=''
+                  id="mce-MMERGE2"
                 />
-                <label for="email">Email</label>
+                <label for="MMERGE2">Phone Number</label>
               </div>
               <div className="splash-bottom">
                 <div className="splash-button">
-                  <button type="submit" className="get-notified">
+                  <button
+                    type="submit"
+                    className="get-notified button"
+                    value="Subscribe"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                  >
                     Get Notified!
                   </button>
                 </div>
@@ -58,7 +78,10 @@ export default class SplashPage extends React.Component {
         <div className="container-splash-desktop">
           <div className="desktop-container-splash">
             <div className="desktop-splash-top">
-              <img src="/images/shine-logo.png" className="desktop-splash-logo" />
+              <img
+                src="/images/shine-logo-original.png"
+                className="desktop-splash-logo"
+              />
               <div className="desktop-splash-header">Listen Up!</div>
               <div className="desktop-splash-subtitle">
                 We've got a new product launching soon. Sign up to be the first
@@ -69,30 +92,34 @@ export default class SplashPage extends React.Component {
               <form>
                 <div className="splash-form-field">
                   <input
-                    className="splash-form-control"
-                    name="first-name"
+                    className="form-control"
                     type="text"
-                    value=""
+                    value=''
+                    name="FNAME"
+                    id="mce-FNAME"
+                    required
                   />
-                  <label for="first-name">First Name</label>
+                  <label for="mce-FNAME">First Name</label>
                 </div>
                 <div className="splash-form-field">
                   <input
-                    className="splash-form-control"
-                    name="phone-number"
-                    type="text"
-                    value=""
+                    className="form-control required email"
+                    value=''
+                    type="email"
+                    name="EMAIL"
+                    id="mce-EMAIL"
                   />
-                  <label for="phone-number">Phone Number</label>
+                  <label for="mce-EMAIL">Email</label>
                 </div>
                 <div className="splash-form-field">
                   <input
-                    className="splash-form-control"
-                    name="email"
+                    className="form-control"
                     type="text"
-                    value=""
+                    name="MMERGE2"
+                    value=''
+                    id="mce-MMERGE2"
                   />
-                  <label for="email">Email</label>
+                  <label for="mce-MMERGE2">Phone Number</label>
                 </div>
               </form>
             </div>

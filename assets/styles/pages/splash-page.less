@@ -57,27 +57,26 @@
     margin-left: @margin-splash-sm;
   }
 
-  .splash-form-control {
-    outline: none !important;
-    width: 100%;
+  .form-control {
     border: none;
     border-radius: 0;
-    line-height: 25pt;
+    color: @color-form-input;
+    height: 60px;
+    padding: 40px 0px 10px 0px;
     box-shadow: none;
-    font-size: @font-size-splash-input;
-    .font-work-sans-medium;
+    font-size: @font-size-input;
   }
 
-  .splash-form-control + label {
+  .form-control + label {
     .font-work-sans-semi;
     color: @color-label-sm;
     pointer-events: none;
     position: absolute;
     font-size: @font-size-label-sm;
-    top: -15px;
+    top: 5px;
     left: 0px;
     margin: 0;
-    text-transform: uppercase;
+    text-transform: none;
 
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -85,33 +84,28 @@
     -ms-transition: all 0.3s ease;
   }
 
-  .splash-form-control:focus + label {
-    color: @color-label-sm !important;
-    font-size: @font-size-label-sm !important;
-    top: -15px !important;
-  }
-  .splash-form-control[value=''] + label {
+  .form-control[value=""] + label {
     .font-work-sans-regular;
     color: @color-label;
     font-size: @font-size-label;
-    top: -9px;
+    top: 20px;
+  }
+
+  .form-control:focus + label {
+    .font-work-sans-semi;
+    color: @color-label-sm!important;
+    font-size: @font-size-label-sm!important;
+    top: 5px!important;
   }
 
   .splash-form-field {
-    border-bottom: 2px solid @color-label-sm!important;
+    border-bottom: 2px solid @color-yellow!important;
     margin: @margin-sm 0;
     margin-right: @margin-splash-sm;
     position: relative;
 
     label:hover {
       cursor: text;
-    }
-    .required-asterisk {
-      color: @color-label;
-      font-size: @font-size-splash-subtitle;
-      position: absolute;
-      top: -8px;
-      right: 20px;
     }
   }
   .splash-bottom {
@@ -156,32 +150,34 @@
 
   @media (min-width: @screen-xs-max) {
     .container-splash {
+      width: 1280pt;
+      height: 847pt;
       display: none;
     }
     .container-splash-desktop {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      max-height: 750pt;
       margin-left: 130pt;
       .desktop-image {
-        flex-basis: 70%;
         background-image: url('https://images.contentful.com/awpxl2koull4/1dP5HW8lm6q8sUc2EkecAY/001b39bbcd108db239cb38c6819684a2/Web-background.png');
         background-repeat: no-repeat;
         display: flex;
         justify-content: flex-end;
+        width: 755pt;
         img {
-          height: 758pt;
-          width: 534pt;
+          margin-top: 89pt;
+          height: 653pt;
         }
       }
       .desktop-container-splash {
-        flex-basis: 30%;
         max-width: 300pt;
         .desktop-splash-top {
           margin-top: 150pt;
           .desktop-splash-logo {
             margin-bottom: 56.7pt;
-            height: 47.3pt;
+            height: 45.3pt;
             width: 75pt;
           }
           .desktop-splash-header {
