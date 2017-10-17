@@ -5,7 +5,7 @@
 
 @font-size-label: 1.6em;
 @font-size-label-sm: 1em;
-@font-size-splash-header: 3.55em;
+@font-size-splash-header: 4.2em;
 @font-size-splash-subtitle: 1.2em;
 @font-size-splash-input: 16pt;
 
@@ -49,7 +49,6 @@
       .font-work-sans-regular;
       font-size: @font-size-splash-subtitle;
     }
-    margin-bottom: 30pt;
   }
 
   .splash-signup-form {
@@ -60,7 +59,7 @@
   .form-control {
     border: none;
     border-radius: 0;
-    color: @color-form-input;
+    color: black;
     height: 60px;
     padding: 40px 0px 10px 0px;
     box-shadow: none;
@@ -84,7 +83,7 @@
     -ms-transition: all 0.3s ease;
   }
 
-  .form-control[value=""] + label {
+  .form-control[value=''] + label {
     .font-work-sans-regular;
     color: @color-label;
     font-size: @font-size-label;
@@ -95,7 +94,7 @@
     .font-work-sans-semi;
     color: @color-label-sm!important;
     font-size: @font-size-label-sm!important;
-    top: 5px!important;
+    top: 5px !important;
   }
 
   .splash-form-field {
@@ -119,6 +118,7 @@
       background-color: black;
       border-radius: 5pt;
       button {
+        text-transform: uppercase;
         font-size: 1.2em;
         color: white;
         border: none;
@@ -130,7 +130,7 @@
         height: 29pt;
         margin-top: 8pt;
         margin-bottom: 8pt;
-        letter-spacing: 0.5pt;
+        letter-spacing: 1pt;
       }
     }
     .splash-image {
@@ -159,15 +159,25 @@
       flex-direction: row;
       justify-content: space-between;
       max-height: 750pt;
-      margin-left: 130pt;
+      margin-left: 9%;
       .desktop-image {
         background-image: url('https://images.contentful.com/awpxl2koull4/1dP5HW8lm6q8sUc2EkecAY/001b39bbcd108db239cb38c6819684a2/Web-background.png');
         background-repeat: no-repeat;
+        background-size: cover;
         display: flex;
         justify-content: flex-end;
         width: 755pt;
         img {
           margin-top: 89pt;
+          @media (min-width: @screen-sm-min) {
+            margin-top: 285pt;
+          }
+          @media (min-width: @screen-sm-max) {
+            margin-top: 370pt;
+          }
+          @media (min-width: @screen-md-max) {
+            margin-top: 89pt;
+          }
           height: 653pt;
         }
       }
@@ -189,6 +199,30 @@
             .font-work-sans-medium;
             font-size: @font-size-splash-subtitle;
             margin-bottom: 34pt;
+          }
+        }
+        .splash-button {
+          margin-top: 52pt;
+          width: 200pt;
+          height: 45pt;
+          background-color: black;
+          border-radius: 5pt;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          button {
+            text-transform: uppercase;
+            text-align: center;
+            border: none;
+            margin-top: 8pt;
+            margin-bottom: 8pt;
+            background-color: black;
+            line-height: 20pt;
+            letter-spacing: 0.5pt;
+            font-size: 1.2em;
+            color: white;
+            width: 179pt;
+            height: 29pt;
           }
         }
       }

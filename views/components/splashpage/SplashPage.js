@@ -31,7 +31,7 @@ export default class SplashPage extends React.Component {
                 <input
                   className="form-control"
                   type="text"
-                  value=''
+                  value=""
                   name="FNAME"
                   id="mce-FNAME"
                 />
@@ -40,7 +40,7 @@ export default class SplashPage extends React.Component {
               <div className="splash-form-field">
                 <input
                   className="form-control required email"
-                  value=''
+                  value=""
                   type="email"
                   name="EMAIL"
                   id="mce-EMAIL"
@@ -52,7 +52,7 @@ export default class SplashPage extends React.Component {
                   className="form-control"
                   type="text"
                   name="MMERGE2"
-                  value=''
+                  value=""
                   id="mce-MMERGE2"
                 />
                 <label for="MMERGE2">Phone Number</label>
@@ -89,12 +89,20 @@ export default class SplashPage extends React.Component {
               </div>
             </div>
             <div className="desktop-splash-signup-form">
-              <form>
+              <form
+                action="https://herokuapp.us16.list-manage.com/subscribe/post?u=c425e0f0036c8419c743da9f9&amp;id=a5df199522"
+                method="post"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
+                class="validate"
+                target="_blank"
+                novalidate
+              >
                 <div className="splash-form-field">
                   <input
                     className="form-control"
                     type="text"
-                    value=''
+                    value=""
                     name="FNAME"
                     id="mce-FNAME"
                     required
@@ -104,7 +112,7 @@ export default class SplashPage extends React.Component {
                 <div className="splash-form-field">
                   <input
                     className="form-control required email"
-                    value=''
+                    value=""
                     type="email"
                     name="EMAIL"
                     id="mce-EMAIL"
@@ -116,10 +124,21 @@ export default class SplashPage extends React.Component {
                     className="form-control"
                     type="text"
                     name="MMERGE2"
-                    value=''
+                    value=""
                     id="mce-MMERGE2"
                   />
                   <label for="mce-MMERGE2">Phone Number</label>
+                </div>
+                <div className="splash-button">
+                  <button
+                    type="submit"
+                    className="get-notified button"
+                    value="Subscribe"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                  >
+                    Get Notified!
+                  </button>
                 </div>
               </form>
             </div>
