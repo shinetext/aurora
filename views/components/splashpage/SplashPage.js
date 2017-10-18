@@ -8,7 +8,7 @@ export default class SplashPage extends React.Component {
         <div className="container-splash">
           <div className="splash-top">
             <img
-              src="/images/shine-logo-original.png"
+              src="/images/Shine-logo-original.png"
               className="splash-logo"
             />
             <div className="splash-header">Listen Up!</div>
@@ -19,7 +19,7 @@ export default class SplashPage extends React.Component {
           </div>
           <div className="splash-signup-form">
             <form
-              action="https://herokuapp.us16.list-manage.com/subscribe/post?u=c425e0f0036c8419c743da9f9&amp;id=a5df199522"
+              action="https://shinetext.us14.list-manage.com/subscribe/post"
               method="post"
               id="mc-embedded-subscribe-form"
               name="mc-embedded-subscribe-form"
@@ -27,35 +27,37 @@ export default class SplashPage extends React.Component {
               target="_blank"
               novalidate
             >
+              <input type="hidden" name="u" value="3509707e26340578cd6281c2d" />
+                <input type="hidden" name="id" value="8ca1941e29"/>
               <div className="splash-form-field">
                 <input
                   className="form-control"
-                  type="text"
+                  type="email"
                   value=""
-                  name="FNAME"
-                  id="mce-FNAME"
+                  name="MERGE0"
+                  id="MERGE0"
                 />
-                <label for="FNAME">First Name</label>
+                <label for="MERGE0">Email</label>
               </div>
               <div className="splash-form-field">
                 <input
                   className="form-control required email"
                   value=""
-                  type="email"
-                  name="EMAIL"
-                  id="mce-EMAIL"
+                  type="text"
+                  name="MERGE1"
+                  id="MERGE1"
                 />
-                <label for="EMAIL">Email</label>
+                <label for="MERGE1">First Name</label>
               </div>
               <div className="splash-form-field">
                 <input
                   className="form-control"
                   type="text"
-                  name="MMERGE2"
+                  name="MERGE3"
                   value=""
-                  id="mce-MMERGE2"
+                  id="MERGE3"
                 />
-                <label for="MMERGE2">Phone Number</label>
+                <label for="MERGE3">Phone Number</label>
               </div>
               <div className="splash-bottom">
                 <div className="splash-button">
@@ -66,7 +68,7 @@ export default class SplashPage extends React.Component {
                     name="subscribe"
                     id="mc-embedded-subscribe"
                   >
-                    Get Notified!
+                    Get Notified
                   </button>
                 </div>
                 <div className="splash-image" />
@@ -79,7 +81,7 @@ export default class SplashPage extends React.Component {
           <div className="desktop-container-splash">
             <div className="desktop-splash-top">
               <img
-                src="/images/shine-logo-original.png"
+                src="/images/Shine-logo-original.png"
                 className="desktop-splash-logo"
               />
               <div className="desktop-splash-header">Listen Up!</div>
@@ -90,7 +92,7 @@ export default class SplashPage extends React.Component {
             </div>
             <div className="desktop-splash-signup-form">
               <form
-                action="https://herokuapp.us16.list-manage.com/subscribe/post?u=c425e0f0036c8419c743da9f9&amp;id=a5df199522"
+                action="https://shinetext.us14.list-manage.com/subscribe/post"
                 method="post"
                 id="mc-embedded-subscribe-form"
                 name="mc-embedded-subscribe-form"
@@ -98,36 +100,38 @@ export default class SplashPage extends React.Component {
                 target="_blank"
                 novalidate
               >
-                <div className="splash-form-field">
-                  <input
-                    className="form-control"
-                    type="text"
-                    value=""
-                    name="FNAME"
-                    id="mce-FNAME"
-                    required
-                  />
-                  <label for="mce-FNAME">First Name</label>
-                </div>
+                <input type="hidden" name="u" value="3509707e26340578cd6281c2d" />
+                <input type="hidden" name="id" value="8ca1941e29"/>
                 <div className="splash-form-field">
                   <input
                     className="form-control required email"
                     value=""
                     type="email"
-                    name="EMAIL"
-                    id="mce-EMAIL"
+                    name="MERGE0"
+                    id="MERGE0"
                   />
-                  <label for="mce-EMAIL">Email</label>
+                  <label for="MERGE0">Email</label>
                 </div>
                 <div className="splash-form-field">
                   <input
                     className="form-control"
                     type="text"
-                    name="MMERGE2"
                     value=""
-                    id="mce-MMERGE2"
+                    name="MERGE1"
+                    id="MERGE1"
+                    required
                   />
-                  <label for="mce-MMERGE2">Phone Number</label>
+                  <label for="MERGE1">First Name</label>
+                </div>
+                <div className="splash-form-field">
+                  <input
+                    className="form-control"
+                    type="text"
+                    name="MERGE3"
+                    value=""
+                    id="MERGE3"
+                  />
+                  <label for="MERGE3">Phone Number</label>
                 </div>
                 <div className="splash-button">
                   <button
@@ -137,14 +141,14 @@ export default class SplashPage extends React.Component {
                     name="subscribe"
                     id="mc-embedded-subscribe"
                   >
-                    Get Notified!
+                    Get Notified
                   </button>
                 </div>
               </form>
             </div>
           </div>
           <div className="desktop-image">
-            <img src="https://images.contentful.com/awpxl2koull4/2taChd2Wa0CCKa8AGOOAIc/7c11ee98a301959a58cb94d3702f8bf3/Web-figure.png" />
+            <img src="https://images.contentful.com/awpxl2koull4/2NHsdgj8NGC086Wcgu4OeY/fd00736874115140b113ccb939d31d67/Model2_copy.png" />
           </div>
         </div>
       </div>
