@@ -38,7 +38,7 @@ const partnersData = {
       imageUrl: 'https://public.boxcloud.com/api/2.0/internal_files/233615006533/versions/246506889541/representations/png_paged_2048x2048/content/1.png?access_token=1!89AKZ4tnPE8tQNb7UajmInaGoSY-Gb1eN300J7Lg5QMxJ0V8jij2VEME_HvKUZvcWcrhNftf7Mg8h5evhtyj6OGWk4qsSAL86HjGJUXD2X55i6v1G23xr3whSdRsM_sDEV194RF6YileOzFClrkx1zazk9oIfUHxQTeKOcvECxBPvUDr2lVnoCYd-Q_Ym4--NyRUzUGpoS2NYjqfLYYEfNAL02_M6Lm1H0lknRr71yqmzYbReNia90Sx669WRK50Qx3AYnkZrxEbaim6_9zkqGN_Z8OtSEUIDvPGR7tOD9ee05xLD3ma4y7m4XxXlNea5DkxZH44pfCkZecM4qvK8qL92iCUVu5opUnW8MI_7HzZYyAkRaShMDzIks-iWdBP_EV3QDdJkObtl_xB&shared_link=https%3A%2F%2Fsm01.app.box.com%2Fs%2F3fx4zlhotly5z03k62gi1ugdghun0230&box_client_name=box-content-preview&box_client_version=1.13.0',
       copy: "You're all signed up!",
     },
-    campaignKey: process.env.RYDEL_MOBILECOMMONS_KEY,
+    campaignKey: process.env.KEYSHIA_MOBILECOMMONS_KEY,
   },
   'self-care-scholarship-2017': {
     name: '$1,000 Easy Self-Care Scholarship - Fall 2017',
