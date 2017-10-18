@@ -208,7 +208,6 @@ module.exports = {
   partners: function(req, res) {
     try {
       const partnerName = req.params.partner.toLowerCase();
-      console.log(partnerName)
       const partner = PartnerService.getPartner(partnerName);
       const partnerComponentMarkup = ReactDOMServer.renderToString(
         <PartnerApp {...partner} partnerId={partnerName} />

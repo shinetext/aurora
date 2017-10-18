@@ -32,10 +32,10 @@ const partnersData = {
   '1111reset': {
     name: 'Sign up for motivational texts inspired by Keyshia Cole\'s new album 11:11 Reset',
     imageUrl:
-      'https://public.boxcloud.com/api/2.0/internal_files/230941827556/versions/243758160868/representations/jpg_paged_2048x2048/content/1.jpg?access_token=1!5dr3vljsE67jxlKZz3Pa8r4xn6KOXjxCLdS30aUaz8hNGNGO4hCkHMCa5T8ZRVsT78uCMCWep_WIaA62hvsP0TOxM189nF1a5jwY9TMl90OkeehlUilTZLXFSfdlmLR62ZZV2Gmq5mnows-ZBC4s5l9Xpng3nd6JXdzO3_S-peVoOo82kVQEqh0yl_0U6QKRc10Q-sU7DuIBx0Z1FZkNydjhhDLr8kEkptP0NhEn_xQnQrQ8XNHUL5aeHqXUxQeD40LOQWeoairht0W1akv8tr1hBU6f6OX2kDqqf5NULFyRXfeISAzrR0yUS4T2ZcBXdB3CEspGHBAGe_hHM40JwTMlKS6ZjOFpoicN9RnI-xDz00TKe8jXMG8rGFtaHcnUp2EUHzNocg-zm0Fj&shared_link=https%3A%2F%2Fsm01.app.box.com%2Fs%2F3fx4zlhotly5z03k62gi1ugdghun0230&box_client_name=box-content-preview&box_client_version=1.13.0',
+      'https://images.contentful.com/awpxl2koull4/NaJiiJyU0wa0Gs0aGg2ua/3987f0a1f5203259e399f763f880aa01/KEYSHIACOLE_1111RESET_CVR_CLEAN.jpg',
     copy: '',
     confirmation: {
-      imageUrl: 'https://public.boxcloud.com/api/2.0/internal_files/233615006533/versions/246506889541/representations/png_paged_2048x2048/content/1.png?access_token=1!89AKZ4tnPE8tQNb7UajmInaGoSY-Gb1eN300J7Lg5QMxJ0V8jij2VEME_HvKUZvcWcrhNftf7Mg8h5evhtyj6OGWk4qsSAL86HjGJUXD2X55i6v1G23xr3whSdRsM_sDEV194RF6YileOzFClrkx1zazk9oIfUHxQTeKOcvECxBPvUDr2lVnoCYd-Q_Ym4--NyRUzUGpoS2NYjqfLYYEfNAL02_M6Lm1H0lknRr71yqmzYbReNia90Sx669WRK50Qx3AYnkZrxEbaim6_9zkqGN_Z8OtSEUIDvPGR7tOD9ee05xLD3ma4y7m4XxXlNea5DkxZH44pfCkZecM4qvK8qL92iCUVu5opUnW8MI_7HzZYyAkRaShMDzIks-iWdBP_EV3QDdJkObtl_xB&shared_link=https%3A%2F%2Fsm01.app.box.com%2Fs%2F3fx4zlhotly5z03k62gi1ugdghun0230&box_client_name=box-content-preview&box_client_version=1.13.0',
+      imageUrl: 'https://images.contentful.com/awpxl2koull4/1SsNHkoxfKG2Mkim24KMaQ/90c8e69412aac14809bbd31f2ca6c401/KC-Title_black.jpg',
       copy: "You're all signed up!",
     },
     campaignKey: process.env.KEYSHIA_MOBILECOMMONS_KEY,
