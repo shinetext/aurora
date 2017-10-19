@@ -11,10 +11,11 @@ export default class SplashPage extends React.Component {
               src="/images/Shine-logo-original.png"
               className="splash-logo"
             />
-            <div className="splash-header">Hear it first!</div>
+            <div className="splash-header">Hear it first.</div>
             <div className="splash-subtitle">
-              We’ve got something big up our sleeves. Sound interesting? Sign up
-              to be the first to know when it launches.
+              Psst: we've got something big coming soon. Sound interesting? Sign
+              up to be <strong>first</strong> to find out what it is and when it
+              launches.
             </div>
           </div>
           <div className="splash-signup-form">
@@ -68,7 +69,7 @@ export default class SplashPage extends React.Component {
                     name="subscribe"
                     id="mc-embedded-subscribe"
                   >
-                    Notify Me!
+                    Notify Me
                   </button>
                 </div>
                 <div className="splash-image" />
@@ -84,10 +85,11 @@ export default class SplashPage extends React.Component {
                 src="/images/Shine-logo-original.png"
                 className="desktop-splash-logo"
               />
-              <div className="desktop-splash-header">Hear it first!</div>
+              <div className="desktop-splash-header">Hear it first.</div>
               <div className="desktop-splash-subtitle">
-                We’ve got something big up our sleeves. Sound interesting? Sign
-                up to be the first to know when it launches.
+                Psst: we've got something big coming soon. Sound interesting?
+                Sign up to be <strong>first</strong> to find out what it is and
+                when it launches.
               </div>
             </div>
             <div className="desktop-splash-signup-form">
@@ -145,7 +147,7 @@ export default class SplashPage extends React.Component {
                     name="subscribe"
                     id="mc-embedded-subscribe"
                   >
-                    Notify Me!
+                    Notify Me
                   </button>
                 </div>
               </form>
