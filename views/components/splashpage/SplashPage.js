@@ -148,7 +148,7 @@ export default class SplashPage extends React.Component {
             </div>
           </div>
           <div className="desktop-image">
-            <img src="https://images.contentful.com/awpxl2koull4/2NHsdgj8NGC086Wcgu4OeY/fd00736874115140b113ccb939d31d67/Model2_copy.png" />
+            <img src="https://images.contentful.com/awpxl2koull4/7FVydJIS9aYokIQK842ySk/58b9a7192f54c7413e66d5f84d001e82/Figure3-web.png" />
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@
 @font-size-splash-subtitle: 1.2em;
 @font-size-splash-input: 16pt;
 
-@color-label-sm: #e4a100;
+@color-label-sm: #8d8d8d;
 @color-label: #8d8d8d;
 
 @margin-splash-sm: 28pt;
@@ -17,7 +17,7 @@
 .container-splash-lead {
   padding: 0;
   margin-bottom: 0;
-  background-image: url('https://images.contentful.com/awpxl2koull4/6wra1o2DV6WcUUCO6oWa4U/bcab07fedbc8dac93c808711160b2f96/Mobile-background.png');
+  background-image: url('https://images.contentful.com/awpxl2koull4/1YR7B1gPD2ueqKwAC4yc22/77e1316800611af0184429dc57f4264d/Mobile-background-Y.png');
   background-position: bottom;
   background-repeat: no-repeat;
   .container-splash {
@@ -47,6 +47,7 @@
     }
     .splash-subtitle {
       .font-work-sans-regular;
+      color: @color-label;
       font-size: @font-size-splash-subtitle;
     }
   }
@@ -67,7 +68,7 @@
   }
 
   .form-control + label {
-    .font-work-sans-semi;
+    .font-work-sans-regular;
     color: @color-label-sm;
     pointer-events: none;
     position: absolute;
@@ -91,7 +92,7 @@
   }
 
   .form-control:focus + label {
-    .font-work-sans-semi;
+    .font-work-sans-regular;
     color: @color-label-sm!important;
     font-size: @font-size-label-sm!important;
     top: 5px !important;
@@ -135,7 +136,7 @@
     }
     .splash-image {
       flex-basis: 55%;
-      background-image: url('https://images.contentful.com/awpxl2koull4/6AGXrtmCQMe0ygCOy622IE/2c6532546c740e194d4efc106dfe9ae6/Model2-Mobile.png');
+      background-image: url('https://images.contentful.com/awpxl2koull4/49bXwfVJEAuSoMUW6EQQIU/9ba3c4a768f3efe38bc6406672f24d59/Figure3-mobile.png');
       background-repeat: no-repeat;
       background-position: left bottom;
       background-size: cover;
@@ -161,7 +162,7 @@
       max-height: 750pt;
       margin-left: 9%;
       .desktop-image {
-        background-image: url('https://images.contentful.com/awpxl2koull4/1dP5HW8lm6q8sUc2EkecAY/001b39bbcd108db239cb38c6819684a2/Web-background.png');
+        background-image: url('https://images.contentful.com/awpxl2koull4/4HXDe6VPX2yqWcMI2QSs8o/7873446cb7ae68e4d4f25b130a29e77c/Web-background-Y.png');
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
@@ -196,7 +197,8 @@
             margin-bottom: 13pt;
           }
           .desktop-splash-subtitle {
-            .font-work-sans-medium;
+            .font-work-sans-regular;
+            color: @color-label;
             font-size: @font-size-splash-subtitle;
             margin-bottom: 34pt;
           }
