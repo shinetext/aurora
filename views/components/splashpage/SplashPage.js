@@ -20,7 +20,7 @@ export default class SplashPage extends React.Component {
           </div>
           <div className="splash-signup-form">
             <form
-              action="https://shinetext.us14.list-manage.com/subscribe/post"
+              action="https://shinetext.us14.list-manage.com/subscribe/post?u=3509707e26340578cd6281c2d&amp;id=2b48e43c6c"
               method="post"
               id="mc-embedded-subscribe-form"
               name="mc-embedded-subscribe-form"
@@ -28,37 +28,42 @@ export default class SplashPage extends React.Component {
               target="_blank"
               novalidate
             >
-              <input type="hidden" name="u" value="3509707e26340578cd6281c2d" />
-              <input type="hidden" name="id" value="8ca1941e29" />
+              <input
+                type="hidden"
+                value="8388608"
+                name="group[207][8388608]"
+                id="mce-group[207]-207-0"
+                checked
+              />
               <div className="splash-form-field">
                 <input
                   className="form-control"
                   type="email"
                   value=""
-                  name="MERGE0"
-                  id="MERGE0"
+                  name="EMAIL"
+                  id="mce-EMAIL"
                 />
-                <label for="MERGE0">Email</label>
+                <label for="mce-EMAIL">Email</label>
               </div>
               <div className="splash-form-field">
                 <input
-                  className="form-control required email"
+                  className="form-control"
                   value=""
                   type="text"
-                  name="MERGE1"
-                  id="MERGE1"
+                  name="FNAME"
+                  id="mce-FNAME"
                 />
-                <label for="MERGE1">First Name</label>
+                <label for="mce-FNAME">First Name</label>
               </div>
               <div className="splash-form-field">
                 <input
                   className="form-control"
                   type="text"
-                  name="MERGE3"
+                  name="PHONE"
                   value=""
-                  id="MERGE3"
+                  id="mce-PHONE"
                 />
-                <label for="MERGE3">Phone Number</label>
+                <label for="mce-PHONE">Phone Number</label>
               </div>
               <div className="splash-bottom">
                 <div className="splash-button">
@@ -94,7 +99,7 @@ export default class SplashPage extends React.Component {
             </div>
             <div className="desktop-splash-signup-form">
               <form
-                action="https://shinetext.us14.list-manage.com/subscribe/post"
+                action="https://shinetext.us14.list-manage.com/subscribe/post?u=3509707e26340578cd6281c2d&amp;id=2b48e43c6c"
                 method="post"
                 id="mc-embedded-subscribe-form"
                 name="mc-embedded-subscribe-form"
@@ -104,40 +109,41 @@ export default class SplashPage extends React.Component {
               >
                 <input
                   type="hidden"
-                  name="u"
-                  value="3509707e26340578cd6281c2d"
+                  value="8388608"
+                  name="group[207][8388608]"
+                  id="mce-group[207]-207-0"
+                  checked
                 />
-                <input type="hidden" name="id" value="8ca1941e29" />
+
                 <div className="splash-form-field">
                   <input
-                    className="form-control required email"
-                    value=""
+                    className="form-control"
                     type="email"
-                    name="MERGE0"
-                    id="MERGE0"
+                    value=""
+                    name="EMAIL"
+                    id="mce-EMAIL"
                   />
-                  <label for="MERGE0">Email</label>
+                  <label for="mce-EMAIL">Email</label>
+                </div>
+                <div className="splash-form-field">
+                  <input
+                    className="form-control"
+                    value=""
+                    type="text"
+                    name="FNAME"
+                    id="mce-FNAME"
+                  />
+                  <label for="mce-FNAME">First Name</label>
                 </div>
                 <div className="splash-form-field">
                   <input
                     className="form-control"
                     type="text"
+                    name="PHONE"
                     value=""
-                    name="MERGE1"
-                    id="MERGE1"
-                    required
+                    id="mce-PHONE"
                   />
-                  <label for="MERGE1">First Name</label>
-                </div>
-                <div className="splash-form-field">
-                  <input
-                    className="form-control"
-                    type="text"
-                    name="MERGE3"
-                    value=""
-                    id="MERGE3"
-                  />
-                  <label for="MERGE3">Phone Number</label>
+                  <label for="mce-PHONE">Phone Number</label>
                 </div>
                 <div className="splash-button">
                   <button
