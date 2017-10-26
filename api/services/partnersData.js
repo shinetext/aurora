@@ -41,7 +41,7 @@ const partnersData = {
     campaignKey: process.env.KEYSHIA_MOBILECOMMONS_KEY,
   },
   'snapchat': {
-    name: 'Sign up for a daily text to help you feel your best',
+    name: 'Sign up for a daily text to help you feel your best.',
     imageUrl:
       '/images/partners/snapchat/snapchat-image-4.png',
     copy: '',
