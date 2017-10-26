@@ -49,7 +49,7 @@ const partnersData = {
       imageUrl: '/images/confirmation-header.gif',
       copy: "You're all signed up!",
     },
-    campaignKey: process.env.KEYSHIA_MOBILECOMMONS_KEY,
+    campaignKey: process.env.SNAPCHAT_MOBILECOMMONS_KEY,
   },
   'self-care-scholarship-2017': {
     name: '$1,000 Easy Self-Care Scholarship - Fall 2017',
