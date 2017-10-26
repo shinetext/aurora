@@ -43,7 +43,7 @@ const partnersData = {
   'snapchat': {
     name: 'Sign up for a daily text to help you feel your best',
     imageUrl:
-      '/images/partners/snapchat/snapchat-image-3.png',
+      '/images/partners/snapchat/snapchat-image-4.png',
     copy: '',
     confirmation: {
       imageUrl: '/images/confirmation-header.gif',
