@@ -40,6 +40,17 @@ const partnersData = {
     },
     campaignKey: process.env.KEYSHIA_MOBILECOMMONS_KEY,
   },
+  'snapchat': {
+    name: 'Sign up for a daily text to help you feel your best.',
+    imageUrl:
+      '/images/partners/snapchat/snapchat-image-4.png',
+    copy: '',
+    confirmation: {
+      imageUrl: '/images/confirmation-header.gif',
+      copy: "You're all signed up!",
+    },
+    campaignKey: process.env.SNAPCHAT_MOBILECOMMONS_KEY,
+  },
   'self-care-scholarship-2017': {
     name: '$1,000 Easy Self-Care Scholarship - Fall 2017',
     imageUrl: '/images/partners/scholarship/scholarship-2017-photo.jpg',
