@@ -131,6 +131,7 @@ var routes = {
   *                                                                          *
   ***************************************************************************/
 
+  'post /splash': 'WebActionsController.splash',
   'post /join': 'WebActionsController.join',
   'post /save-settings': 'WebActionsController.saveSettings',
   'post /sms-invite': 'WebActionsController.smsInvite',
