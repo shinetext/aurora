@@ -7,6 +7,8 @@
 const Promise = require('bluebird');
 const request = Promise.promisifyAll(require('request'));
 const Mixpanel = require('mixpanel');
+const crypto = require('crypto');
+
 let mixpanel;
 
 if (process.env.MIXPANEL_TOKEN) {
