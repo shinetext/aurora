@@ -128,7 +128,7 @@ module.exports = {
     }
   },
 
-  splash: function(req, res) {
+  joinSplashList: function(req, res) {
     let { EMAIL, FNAME, PHONE, group } = req.body;
     let memberHash = crypto
       .createHash('md5')
@@ -138,8 +138,8 @@ module.exports = {
 
     const mailchimpUpdateRequest = {
       method: 'PATCH',
-      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config
-        .globals.mailchimpListId}/members/${memberHash}`,
+      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals
+        .mailchimpListId}/members/${memberHash}`,
       json: true,
       auth: {
         user: sails.config.globals.mailchimpApiAuthUser,
@@ -172,31 +172,36 @@ module.exports = {
       },
     };
 
-    request
-      .patchAsync(mailchimpUpdateRequest)
-      .then(response => {
-        if (!response || !response.body) {
-          sails.log.error(
-            'Invalid response received from MailChimp subscribe call.'
-          );
-        } else if (response.body.status === 404) {
-          request.postAsync(mailchimpSubscribeRequest).then(response => {
-            if (!response || !response.body) {
-              sails.log.error(
-                'Invalid response received from MailChimp subscribe call.'
-              );
-            }
-            sails.log.info('Successful MailChimp subscribe');
-            res.redirect(redirectUrl);
-          });
-        } else {
+    return Promise.coroutine(function*() {
+      try {
+        let patchRequest = yield request.patchAsync(mailchimpUpdateRequest);
+        let postRequest;
+
+        if (patchRequest.statusCode === 200) {
           sails.log.info('Successful MailChimp update');
-          res.redirect(redirectUrl);
+          return res.redirect(redirectUrl);
+        } else if (patchRequest.statusCode === 404) {
+          postRequest = yield request.postAsync(mailchimpSubscribeRequest);
+          if (postRequest && postRequest.statusCode === 200) {
+            sails.log.info('Successful MailChimp User Subscribe');
+            return res.redirect(redirectUrl);
+          } else if (postRequest) {
+            sails.log.error(
+              'Invalid response received from MailChimp subscribe call.'
+            );
+            return res.redirect('500');
+          }
+        } else {
+          sails.log.error(
+            'Invalid response received from MailChimp update subscriber call.'
+          );
+          return res.redirect('500');
         }
-      })
-      .catch(err => {
+      } catch (err) {
         sails.log.error(err);
-      });
+        res.redirect('500');
+      }
+    })();
   },
 
   /**
