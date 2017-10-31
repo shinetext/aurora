@@ -128,7 +128,7 @@ module.exports = {
     }
   },
 
-  splash: function(req, res) {
+  joinSplashList: function(req, res) {
     let { EMAIL, FNAME, PHONE, group } = req.body;
     let memberHash = crypto
       .createHash('md5')
@@ -138,8 +138,8 @@ module.exports = {
 
     const mailchimpUpdateRequest = {
       method: 'PATCH',
-      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config
-        .globals.mailchimpListId}/members/${memberHash}`,
+      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals
+        .mailchimpListId}/members/${memberHash}`,
       json: true,
       auth: {
         user: sails.config.globals.mailchimpApiAuthUser,
@@ -180,22 +180,28 @@ module.exports = {
             'Invalid response received from MailChimp subscribe call.'
           );
         } else if (response.body.status === 404) {
-          request.postAsync(mailchimpSubscribeRequest).then(response => {
-            if (!response || !response.body) {
-              sails.log.error(
-                'Invalid response received from MailChimp subscribe call.'
-              );
-            }
-            sails.log.info('Successful MailChimp subscribe');
-            res.redirect(redirectUrl);
-          });
-        } else {
+          return request.postAsync(mailchimpSubscribeRequest);
+        } else if (response.body.status === 200) {
           sails.log.info('Successful MailChimp update');
           res.redirect(redirectUrl);
+        } else {
+          sails.log.error(
+            'Invalid response received from MailChimp subscribe call.'
+          );
         }
+      })
+      .then(postResonse => {
+        if (!postResonse || !postResonse.body) {
+          sails.log.error(
+            'Invalid response received from MailChimp subscribe call.'
+          );
+        }
+        sails.log.info('Successful MailChimp subscribe');
+        res.redirect(redirectUrl);
       })
       .catch(err => {
         sails.log.error(err);
+        res.redirect('500');
       });
   },
 

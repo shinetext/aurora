@@ -19,7 +19,7 @@ export default class SplashPage extends React.Component {
             </div>
           </div>
           <div className="splash-signup-form">
-            <form action="/splash" method="post">
+            <form action="/joinSplashList" method="post">
               <div className="splash-form-field">
                 <input
                   className="form-control"
@@ -77,7 +77,7 @@ export default class SplashPage extends React.Component {
               </div>
             </div>
             <div className="desktop-splash-signup-form">
-              <form action="/splash" method="post">
+              <form action="/joinSplashList" method="post">
                 <div className="splash-form-field">
                   <input
                     className="form-control"
