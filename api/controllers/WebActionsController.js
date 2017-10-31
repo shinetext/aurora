@@ -6,7 +6,6 @@
 
 const Promise = require('bluebird');
 const request = Promise.promisifyAll(require('request'));
-const crypto = require('crypto');
 const Mixpanel = require('mixpanel');
 let mixpanel;
 

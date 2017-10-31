@@ -52,7 +52,13 @@ export default class SplashPage extends React.Component {
               </div>
               <div className="splash-bottom">
                 <div className="splash-button">
-                  <button type="submit" className="get-notified button">
+                  <button
+                    type="submit"
+                    className="get-notified button"
+                    value="Subscribe"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                  >
                     Notify Me
                   </button>
                 </div>
@@ -109,7 +115,13 @@ export default class SplashPage extends React.Component {
                   <label for="mce-PHONE">Phone Number</label>
                 </div>
                 <div className="splash-button">
-                  <button type="submit" className="get-notified button">
+                  <button
+                    type="submit"
+                    className="get-notified button"
+                    value="Subscribe"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                  >
                     Notify Me
                   </button>
                 </div>
