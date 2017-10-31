@@ -19,7 +19,22 @@ export default class SplashPage extends React.Component {
             </div>
           </div>
           <div className="splash-signup-form">
-            <form action="/joinSplashList" method="post">
+            <form
+              action="https://shinetext.us14.list-manage.com/subscribe/post?u=3509707e26340578cd6281c2d&amp;id=2b48e43c6c"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              class="validate"
+              target="_blank"
+              novalidate
+            >
+              <input
+                type="hidden"
+                value="8388608"
+                name="group[207][8388608]"
+                id="mce-group[207]-207-0"
+                checked
+              />
               <div className="splash-form-field">
                 <input
                   className="form-control"
@@ -52,7 +67,13 @@ export default class SplashPage extends React.Component {
               </div>
               <div className="splash-bottom">
                 <div className="splash-button">
-                  <button type="submit" className="get-notified button">
+                  <button
+                    type="submit"
+                    className="get-notified button"
+                    value="Subscribe"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                  >
                     Notify Me
                   </button>
                 </div>
@@ -77,7 +98,23 @@ export default class SplashPage extends React.Component {
               </div>
             </div>
             <div className="desktop-splash-signup-form">
-              <form action="/joinSplashList" method="post">
+              <form
+                action="https://shinetext.us14.list-manage.com/subscribe/post?u=3509707e26340578cd6281c2d&amp;id=2b48e43c6c"
+                method="post"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
+                class="validate"
+                target="_blank"
+                novalidate
+              >
+                <input
+                  type="hidden"
+                  value="8388608"
+                  name="group[207][8388608]"
+                  id="mce-group[207]-207-0"
+                  checked
+                />
+
                 <div className="splash-form-field">
                   <input
                     className="form-control"
@@ -109,7 +146,13 @@ export default class SplashPage extends React.Component {
                   <label for="mce-PHONE">Phone Number</label>
                 </div>
                 <div className="splash-button">
-                  <button type="submit" className="get-notified button">
+                  <button
+                    type="submit"
+                    className="get-notified button"
+                    value="Subscribe"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                  >
                     Notify Me
                   </button>
                 </div>
