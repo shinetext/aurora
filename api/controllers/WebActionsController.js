@@ -138,7 +138,7 @@ module.exports = {
 
     const mailchimpUpdateRequest = {
       method: 'PATCH',
-      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals
+      uri: `${sails.config.globals.mailchimpApiUrl}lists/${sails.config.globals
         .mailchimpListId}/members/${memberHash}`,
       json: true,
       auth: {
@@ -154,7 +154,7 @@ module.exports = {
 
     const mailchimpSubscribeRequest = {
       method: 'POST',
-      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals
+      uri: `${sails.config.globals.mailchimpApiUrl}lists/${sails.config.globals
         .mailchimpListId}/members`,
       json: true,
       auth: {
