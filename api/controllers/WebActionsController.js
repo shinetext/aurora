@@ -6,6 +6,7 @@
 
 const Promise = require('bluebird');
 const request = Promise.promisifyAll(require('request'));
+const crypto = require('crypto');
 const Mixpanel = require('mixpanel');
 let mixpanel;
 
@@ -125,6 +126,81 @@ module.exports = {
         request.postAsync(photonRequest);
       }
     }
+  },
+
+  joinSplashList: function(req, res) {
+    let { EMAIL, FNAME, PHONE, group } = req.body;
+    let memberHash = crypto
+      .createHash('md5')
+      .update(EMAIL.toLowerCase())
+      .digest('hex');
+    let redirectUrl = '/confirmation';
+
+    const mailchimpUpdateRequest = {
+      method: 'PATCH',
+      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals
+        .mailchimpListId}/members/${memberHash}`,
+      json: true,
+      auth: {
+        user: sails.config.globals.mailchimpApiAuthUser,
+        pass: sails.config.globals.mailchimpApiAuthPass,
+      },
+      body: {
+        status: 'subscribed',
+        // Subscribe users to Shine Splash App Group
+        interests: { e8db15c44a: true },
+      },
+    };
+
+    const mailchimpSubscribeRequest = {
+      method: 'POST',
+      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals
+        .mailchimpListId}/members`,
+      json: true,
+      auth: {
+        user: sails.config.globals.mailchimpApiAuthUser,
+        pass: sails.config.globals.mailchimpApiAuthPass,
+      },
+      body: {
+        email_address: EMAIL,
+        status: 'subscribed',
+        merge_fields: {
+          FNAME: FNAME,
+          PHONE: PHONE,
+        },
+        interests: { e8db15c44a: true }, // Subscribe users to Shine Splash App Group
+      },
+    };
+    return Promise.coroutine(function*() {
+      try {
+        let patchRequest = yield request.patchAsync(mailchimpUpdateRequest);
+        let postRequest;
+
+        if (patchRequest.body.status === 200) {
+          sails.log.info('Successful MailChimp update');
+          return res.redirect(redirectUrl);
+        } else if (patchRequest.body.status === 404) {
+          postRequest = yield request.postAsync(mailchimpSubscribeRequest);
+        } else {
+          sails.log.error(
+            'Invalid response received from MailChimp subscribe call.'
+          );
+          return res.redirect('500');
+        }
+
+        if (postRequest && postRequest.body.status === 200) {
+          sails.log.info('Successful MailChimp User Subscribe');
+          return res.redirect(redirectUrl);
+        } else if (postRequest) {
+          sails.log.error(
+            'Invalid response received from MailChimp subscribe call.'
+          );
+        }
+      } catch (err) {
+        sails.log.error(err);
+        res.redirect('500');
+      }
+    })();
   },
 
   /**
