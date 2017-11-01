@@ -52,10 +52,10 @@ const partnersData = {
     campaignKey: process.env.SNAPCHAT_MOBILECOMMONS_KEY,
   },
   'self-care-scholarship-2017': {
-    name: '$1,000 Easy Self-Care Scholarship - Fall 2017',
+    name: '$500 Easy Self-Care Scholarship - Fall 2017',
     imageUrl: '/images/partners/scholarship/scholarship-2017-photo.jpg',
     copy:
-      '<p>School can be stressful.</p><p>Sign up to get a free daily text message to help you practice self-care AND get a chance to earn cash for school.</p><p>To enter the $1,000 scholarship, sign up for <a href="/?utm_source=Shine&utm_medium=Scholarship">Shine</a> texts.</p><p><a href="/images/partners/scholarship/scholarship-winner-denisse.png">Previous Scholarship Winner</a></p>',
+      '<p>School can be stressful.</p><p>Sign up to get a free daily text message to help you practice self-care AND get a chance to earn cash for school.</p><p>To enter the $500 scholarship, sign up for <a href="/?utm_source=Shine&utm_medium=Scholarship">Shine</a> texts.</p><p><a href="/images/partners/scholarship/scholarship-winner-denisse.png">Previous Scholarship Winner</a></p>',
     confirmation: {
       imageUrl: '/images/partners/scholarship/confirmation.gif',
       copy: 'You’ve entered the Shine Self-Care Scholarship!',
@@ -63,7 +63,7 @@ const partnersData = {
     campaignKey: 'OPF103C6C3AE571FD2082D4B7F18929F5B',
     additionalFormLink: {
       label: 'Official Scholarship Rules',
-      link: '/files/scholarship-rules-9-16-17-updated.pdf',
+      link: '/files/scholarship-rules-11-1-17-updated.pdf',
     },
   },
 };
