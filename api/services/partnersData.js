@@ -29,6 +29,17 @@ const partnersData = {
     },
     campaignKey: process.env.RYDEL_MOBILECOMMONS_KEY,
   },
+  'gabrielle-union': {
+    name:
+      'Sign up for advice from Gabrielle Union inspired by her new book “We’re Going to Need More Wine',
+    imageUrl: '/images/partners/GabUnioncover_notype.jpg',
+    copy: '',
+    confirmation: {
+      imageUrl: 'https://media.giphy.com/media/l3q2X3tmbWqZPWkuI/giphy.gif',
+      copy: "You're all signed up!",
+    },
+    campaignKey: process.env.GB_UNION_MOBILECOMMONS_KEY,
+  },
   '1111reset': {
     name: 'Sign up for motivational texts inspired by Keyshia Cole\'s new album 11:11 Reset',
     imageUrl:
