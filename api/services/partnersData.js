@@ -31,8 +31,8 @@ const partnersData = {
   },
   'gabrielle-union': {
     name:
-      'Sign up for advice from Gabrielle Union inspired by her new book “We’re Going to Need More Wine',
-    imageUrl: '/images/partners/GabUnioncover_notype.jpg',
+      'Sign up for texts inspired by Gabrielle Union\'s book <br/> "We\'re Going to Need More Wine"',
+    imageUrl: '/images/partners/GabUnioncover_notype.png',
     copy: '',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/l3q2X3tmbWqZPWkuI/giphy.gif',
