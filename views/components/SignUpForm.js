@@ -64,9 +64,7 @@ const SignUpForm = props => {
   return (
     <div className="SignUpForm col-md-7">
       <div className="container-signup">
-        <h2>
-          {header}
-        </h2>
+        <h2 dangerouslySetInnerHTML={{ __html: header}} />
         {infoView}
 
         <form class="signup-form" id="alpha-signup" action="/join" method="post">
