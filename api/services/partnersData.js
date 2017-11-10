@@ -31,7 +31,7 @@ const partnersData = {
   },
   'gabrielle-union': {
     name:
-      'Sign up for texts inspired by Gabrielle Union\'s book <br/> "We\'re Going to Need More Wine"',
+      'Get texts inspired by Gabrielle Union\'s book <br/> <em>We\'re Going to Need More Wine</em>',
     imageUrl: '/images/partners/GabUnioncover_notype.png',
     copy: '',
     confirmation: {
