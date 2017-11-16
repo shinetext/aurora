@@ -93,6 +93,14 @@ var routes = {
 
   '/sms-settings': 'WebViewController.smsSettings',
 
+  '/speakers': {
+    view: 'speakers',
+    locals: {
+      title: 'Speakers | Shine',
+      layout: 'layouts/subpage.layout',
+    },
+  },
+
   '/squad': 'WebViewController.squad',
 
   '/terms-of-service': {
