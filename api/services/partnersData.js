@@ -21,10 +21,10 @@ const partnersData = {
   'kelly-clarkson': {
     name: 'Get texts inspired by Kelly Clarkson\'s new album <em>Meaning of Life</em>',
     imageUrl:
-      '/images/partners/kelly-clarkson.png',
+      '/images/partners/kelly-clarkson-2.png',
     copy: '',
     confirmation: {
-      imageUrl: 'https://media.giphy.com/media/YZZJNDPNPrq0w/giphy.gif',
+      imageUrl: 'https://gph.is/1RjwKfd',
       copy: "You're all signed up!",
     },
     campaignKey: process.env.KELLY_CLARKSON_MOBILECOMMONS_KEY,
