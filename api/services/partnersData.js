@@ -18,6 +18,17 @@
  * }
  */
 const partnersData = {
+  'kelly-clarkson': {
+    name: 'Get texts inspired by Kelly Clarkson\'s new album <em>Meaning of Life</em>',
+    imageUrl:
+      '/images/partners/kelly-clarkson.png',
+    copy: '',
+    confirmation: {
+      imageUrl: 'https://media.giphy.com/media/YZZJNDPNPrq0w/giphy.gif',
+      copy: "You're all signed up!",
+    },
+    campaignKey: process.env.KELLY_CLARKSON_MOBILECOMMONS_KEY,
+  },
   rydel: {
     name: 'Sign up for confidence and positivity tips from Rydel!',
     imageUrl:
