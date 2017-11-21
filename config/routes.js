@@ -63,7 +63,7 @@ var routes = {
   '/p/:partner': 'WebViewController.partners',
   '/partners/:partner': 'WebViewController.partners',
 
-  '/app': 'WebViewController.splash',
+  '/app': 'WebViewController.app',
   '/coming-soon': 'WebViewController.splash',
 
   '/campaigns/:campaign': 'WebViewController.campaigns',

@@ -11,6 +11,7 @@ import CampaignService from '../services/CampaignService';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import SplashPage from '../../views/components/splashpage/SplashPage';
+import AppPage from '../../views/components/app-page/AppPage';
 import PartnerApp from '../../views/components/PartnerApp';
 import CampaignApp from '../../views/components/campaigns/CampaignApp';
 import CampaignReferral from '../../views/components/campaigns/CampaignReferral';
@@ -240,6 +241,27 @@ module.exports = {
         hideFooterCta: true
       };
       return res.view('splash-page', locals);
+    } catch (err) {
+      sails.log.error(err);
+      return res.view(404);
+    }
+  },
+
+  /**
+   * View for mobile app splash
+   *
+   */
+  app: function(req, res) {
+    try {
+      const appPageComponentMarkup = ReactDOMServer.renderToString(
+        <AppPage />
+      );
+      const locals = {
+        layout: 'layouts/subpage-fullwidth-no-header.layout',
+        appPageComponent: appPageComponentMarkup,
+        hideFooterCta: true
+      };
+      return res.view('app-page', locals);
     } catch (err) {
       sails.log.error(err);
       return res.view(404);
