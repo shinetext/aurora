@@ -24,7 +24,7 @@ const partnersData = {
       '/images/partners/kelly-clarkson-2.png',
     copy: '',
     confirmation: {
-      imageUrl: 'https://gph.is/1RjwKfd',
+      imageUrl: 'https://media.giphy.com/media/IJrLbXNKoNYFG/giphy.gif',
       copy: "You're all signed up!",
     },
     campaignKey: process.env.KELLY_CLARKSON_MOBILECOMMONS_KEY,
