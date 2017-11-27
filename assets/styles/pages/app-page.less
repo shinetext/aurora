@@ -1,189 +1,262 @@
 // Mobile Views
-.mobile-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mobile-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 1010px;
-
-  .mobile-header-top {
-    height: 525px;
-    padding-left: 30px;
-    padding-right: 30px;
-    .icon {
-      margin-top: 30px;
-      top: 30px;
-      left: 30px;
-      height: 81px;
-    }
-    h1 {
-      .font-Poppins;
-      margin-top: 75px;
-      font-size: 38px;
-      color: rgba(25, 25, 25, 1);
-      text-align: left;
-      line-height: 50px;
-    }
-    p {
-      margin-top: 15px;
-      .font-work-sans-regular;
-      font-size: 18px;
-      color: rgba(141, 141, 141, 1);
-      text-align: left;
-      line-height: 25px;
-    }
-  }
-  .mobile-header-bottom {
-    height: 550px;
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-top: 50px;
-    background-image: url('https://images.contentful.com/awpxl2koull4/4A8nht6rvqkwG4UwO8m68S/693b5fb3bcd87759511eb66b394f1594/LaunchPage-Wave-Mobile.png');
-    background-size: cover;
-    img {
-      height: 55px;
-    }
-  }
-}
-
-.mobile-middle {
-  width: 100%;
-  .middle-top {
+.app-page-container {
+  .mobile-container {
     display: flex;
-    justify-content: center;
-    height: 575px;
-    width: 100%;
-    video {
-      border: none;
-      position: relative;
-      top: 27px;
-      -webkit-transform: rotate(-90deg);
-      -moz-transform: rotate(-90deg);
-      -o-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-      transform: rotate(-90deg);
-      height: 306px;
-      width: 597px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 1010px;
+
+    .mobile-header-top {
+      height: 525px;
+      padding-left: 30px;
+      padding-right: 30px;
+      .icon {
+        margin-top: 30px;
+        top: 30px;
+        left: 30px;
+        height: 81px;
+      }
+      h1 {
+        .font-Poppins;
+        margin-top: 75px;
+        font-size: 38px;
+        color: rgba(25, 25, 25, 1);
+        text-align: left;
+        line-height: 50px;
+      }
+      p {
+        margin-top: 15px;
+        .font-work-sans-regular;
+        font-size: 18px;
+        color: rgba(141, 141, 141, 1);
+        text-align: left;
+        line-height: 25px;
+      }
+    }
+    .mobile-header-bottom {
+      height: 550px;
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-top: 50px;
+      background-image: url('https://images.contentful.com/awpxl2koull4/4A8nht6rvqkwG4UwO8m68S/693b5fb3bcd87759511eb66b394f1594/LaunchPage-Wave-Mobile.png');
+      background-size: cover;
+      img {
+        height: 55px;
+      }
     }
   }
 
-  .middle-bottom {
-    .timeline {
+  .mobile-middle {
+    width: 100%;
+    .middle-top {
       display: flex;
-      flex-direction: column;
-      .timeline-item {
-        margin-left: 46px;
-        margin-right: 46px;
-        margin-bottom: 90px;
-        height: 150px;
+      justify-content: center;
+      height: 575px;
+      width: 100%;
+      video {
+        border: none;
+        position: relative;
+        top: 27px;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        height: 306px;
+        width: 597px;
+      }
+    }
+
+    .middle-bottom {
+      .timeline {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        .timeline-item {
+          margin-left: 46px;
+          margin-right: 46px;
+          margin-bottom: 90px;
+          height: 150px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
 
-        .timeline-icon {
-          height: 114px;
+          .timeline-icon {
+            height: 114px;
 
-          align-self: flex-start;
-          flex: 0.5;
-          img {
-            height: 90px;
+            align-self: flex-start;
+            flex: 0.5;
+            img {
+              height: 90px;
+            }
           }
-        }
 
-        .timeline-item-content {
-          flex: 1;
-          h3 {
-            .font-Poppins;
-            font-size: 32px;
-            color: rgba(25, 25, 25, 1);
-            text-align: left;
-            line-height: 40px;
-          }
-          p {
-            .font-work-sans-regular;
-            font-size: 16px;
-            color: rgba(141, 141, 141, 1);
-            text-align: left;
-            line-height: 20px;
+          .timeline-item-content {
+            flex: 1;
+            h3 {
+              .font-Poppins;
+              font-size: 32px;
+              color: rgba(25, 25, 25, 1);
+              text-align: left;
+              line-height: 40px;
+            }
+            p {
+              .font-work-sans-regular;
+              font-size: 16px;
+              color: rgba(141, 141, 141, 1);
+              text-align: left;
+              line-height: 20px;
+            }
           }
         }
       }
     }
   }
-}
 
-.mobile-bottom {
-  height: 663px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  .mobile-bottom-top {
-    text-align: center;
-    position: relative;
-    top: 66px;
-    height: 310px;
-    width: 310px;
-    background-color: white;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
-    -moz-box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
-    box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
-
-    align-self: center;
-
-    .mobile-bottom-header {
-      .font-Poppins;
-      font-size: 28px;
-      color: rgba(25, 25, 25, 1);
-      line-height: 65px;
-      padding-bottom: 0px;
-      padding-top: 0px;
-      padding-left: 5px;
-      padding-right: 5px;
-    }
-    .mobile-bottom-subtitle {
-      .font-work-sans-regular;
-      font-size: 14px;
-      color: rgba(141, 141, 141, 1);
-      line-height: 20px;
-      padding-top: 0px;
-      padding-left: 40px;
-      padding-right: 40px;
-    }
-    .mobile-bottom-button {
-      margin-top: 10px;
-      height: 48px;
-    }
-  }
-  .mobile-bottom-bottom {
+  .mobile-bottom {
+    height: 663px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 474px;
-    width: 100%;
+    .mobile-bottom-top {
+      text-align: center;
+      position: relative;
+      top: 66px;
+      height: 310px;
+      width: 310px;
+      background-color: white;
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
+      -moz-box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
+      box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
 
-    background-image: url('https://images.contentful.com/awpxl2koull4/4A8nht6rvqkwG4UwO8m68S/693b5fb3bcd87759511eb66b394f1594/LaunchPage-Wave-Mobile.png');
-    background-size: cover;
-    img {
-      object-fit: contain;
-    }
-    .bottom-image {
       align-self: center;
-      height: 344px;
+
+      .mobile-bottom-header {
+        .font-Poppins;
+        font-size: 28px;
+        color: rgba(25, 25, 25, 1);
+        line-height: 65px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      .mobile-bottom-subtitle {
+        .font-work-sans-regular;
+        font-size: 14px;
+        color: rgba(141, 141, 141, 1);
+        line-height: 20px;
+        padding-top: 0px;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      .mobile-bottom-button {
+        margin-top: 10px;
+        height: 48px;
+      }
+    }
+    .mobile-bottom-bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 474px;
+      width: 100%;
+
+      background-image: url('https://images.contentful.com/awpxl2koull4/4A8nht6rvqkwG4UwO8m68S/693b5fb3bcd87759511eb66b394f1594/LaunchPage-Wave-Mobile.png');
+      background-size: cover;
+      img {
+        object-fit: contain;
+      }
+      .bottom-image {
+        align-self: center;
+        height: 344px;
+      }
     }
   }
-}
-// Desktop views
-.desktop-container {
-  display: none;
+  .desktop-container {
+    display: none;
+  }
+
+  // Desktop view
+  @media (min-width: @screen-sm-max) {
+    .mobile-container {
+      display: none;
+    }
+
+    .desktop-container {
+      display: flex;
+      width: 100%;
+    }
+
+    .desktop-first-section {
+      height: 1268px;
+      display: flex;
+      margin-top: 163px;
+      background-image: url('https://images.contentful.com/awpxl2koull4/4A8nht6rvqkwG4UwO8m68S/693b5fb3bcd87759511eb66b394f1594/LaunchPage-Wave-Mobile.png');
+      background-size: 100% 50%;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      .left {
+        display: flex;
+        flex-direction: column;
+        margin-left: 266px;
+        text-align: left;
+        .icon {
+          top: 163px;
+          left: 254px;
+          height: 65px;
+          width: 65px;
+        }
+        h1 {
+          .font-Poppins;
+          font-size: 3.5em;
+          color: rgba(25, 25, 25, 1);
+          text-align: left;
+          line-height: 65px;
+          padding-bottom: 25px;
+        }
+        p {
+          .font-work-sans-regular;
+          font-size: 16px;
+          color: rgba(141, 141, 141, 1);
+          text-align: left;
+          line-height: 20px;
+          padding-bottom: 25px;
+        }
+        .download-button {
+          height: 72px;
+          width: 221px;
+        }
+      }
+
+      .right {
+        display: flex;
+        justify-content: center;
+        height: 930px;
+        width: 100%;
+        video {
+          margin-top: 60px;
+          border: none;
+          -webkit-transform: rotate(-90deg);
+          -moz-transform: rotate(-90deg);
+          -o-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          height: 306px;
+          width: 597px;
+        }
+      }
+    }
+  }
 }
