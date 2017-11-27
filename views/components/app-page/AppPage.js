@@ -23,12 +23,12 @@ export default class AppPage extends Component {
           </section>
           <section className="mobile-middle">
             <div className="middle-top">
-              {/* <video
+              <video
                 id="video"
               >
-                <source src="/images/app-page/vid-app.mp4" type="video/mp4" />
+                <source src="/images/app-page/vid-app-2.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
-              </video> */}
+              </video>
             </div>
             <div className="middle-bottom">
               <Timeline />
