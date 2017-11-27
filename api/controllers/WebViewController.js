@@ -238,7 +238,7 @@ module.exports = {
       const locals = {
         layout: 'layouts/subpage-fullwidth-no-header.layout',
         splashComponent: splashComponentMarkup,
-        hideFooterCta: true
+        hideFooterCta: false
       };
       return res.view('splash-page', locals);
     } catch (err) {
