@@ -47,7 +47,7 @@
       padding-left: 30px;
       padding-right: 30px;
       margin-top: 50px;
-      background-image: url('https://images.contentful.com/awpxl2koull4/4A8nht6rvqkwG4UwO8m68S/693b5fb3bcd87759511eb66b394f1594/LaunchPage-Wave-Mobile.png');
+      background-image: url('/images/app-page/LaunchPage-Wave-Mobile.png');
       background-size: cover;
       img {
         height: 55px;
@@ -65,7 +65,7 @@
       video {
         border: none;
         position: relative;
-        top: 27px;
+        top: 20.5px;
         -webkit-transform: rotate(-90deg);
         -moz-transform: rotate(-90deg);
         -o-transform: rotate(-90deg);
@@ -189,20 +189,21 @@
   }
 
   // Desktop view
-  @media (min-width: @screen-sm-max) {
+  @media (min-width: @screen-sm-min) {
     .mobile-container {
       display: none;
     }
 
     .desktop-container {
       display: flex;
+      flex-direction: column;
       width: 100%;
     }
 
     .desktop-first-section {
-      height: 1268px;
+      height: 1068px !important;
       display: flex;
-      margin-top: 163px;
+      padding-top: 108px !important;
       background-image: url('https://images.contentful.com/awpxl2koull4/4A8nht6rvqkwG4UwO8m68S/693b5fb3bcd87759511eb66b394f1594/LaunchPage-Wave-Mobile.png');
       background-size: 100% 50%;
       background-repeat: no-repeat;
@@ -246,7 +247,7 @@
         height: 930px;
         width: 100%;
         video {
-          margin-top: 60px;
+          margin-top: 52px;
           border: none;
           -webkit-transform: rotate(-90deg);
           -moz-transform: rotate(-90deg);
@@ -255,6 +256,60 @@
           transform: rotate(-90deg);
           height: 306px;
           width: 597px;
+        }
+      }
+    }
+
+    .desktop-second-section {
+      height: 2767px;
+      .border {
+        position: absolute;
+        margin-left: 50%;
+        height: 2767px;
+        width: 3px;
+        background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(215, 215, 215, 1) 62%,
+          rgba(255, 255, 255, 1) 100%
+        );
+      }
+
+      .content-sections {
+        margin-top: 63px;
+        margin-bottom: 63px;
+        height: 753px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        img {
+          margin-left: 205px;
+          height: 500px;
+        }
+        .quick-hitter-logo {
+          height: 119px;
+          width: 120px;
+          position: absolute;
+          margin-left: 46%;
+        }
+        .textbox {
+          width: 316px;
+          margin-right: 205px;
+          h3 {
+            .font-Poppins;
+            font-size: 48px;
+            color: rgba(25, 25, 25, 1);
+            text-align: left;
+            line-height: 55px;
+          }
+          p {
+            .font-work-sans-regular;
+            font-size: 18px;
+            color: rgba(141, 141, 141, 1);
+            text-align: left;
+            line-height: 25px;
+          }
         }
       }
     }

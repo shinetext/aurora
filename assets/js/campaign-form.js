@@ -80,23 +80,3 @@ function duplicateNumber(betaPhoneNumber, alphaPhoneNumber) {
 }
 
 $('#alpha-signup').submit(submitAlpha);
-
-$('#video').on('click', function (e) {
-  let video = $("#video").get(0);
-  if (video.paused) {
-    video.play();
-  }
-  else {
-    video.pause();
-  }
-})
-
-$('#video-2').on('click', function (e) {
-  let video = $("#video-2").get(0);
-  if (video.paused) {
-    video.play();
-  }
-  else {
-    video.pause();
-  }
-})

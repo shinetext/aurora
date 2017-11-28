@@ -12,8 +12,8 @@ export default function() {
           />
           <h1>Mindful 🎧 moments for any situations.</h1>
           <p>
-            Hit PAUSE on the day and take a moment to show some love—and
-            care—to yourself.
+            Hit PAUSE on the day and take a moment to show some love—and care—to
+            yourself.
           </p>
         </div>
         <div className="mobile-header-bottom">
@@ -22,10 +22,11 @@ export default function() {
       </section>
       <section className="mobile-middle">
         <div className="middle-top">
-          <video
-            id="video"
-          >
-            <source src="/images/app-page/vid-app-2.mp4" type="video/mp4" />
+          <video preload="auto" id="video">
+            <source
+              data-src="/images/app-page/vid-app-2.mp4"
+              type="video/mp4"
+            />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -37,8 +38,8 @@ export default function() {
         <div className="mobile-bottom-top">
           <h3 className="mobile-bottom-header">Get the App Now</h3>
           <p className="mobile-bottom-subtitle">
-            Press pause on your busy schedule and destress with a quick
-            audio affirmations.
+            Press pause on your busy schedule and destress with a quick audio
+            affirmations.
           </p>
           <img
             src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
@@ -53,5 +54,5 @@ export default function() {
         </div>
       </section>
     </section>
-  )
+  );
 }
