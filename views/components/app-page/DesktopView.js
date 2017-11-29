@@ -39,10 +39,9 @@ export default function() {
           data--500-bottom-bottom="translateY(25%); opacity: 0.2;"
         >
           <img src="/images/app-page/LaunchPage-Video-Mobile.png" />
-          <img
-            className="quick-hitter-logo"
-            src="/images/app-page/LaunchPage-Yellow-Mobile.png"
-          />
+          <div className="quick-hitter-logo">
+            <img src="/images/app-page/LaunchPage-Green-Mobile.png" />
+          </div>
           <div className="textbox">
             <h3>Daily Motivation</h3>
             <p>
@@ -58,10 +57,9 @@ export default function() {
           data--500-bottom-bottom="translateY(25%); opacity: 0.2;"
         >
           <img src="/images/app-page/LaunchPage-Video-Mobile.png" />
-          <img
-            className="quick-hitter-logo"
-            src="/images/app-page/LaunchPage-Purple-Mobile.png"
-          />
+          <div className="quick-hitter-logo">
+            <img src="/images/app-page/LaunchPage-Purple-Mobile.png" />
+          </div>
           <div className="textbox">
             <h3>Mindful Moments</h3>
             <p>
@@ -78,11 +76,9 @@ export default function() {
           data--500-bottom-bottom="translateY(25%); opacity: 0.2;"
         >
           <img src="/images/app-page/LaunchPage-Video-Mobile.png" />
-          <img
-            className="quick-hitter-logo"
-            src="/images/app-page/LaunchPage-Green-Mobile.png"
-          />
-
+          <div className="quick-hitter-logo">
+            <img src="/images/app-page/LaunchPage-Yellow-Mobile.png" />
+          </div>
           <div className="textbox">
             <h3>Shine On Demand</h3>
             <p>
@@ -91,6 +87,24 @@ export default function() {
             </p>
           </div>
         </div>
+      </div>
+      <div className="desktop-footer scrollify-section">
+        <div className="footer-textarea">
+          <h3>Get Shine Now</h3>
+          <p>
+            {' '}
+            Press pause on your busy schedule and destress with a quick audio
+            affirmations.
+          </p>
+          <img
+            className="footer-download-button"
+            src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
+          />
+        </div>
+        <img
+          className="footer-image"
+          src="/images/app-page/LaunchPage-Bossgirl-Desktop.png"
+        />
       </div>
     </section>
   );
