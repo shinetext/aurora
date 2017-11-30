@@ -28,13 +28,13 @@ $(document).ready(function() {
   // Check if screen is a desktop or ipad and if page has loaded scrollify script
   // load video specific to that view
   if ($(window).width() > 768 && $(location)[0].pathname === '/app') {
-    let video = $('#video-2');
+    var video = $('#video-2');
     $('source', video).attr('src', '/images/app-page/vid-app-3.mp4');
     video.load();
     scrollifyDesktop();
     refreshSkrollr();
   } else {
-    let video = $('#video');
+    var video = $('#video');
     $('source', video).attr('src', '/images/app-page/vid-app-2.mp4');
     video.load();
   }
@@ -55,7 +55,7 @@ $(document).ready(function() {
 
   // Toggle play on mobile view
   $('#video').on('click', function(e) {
-    let video = $('#video').get(0);
+    var video = $('#video').get(0);
     if (video.paused) {
       video.play();
     } else {
@@ -65,7 +65,7 @@ $(document).ready(function() {
 
   // Toggle play on desktop view
   $('#video-2').on('click', function(e) {
-    let video = $('#video-2').get(0);
+    var video = $('#video-2').get(0);
     if (video.paused) {
       video.play();
     } else {
