@@ -6,10 +6,12 @@ export default function() {
     <section className="mobile-container">
       <section className="mobile-header">
         <div className="mobile-header-top">
-          <img
-            src="/images/app-page/LaunchPage-Logo-Mobile.png"
-            className="icon"
-          />
+          <a href="/">
+            <img
+              src="/images/app-page/LaunchPage-Logo-Mobile.png"
+              className="icon"
+            />
+          </a>
           <h1>Mindful 🎧 moments for any situations.</h1>
           <p>
             Hit PAUSE on the day and take a moment to show some love—and care—to
@@ -17,7 +19,9 @@ export default function() {
           </p>
         </div>
         <div className="mobile-header-bottom">
+          <a href="/">
           <img src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png" />
+          </a>
         </div>
       </section>
       <section className="mobile-middle">
@@ -41,10 +45,12 @@ export default function() {
             Press pause on your busy schedule and destress with a quick audio
             affirmations.
           </p>
-          <img
-            src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
-            className="mobile-bottom-button"
-          />
+          <a href="/">
+            <img
+              src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
+              className="mobile-bottom-button"
+            />
+          </a>
         </div>
         <div className="mobile-bottom-bottom">
           <img
