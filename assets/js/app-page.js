@@ -10,9 +10,10 @@ $(document).ready(function() {
     $.scrollify({
       section: '.scrollify-section',
       easing: 'easeOutExpo',
-      scrollSpeed: 1100,
+      scrollSpeed: 1000,
       offset: 0,
       scrollbars: true,
+      interstitialSection: '.desktop-footer',
       standardScrollElements: '.desktop-footer',
       setHeights: true,
       overflowScroll: true,
@@ -28,14 +29,11 @@ $(document).ready(function() {
   // Check if screen is a desktop or ipad and if page has loaded scrollify script
   // load video specific to that view
   if ($(window).width() > 768 && $(location)[0].pathname === '/app') {
-    var video = $('#video-2');
-    $('source', video).attr('src', '/images/app-page/vid-app-3.mp4');
-    video.load();
     scrollifyDesktop();
     refreshSkrollr();
   } else {
     var video = $('#video');
-    $('source', video).attr('src', '/images/app-page/vid-app-2.mp4');
+    $('source', video).attr('src', '/images/app-page/vid-app-5.mp4');
     video.load();
   }
 

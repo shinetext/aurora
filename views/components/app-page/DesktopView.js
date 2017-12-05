@@ -3,9 +3,7 @@ import React from 'react';
 export default function() {
   return (
     <section className="desktop-container">
-      <div
-        className="desktop-first-section scrollify-section"
-      >
+      <div className="desktop-first-section scrollify-section">
         <div className="left">
           <img
             src="/images/app-page/LaunchPage-Logo-Mobile.png"
@@ -16,23 +14,20 @@ export default function() {
             Hit PAUSE on the day and take a moment to show some love—and care—to
             yourself.
           </p>
-          <img
-            className="download-button"
-            src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
-          />
+          <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
+            <img
+              className="download-button"
+              src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
+            />
+          </a>
         </div>
         <div className="right">
-          <video id="video-2" preload="auto">
-            <source src="" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <img src="/images/app-page/LaunchPage-Video-Mobile.png" />
         </div>
       </div>
       <div className="desktop-second-section">
         <div className="border" />
-        <div
-          className="content-sections scrollify-section"
-        >
+        <div className="content-sections scrollify-section">
           <img src="/images/app-page/iPhone-DailyMotivation.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Green-Mobile.png" />
@@ -45,9 +40,7 @@ export default function() {
             </p>
           </div>
         </div>
-        <div
-          className="content-sections scrollify-section"
-        >
+        <div className="content-sections scrollify-section">
           <img src="/images/app-page/iPhone-White-MindfulMoments.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Purple-Mobile.png" />
@@ -61,9 +54,7 @@ export default function() {
           </div>
         </div>
 
-        <div
-          className="content-sections scrollify-section"
-        >
+        <div className="content-sections scrollify-section">
           <img src="/images/app-page/iPhone-ShineOnDemand.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Yellow-Mobile.png" />
@@ -85,10 +76,12 @@ export default function() {
             Press pause on your busy schedule and destress with a quick audio
             affirmations.
           </p>
-          <img
-            className="footer-download-button"
-            src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
-          />
+          <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
+            <img
+              className="footer-download-button"
+              src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
+            />
+          </a>
         </div>
         <img
           className="footer-image"

@@ -19,7 +19,7 @@ export default function() {
           </p>
         </div>
         <div className="mobile-header-bottom">
-          <a href="/">
+          <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
           <img src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png" />
           </a>
         </div>
@@ -28,7 +28,7 @@ export default function() {
         <div className="middle-top">
           <video preload="auto" id="video">
             <source
-              data-src="/images/app-page/vid-app-2.mp4"
+              data-src="/images/app-page/vid-app-5.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
@@ -45,7 +45,7 @@ export default function() {
             Press pause on your busy schedule and destress with a quick audio
             affirmations.
           </p>
-          <a href="/">
+          <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
             <img
               src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
               className="mobile-bottom-button"
