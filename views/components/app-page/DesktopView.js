@@ -5,8 +5,6 @@ export default function() {
     <section className="desktop-container">
       <div
         className="desktop-first-section scrollify-section"
-        data--500-bottom-center="transform: translateY(0%); opacity: 1;"
-        data--500-bottom-bottom="translateY(25%); opacity: 0.2;"
       >
         <div className="left">
           <img
@@ -34,11 +32,8 @@ export default function() {
         <div className="border" />
         <div
           className="content-sections scrollify-section"
-          data-bottom-top="transform: translateY(-25%); opacity: 0.2;"
-          data--500-bottom-center="transform: translateY(0%); opacity: 1;"
-          data--500-bottom-bottom="translateY(25%); opacity: 0.2;"
         >
-          <img src="/images/app-page/LaunchPage-Video-Mobile.png" />
+          <img src="/images/app-page/iPhone-DailyMotivation.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Green-Mobile.png" />
           </div>
@@ -52,11 +47,8 @@ export default function() {
         </div>
         <div
           className="content-sections scrollify-section"
-          data-bottom-top="transform: translateY(-25%); opacity: 0.2;"
-          data--500-bottom-center="transform: translateY(0%); opacity: 1;"
-          data--500-bottom-bottom="translateY(25%); opacity: 0.2;"
         >
-          <img src="/images/app-page/LaunchPage-Video-Mobile.png" />
+          <img src="/images/app-page/iPhone-White-MindfulMoments.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Purple-Mobile.png" />
           </div>
@@ -71,11 +63,8 @@ export default function() {
 
         <div
           className="content-sections scrollify-section"
-          data-bottom-top="transform: translateY(-25%); opacity: 0.2;"
-          data--500-bottom-center="transform: translateY(0%); opacity: 1;"
-          data--500-bottom-bottom="translateY(25%); opacity: 0.2;"
         >
-          <img src="/images/app-page/LaunchPage-Video-Mobile.png" />
+          <img src="/images/app-page/iPhone-ShineOnDemand.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Yellow-Mobile.png" />
           </div>

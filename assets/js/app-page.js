@@ -14,7 +14,7 @@ $(document).ready(function() {
       offset: 0,
       scrollbars: true,
       standardScrollElements: '.desktop-footer',
-      setHeights: false,
+      setHeights: true,
       overflowScroll: true,
       updateHash: false,
       touchScroll: true,
