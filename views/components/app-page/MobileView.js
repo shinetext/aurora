@@ -12,15 +12,15 @@ export default function() {
               className="icon"
             />
           </a>
-          <h1>Mindful 🎧 moments for any situations.</h1>
+          <h1>Mindful moments made for you.</h1>
           <p>
-            Hit PAUSE on the day and take a moment to show some love—and care—to
-            yourself.
+            Reclaim me-time with the first mindfulness app that speaks your
+            language.
           </p>
         </div>
         <div className="mobile-header-bottom">
           <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
-          <img src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png" />
+            <img src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png" />
           </a>
         </div>
       </section>

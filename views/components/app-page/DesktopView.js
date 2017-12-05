@@ -9,10 +9,10 @@ export default function() {
             src="/images/app-page/LaunchPage-Logo-Mobile.png"
             className="icon"
           />
-          <h1>Mindful moments for any situation.</h1>
+          <h1>Mindful moments made for you</h1>
           <p>
-            Hit PAUSE on the day and take a moment to show some love—and care—to
-            yourself.
+            Reclaim me-time with the first mindfulness app that speaks your
+            language.
           </p>
           <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
             <img
@@ -35,8 +35,9 @@ export default function() {
           <div className="textbox">
             <h3>Daily Motivation</h3>
             <p>
-              Wake up to daily Shine Texts to help you improve on your
-              wellbeing.
+              Need a reminder that you’re doing the best you can? We got you.
+              Wake up to daily Shine Texts to help you practice self-love and
+              remind you that you’re not alone in the struggle.
             </p>
           </div>
         </div>
@@ -48,8 +49,9 @@ export default function() {
           <div className="textbox">
             <h3>Mindful Moments</h3>
             <p>
-              Press pause on your busy schedule and destress with a quick audio
-              affirmations.
+              Find calm on the fly—around whatever issue you’re struggling with.
+              Whether it’s a toxic friend, dating burnout, or you’re just trying
+              to find some chill in your day, sit back and listen.
             </p>
           </div>
         </div>
@@ -72,9 +74,8 @@ export default function() {
         <div className="footer-textarea">
           <h3>Get Shine Now</h3>
           <p>
-            {' '}
-            Press pause on your busy schedule and destress with a quick audio
-            affirmations.
+            Get your me time back with the first mindfulness app that speaks
+            your language.
           </p>
           <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
             <img
