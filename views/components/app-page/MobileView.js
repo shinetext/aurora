@@ -42,8 +42,8 @@ export default function() {
         <div className="mobile-bottom-top">
           <h3 className="mobile-bottom-header">Get the App Now</h3>
           <p className="mobile-bottom-subtitle">
-            Press pause on your busy schedule and destress with a quick audio
-            affirmations.
+            Get your me time back with the first mindfulness app that speaks{' '}
+            <i>your</i> language.
           </p>
           <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
             <img
