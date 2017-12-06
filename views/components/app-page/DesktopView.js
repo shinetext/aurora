@@ -22,7 +22,9 @@ export default function() {
           </a>
         </div>
         <div className="right">
-          <img src="/images/app-page/LaunchPage-Video-Mobile.png" />
+          <a href="https://youtu.be/j4C6SBHhSlo" target="_blank">
+            <img src="/images/app-page/LaunchPage-Video-Mobile.png" />
+          </a>
         </div>
       </div>
       <div className="desktop-second-section">
