@@ -12,10 +12,10 @@ export default function() {
               className="icon"
             />
           </a>
-          <h1>Mindful moments made for you.</h1>
+          <h1>You deserve a Mindful Moment.</h1>
           <p>
-            Reclaim me-time with the first mindfulness app that speaks your
-            language.
+            Take back me time with the Shine app. We’ll treat you like the
+            friend you’ve always wanted.
           </p>
         </div>
         <div className="mobile-header-bottom">

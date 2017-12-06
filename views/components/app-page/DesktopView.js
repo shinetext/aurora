@@ -9,10 +9,10 @@ export default function() {
             src="/images/app-page/LaunchPage-Logo-Mobile.png"
             className="icon"
           />
-          <h1>Mindful moments made for you</h1>
+          <h1>You deserve a Mindful Moment.</h1>
           <p>
-            Reclaim me-time with the first mindfulness app that speaks your
-            language.
+            Take back me time with the Shine app. We’ll treat you like the
+            friend you’ve always wanted.
           </p>
           <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
             <img
@@ -42,7 +42,7 @@ export default function() {
           </div>
         </div>
         <div className="content-sections scrollify-section">
-          <img src="/images/app-page/iPhone-White-MindfulMoments.png" />
+          <img src="/images/app-page/iPhone-ShineOnDemand.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Purple-Mobile.png" />
           </div>
@@ -51,21 +51,22 @@ export default function() {
             <p>
               Find calm on the fly—around whatever issue you’re struggling with.
               Whether it’s a toxic friend, dating burnout, or you’re just trying
-              to find some chill in your day, sit back and listen.
+              to find some chill in your day, sit back and listen. 🎧
             </p>
           </div>
         </div>
 
         <div className="content-sections scrollify-section">
-          <img src="/images/app-page/iPhone-ShineOnDemand.png" />
+          <img src="/images/app-page/iPhone-White-MindfulMoments.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Yellow-Mobile.png" />
           </div>
           <div className="textbox">
             <h3>Shine On Demand</h3>
             <p>
-              Interact with hundreds of Mindful Moments & maintain that
-              long-term emotional health.
+              Customize your Mindful Moments by sharing more about your
+              situation. It’s like a cross between meditation and a call with a
+              friend. 💯
             </p>
           </div>
         </div>
@@ -74,8 +75,8 @@ export default function() {
         <div className="footer-textarea">
           <h3>Get Shine Now</h3>
           <p>
-            Get your me time back with the first mindfulness app that speaks
-            your language.
+            Get your me time back with the first mindfulness app that speaks{' '}
+            <i>your</i> language.
           </p>
           <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
             <img
