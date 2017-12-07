@@ -1,10 +1,5 @@
 'use strict';
 $(document).ready(function() {
-  // Helpers for managing the skrollr lib
-  var skrollrInitialized = false;
-  var skrollrIsMobile = false;
-  var skrollrInstance;
-
   // Initialize scrollify function
   var scrollifyDesktop = function() {
     $.scrollify({
@@ -13,8 +8,8 @@ $(document).ready(function() {
       scrollSpeed: 1000,
       offset: 0,
       scrollbars: true,
-      interstitialSection: '.desktop-footer',
-      standardScrollElements: '.desktop-footer',
+      interstitialSection: '.social-and-footer-nav',
+      standardScrollElements: ' .social-and-footer-nav',
       setHeights: true,
       overflowScroll: true,
       updateHash: false,
@@ -30,25 +25,10 @@ $(document).ready(function() {
   // load video specific to that view
   if ($(window).width() > 768 && $(location)[0].pathname === '/app') {
     scrollifyDesktop();
-    refreshSkrollr();
   } else {
     var video = $('#video');
     $('source', video).attr('src', '/images/app-page/vid-app-5.mp4');
     video.load();
-  }
-
-  function refreshSkrollr() {
-    if (!skrollrInitialized) {
-      skrollrInitialized = true;
-
-      skrollrInstance = skrollr.init();
-      if (skrollrInstance.isMobile()) {
-        skrollrIsMobile = true;
-        skrollrInstance.destroy();
-      }
-    } else if (!skrollrIsMobile) {
-      skrollrInstance.refresh();
-    }
   }
 
   // Toggle play on mobile view
