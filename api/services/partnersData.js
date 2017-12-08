@@ -86,7 +86,7 @@ const partnersData = {
     campaignKey: 'OPF103C6C3AE571FD2082D4B7F18929F5B',
     additionalFormLink: {
       label: 'Official Scholarship Rules',
-      link: '/files/scholarship-rules-11-1-17-updated.pdf',
+      link: '/files/Scholarship-Rules-12-7-17-updated.pdf',
     },
   },
 };
