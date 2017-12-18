@@ -434,6 +434,17 @@ font-size: @font-size-homepage-normal;
         font-size: 13px;
       }
     }
+    @media (max-width: @screen-sm-min) {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow-x: auto;
+      .card {
+        margin-left: 0px;
+        flex: 0 0 auto;
+        width: 320px;
+      }
+    }
   }
 
   .info-container {
@@ -454,7 +465,6 @@ font-size: @font-size-homepage-normal;
         .font-work-sans-regular;
         font-size: 14px;
         line-height: 20px;
-        width: 387px;
         padding-top: @margin-sm;
         padding-bottom: @margin-sm;
       }
@@ -468,6 +478,23 @@ font-size: @font-size-homepage-normal;
       height: 666.6px;
       background-image: url('/images/app-page/LaunchPage-Video-Mobile-half.png');
       background-size: cover;
+    }
+
+    @media (max-width: @screen-sm-min) {
+      display: flex;
+      flex-direction: column;
+
+      .app-image {
+        width: 95%;
+        margin-top: @margin-lg;
+        background-image: url('/images/app-page/LaunchPage-Video-Mobile.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      .info {
+        width: 90%;
+      }
     }
   }
 }
