@@ -8,26 +8,76 @@ font-size: @font-size-homepage-normal;
 
   padding: 0;
   position: relative;
-
+  .col-md-7 {
+    background-color: blue;
+  }
   .container-signup {
     height: @container-homepage-lead-height;
     padding-bottom: @margin-lg;
-    padding-top: @margin-sm;
+    padding-top: @margin-lg;
+
+    .form-container {
+      width: 45%;
+      height: 350px;
+      background-color: white;
+      margin: auto;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      form {
+        padding-top: 20px;
+        .form-field {
+          border-top: none;
+          border-left: none;
+          border-right: none;
+
+          .required-asterisk {
+            .font-main-bold;
+
+            color: @color-black;
+            font-size: @font-size-subtitle;
+            position: absolute;
+            top: 18px;
+            right: 20px;
+          }
+        }
+
+        .form-control {
+          color: @color-black;
+          font-size: @font-size-input;
+          height: 60px;
+        }
+        .form-control + label {
+          color: @color-black;
+        }
+
+        .form-control[value=''] + label {
+          color: @color-black;
+          font-size: @font-size-label;
+          top: 20px;
+        }
+
+        .form-control:focus + label {
+          color: @color-black !important;
+          font-size: @font-size-label-sm!important;
+          top: 5px !important;
+        }
+      }
+    }
 
     h2 {
       font-size: @font-size-header;
-      margin: @margin-md auto @margin-md auto;
+      margin: @margin-md auto @margin-lg auto;
       text-align: center;
-      width: 60%;
-    }
-
-    form {
-      margin: auto;
+      width: 80%;
     }
 
     .ctia {
       margin: auto;
       padding-top: @margin-xs;
+      padding-bottom: @margin-sm;
     }
 
     .fbmessenger {
@@ -65,10 +115,9 @@ font-size: @font-size-homepage-normal;
     form,
     .ctia,
     .fbmessenger {
-      width: 50%;
+      width: 80%;
       max-width: 400px;
     }
-
 
     @media (max-width: @screen-md-max) {
       h2 {
@@ -88,6 +137,7 @@ font-size: @font-size-homepage-normal;
 
       form,
       .ctia,
+      .form-container,
       .fbmessenger {
         width: 80%;
       }
@@ -103,7 +153,6 @@ font-size: @font-size-homepage-normal;
     @media (max-width: @screen-sm-max) {
       height: 400px;
     }
-
   }
 }
 
@@ -193,20 +242,19 @@ font-size: @font-size-homepage-normal;
       margin-bottom: @margin-md;
     }
   }
-  
+
   .border {
-    border-top: 1px solid #AAA;
+    border-top: 1px solid #aaa;
     width: 84%;
     margin: auto;
-    margin-top: 7%;      
-    
+    margin-top: 7%;
+
     @media (max-width: @screen-xs-max) {
       width: 90%;
       margin-top: 10%;
     }
   }
 
-  
   .in-the-news {
     margin-top: @margin-md;
     margin-bottom: @margin-xs;
@@ -221,7 +269,7 @@ font-size: @font-size-homepage-normal;
       filter: grayscale(100%);
       transition-property: opacity, -webkit-filter, filter;
       transition-duration: 0.25s;
-      
+
       @media (max-width: @screen-xs-max) {
         max-height: 35px;
       }
@@ -233,32 +281,32 @@ font-size: @font-size-homepage-normal;
       -webkit-filter: grayscale(0);
       filter: grayscale(0);
     }
-    
+
     .row {
       margin: auto;
       margin-left: 15px;
     }
-    
+
     .news-item {
       margin: 10px 0;
       padding: 0 6px;
       text-align: center;
-      
+
       .time-logo {
         max-height: 25px;
       }
-      
+
       .hello-giggles-logo {
         max-height: 60px;
         margin-top: -8px;
         margin-left: 20px;
-        
+
         @media (max-width: @screen-xs-max) {
           margin-left: -40px;
           max-width: 200px;
         }
       }
-      
+
       .pop-sugar-logo {
         max-height: 20px;
         @media (min-width: @screen-lg-min) {
@@ -266,7 +314,7 @@ font-size: @font-size-homepage-normal;
         }
       }
     }
-    
+
     @media (max-width: @screen-xs-max) {
       margin-top: @margin-xs;
     }
@@ -277,7 +325,8 @@ font-size: @font-size-homepage-normal;
  * Testimonial section
  */
 .testimonial-container {
-  background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),url('../images/homepage/homepage_photo_2.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url('../images/homepage/homepage_photo_2.jpg');
   background-position: center;
   background-size: cover;
   padding-bottom: @margin-lg;
@@ -329,6 +378,86 @@ font-size: @font-size-homepage-normal;
       .quote-right {
         right: 0;
       }
+    }
+  }
+}
+
+/**
+ * App section
+ */
+.app-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+
+  .card-container {
+    margin-top: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .card {
+      border-radius: 14px;
+      background-color: white;
+      margin-left: @margin-sm;
+      margin-right: @margin-sm;
+      text-align: center;
+      padding-top: 40px;
+      padding-left: 30px;
+      padding-right: 30px;
+      width: 380px;
+      height: 280px;
+      .font-Poppins;
+
+      .quote {
+        font-size: 15px;
+      }
+      .line {
+        width: 40%;
+        margin: @margin-sm auto;
+        height: 5px;
+        background-color: @color-yellow;
+      }
+      .author {
+        padding-bottom: @margin-sm;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .info-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 165px;
+    .info {
+      display: flex;
+      flex-direction: column;
+      text-align: Left;
+      width: 421px;
+      h2 {
+        .font-Poppins;
+      }
+      p {
+        .font-work-sans-regular;
+        font-size: 14px;
+        line-height: 20px;
+        width: 387px;
+        padding-top: @margin-sm;
+        padding-bottom: @margin-sm;
+      }
+      img {
+        width: 221.1px;
+        height: 71.7px;
+      }
+    }
+    .app-image {
+      width: 446.7px;
+      height: 666.6px;
+      background-image: url('/images/app-page/LaunchPage-Video-Mobile-half.png');
+      background-size: cover;
     }
   }
 }
