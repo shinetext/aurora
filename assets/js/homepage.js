@@ -77,4 +77,25 @@ $(document).ready(function() {
       skrollrInstance.refresh();
     }
   }
+
+
+  // Lightbox
+  $(".lightBox").on("click", function(){
+    $(".backDrop").animate({"opacity": ".70"}, 500);
+    $(".box").animate({"opacity": "1.0"}, 500);
+    $(".backDrop, .box").css("display", "block");
+    $(".largeImage")[0].currentTime = 0;
+    $(".largeImage")[0].play()
+  });
+
+  $(".close, .backDrop").on("click", function(){
+    closeBox();
+  });
+
+  function closeBox(){
+    $(".backDrop, .box").animate({"opacity": "0"}, 500, function(){
+    $(".backDrop, .box").css("display", "none");
+    $(".largeImage")[0].pause()
+    });
+  }
 });
