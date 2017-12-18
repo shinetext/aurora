@@ -1,0 +1,363 @@
+// Mobile Views
+.app-page-container {
+  .mobile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 1010px;
+
+    .mobile-header-top {
+      height: 525px;
+      padding-left: 30px;
+      padding-right: 30px;
+      .icon {
+        margin-top: 30px;
+        top: 30px;
+        left: 30px;
+        height: 81px;
+      }
+      h1 {
+        .font-Poppins;
+        font-size: 38px;
+        color: rgba(25, 25, 25, 1);
+        text-align: left;
+        line-height: 50px;
+        padding-bottom: 0px;
+      }
+      p {
+        margin-top: 15px;
+        .font-work-sans-regular;
+        font-size: 18px;
+        color: rgba(141, 141, 141, 1);
+        text-align: left;
+        line-height: 25px;
+      }
+    }
+    .mobile-header-bottom {
+      height: 550px;
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-top: 50px;
+      background-image: url('/images/app-page/LaunchPage-Wave-Mobile-2.png');
+      background-size: cover;
+      a img {
+        height: 55px;
+      }
+    }
+  }
+
+  .mobile-middle {
+    width: 100%;
+    .middle-top {
+      display: flex;
+      justify-content: center;
+      height: 575px;
+      width: 100%;
+      video {
+        border: none;
+        position: relative;
+        top: 71.5px;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        height: 306px;
+        width: 597px;
+      }
+    }
+
+    .middle-bottom {
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        .timeline-item {
+          margin-left: 46px;
+          margin-right: 46px;
+          margin-bottom: 90px;
+          height: 150px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          .timeline-icon {
+            height: 114px;
+            padding-right: 10px;
+            align-self: flex-start;
+            flex: 0.5;
+            img {
+              height: 90px;
+            }
+          }
+
+          .timeline-item-content {
+            flex: 1;
+            h3 {
+              .font-Poppins;
+              font-size: 32px;
+              color: rgba(25, 25, 25, 1);
+              text-align: left;
+              line-height: 40px;
+            }
+            p {
+              .font-work-sans-regular;
+              font-size: 16px;
+              color: rgba(141, 141, 141, 1);
+              text-align: left;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-bottom {
+    height: 663px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .mobile-bottom-top {
+      text-align: center;
+      position: relative;
+      top: 66px;
+      height: 310px;
+      width: 310px;
+      background-color: white;
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
+      -moz-box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
+      box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
+
+      align-self: center;
+
+      .mobile-bottom-header {
+        .font-Poppins;
+        font-size: 28px;
+        color: rgba(25, 25, 25, 1);
+        line-height: 65px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      .mobile-bottom-subtitle {
+        .font-work-sans-regular;
+        font-size: 14px;
+        color: rgba(141, 141, 141, 1);
+        line-height: 20px;
+        padding-top: 0px;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      .mobile-bottom-button {
+        margin-top: 10px;
+        height: 48px;
+      }
+    }
+    .mobile-bottom-bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 474px;
+      width: 100%;
+
+      background-image: url('https://images.contentful.com/awpxl2koull4/4A8nht6rvqkwG4UwO8m68S/693b5fb3bcd87759511eb66b394f1594/LaunchPage-Wave-Mobile.png');
+      background-size: cover;
+      img {
+        object-fit: contain;
+      }
+      .bottom-image {
+        align-self: center;
+        height: 344px;
+      }
+    }
+  }
+  .desktop-container {
+    display: none;
+  }
+
+  // Desktop view
+  @media (min-width: @screen-md-min) {
+    .mobile-container {
+      display: none;
+    }
+
+    .desktop-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .desktop-first-section {
+      height: 1068px !important;
+      display: flex;
+      padding-top: 108px !important;
+      background-image: url('https://images.contentful.com/awpxl2koull4/4A8nht6rvqkwG4UwO8m68S/693b5fb3bcd87759511eb66b394f1594/LaunchPage-Wave-Mobile.png');
+      background-size: 100% 50%;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      .left {
+        display: flex;
+        flex-direction: column;
+        margin-left: 266px;
+        text-align: left;
+        .icon {
+          top: 163px;
+          left: 254px;
+          height: 65px;
+          width: 65px;
+        }
+        h1 {
+          .font-Poppins;
+          font-size: 3.5em;
+          color: rgba(25, 25, 25, 1);
+          text-align: left;
+          line-height: 55px;
+          padding-bottom: 25px;
+        }
+        p {
+          .font-work-sans-regular;
+          font-size: 18px;
+          color: rgba(141, 141, 141, 1);
+          text-align: left;
+          line-height: 20px;
+          padding-bottom: 25px;
+        }
+        .download-button {
+          height: 48px;
+          width: 147px;
+        }
+      }
+
+      .right {
+        display: flex;
+        justify-content: center;
+        height: 800px;
+        width: 100%;
+        a img {
+          border: none;
+          height: 80%;
+          width: 340px;
+        }
+      }
+    }
+
+    .desktop-second-section {
+      height: 2767px;
+      .border {
+        position: absolute;
+        margin-left: 50%;
+        height: 2767px;
+        width: 3px;
+        z-index: -1;
+        background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(215, 215, 215, 1) 62%,
+          rgba(255, 255, 255, 1) 100%
+        );
+      }
+
+      .content-sections {
+        margin-top: 63px;
+        margin-bottom: 63px;
+        height: 753px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        img {
+          height: 600px;
+        }
+        .quick-hitter-logo {
+          height: 119px;
+          width: 120px;
+          img {
+            margin-left: 6px;
+            height: 119px;
+            width: 120px;
+          }
+        }
+        .textbox {
+          width: 316px;
+          h3 {
+            .font-Poppins;
+            font-size: 48px;
+            color: rgba(25, 25, 25, 1);
+            text-align: left;
+            line-height: 55px;
+          }
+          p {
+            .font-work-sans-regular;
+            font-size: 18px;
+            color: rgba(141, 141, 141, 1);
+            text-align: left;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+
+    .desktop-footer {
+      background-image: url('/images/app-page/bg-desktop.png');
+      background-size: 100% 50%;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      display: flex;
+      justify-content: space-around;
+      .footer-textarea {
+        text-align: center;
+        align-self: center;
+        height: 300px;
+        width: 600px;
+        background-color: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
+        -moz-box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
+        box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
+
+        h3 {
+          .font-Poppins;
+          font-size: 48px;
+          color: rgba(25, 25, 25, 1);
+          text-align: center;
+          line-height: 65px;
+          padding-bottom: 10px;
+        }
+        p {
+          .font-work-sans-regular;
+          font-size: 18px;
+          width: 498px;
+          margin: auto;
+          color: rgba(141, 141, 141, 1);
+          text-align: center;
+          line-height: 20px;
+          padding-bottom: 32px;
+        }
+        .footer-download-button {
+          height: 48px;
+          width: 147px;
+        }
+      }
+      .footer-image {
+        align-self: flex-end;
+        height: 676px;
+        bottom: 194px;
+        position: relative;
+        top: 49px;
+      }
+    }
+  }
+}

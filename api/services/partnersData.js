@@ -18,6 +18,17 @@
  * }
  */
 const partnersData = {
+  'kelly-clarkson': {
+    name: 'Get texts inspired by Kelly Clarkson\'s new album <em>Meaning of Life</em>',
+    imageUrl:
+      '/images/partners/kelly-clarkson-2.png',
+    copy: '',
+    confirmation: {
+      imageUrl: 'https://media.giphy.com/media/IJrLbXNKoNYFG/giphy.gif',
+      copy: "You're all signed up!",
+    },
+    campaignKey: process.env.KELLY_CLARKSON_MOBILECOMMONS_KEY,
+  },
   rydel: {
     name: 'Sign up for confidence and positivity tips from Rydel!',
     imageUrl:
@@ -31,8 +42,8 @@ const partnersData = {
   },
   'gabrielle-union': {
     name:
-      'Sign up for advice from Gabrielle Union inspired by her new book “We’re Going to Need More Wine',
-    imageUrl: '/images/partners/GabUnioncover_notype.jpg',
+      'Get texts inspired by Gabrielle Union\'s book <br/> <em>We\'re Going to Need More Wine</em>',
+    imageUrl: '/images/partners/GabUnioncover_notype.png',
     copy: '',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/l3q2X3tmbWqZPWkuI/giphy.gif',
@@ -41,20 +52,21 @@ const partnersData = {
     campaignKey: process.env.GB_UNION_MOBILECOMMONS_KEY,
   },
   '1111reset': {
-    name: 'Sign up for motivational texts inspired by Keyshia Cole\'s new album 11:11 Reset',
+    name:
+      "Sign up for motivational texts inspired by Keyshia Cole's new album 11:11 Reset",
     imageUrl:
       'https://images.contentful.com/awpxl2koull4/NaJiiJyU0wa0Gs0aGg2ua/3987f0a1f5203259e399f763f880aa01/KEYSHIACOLE_1111RESET_CVR_CLEAN.jpg',
     copy: '',
     confirmation: {
-      imageUrl: 'https://images.contentful.com/awpxl2koull4/1SsNHkoxfKG2Mkim24KMaQ/90c8e69412aac14809bbd31f2ca6c401/KC-Title_black.jpg',
+      imageUrl:
+        'https://images.contentful.com/awpxl2koull4/1SsNHkoxfKG2Mkim24KMaQ/90c8e69412aac14809bbd31f2ca6c401/KC-Title_black.jpg',
       copy: "You're all signed up!",
     },
     campaignKey: process.env.KEYSHIA_MOBILECOMMONS_KEY,
   },
-  'snapchat': {
+  snapchat: {
     name: 'Sign up for a daily text to help you feel your best.',
-    imageUrl:
-      '/images/partners/snapchat/snapchat-image-4.png',
+    imageUrl: '/images/partners/snapchat/snapchat-image-4.png',
     copy: '',
     confirmation: {
       imageUrl: '/images/confirmation-header.gif',
@@ -74,7 +86,7 @@ const partnersData = {
     campaignKey: 'OPF103C6C3AE571FD2082D4B7F18929F5B',
     additionalFormLink: {
       label: 'Official Scholarship Rules',
-      link: '/files/scholarship-rules-11-1-17-updated.pdf',
+      link: '/files/Scholarship-Rules-12-7-17-updated.pdf',
     },
   },
 };

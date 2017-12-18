@@ -63,6 +63,7 @@ var routes = {
   '/p/:partner': 'WebViewController.partners',
   '/partners/:partner': 'WebViewController.partners',
 
+  '/app': 'WebViewController.app',
   '/coming-soon': 'WebViewController.splash',
 
   '/campaigns/:campaign': 'WebViewController.campaigns',
@@ -91,6 +92,14 @@ var routes = {
   '/referrals/:phone': 'WebViewController.myReferral',
 
   '/sms-settings': 'WebViewController.smsSettings',
+
+  '/speakers': {
+    view: 'speakers',
+    locals: {
+      title: 'Speakers | Shine',
+      layout: 'layouts/subpage.layout',
+    },
+  },
 
   '/squad': 'WebViewController.squad',
 
