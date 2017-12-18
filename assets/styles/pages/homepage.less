@@ -406,8 +406,8 @@ font-size: @font-size-homepage-normal;
       padding-top: 40px;
       padding-left: 30px;
       padding-right: 30px;
-      width: 350px;
-      height: 250px;
+      width: 380px;
+      height: 280px;
       .font-Poppins;
 
       .quote {
@@ -420,6 +420,7 @@ font-size: @font-size-homepage-normal;
         background-color: @color-yellow;
       }
       .author {
+        padding-bottom: @margin-sm;
         font-size: 13px;
       }
     }
@@ -429,15 +430,18 @@ font-size: @font-size-homepage-normal;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    margin-top: 165px;
     .info {
       display: flex;
       flex-direction: column;
       text-align: Left;
       width: 421px;
       h2 {
+        .font-Poppins;
       }
       p {
+        .font-work-sans-regular;
         font-size: 14px;
         line-height: 20px;
         width: 387px;
@@ -452,6 +456,8 @@ font-size: @font-size-homepage-normal;
     .app-image {
       width: 446.7px;
       height: 666.6px;
+      background-image: url('/images/app-page/LaunchPage-Video-Mobile-half.png');
+      background-size: cover;
     }
   }
 }
