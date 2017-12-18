@@ -11,49 +11,44 @@
 <div class="container-fluid container-homepage-lead">
   <div class="col-md-7">
     <div class="container-signup">
-      <h2>A daily text to help you thrive.</h2>
+      <h2>Daily tips for self-fulfillment texted to you every morning.</h2>
+      <div class="form-container">
+        <form action="/join" method="post">
 
-      <form action="/join" method="post">
+          <% if (referredByCode) { %><input name="referredByCode" value="<%= referredByCode %>" type="hidden"/><% } %>
+          <% if (utmCampaign) { %><input name="utmCampaign" value="<%= utmCampaign %>" type="hidden"/><% } %>
+          <% if (utmContent) { %><input name="utmContent" value="<%= utmContent %>" type="hidden"/><% } %>
+          <% if (utmSource) { %><input name="utmSource" value="<%= utmSource %>" type="hidden"/><% } %>
+          <% if (utmMedium) { %><input name="utmMedium" value="<%= utmMedium %>" type="hidden"/><% } %>
 
-        <% if (referredByCode) { %><input name="referredByCode" value="<%= referredByCode %>" type="hidden"/><% } %>
-        <% if (utmCampaign) { %><input name="utmCampaign" value="<%= utmCampaign %>" type="hidden"/><% } %>
-        <% if (utmContent) { %><input name="utmContent" value="<%= utmContent %>" type="hidden"/><% } %>
-        <% if (utmSource) { %><input name="utmSource" value="<%= utmSource %>" type="hidden"/><% } %>
-        <% if (utmMedium) { %><input name="utmMedium" value="<%= utmMedium %>" type="hidden"/><% } %>
+          <div class="form-field">
+            <input class="form-control" name="first_name" id="form-first-name" type="text" required value="">
+            <label for="form-first-name">First Name</label>
+            <span class="required-asterisk">*</span>
+          </div>
 
-        <div class="form-field">
-          <input class="form-control" name="first_name" id="form-first-name" type="text" required value="">
-          <label for="form-first-name">First Name</label>
-          <span class="required-asterisk">*</span>
+          <div class="form-field">
+            <input class="form-control" name="phone" id="form-phone-number" type="tel" required value="">
+            <label for="form-phone-number">Phone Number</label>
+            <span class="required-asterisk">*</span>
+          </div>
+
+          <div>
+            <input class="btn" type="submit" value="Get Shine Texts"
+              ga-on="click"
+              ga-event-category="SignUp"
+              ga-event-action="SMS"/>
+          </div>
+        </form>
+        <div class="ctia">
+          Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a>
+          & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily message.
+          Message & data rates may apply. Text STOP to opt-out, HELP for help.
         </div>
-
-        <div class="form-field">
-          <input class="form-control" name="phone" id="form-phone-number" type="tel" required value="">
-          <label for="form-phone-number">Phone Number</label>
-          <span class="required-asterisk">*</span>
-        </div>
-
-        <div class="form-field">
-          <input class="form-control" name="email" id="form-email" type="email" required value="">
-          <label for="form-email">Email Address</label>
-          <span class="required-asterisk">*</span>
-        </div>
-
-        <div>
-          <input class="btn" type="submit" value="Get Shine Texts"
-            ga-on="click"
-            ga-event-category="SignUp"
-            ga-event-action="SMS"/>
-        </div>
-      </form>
-
-      <div class="ctia">
-        Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a>
-        & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily message.
-        Message & data rates may apply. Text STOP to opt-out, HELP for help.
       </div>
 
-      <div class="fbmessenger">
+
+      <!-- <div class="fbmessenger">
         <a class="btn" href="https://m.me/ShineText" target="_blank"
           ga-on="click"
           ga-event-category="SignUp"
@@ -61,7 +56,7 @@
           Sign Up on Messenger
         </a>
         <div class="description"><span class="fbmessenger-icon"></span>Shine is now on Facebook Messenger!</div>
-      </div>
+      </div> -->
 
     </div> <!-- end .container-signup -->
   </div>
@@ -130,20 +125,35 @@
 </div>
 
 <!-- Testimonials -->
-<div class="container-fluid testimonial-container">
-  <div class="testimonial col-xs-10 col-xs-offset-1 col-md-5">
-    <div
-      data-bottom-top="transform: translateY(15%); opacity: 0.25;"
-      data--100-bottom-bottom="transform: translateY(0%); opacity: 1;">
-      <p>
-        "Words cannot express my love for Shine Text. It's like having a best friend who always knows what you need to hear."
-      </p>
-      <div class="divider"></div>
-      <p class="testimonial-name">Sandy M.</p>
-    </div>
-  </div>
 
-  <div class="section-arrow"></div>
+  <div class="container-fluid app-container">
+    <div class="card-container">
+      <div class="card">
+        <p class="quote">EVERYTHING I ever needed to make it through another awkward week of my version of adulting. I’m always twiddling my thumbs waiting for shine to kick my ass back into gear. #dependency</p>
+        <div class="line"></div>
+        <p class="author">BRENNA - GRADUATE STUDENT</p>
+      </div>
+      <div class="card">
+        <p class="quote">EVERYTHING I ever needed to make it through another awkward week of my version of adulting. I’m always twiddling my thumbs waiting for shine to kick my ass back into gear. #dependency</p>
+        <div class="line"></div>
+        <p class="author">BRENNA - GRADUATE STUDENT</p>
+      </div>
+      <div class="card">
+        <p class="quote">EVERYTHING I ever needed to make it through another awkward week of my version of adulting. I’m always twiddling my thumbs waiting for shine to kick my ass back into gear. #dependency</p>
+        <div class="line"></div>
+        <p class="author">BRENNA - GRADUATE STUDENT</p>
+      </div>
+    </div>
+    <div class="info-container">
+      <div class="info">
+        <h2>Psst….Want More Shine? 🎧</h2>
+        <p>We’ve just launched a new IOS app where you can listen to audio affirmations called Mindful Moments to deepen your Shine experience. Check it out now!</p>
+        <img src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png" />
+      </div>
+      <img class="app-image" src="/images/app-page/LaunchPage-Video-Mobile.png" />
+    </div>
+    <div class="section-arrow"></div>
+  </div>
 </div>
 
 <%- partial ('partials/promoted-articles') %>
