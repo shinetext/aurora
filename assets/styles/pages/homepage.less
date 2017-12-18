@@ -4,7 +4,7 @@ font-size: @font-size-homepage-normal;
  * Top section of the homepage
  */
 .container-homepage-lead {
-  @container-homepage-lead-height: 960px;
+  @container-homepage-lead-height: 773px;
 
   padding: 0;
   position: relative;
@@ -16,9 +16,19 @@ font-size: @font-size-homepage-normal;
     padding-bottom: @margin-lg;
     padding-top: @margin-lg;
 
+    h2 {
+      .font-Poppins;
+      font-size: (@font-size-header - 6);
+      margin: @margin-md auto 49px auto;
+      line-height: 54px;
+      letter-spacing: 1px;
+      text-align: center;
+      width: 598px;
+    }
+
     .form-container {
-      width: 45%;
-      height: 350px;
+      width: 412px;
+      height: 358px;
       background-color: white;
       margin: auto;
       border-radius: 20px;
@@ -34,8 +44,6 @@ font-size: @font-size-homepage-normal;
           border-right: none;
 
           .required-asterisk {
-            .font-main-bold;
-
             color: @color-black;
             font-size: @font-size-subtitle;
             position: absolute;
@@ -45,12 +53,14 @@ font-size: @font-size-homepage-normal;
         }
 
         .form-control {
+          .font-karla-regular;
           color: @color-black;
           font-size: @font-size-input;
           height: 60px;
         }
         .form-control + label {
           color: @color-black;
+          .font-karla-bold;
         }
 
         .form-control[value=''] + label {
@@ -65,19 +75,19 @@ font-size: @font-size-homepage-normal;
           top: 5px !important;
         }
       }
+      .btn {
+        .font-karla-bold;
+      }
     }
-
-    h2 {
-      font-size: @font-size-header;
-      margin: @margin-md auto @margin-lg auto;
-      text-align: center;
-      width: 80%;
-    }
-
     .ctia {
+      .font-karla-bold;
       margin: auto;
       padding-top: @margin-xs;
       padding-bottom: @margin-sm;
+      font-size: 10px;
+      text-align: left;
+      color: rgb(141, 141, 141);
+      line-height: 14px;
     }
 
     .fbmessenger {
