@@ -147,11 +147,13 @@ font-size: @font-size-homepage-normal;
     @media (max-width: @screen-sm-max) {
       height: 100%;
       padding-bottom: @margin-md 0;
+      padding-top: 60px;
     }
 
     @media (max-width: @screen-sm-min) {
       h2 {
-        font-size: @font-size-header-xs;
+        font-size: (@font-size-header-xs - 7);
+        margin-top: 0px;
       }
 
       form,
@@ -416,6 +418,8 @@ font-size: @font-size-homepage-normal;
   flex-direction: column;
   background-image: url('/images/app-page/Section3-background-web.png');
   background-size: 100% 100%;
+  padding-left: 0px;
+  padding-right: 0px;
 
   .card-container {
     margin-top: 180px;
@@ -547,6 +551,7 @@ font-size: @font-size-homepage-normal;
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        margin-bottom: 70px;
       }
       .info {
         width: 90%;
@@ -561,7 +566,8 @@ font-size: @font-size-homepage-normal;
 }
 
 .section-arrow {
-  background-image: url('../images/homepage/homepage-section-arrow.png');
+  background-image: url('../images/homepage/Black-Arrow-web.png');
+  background-size: cover;
   background-repeat: no-repeat;
   height: 100px;
   width: 100px;
