@@ -8,8 +8,15 @@ font-size: @font-size-homepage-normal;
 
   padding: 0;
   position: relative;
+
   .col-md-7 {
-    background-color: blue;
+    background-image: url('/images/app-page/header-background-web.png');
+    background-size: 100% 773px;
+
+    @media (max-width: @screen-sm-max) {
+      background-image: url('/images/app-page/header-background-mobile.png');
+      background-size: cover;
+    }
   }
   .container-signup {
     height: @container-homepage-lead-height;
@@ -36,6 +43,8 @@ font-size: @font-size-homepage-normal;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      box-shadow: 0px 15px 50px rgba(226, 160, 37, 0.5);
+
       form {
         padding-top: 20px;
         .form-field {
@@ -405,18 +414,19 @@ font-size: @font-size-homepage-normal;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  background-color: yellow;
+  background-image: url('/images/app-page/Section3-background-web.png');
+  background-size: 100% 100%;
 
   .card-container {
     margin-top: 180px;
+    margin-bottom: 165px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     .card {
       border-radius: 14px;
       background-color: white;
-      margin-left: @margin-sm;
-      margin-right: @margin-sm;
+      margin: @margin-sm;
       text-align: center;
       padding-top: 40px;
       padding-left: 30px;
@@ -424,6 +434,7 @@ font-size: @font-size-homepage-normal;
       width: 380px;
       height: 280px;
       .font-Poppins;
+      box-shadow: 0px 15px 50px rgba(226, 160, 37, 0.5);
 
       .quote {
         font-size: 15px;
@@ -435,7 +446,7 @@ font-size: @font-size-homepage-normal;
         background-color: @color-yellow;
       }
       .author {
-        padding-bottom: @margin-sm;
+        padding-bottom: @margin-xs;
         font-size: 13px;
       }
     }
@@ -448,6 +459,7 @@ font-size: @font-size-homepage-normal;
         margin-left: 0px;
         flex: 0 0 auto;
         width: 320px;
+        box-shadow: 10px 5px 13px rgba(226, 160, 37, 0.5);
       }
     }
   }
@@ -457,7 +469,6 @@ font-size: @font-size-homepage-normal;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    margin-top: 165px;
     .info {
       display: flex;
       flex-direction: column;
@@ -541,6 +552,11 @@ font-size: @font-size-homepage-normal;
         width: 90%;
       }
     }
+  }
+
+  @media (max-width: @screen-sm-max) {
+    background-image: url('/images/app-page/Section3-background-mobile.png');
+    background-size: cover;
   }
 }
 
