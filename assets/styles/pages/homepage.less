@@ -26,7 +26,7 @@ font-size: @font-size-homepage-normal;
     h2 {
       .font-Poppins;
       font-size: (@font-size-header - 6);
-      margin: @margin-md auto 49px auto;
+      margin: @margin-md auto @margin-lg auto;
       line-height: 54px;
       letter-spacing: 1px;
       text-align: center;
@@ -89,7 +89,7 @@ font-size: @font-size-homepage-normal;
       }
     }
     .ctia {
-      .font-karla-bold;
+      .font-karla-regular;
       margin: auto;
       padding-top: @margin-xs;
       padding-bottom: @margin-sm;
@@ -152,7 +152,7 @@ font-size: @font-size-homepage-normal;
 
     @media (max-width: @screen-sm-min) {
       h2 {
-        font-size: (@font-size-header-xs - 7);
+        font-size: (@font-size-header-xs);
         margin-top: 0px;
       }
 
@@ -441,6 +441,7 @@ font-size: @font-size-homepage-normal;
       box-shadow: 0px 15px 50px rgba(226, 160, 37, 0.5);
 
       .quote {
+        .font-Poppins-Regular;
         font-size: 15px;
       }
       .line {
@@ -477,7 +478,9 @@ font-size: @font-size-homepage-normal;
       display: flex;
       flex-direction: column;
       text-align: Left;
+      align-self: baseline;
       width: 421px;
+      font-color: black;
       h2 {
         .font-Poppins;
       }
@@ -488,7 +491,7 @@ font-size: @font-size-homepage-normal;
         padding-top: @margin-sm;
         padding-bottom: @margin-sm;
       }
-      img {
+      a img {
         width: 221.1px;
         height: 71.7px;
       }
@@ -531,7 +534,7 @@ font-size: @font-size-homepage-normal;
     }
 
     .close {
-      color: white;
+      color: @color-yellow;
       cursor: pointer;
       float: left;
       font-size: 32px;
@@ -555,6 +558,7 @@ font-size: @font-size-homepage-normal;
       }
       .info {
         width: 90%;
+        align-self: center;
       }
     }
   }
