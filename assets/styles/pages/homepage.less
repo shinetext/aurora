@@ -11,10 +11,10 @@ font-size: @font-size-homepage-normal;
 
   .col-md-7 {
     background-image: url('/images/app-page/header-background-web.png');
-    background-size: 100% 773px;
+    background-size: cover;
 
     @media (max-width: @screen-sm-max) {
-      background-image: url('/images/app-page/header-background-mobile.png');
+      background-image: url('/images/homepage/Section1-mobile.png');
       background-size: cover;
     }
   }
@@ -62,14 +62,14 @@ font-size: @font-size-homepage-normal;
         }
 
         .form-control {
-          .font-karla-regular;
+          .font-open-sans-regular;
           color: @color-black;
           font-size: @font-size-input;
           height: 60px;
         }
         .form-control + label {
           color: @color-black;
-          .font-karla-bold;
+          .font-open-sans-bold;
         }
 
         .form-control[value=''] + label {
@@ -85,11 +85,11 @@ font-size: @font-size-homepage-normal;
         }
       }
       .btn {
-        .font-karla-bold;
+        .font-open-sans-bold;
       }
     }
     .ctia {
-      .font-karla-regular;
+      .font-open-sans-regular;
       margin: auto;
       padding-top: @margin-xs;
       padding-bottom: @margin-sm;
@@ -194,7 +194,6 @@ font-size: @font-size-homepage-normal;
   .product-image {
     height: 840px;
     text-align: center;
-
     img {
       max-width: 90%;
       position: relative;
@@ -220,13 +219,13 @@ font-size: @font-size-homepage-normal;
     }
 
     li {
-      .font-caveat;
+      .font-Poppins;
 
       font-size: 48px;
       margin: @margin-md auto;
 
       p {
-        .font-main;
+        .font-open-sans-regular;
 
         border-left: 4px solid @color-yellow;
         display: inline-block;
@@ -258,8 +257,7 @@ font-size: @font-size-homepage-normal;
   }
 
   h2 {
-    .font-section-title;
-
+    .font-Poppins;
     color: @color-black;
     margin-bottom: @margin-lg;
     text-align: center;
@@ -348,67 +346,6 @@ font-size: @font-size-homepage-normal;
 }
 
 /**
- * Testimonial section
- */
-.testimonial-container {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url('../images/homepage/homepage_photo_2.jpg');
-  background-position: center;
-  background-size: cover;
-  padding-bottom: @margin-lg;
-  padding-top: @margin-lg;
-  position: relative;
-
-  .testimonial {
-    margin-bottom: @margin-sm;
-    text-align: center;
-
-    p {
-      color: white;
-      padding: @margin-md @margin-sm;
-    }
-
-    .divider {
-      border-top: 4px solid @color-yellow;
-      margin: auto;
-      width: 100px;
-    }
-
-    .testimonial-name {
-      font-size: @font-size-homepage-testimonial-credit;
-      text-transform: uppercase;
-    }
-
-    .quote-left {
-      position: absolute;
-      top: 0;
-      left: -20px;
-    }
-
-    .quote-right {
-      position: absolute;
-      bottom: 0;
-      right: -20px;
-    }
-
-    @media (max-width: @screen-xs-max) {
-      p {
-        font-size: @font-size-homepage-normal-xs;
-        padding: @margin-md 0;
-      }
-
-      .quote-left {
-        left: 0;
-      }
-
-      .quote-right {
-        right: 0;
-      }
-    }
-  }
-}
-
-/**
  * App section
  */
 .app-container {
@@ -416,11 +353,29 @@ font-size: @font-size-homepage-normal;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  background-image: url('/images/app-page/Section3-background-web.png');
-  background-size: 100% 100%;
+  background-image: url('/images/homepage/Section3-waveonly.png');
+  background-size: cover;
+  background-position: bottom;
   padding-left: 0px;
   padding-right: 0px;
 
+  .app-section-circle {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    right: -75px;
+    z-index: -1;
+  }
+
+  .app-section-oval {
+    height: 550px;
+    width: 250px;
+    transform: rotate(23deg);
+    position: absolute;
+    left: -20px;
+    z-index: -1;
+    top: 15%;
+  }
   .card-container {
     margin-top: 180px;
     margin-bottom: 165px;
@@ -485,7 +440,7 @@ font-size: @font-size-homepage-normal;
         .font-Poppins;
       }
       p {
-        .font-work-sans-regular;
+        .font-open-sans-regular;
         font-size: 14px;
         line-height: 20px;
         padding-top: @margin-sm;
@@ -566,6 +521,10 @@ font-size: @font-size-homepage-normal;
   @media (max-width: @screen-sm-max) {
     background-image: url('/images/app-page/Section3-background-mobile.png');
     background-size: cover;
+    .app-section-circle,
+    .app-section-oval {
+      display: none;
+    }
   }
 }
 
