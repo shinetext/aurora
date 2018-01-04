@@ -70,7 +70,7 @@ font-size: @font-size-homepage-normal;
         }
         .form-control + label {
           color: @color-black;
-          .font-open-sans-bold;
+          .font-open-sans-regular;
         }
 
         .form-control[value=''] + label {
@@ -90,51 +90,18 @@ font-size: @font-size-homepage-normal;
       }
     }
     .ctia {
+      text-align: center;
       .font-open-sans-regular;
       margin: auto;
       padding-top: @margin-xs;
       padding-bottom: @margin-sm;
       font-size: 10px;
-      text-align: left;
       color: rgb(141, 141, 141);
       line-height: 14px;
     }
 
-    .fbmessenger {
-      border-top: 1px solid @color-form-secondary;
-      margin: auto;
-      margin-top: @margin-md;
-      padding-top: @margin-md;
-
-      .description {
-        font-size: 12px;
-        text-align: center;
-      }
-
-      .fbmessenger-icon {
-        background-image: url('../images/fbmessenger-icon.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        display: inline-block;
-        margin-right: 6px;
-        position: relative;
-        top: 6px;
-        height: 25px;
-        width: 25px;
-      }
-
-      @media (max-width: @screen-sm-max) {
-        .btn {
-          background-color: @color-fbmessenger;
-          color: white;
-          font-size: 15px;
-        }
-      }
-    }
-
     form,
-    .ctia,
-    .fbmessenger {
+    .ctia {
       width: 80%;
       max-width: 400px;
     }
@@ -159,8 +126,7 @@ font-size: @font-size-homepage-normal;
 
       form,
       .ctia,
-      .form-container,
-      .fbmessenger {
+      .form-container {
         width: 95%;
       }
       .ctia,
@@ -364,7 +330,7 @@ font-size: @font-size-homepage-normal;
     position: absolute;
     height: 300px;
     width: 300px;
-    right: -75px;
+    right: 0px;
     z-index: -1;
   }
 
@@ -395,7 +361,9 @@ font-size: @font-size-homepage-normal;
       height: 280px;
       .font-Poppins;
       box-shadow: 0px 15px 50px rgba(226, 160, 37, 0.5);
-
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       .quote {
         .font-Poppins-Regular;
         font-size: 16px;
@@ -407,6 +375,7 @@ font-size: @font-size-homepage-normal;
         background-color: @color-yellow;
       }
       .author {
+        text-transform: uppercase;
         padding-bottom: @margin-xs;
         font-size: 13px;
       }
@@ -474,7 +443,7 @@ font-size: @font-size-homepage-normal;
         margin-bottom: 70px;
       }
       .info {
-        width: 90%;
+        width: 85%;
         align-self: center;
       }
     }
