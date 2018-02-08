@@ -75,7 +75,7 @@ const partnersData = {
     campaignKey: process.env.SNAPCHAT_MOBILECOMMONS_KEY,
   },
   'self-care-scholarship-2017': {
-    name: '$500 Easy Self-Care Scholarship - Fall 2017',
+    name: '$500 Easy Self-Care Scholarship - Winter 2018',
     imageUrl: '/images/partners/scholarship/scholarship-2017-photo.jpg',
     copy:
       '<p>School can be stressful.</p><p>Sign up to get a free daily text message to help you practice self-care AND get a chance to earn cash for school.</p><p>To enter the $500 scholarship, sign up for <a href="/?utm_source=Shine&utm_medium=Scholarship">Shine</a> texts.</p><p><a href="/images/partners/scholarship/scholarship-winner-denisse.png">Previous Scholarship Winner</a></p>',
@@ -86,7 +86,7 @@ const partnersData = {
     campaignKey: 'OPF103C6C3AE571FD2082D4B7F18929F5B',
     additionalFormLink: {
       label: 'Official Scholarship Rules',
-      link: '/files/Scholarship-Rules-12-7-17-updated.pdf',
+      link: '/files/Scholarship-Rules-2-7-18.pdf',
     },
   },
 };
