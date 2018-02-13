@@ -89,7 +89,7 @@ const partnersData = {
       link: '/files/Scholarship-Rules-2-7-18.pdf',
     },
   },
-  valentine: {
+  'valentines-day': {
     name: 'Be your own boo.',
     imageUrl: '/images/partners/love_yourself_first.jpg',
     copy: '<p>Sign up for free texts to show some love to the most important person in your life: you.</p><div class="partner-gif"><img src="/images/partners/falling_hearts.gif"/></div>',
