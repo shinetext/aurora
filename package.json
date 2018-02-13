@@ -1,7 +1,7 @@
 {
   "name": "shine-aurora",
   "private": true,
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "",
   "keywords": [],
   "dependencies": {
@@ -39,8 +39,7 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "test":
-      "NODE_ENV=test mocha test/bootstrap.test.js test/integration/**/*.test.js"
+    "test": "NODE_ENV=test mocha test/bootstrap.test.js test/integration/**/*.test.js"
   },
   "main": "app.js",
   "devDependencies": {

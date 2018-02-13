@@ -69,7 +69,7 @@ const partnersData = {
     imageUrl: '/images/partners/snapchat/snapchat-image-4.png',
     copy: '',
     confirmation: {
-      imageUrl: '/images/confirmation-header.gif',
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
       copy: "You're all signed up!",
     },
     campaignKey: process.env.SNAPCHAT_MOBILECOMMONS_KEY,
@@ -88,6 +88,16 @@ const partnersData = {
       label: 'Official Scholarship Rules',
       link: '/files/Scholarship-Rules-2-7-18.pdf',
     },
+  },
+  'valentines-day': {
+    name: 'Be your own boo.',
+    imageUrl: '/images/partners/love_yourself_first.jpg',
+    copy: '<p>Sign up for free texts to show some love to the most important person in your life: you.</p><div class="partner-gif"><img src="/images/partners/falling_hearts.gif"/></div>',
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're all signed up!",
+    },
+    campaignKey: process.env.VALENTINE_MOBILECOMMONS_KEY,
   },
 };
 

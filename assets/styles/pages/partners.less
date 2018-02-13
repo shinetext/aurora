@@ -87,6 +87,7 @@ font-size: @font-size-homepage-normal;
     }
   }
 
+
   .partner-header-image {
     display: inline-block;
     float: right;
@@ -99,6 +100,19 @@ font-size: @font-size-homepage-normal;
       display: block;
       width: 100%;
       min-height: 400px;
+    }
+  }
+
+  // Customize gifs if added to partner page copy field
+  .partner-gif {
+    display: flex;
+    justify-content: center;
+    img {
+      height: 300px;
+      max-width: 480px;
+    }
+    @media (max-width: @screen-xs-max) {
+      display: none;
     }
   }
 }
