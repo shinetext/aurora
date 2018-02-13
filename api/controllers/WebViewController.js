@@ -78,7 +78,7 @@ module.exports = {
       headerText = campaignConfirmation.header;
       bodyCopy = campaignConfirmation.copy;
     } else {
-      headerImage = 'images/confirmation-header.gif';
+      headerImage = 'images/confirmation-header-happy-dance.gif';
       headerText = req.query.referral
         ? `Thanks for sharing!`
         : `You're all signed up!`;
