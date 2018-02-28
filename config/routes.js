@@ -39,6 +39,7 @@ var routes = {
   '/articles/*': 'WebViewController.articlesRedirect',
 
   '/careers': 'WebViewController.careers',
+  '/jobs': 'WebViewController.jobs',
 
   '/confirmation': 'WebViewController.confirmation',
 
@@ -48,14 +49,6 @@ var routes = {
     view: 'faq',
     locals: {
       title: 'FAQ | Shine',
-      layout: 'layouts/subpage.layout',
-    },
-  },
-
-  '/jobs': {
-    view: 'jobs',
-    locals: {
-      title: 'Careers | Shine',
       layout: 'layouts/subpage.layout',
     },
   },
