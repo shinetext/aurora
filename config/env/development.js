@@ -27,6 +27,9 @@ module.exports = {
     // Base URL for the Daily Shine content
     dailyShineBaseUrl: process.env.DAILY_SHINE_BASE_URL,
 
+    // External url where Shine jobs are posted
+    jobsRedirectUrl: process.env.JOBS_REDIRECT_URL,
+
     // The Mobile Commons URL to send join requests to
     mcJoinUrl: 'http://localhost:1337/mc-join',
 

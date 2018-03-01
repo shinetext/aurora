@@ -14,7 +14,8 @@ import SplashPage from '../../views/components/splashpage/SplashPage';
 import AppPage from '../../views/components/app-page/AppPage';
 import PartnerApp from '../../views/components/PartnerApp';
 import CampaignApp from '../../views/components/campaigns/CampaignApp';
-import CampaignReferral from '../../views/components/campaigns/CampaignReferral';
+import CampaignReferral
+  from '../../views/components/campaigns/CampaignReferral';
 Promise.promisifyAll(request);
 
 module.exports = {
@@ -39,6 +40,9 @@ module.exports = {
     return res.redirect(301, '/jobs');
   },
 
+  jobs: (req, res) => {
+    return res.redirect(302, `${sails.config.globals.jobsRedirectUrl}`);
+  },
   /**
    * Redirect to the Daily Shine homepage.
    */
@@ -51,8 +55,7 @@ module.exports = {
   squad: (req, res) => {
     let locals = {
       title: 'Squad | Shine',
-      metaDescription:
-        "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
+      metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
       layout: 'layouts/subpage-fullwidth.layout',
       hideFooterCta: true,
       adviceBaseUrl: sails.config.globals.adviceBaseUrl,
@@ -129,8 +132,9 @@ module.exports = {
     Promise.coroutine(function*() {
       let referralRequest = {
         method: 'GET',
-        uri:
-          sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
+        uri: sails.config.globals.photonApiUrl +
+          '/referral/' +
+          req.params.phone,
         json: true,
       };
 
@@ -139,8 +143,7 @@ module.exports = {
 
         let locals = {
           title: 'My Referrals | Shine',
-          metaDescription:
-            "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
+          metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
           layout: 'layouts/subpage-fullwidth.layout',
           hideFooterCta: true,
           shareUrls: {},
@@ -238,7 +241,7 @@ module.exports = {
       const locals = {
         layout: 'layouts/subpage-fullwidth-no-header.layout',
         splashComponent: splashComponentMarkup,
-        hideFooterCta: false
+        hideFooterCta: false,
       };
       return res.view('splash-page', locals);
     } catch (err) {
@@ -253,13 +256,11 @@ module.exports = {
    */
   app: function(req, res) {
     try {
-      const appPageComponentMarkup = ReactDOMServer.renderToString(
-        <AppPage />
-      );
+      const appPageComponentMarkup = ReactDOMServer.renderToString(<AppPage />);
       const locals = {
         layout: 'layouts/subpage-fullwidth-no-header.layout',
         appPageComponent: appPageComponentMarkup,
-        hideFooterCta: true
+        hideFooterCta: true,
       };
       return res.view('app-page', locals);
     } catch (err) {
