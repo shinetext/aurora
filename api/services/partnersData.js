@@ -99,6 +99,16 @@ const partnersData = {
     },
     campaignKey: process.env.VALENTINE_MOBILECOMMONS_KEY,
   },
+  'instagram-stories': {
+    name: 'A daily text to help you thrive', 
+    imageUrl: '/images/homepage/homepage_photo_1.jpg',
+    copy:'',
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're all signed up!",
+    },
+    campaignKey: process.env.INSTAGRAM_STORIES_MOBILECOMMONS_KEY,
+  }
 };
 
 export default partnersData;
