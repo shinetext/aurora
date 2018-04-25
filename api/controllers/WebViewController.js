@@ -14,8 +14,7 @@ import SplashPage from '../../views/components/splashpage/SplashPage';
 import AppPage from '../../views/components/app-page/AppPage';
 import PartnerApp from '../../views/components/PartnerApp';
 import CampaignApp from '../../views/components/campaigns/CampaignApp';
-import CampaignReferral
-  from '../../views/components/campaigns/CampaignReferral';
+import CampaignReferral from '../../views/components/campaigns/CampaignReferral';
 Promise.promisifyAll(request);
 
 module.exports = {
@@ -55,7 +54,8 @@ module.exports = {
   squad: (req, res) => {
     let locals = {
       title: 'Squad | Shine',
-      metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
+      metaDescription:
+        "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
       layout: 'layouts/subpage-fullwidth.layout',
       hideFooterCta: true,
       adviceBaseUrl: sails.config.globals.adviceBaseUrl,
@@ -101,7 +101,7 @@ module.exports = {
       phone: req.query.phone ? req.query.phone : '',
       query: req.query,
       referralCode: req.query.referralCode ? req.query.referralCode : '',
-      shareUrls: this.makeShareUrls(req.query.referralCode),
+      shareUrls: this.makeShareUrls(req.query.referralCode, 'Confirmation'),
     };
 
     return res.view('confirmation', locals);
@@ -132,9 +132,8 @@ module.exports = {
     Promise.coroutine(function*() {
       let referralRequest = {
         method: 'GET',
-        uri: sails.config.globals.photonApiUrl +
-          '/referral/' +
-          req.params.phone,
+        uri:
+          sails.config.globals.photonApiUrl + '/referral/' + req.params.phone,
         json: true,
       };
 
@@ -143,7 +142,8 @@ module.exports = {
 
         let locals = {
           title: 'My Referrals | Shine',
-          metaDescription: "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
+          metaDescription:
+            "The Shine Squad is a supportive community of people who lift others up and motivate others to be their best. Be the first to get updates from the Shine team and have a community to brag about your wins and lean on when you're not feeling so hot",
           layout: 'layouts/subpage-fullwidth.layout',
           hideFooterCta: true,
           shareUrls: {},
@@ -177,7 +177,10 @@ module.exports = {
           }
 
           // Create the share URLs
-          locals.shareUrls = _this.makeShareUrls(response.body.referralCode);
+          locals.shareUrls = _this.makeShareUrls(
+            response.body.referralCode,
+            'ReferralPage'
+          );
         }
 
         return res.view('my-referrals', locals);
@@ -326,16 +329,38 @@ module.exports = {
    * @param referralCode {string}
    * @return {object}
    */
-  makeShareUrls: function(referralCode) {
+  makeShareUrls: function(referralCode, campaign) {
     const shareBody = `Sign up with me to get Shine! A daily text for your self-care and joy.`;
     const shareTitle = `Sign up for Shine!`;
-    const shareUrl = `https://www.shinetext.com?r=${referralCode}`;
+    const shareUrl = `https://www.shinetext.com?r=${referralCode}%26utm_source=Shine`;
+    
+    // Add UTM campaign if one is available 
+    const facebookShareUrl = `${shareUrl}%26utm_medium=SocialShareFacebook${
+      campaign ? '%26utm_campaign=' + campaign : ''
+    }`;
+    const twitterShareUrl = `${shareUrl}%26utm_source=Shine%26utm_medium=SocialShareTwitter${
+      campaign ? '%26utm_campaign=' + campaign : ''
+    }`;
+    const smsShareUrl = `${shareUrl}%26utm_source=Shine%26utm_medium=SocialShareSMS${
+      campaign ? '%26utm_campaign=' + campaign : ''
+    }`;
+    const emailShareUrl = `${shareUrl}%26utm_source=Shine%26utm_medium=SocialShareEmail${
+      campaign ? '%26utm_campaign=' + campaign : ''
+    }`;
+
+    const twitterShareBody =
+      'A text that sends you a daily self-care advice? Yes, please. Join me %26 sign up for Shine! %23ShineOn';
+    const smsShareBody =
+    'Hey! I just signed up for Shine %26 thought you would love this - Shine sends a free, daily motivational text message to make your morning better. Sign up with my link here:';
+    const emailShareTitle = "Thought you'd like this!";
+    const emailShareBody =
+      'Hey! Thought you would love this - Shine sends a free, daily motivational text message to make your morning better. Sign up with my link here: ';
 
     return {
-      email: `mailto:?subject=${shareTitle}&body=${shareBody} ${shareUrl}`,
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}&title=${shareTitle}&description=${shareBody}`,
-      sms: `sms:?&body=${shareBody} ${shareUrl}`,
-      twitter: `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareBody}&via=ShineText`,
+      email: `mailto:?subject=${shareTitle}&body=${shareBody} ${emailShareUrl}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${facebookShareUrl}&title=${shareTitle}&description=${shareBody}`,
+      sms: `sms:?&body=${smsShareBody} ${emailShareUrl}`,
+      twitter: `https://twitter.com/intent/tweet?url=${twitterShareUrl}&text=${twitterShareBody}&via=ShineText`,
     };
   },
 };
