@@ -99,15 +99,25 @@ const partnersData = {
     },
     campaignKey: process.env.VALENTINE_MOBILECOMMONS_KEY,
   },
-  'instagram-stories': {
+  'igs': {
     name: 'A daily text to help you thrive', 
     imageUrl: '/images/homepage/homepage_photo_1.jpg',
-    copy:'',
+    copy:'<p>Join over 2M people who start their morning with Shine.</p>',
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
       copy: "You're all signed up!",
     },
     campaignKey: process.env.INSTAGRAM_STORIES_MOBILECOMMONS_KEY,
+  },
+  'igs_ec': {
+    name: 'A daily text to help you thrive', 
+    imageUrl: '/images/homepage/homepage_photo_1.jpg',
+    copy:'<p>Join over 2M people who start their morning with Shine.</p>',
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're all signed up!",
+    },
+    campaignKey: process.env.INSTAGRAM_STORIES_MAY_MOBILECOMMONS_KEY,
   }
 };
 
