@@ -111,7 +111,7 @@ const partnersData = {
   },
   'feels': {
     name: 'Embrace all the feels', 
-    imageUrl: '/images/partners/ALL_THE_FEELS.png',
+    imageUrl: '/images/partners/ALL_THE_FEELS_LANDING_PAGE.png',
     copy:'<p>Sign up for texts from Shine to help you celebrate & embrace all of your feelings this Mental Health Month.</p>',
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
