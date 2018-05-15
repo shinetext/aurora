@@ -109,15 +109,19 @@ const partnersData = {
     },
     campaignKey: process.env.INSTAGRAM_STORIES_MOBILECOMMONS_KEY,
   },
-  'igs_ec': {
-    name: 'A daily text to help you thrive', 
-    imageUrl: '/images/homepage/homepage_photo_1.jpg',
-    copy:'<p>Join over 2M people who start their morning with Shine.</p>',
+  'feels': {
+    name: 'Embrace all the feels', 
+    imageUrl: '/images/partners/ALL_THE_FEELS_LANDING_PAGE.png',
+    copy:'<p>Sign up for texts from Shine to help you celebrate & embrace all of your feelings this Mental Health Month.</p>',
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
       copy: "You're all signed up!",
     },
-    campaignKey: process.env.INSTAGRAM_STORIES_MAY_MOBILECOMMONS_KEY,
+    campaignKey: process.env.ALL_THE_FEELS_MOBILECOMMONS_KEY,
+    additionalFormLink: {
+      label: 'Read Up on all of the feels',
+      link: 'https://advice.shinetext.com/tags/all-the-feels/?utm_source=Shine&utm_medium=PartnerPage&utm_campaign=AllTheFeels',
+    },
   }
 };
 
