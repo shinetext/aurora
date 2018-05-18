@@ -32,7 +32,7 @@ const partnersData = {
   rydel: {
     name: 'Sign up for confidence and positivity tips from Rydel!',
     imageUrl:
-      'https://images.contentful.com/awpxl2koull4/VVLQ8XTSea46g2quYACMG/2d6b6d3b4787ed58367f10f09430998a/rydel_cropped.jpg',
+      'https://images.ctfassets.net/awpxl2koull4/VVLQ8XTSea46g2quYACMG/2d6b6d3b4787ed58367f10f09430998a/rydel_cropped.jpg',
     copy: '',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/YZZJNDPNPrq0w/giphy.gif',
@@ -55,11 +55,11 @@ const partnersData = {
     name:
       "Sign up for motivational texts inspired by Keyshia Cole's new album 11:11 Reset",
     imageUrl:
-      'https://images.contentful.com/awpxl2koull4/NaJiiJyU0wa0Gs0aGg2ua/3987f0a1f5203259e399f763f880aa01/KEYSHIACOLE_1111RESET_CVR_CLEAN.jpg',
+      'https://images.ctfassets.net/awpxl2koull4/NaJiiJyU0wa0Gs0aGg2ua/3987f0a1f5203259e399f763f880aa01/KEYSHIACOLE_1111RESET_CVR_CLEAN.jpg',
     copy: '',
     confirmation: {
       imageUrl:
-        'https://images.contentful.com/awpxl2koull4/1SsNHkoxfKG2Mkim24KMaQ/90c8e69412aac14809bbd31f2ca6c401/KC-Title_black.jpg',
+        'https://images.ctfassets.net/awpxl2koull4/1SsNHkoxfKG2Mkim24KMaQ/90c8e69412aac14809bbd31f2ca6c401/KC-Title_black.jpg',
       copy: "You're all signed up!",
     },
     campaignKey: process.env.KEYSHIA_MOBILECOMMONS_KEY,
@@ -99,20 +99,20 @@ const partnersData = {
     },
     campaignKey: process.env.VALENTINE_MOBILECOMMONS_KEY,
   },
-  'igs': {
-    name: 'A daily text to help you thrive', 
+  igs: {
+    name: 'A daily text to help you thrive',
     imageUrl: '/images/homepage/homepage_photo_1.jpg',
-    copy:'<p>Join over 2M people who start their morning with Shine.</p>',
+    copy: '<p>Join over 2M people who start their morning with Shine.</p>',
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
       copy: "You're all signed up!",
     },
     campaignKey: process.env.INSTAGRAM_STORIES_MOBILECOMMONS_KEY,
   },
-  'feels': {
-    name: 'Embrace all the feels', 
+  feels: {
+    name: 'Embrace all the feels',
     imageUrl: '/images/partners/ALL_THE_FEELS_LANDING_PAGE.png',
-    copy:'<p>Sign up for texts from Shine to help you celebrate & embrace all of your feelings this Mental Health Month.</p>',
+    copy: '<p>Sign up for texts from Shine to help you celebrate & embrace all of your feelings this Mental Health Month.</p>',
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
       copy: "You're all signed up!",
