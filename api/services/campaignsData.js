@@ -46,7 +46,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -84,7 +84,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -122,7 +122,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -160,7 +160,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -198,7 +198,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -236,7 +236,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -275,7 +275,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -313,7 +313,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -351,7 +351,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -389,7 +389,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -427,7 +427,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -465,7 +465,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -503,7 +503,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -541,7 +541,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -579,7 +579,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -617,7 +617,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -655,7 +655,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -693,7 +693,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -731,7 +731,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -769,7 +769,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -807,7 +807,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -845,7 +845,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -883,7 +883,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -921,7 +921,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -960,7 +960,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -998,7 +998,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -1036,7 +1036,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -1074,7 +1074,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],
@@ -1113,7 +1113,7 @@ const campaignData = {
       {
         name: 'KiK',
         logo:
-          'https://images.contentful.com/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
+          'https://images.ctfassets.net/awpxl2koull4/6BSKsZtRIs8w4K4m6K8ew8/f35abc8e9296799d1993fbc3ba249a52/Add_aheading.png',
         link: 'https://www.kik.com/bots/shinetext/',
       },
     ],

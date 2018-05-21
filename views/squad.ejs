@@ -1,86 +1,98 @@
 <div class="squad-page">
 
 
-<div class="banner-container"><img src="/images/shine-squad-banner.png"/></div>
-
-<section>
-  <p>As a Shine Squad member, you have access to an exclusive community of go-getters who will do just that. Shine Squad members help each other with jobs, advice, passion projects, recognition and a bunch of other stuff you'll only know about if you JOIN.</p>
-  <p>Just refer <strong>10 friends</strong> to get your exclusive invite.</p>
-  <p>Need a few ideas to help you refer friends? 
-    <a  
-      href="<%= adviceBaseUrl %>/articles/14-no-fail-tips-to-help-you-refer-friends-and-join-the-shine-squad/?utm_source=Shine&utm_medium=SquadPage" 
-      target="_blank"
-      ga-on="click">
-      We got you
-    </a>.
-  </p>
-</section>
-
-<div class="invite-friends">
-  <h1>Get Your Referral Link</h1>
-  <div class="phone-input-container">
-    <div class="form-field">
-      <input class="form-control get-referral-phone"
-        name="get-referral-phone-1"
-        id="get-referral-phone-1"
-        data-for="get-referral-phone-1"
-        data-error="invalid-number-error-1"
-        type="tel"
-        value="">
-      <label for="get-referral-phone-1">Phone Number</label>
-    </div>
-    <button class="get-referral-info-btn"
-      data-for="get-referral-phone-1"
-      data-error="invalid-number-error-1">Get Link</button>
+  <div class="banner-container">
+    <img src="/images/shine-squad-banner.png" />
   </div>
-  <div class="phone-validation-error" id="invalid-number-error-1">Please enter a valid cell phone number.</div>
-</div>
 
-<ul class="squad-perks">
-  <h2>Shine Squad Exclusives</h2>
+  <section>
+    <p>What’s the Shine Squad, you ask? </p>
+    <p>It’s a supportive, *judgement-free* community of people who lift others up and motivate others to be their best. </p>
 
-  <li>
-    <div class="label-container">
-      <h4>1st Access to Shine Updates</h4>
+    <p>
+      <strong>Here’s what you get when you join the Shine Squad:</strong>
+    </p>
+    <ul>
+      <li>You're the first to know updates from Shine HQ on company, product, and team updates</li>
+      <li>Advice & support on life decisions from a community of like-minded individuals</li>
+      <li>A community to brag about your wins (!) & lean on when you’re not feeling so hot</li>
+      <li>Job opportunities, events, articles, and resources to help you thrive</li>
+    </ul>
+
+    <p>Just
+      <a href="/referrals">
+        refer
+      </a>
+      <strong>5 friends</strong> to get your exclusive invite.</p>
+
+    <p>Need a few ideas to help you refer friends?
+      <a href="<%= adviceBaseUrl %>/articles/14-no-fail-tips-to-help-you-refer-friends-and-join-the-shine-squad/?utm_source=Shine&utm_medium=SquadPage"
+        target="_blank" ga-on="click">
+        We got you
+      </a>.
+    </p>
+  </section>
+
+  <div class="invite-friends">
+    <h1>Get Your Referral Link</h1>
+    <div class="phone-input-container">
+      <div class="form-field">
+        <input class="form-control get-referral-phone" name="get-referral-phone-1" id="get-referral-phone-1" data-for="get-referral-phone-1"
+          data-error="invalid-number-error-1" type="tel" value="">
+        <label for="get-referral-phone-1">Phone Number</label>
+      </div>
+      <button class="get-referral-info-btn" data-for="get-referral-phone-1" data-error="invalid-number-error-1">Get Link</button>
     </div>
-    <div class="perk-image -p1"></div>
-    <p>As a VIP you'll get a first look at new features before they even come out and a huge say in what will end up in the final product.</p>
-  </li>
-  <li>
-    <div class="label-container">
-      <h4>Swag</h4>
-    </div>
-    <div class="perk-image -p2"></div>
-    <p>If you live for totes, tees, hoodies and leggings - we've got you. <a href="/referrals">Get Shine swag</a> based on how many friends you refer.</p>
-  </li>
-  <li>
-    <div class="label-container">
-      <h4>Chat with the Shine Founders</h4>
-    </div>
-    <div class="perk-image -p3"></div>
-    <p>Get facetime with the founders and tell them about what you want to see more of.</p>
-  </li>
-  <li>
-    <div class="label-container">
-      <h4>Shoutouts on Social Media</h4>
-    </div>
-    <div class="perk-image -p4"></div>
-    <p>Get love on our Facebook and Instagram for being awesome.</p>
-  </li>
-  <li>
-    <div class="label-container">
-      <h4>Local Shine & Wine Events</h4>
-    </div>
-    <div class="perk-image -p5"></div>
-    <p>Meet up with other Shine members in your community who are doing big things like you.</p>
-  </li>
-  <li>
-    <div class="label-container">
-      <h4>A Community of Your Biggest Fans</h4>
-    </div>
-    <div class="perk-image -p6"></div>
-    <p>Get advice. Network. And lean on a group of the coolest, kindest people who will be there for whatever you need.</p>
-  </li>
-</ul>
+    <div class="phone-validation-error" id="invalid-number-error-1">Please enter a valid cell phone number.</div>
+  </div>
+
+  <ul class="squad-perks">
+    <h2>Shine Squad Exclusives</h2>
+
+    <li>
+      <div class="label-container">
+        <h4>1st Access to Shine Updates</h4>
+      </div>
+      <div class="perk-image -p1"></div>
+      <p>As a VIP you'll get a first look at new features before they even come out and a huge say in what will end up in the
+        final product.</p>
+    </li>
+    <li>
+      <div class="label-container">
+        <h4>Swag</h4>
+      </div>
+      <div class="perk-image -p2"></div>
+      <p>If you live for totes, tees, hoodies and leggings - we've got you.
+        <a href="/referrals">Get Shine swag</a> based on how many friends you refer.</p>
+    </li>
+    <li>
+      <div class="label-container">
+        <h4>Chat with the Shine Founders</h4>
+      </div>
+      <div class="perk-image -p3"></div>
+      <p>Get facetime with the founders and tell them about what you want to see more of.</p>
+    </li>
+    <li>
+      <div class="label-container">
+        <h4>Shoutouts on Social Media</h4>
+      </div>
+      <div class="perk-image -p4"></div>
+      <p>Get love on our Facebook and Instagram for being awesome.</p>
+    </li>
+    <li>
+      <div class="label-container">
+        <h4>Local Shine & Wine Events</h4>
+      </div>
+      <div class="perk-image -p5"></div>
+      <p>Meet up with other Shine members in your community who are doing big things like you.</p>
+    </li>
+    <li>
+      <div class="label-container">
+        <h4>A Community of Your Biggest Fans</h4>
+      </div>
+      <div class="perk-image -p6"></div>
+      <p>Get advice. Network. And lean on a group of the coolest, kindest people who will be there for whatever you need.</p>
+    </li>
+  </ul>
 
 </div>
