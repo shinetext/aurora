@@ -28,7 +28,7 @@ export default class SplashPage extends React.Component {
                   name="EMAIL"
                   id="mce-EMAIL"
                 />
-                <label for="mce-EMAIL">Email</label>
+                <label htmlFor="mce-EMAIL">Email</label>
               </div>
               <div className="splash-form-field">
                 <input
@@ -38,7 +38,7 @@ export default class SplashPage extends React.Component {
                   name="FNAME"
                   id="mce-FNAME"
                 />
-                <label for="mce-FNAME">First Name</label>
+                <label htmlFor="mce-FNAME">First Name</label>
               </div>
               <div className="splash-form-field">
                 <input
@@ -48,7 +48,7 @@ export default class SplashPage extends React.Component {
                   value=""
                   id="mce-PHONE"
                 />
-                <label for="mce-PHONE">Phone Number</label>
+                <label htmlFor="mce-PHONE">Phone Number</label>
               </div>
               <div className="splash-bottom">
                 <div className="splash-button">
@@ -92,7 +92,7 @@ export default class SplashPage extends React.Component {
                     name="EMAIL"
                     id="mce-EMAIL"
                   />
-                  <label for="mce-EMAIL">Email</label>
+                  <label htmlFor="mce-EMAIL">Email</label>
                 </div>
                 <div className="splash-form-field">
                   <input
@@ -102,7 +102,7 @@ export default class SplashPage extends React.Component {
                     name="FNAME"
                     id="mce-FNAME"
                   />
-                  <label for="mce-FNAME">First Name</label>
+                  <label htmlFor="mce-FNAME">First Name</label>
                 </div>
                 <div className="splash-form-field">
                   <input
@@ -112,7 +112,7 @@ export default class SplashPage extends React.Component {
                     value=""
                     id="mce-PHONE"
                   />
-                  <label for="mce-PHONE">Phone Number</label>
+                  <label htmlFor="mce-PHONE">Phone Number</label>
                 </div>
                 <div className="splash-button">
                   <button
@@ -129,7 +129,7 @@ export default class SplashPage extends React.Component {
             </div>
           </div>
           <div className="desktop-image">
-            <img src="https://images.contentful.com/awpxl2koull4/7FVydJIS9aYokIQK842ySk/58b9a7192f54c7413e66d5f84d001e82/Figure3-web.png" />
+            <img src="https://images.ctfassets.net/awpxl2koull4/7FVydJIS9aYokIQK842ySk/58b9a7192f54c7413e66d5f84d001e82/Figure3-web.png" />
           </div>
         </div>
       </div>

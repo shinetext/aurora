@@ -54,7 +54,7 @@ export default function() {
         </div>
         <div className="mobile-bottom-bottom">
           <img
-            src="https://images.contentful.com/awpxl2koull4/4bSBano9gkck2wCMCoo8ec/709dcf1b951c34f0afce5c142b0671d2/LaunchPage-Bossgirl-Mobile.png"
+            src="https://images.ctfassets.net/awpxl2koull4/4bSBano9gkck2wCMCoo8ec/709dcf1b951c34f0afce5c142b0671d2/LaunchPage-Bossgirl-Mobile.png"
             className="bottom-image"
           />
         </div>
