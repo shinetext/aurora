@@ -8,6 +8,7 @@ const Promise = require('bluebird');
 const request = Promise.promisifyAll(require('request'));
 const Mixpanel = require('mixpanel');
 const crypto = require('crypto');
+const sns = require('../services/sns');
 
 let mixpanel;
 
@@ -51,7 +52,7 @@ module.exports = {
     // If an array of friends and opt-in path for them are provided, add it to
     // the submission data.
     if (req.body.friends_opt_in_path && req.body.friends.length > 0) {
-      data.form['friends_opt_in_path'] = req.body.friends_opt_in_path;
+      data.form.friends_opt_in_path = req.body.friends_opt_in_path;
 
       let friendCounter = 0;
       for (const friend of req.body.friends) {
@@ -173,7 +174,7 @@ module.exports = {
       },
     };
 
-    return Promise.coroutine(function*() {
+    return Promise.coroutine(function *() {
       try {
         let patchRequest = yield request.patchAsync(mailchimpUpdateRequest);
         let postRequest;
@@ -269,6 +270,26 @@ module.exports = {
         }
 
         mcSubscribeSuccessful = true;
+
+        let referredUser = {
+          firstName: req.body.first_name,
+          partner: req.body.partner || req.body.campaign,
+          phone: req.body.phone,
+          platform: 'sms',
+          referredByCode: req.body.referredByCode,
+          source: joinByReferral ? 'web-referral' : 'web',
+          utm_campaign: req.body.utmCampaign,
+          utm_content: req.body.utmContent,
+          utm_medium: req.body.utmMedium,
+          utm_source: req.body.utmSource,
+        }
+
+        //Publish 'signup' event to SNS after new user is sucessfully subscribed to MC
+        if (mcSubscribeSuccessful && req.body.referredByCode.length > 0) {
+          console.log(`${referredUser.firstName} just signed up and was referred by ${referredUser.referredByCode}. Publishing SNS event...`)
+
+          sns.publishEvent(process.env.SNS_TOPIC_ARN_SIGN_UP, referredUser)
+        }
 
         // Since we can't update friend names and phone numbers in the /join
         // request, we're updating their profiles here immediately after
