@@ -45,5 +45,11 @@ module.exports = {
     mailchimpApiAuthPass: process.env.MAILCHIMP_API_PASSWORD,
     mailchimpApiUrl: process.env.MAILCHIMP_API_URL,
     mailchimpListId: process.env.MAILCHIMP_LIST_ID,
+
+    // AWS SNS
+    snsRegion: process.env.SERVICE_REGION,
+    snsReferral: process.env.SNS_TOPIC_ARN_REFERRAL,
+
+
   },
 };

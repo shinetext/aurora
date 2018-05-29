@@ -271,26 +271,6 @@ module.exports = {
 
         mcSubscribeSuccessful = true;
 
-        let referredUser = {
-          firstName: req.body.first_name,
-          partner: req.body.partner || req.body.campaign,
-          phone: req.body.phone,
-          platform: 'sms',
-          referredByCode: req.body.referredByCode,
-          source: joinByReferral ? 'web-referral' : 'web',
-          utm_campaign: req.body.utmCampaign,
-          utm_content: req.body.utmContent,
-          utm_medium: req.body.utmMedium,
-          utm_source: req.body.utmSource,
-        }
-
-        //Publish 'signup' event to SNS after new user is sucessfully subscribed to MC
-        if (mcSubscribeSuccessful && req.body.referredByCode.length > 0) {
-          console.log(`${referredUser.firstName} just signed up and was referred by ${referredUser.referredByCode}. Publishing SNS event...`)
-
-          sns.publishEvent(process.env.SNS_TOPIC_ARN_SIGN_UP, referredUser)
-        }
-
         // Since we can't update friend names and phone numbers in the /join
         // request, we're updating their profiles here immediately after
         // the /join.
@@ -305,6 +285,50 @@ module.exports = {
         let referralCode = '';
         if (response.body && typeof response.body.referralCode === 'string') {
           referralCode = response.body.referralCode;
+        }
+
+        // GET referrer's referral count from Photon
+        //Publish 'referral' event to SNS after new user is sucessfully subscribed to MC
+        if (mcSubscribeSuccessful && req.body.referredByCode && req.body.referredByCode.length > 0) {
+          let referralCountRequest = {
+            method: 'GET',
+            uri:
+              sails.config.globals.photonApiUrl + '/referral/' + req.body.phone,
+            json: true,
+          };
+
+          request
+            .getAsync(referralCountRequest)
+            .then(resData => {
+              if (!resData || !resData.body) {
+                sails.log.error(
+                  'Invalid response received from Photon GET referral/:phone.'
+                );
+              } else {
+                sails.log.info('Successful GET referral count');
+                sails.log.info(`  id: ${resData.body.referralCount}`);
+
+                let referralData = {
+                  newUser: {
+                    platform: 'sms',
+                    platformId: req.body.phone,
+                    referralCode,
+                  },
+                  referrer: {
+                    platform: 'sms',
+                    platformId: req.body.referredByCode,
+                    referralCount: resData.body.referralCount,
+                  },
+                }
+
+                sails.log.info(`${req.body.first_name} just signed up and was referred by ${referralData.referrer.platformId}, who made ${referralData.referrer.referralCount} referrals. Publishing SNS event...`)
+
+                sns.publishEvent(sails.config.globals.snsReferral, referralData)
+              }
+            })
+            .catch(err => {
+              sails.log.error(err);
+            })
         }
 
         // Adds as a subscriber to MailChimp if we have an email

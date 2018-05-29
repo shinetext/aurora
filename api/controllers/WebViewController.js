@@ -95,9 +95,9 @@ module.exports = {
       bodyCopy: bodyCopy ? bodyCopy : '',
       hideFooterCta: true,
       firstName: req.query.firstName ? req.query.firstName : '',
-      fromReferral: req.query.referral ? true : false,
-      fromPartner: req.query.partner ? true : false,
-      fromCampaign: req.query.campaign ? true : false,
+      fromReferral: !!req.query.referral,
+      fromPartner: !!req.query.partner,
+      fromCampaign: !!req.query.campaign,
       phone: req.query.phone ? req.query.phone : '',
       query: req.query,
       referralCode: req.query.referralCode ? req.query.referralCode : '',
@@ -129,7 +129,7 @@ module.exports = {
    */
   myReferral: function(req, res) {
     const _this = this;
-    Promise.coroutine(function*() {
+    Promise.coroutine(function *() {
       let referralRequest = {
         method: 'GET',
         uri:
@@ -139,6 +139,8 @@ module.exports = {
 
       try {
         const response = yield request.getAsync(referralRequest);
+
+        console.log(`MADE IS FARRRR respobse`, JSON.stringify(response, null, 2));
 
         let locals = {
           title: 'My Referrals | Shine',
@@ -333,8 +335,8 @@ module.exports = {
     const shareBody = `Sign up with me to get Shine! A daily text for your self-care and joy.`;
     const shareTitle = `Sign up for Shine!`;
     const shareUrl = `https://www.shinetext.com?r=${referralCode}%26utm_source=Shine`;
-    
-    // Add UTM campaign if one is available 
+
+    // Add UTM campaign if one is available
     const facebookShareUrl = `${shareUrl}%26utm_medium=SocialShareFacebook${
       campaign ? '%26utm_campaign=' + campaign : ''
     }`;

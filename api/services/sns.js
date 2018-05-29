@@ -5,7 +5,7 @@ const sns = new AWS.SNS({
 });
 Promise.promisifyAll(sns);
 
-const Sns = {
+module.exports = {
   publishEvent: (topic, eventData) => {
     const message = JSON.stringify(eventData);
     const snsParams = {
@@ -15,12 +15,10 @@ const Sns = {
 
     sns.publish(snsParams, (err, data) => {
       if (err) {
-        console.log(`An error occured publishing to SNS topic`, err.message);
+        sails.log.info(`An error occured publishing to SNS topic`, err.message);
       } else {
-        console.log('Successfully published to SNS topic', data);
+        sails.log.info('Successfully published to SNS topic', data);
       }
     });
   },
 };
-
-module.exports = Sns;
