@@ -52,7 +52,7 @@ module.exports = {
     // If an array of friends and opt-in path for them are provided, add it to
     // the submission data.
     if (req.body.friends_opt_in_path && req.body.friends.length > 0) {
-      data.form.friends_opt_in_path = req.body.friends_opt_in_path;
+      data.form['friends_opt_in_path'] = req.body.friends_opt_in_path;
 
       let friendCounter = 0;
       for (const friend of req.body.friends) {
@@ -174,7 +174,7 @@ module.exports = {
       },
     };
 
-    return Promise.coroutine(function *() {
+    return Promise.coroutine(function*() {
       try {
         let patchRequest = yield request.patchAsync(mailchimpUpdateRequest);
         let postRequest;

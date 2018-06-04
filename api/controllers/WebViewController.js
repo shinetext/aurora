@@ -95,9 +95,9 @@ module.exports = {
       bodyCopy: bodyCopy ? bodyCopy : '',
       hideFooterCta: true,
       firstName: req.query.firstName ? req.query.firstName : '',
-      fromReferral: !!req.query.referral,
-      fromPartner: !!req.query.partner,
-      fromCampaign: !!req.query.campaign,
+      fromReferral: req.query.referral ? true : false,
+      fromPartner: req.query.partner ? true : false,
+      fromCampaign: req.query.campaign ? true : false,
       phone: req.query.phone ? req.query.phone : '',
       query: req.query,
       referralCode: req.query.referralCode ? req.query.referralCode : '',
@@ -129,7 +129,7 @@ module.exports = {
    */
   myReferral: function(req, res) {
     const _this = this;
-    Promise.coroutine(function *() {
+    Promise.coroutine(function*() {
       let referralRequest = {
         method: 'GET',
         uri:
