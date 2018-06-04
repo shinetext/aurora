@@ -1,7 +1,9 @@
 const AWS = require('aws-sdk');
 const Promise = require('bluebird');
 const sns = new AWS.SNS({
-  region: process.env.SERVICE_REGION,
+  accessKeyId: sails.config.globals.accessKeyId,
+  secretAccessKey: sails.config.globals.secretAccessKey,
+  region: sails.config.globals.serviceRegion,
 });
 Promise.promisifyAll(sns);
 

@@ -47,9 +47,9 @@ module.exports = {
     mailchimpListId: process.env.MAILCHIMP_LIST_ID,
 
     // AWS SNS
-    snsRegion: process.env.SERVICE_REGION,
-    snsReferral: process.env.SNS_TOPIC_ARN_REFERRAL,
-
-
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    serviceRegion: process.env.AWS_DEFAULT_REGION,
+    snsTopicReferral: process.env.SNS_TOPIC_ARN_REFERRAL,
   },
 };

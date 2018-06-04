@@ -323,12 +323,11 @@ module.exports = {
                     referralCount: resData.body.referralCount,
                   },
                 }
-                sails.log.info(`${req.body.first_name} just signed up and was
-                  referred by ${referralData.referrer.platformId}, who
-                  made ${referralData.referrer.referralCount} referrals.
+                sails.log.info(`${req.body.first_name} just signed up and was referred by ${referralData.referrer.platformId},
+                  who made ${referralData.referrer.referralCount} referrals.
                   Publishing SNS event...`)
 
-                sns.publishEvent(sails.config.globals.snsReferral, referralData)
+                sns.publishEvent(sails.config.globals.snsTopicReferral, referralData)
               }
             })
             .catch(err => {
