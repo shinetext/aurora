@@ -290,10 +290,13 @@ module.exports = {
         // GET referrer's referral count from Photon
         //Publish 'referral' event to SNS after new user is sucessfully subscribed to MC
         if (mcSubscribeSuccessful && req.body.referredByCode && req.body.referredByCode.length > 0) {
+
+          let referrerPhone = ReferralCodes.decode(req.body.referredByCode);
+
           let referralCountRequest = {
             method: 'GET',
             uri:
-              sails.config.globals.photonApiUrl + '/referral/' + req.body.phone,
+            sails.config.globals.photonApiUrl + '/referral/' + referrerPhone,
             json: true,
           };
 
@@ -306,7 +309,7 @@ module.exports = {
                 );
               } else {
                 sails.log.info('Successful GET referral count');
-                sails.log.info(`  id: ${resData.body.referralCount}`);
+                sails.log.info(`  referralCount: ${resData.body.referralCount}`);
 
                 let referralData = {
                   newUser: {
@@ -320,8 +323,10 @@ module.exports = {
                     referralCount: resData.body.referralCount,
                   },
                 }
-
-                sails.log.info(`${req.body.first_name} just signed up and was referred by ${referralData.referrer.platformId}, who made ${referralData.referrer.referralCount} referrals. Publishing SNS event...`)
+                sails.log.info(`${req.body.first_name} just signed up and was
+                  referred by ${referralData.referrer.platformId}, who
+                  made ${referralData.referrer.referralCount} referrals.
+                  Publishing SNS event...`)
 
                 sns.publishEvent(sails.config.globals.snsReferral, referralData)
               }

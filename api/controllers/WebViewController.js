@@ -140,8 +140,6 @@ module.exports = {
       try {
         const response = yield request.getAsync(referralRequest);
 
-        console.log(`MADE IS FARRRR respobse`, JSON.stringify(response, null, 2));
-
         let locals = {
           title: 'My Referrals | Shine',
           metaDescription:
