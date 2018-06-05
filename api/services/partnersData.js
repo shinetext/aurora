@@ -124,9 +124,9 @@ const partnersData = {
     },
   },
   wybmn: {
-    name: 'A partnership page for our Mr. Rogers partnership',
-    imageUrl: '/images/partners/mr-rogers.jpg',
-    copy: '<p>Get texts inspired by Mr. Rogers</p>',
+    name: 'Get texts inspired by Mr. Rogers',
+    imageUrl: '/images/partners/mr-rogers-2.jpg',
+    copy: '<p>Won\'t You Be My Neighbor in Select Theaters June 8</p>',
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
       copy: "You're all signed up!",
