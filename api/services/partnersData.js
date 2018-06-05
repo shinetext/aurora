@@ -126,16 +126,12 @@ const partnersData = {
   wybmn: {
     name: 'A partnership page for our Mr. Rogers partnership',
     imageUrl: '/images/partners/mr-rogers.jpg',
-    copy: 'Get texts inspired by Mr. Rogers',
+    copy: '<p>Get texts inspired by Mr. Rogers</p>',
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
       copy: "You're all signed up!",
     },
     campaignKey: process.env.MR_ROGERS_MOBILECOMMONS_KEY,
-    additionalFormLink: {
-      label: 'Read Up on all of the feels',
-      link: 'https://advice.shinetext.com/tags/all-the-feels/?utm_source=Shine&utm_medium=PartnerPage&utm_campaign=AllTheFeels',
-    },
   }
 };
 
