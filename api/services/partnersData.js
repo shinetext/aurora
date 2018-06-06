@@ -122,6 +122,16 @@ const partnersData = {
       label: 'Read Up on all of the feels',
       link: 'https://advice.shinetext.com/tags/all-the-feels/?utm_source=Shine&utm_medium=PartnerPage&utm_campaign=AllTheFeels',
     },
+  },
+  wybmn: {
+    name: 'Get texts from Shine inspired by Mr. Rogers',
+    imageUrl: '/images/partners/mr-rogers-3.jpg',
+    copy: '<p>"Won\'t You Be My Neighbor" in Select Theaters June 8</p>',
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're all signed up!",
+    },
+    campaignKey: process.env.MR_ROGERS_MOBILECOMMONS_KEY,
   }
 };
 
