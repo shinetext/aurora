@@ -8,7 +8,6 @@ const Promise = require('bluebird');
 const request = Promise.promisifyAll(require('request'));
 const Mixpanel = require('mixpanel');
 const crypto = require('crypto');
-const sns = require('../services/sns');
 
 let mixpanel;
 
@@ -327,7 +326,7 @@ module.exports = {
                   who made ${referralData.referrer.referralCount} referrals.
                   Publishing SNS event...`)
 
-                sns.publishEvent(sails.config.globals.snsTopicReferral, referralData)
+                SnsService.publishEvent(sails.config.globals.snsTopicReferral, referralData)
               }
             })
             .catch(err => {

@@ -5,7 +5,6 @@ const sns = new AWS.SNS({
   secretAccessKey: sails.config.globals.secretAccessKey,
   region: sails.config.globals.serviceRegion,
 });
-Promise.promisifyAll(sns);
 
 module.exports = {
   publishEvent: (topic, eventData) => {
