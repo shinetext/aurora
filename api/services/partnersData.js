@@ -125,7 +125,7 @@ const partnersData = {
   },
   wybmn: {
     name: 'Get texts from Shine inspired by Mr. Rogers',
-    imageUrl: '/images/partners/mr-rogers-3.jpg',
+    imageUrl: '/images/partners/mr-rogers-shine.png',
     copy: '<p>"Won\'t You Be My Neighbor?" in Theaters June 8</p>',
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
