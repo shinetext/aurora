@@ -286,6 +286,54 @@ module.exports = {
           referralCode = response.body.referralCode;
         }
 
+        // GET referrer's referral count from Photon
+        //Publish 'referral' event to SNS after new user is sucessfully subscribed to MC
+        if (mcSubscribeSuccessful && req.body.referredByCode && req.body.referredByCode.length > 0) {
+
+          let referrerPhone = ReferralCodes.decode(req.body.referredByCode);
+
+          let referralCountRequest = {
+            method: 'GET',
+            uri:
+            sails.config.globals.photonApiUrl + '/referral/' + referrerPhone,
+            json: true,
+          };
+
+          request
+            .getAsync(referralCountRequest)
+            .then(resData => {
+              if (!resData || !resData.body) {
+                sails.log.error(
+                  'Invalid response received from Photon GET referral/:phone.'
+                );
+              } else {
+                sails.log.info('Successful GET referral count');
+                sails.log.info(`  referralCount: ${resData.body.referralCount}`);
+
+                let referralData = {
+                  newUser: {
+                    platform: 'sms',
+                    platformId: req.body.phone,
+                    referralCode,
+                  },
+                  referrer: {
+                    platform: 'sms',
+                    platformId: req.body.referredByCode,
+                    referralCount: resData.body.referralCount,
+                  },
+                }
+                sails.log.info(`${req.body.first_name} just signed up and was referred by ${referralData.referrer.platformId},
+                  who made ${referralData.referrer.referralCount} referrals.
+                  Publishing SNS event...`)
+
+                SnsService.publishEvent(sails.config.globals.snsTopicReferral, referralData)
+              }
+            })
+            .catch(err => {
+              sails.log.error(err);
+            })
+        }
+
         // Adds as a subscriber to MailChimp if we have an email
         if (typeof req.body.email === 'string' && req.body.email.length > 0) {
           // @todo Implement additional email validation?

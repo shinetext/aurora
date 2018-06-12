@@ -6,6 +6,7 @@
   "keywords": [],
   "dependencies": {
     "@jonuy/referral-codes": "1.1.0",
+    "aws-sdk": "^2.88.0",
     "babel-plugin-transform-builtin-extend": "^1.1.2",
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",

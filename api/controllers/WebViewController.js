@@ -333,8 +333,8 @@ module.exports = {
     const shareBody = `Sign up with me to get Shine! A daily text for your self-care and joy.`;
     const shareTitle = `Sign up for Shine!`;
     const shareUrl = `https://www.shinetext.com?r=${referralCode}%26utm_source=Shine`;
-    
-    // Add UTM campaign if one is available 
+
+    // Add UTM campaign if one is available
     const facebookShareUrl = `${shareUrl}%26utm_medium=SocialShareFacebook${
       campaign ? '%26utm_campaign=' + campaign : ''
     }`;
