@@ -281,8 +281,11 @@ module.exports = {
         return request.postAsync(photonRequest);
       })
       .then(function(response) {
+        // this function will prepare and send data to publish to SNS referral event
+
         let referralCode = '';
         if (response.body && typeof response.body.referralCode === 'string') {
+          // newUser's referralCode
           referralCode = response.body.referralCode;
         }
 
@@ -313,13 +316,14 @@ module.exports = {
                 let referralData = {
                   newUser: {
                     platform: 'sms',
-                    platformId: req.body.phone,
+                    platformId: response.body.id,
                     referralCode,
                   },
                   referrer: {
                     platform: 'sms',
-                    platformId: req.body.referredByCode,
+                    platformId: resData.body.id,
                     referralCount: resData.body.referralCount,
+                    referralCode: req.body.referredByCode,
                   },
                 }
                 sails.log.info(`${req.body.first_name} just signed up and was referred by ${referralData.referrer.platformId},
