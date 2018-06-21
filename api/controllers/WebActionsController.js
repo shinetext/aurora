@@ -139,8 +139,9 @@ module.exports = {
 
     const mailchimpUpdateRequest = {
       method: 'PATCH',
-      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals
-        .mailchimpListId}/members/${memberHash}`,
+      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${
+        sails.config.globals.mailchimpListId
+      }/members/${memberHash}`,
       json: true,
       auth: {
         user: sails.config.globals.mailchimpApiAuthUser,
@@ -155,8 +156,9 @@ module.exports = {
 
     const mailchimpSubscribeRequest = {
       method: 'POST',
-      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config.globals
-        .mailchimpListId}/members`,
+      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${
+        sails.config.globals.mailchimpListId
+      }/members`,
       json: true,
       auth: {
         user: sails.config.globals.mailchimpApiAuthUser,
@@ -216,8 +218,9 @@ module.exports = {
     // If signing up through partner landing pages, redirect directly to
     // confirmation page.
     if (req.body.partner) {
-      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req.body
-        .first_name}&partner=${req.body.partner}`;
+      redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${
+        req.body.first_name
+      }&partner=${req.body.partner}`;
     } else if (req.body.campaign) {
       // Redirect user to referral page if user comes from a campaign page
       // or redirects user to confirmation page if user comes from referral page
@@ -229,8 +232,9 @@ module.exports = {
         redirectUrl = `/campaigns/${campaign}/share?phone=${phone}&campaign=${campaign}`;
       }
     } else {
-      redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${req.body
-        .first_name}`;
+      redirectUrl = `/sms-settings?phone=${req.body.phone}&firstName=${
+        req.body.first_name
+      }`;
     }
 
     let photonRequest = {
@@ -291,14 +295,17 @@ module.exports = {
 
         // GET referrer's referral count from Photon
         //Publish 'referral' event to SNS after new user is sucessfully subscribed to MC
-        if (mcSubscribeSuccessful && req.body.referredByCode && req.body.referredByCode.length > 0) {
-
+        if (
+          mcSubscribeSuccessful &&
+          req.body.referredByCode &&
+          req.body.referredByCode.length > 0
+        ) {
           let referrerPhone = ReferralCodes.decode(req.body.referredByCode);
 
           let referralCountRequest = {
             method: 'GET',
             uri:
-            sails.config.globals.photonApiUrl + '/referral/' + referrerPhone,
+              sails.config.globals.photonApiUrl + '/referral/' + referrerPhone,
             json: true,
           };
 
@@ -311,7 +318,9 @@ module.exports = {
                 );
               } else {
                 sails.log.info('Successful GET referral count');
-                sails.log.info(`  referralCount: ${resData.body.referralCount}`);
+                sails.log.info(
+                  `  referralCount: ${resData.body.referralCount}`
+                );
 
                 let referralData = {
                   newUser: {
@@ -322,20 +331,27 @@ module.exports = {
                   referrer: {
                     platform: 'sms',
                     platformId: resData.body.id,
-                    referralCount: resData.body.referralCount,
                     referralCode: req.body.referredByCode,
+                    referralCount: resData.body.referralCount,
                   },
-                }
-                sails.log.info(`${req.body.first_name} just signed up and was referred by ${referralData.referrer.platformId},
+                };
+                sails.log.info(`${
+                  req.body.first_name
+                } just signed up and was referred by ${
+                  referralData.referrer.platformId
+                },
                   who made ${referralData.referrer.referralCount} referrals.
-                  Publishing SNS event...`)
+                  Publishing SNS event...`);
 
-                SnsService.publishEvent(sails.config.globals.snsTopicReferral, referralData)
+                SnsService.publishEvent(
+                  sails.config.globals.snsTopicReferral,
+                  referralData
+                );
               }
             })
             .catch(err => {
               sails.log.error(err);
-            })
+            });
         }
 
         // Adds as a subscriber to MailChimp if we have an email
@@ -344,8 +360,9 @@ module.exports = {
           // @todo Not currently handling failed API calls
           const mailchimpRequest = {
             method: 'POST',
-            uri: `${sails.config.globals.mailchimpApiUrl}/lists/${sails.config
-              .globals.mailchimpListId}/members`,
+            uri: `${sails.config.globals.mailchimpApiUrl}/lists/${
+              sails.config.globals.mailchimpListId
+            }/members`,
             json: true,
             auth: {
               user: sails.config.globals.mailchimpApiAuthUser,
@@ -432,9 +449,9 @@ module.exports = {
       req.body['bday-day'] &&
       req.body['bday-year']
     ) {
-      birthday = `${req.body['bday-year']}-${req.body['bday-month']}-${req.body[
-        'bday-day'
-      ]}`;
+      birthday = `${req.body['bday-year']}-${req.body['bday-month']}-${
+        req.body['bday-day']
+      }`;
     }
 
     let updateRequest = {
@@ -463,8 +480,9 @@ module.exports = {
     request
       .postAsync(updateRequest)
       .then(response => {
-        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${req
-          .body.firstName}&referralCode=${req.body.referralCode}`;
+        let redirectUrl = `/confirmation?phone=${req.body.phone}&firstName=${
+          req.body.firstName
+        }&referralCode=${req.body.referralCode}`;
         res.redirect(redirectUrl);
       })
       .catch(err => {
