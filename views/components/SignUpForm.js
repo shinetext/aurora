@@ -13,7 +13,8 @@ const SignUpForm = props => {
     betaOptInPath,
     extras,
     additionalLink,
-    betaCount
+    betaCount,
+    alphaEmailRequired,
   } = props;
 
   let infoView;
@@ -26,7 +27,10 @@ const SignUpForm = props => {
   let alphaView;
   if (!hideAlpha) {
     alphaView = (
-      <AlphaSignUpForm optin={PartnerService.getOptInPath(partnerId)} />
+      <AlphaSignUpForm
+        optin={PartnerService.getOptInPath(partnerId)}
+        emailRequired={alphaEmailRequired}
+      />
     );
   }
 
@@ -64,10 +68,15 @@ const SignUpForm = props => {
   return (
     <div className="SignUpForm col-md-7">
       <div className="container-signup">
-        <h2 dangerouslySetInnerHTML={{ __html: header}} />
+        <h2 dangerouslySetInnerHTML={{ __html: header }} />
         {infoView}
 
-        <form class="signup-form" id="alpha-signup" action="/join" method="post">
+        <form
+          class="signup-form"
+          id="alpha-signup"
+          action="/join"
+          method="post"
+        >
           {alphaView}
           {betaView}
           {extrasView}
