@@ -15,6 +15,7 @@ const SignUpForm = props => {
     additionalLink,
     betaCount,
     alphaEmailRequired,
+    signUpButtonText,
   } = props;
 
   let infoView;
@@ -91,7 +92,7 @@ const SignUpForm = props => {
               is
               class="btn"
               type="submit"
-              value="Get Shine Texts"
+              value={signUpButtonText || 'Get Shine Texts'}
               ga-on="click"
               ga-event-category="SignUp"
               ga-event-action="SMS"
