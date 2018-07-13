@@ -19,9 +19,9 @@
  */
 const partnersData = {
   'kelly-clarkson': {
-    name: 'Get texts inspired by Kelly Clarkson\'s new album <em>Meaning of Life</em>',
-    imageUrl:
-      '/images/partners/kelly-clarkson-2.png',
+    name:
+      "Get texts inspired by Kelly Clarkson's new album <em>Meaning of Life</em>",
+    imageUrl: '/images/partners/kelly-clarkson-2.png',
     copy: '',
     confirmation: {
       imageUrl: 'https://media.giphy.com/media/IJrLbXNKoNYFG/giphy.gif',
@@ -42,7 +42,7 @@ const partnersData = {
   },
   'gabrielle-union': {
     name:
-      'Get texts inspired by Gabrielle Union\'s book <br/> <em>We\'re Going to Need More Wine</em>',
+      "Get texts inspired by Gabrielle Union's book <br/> <em>We're Going to Need More Wine</em>",
     imageUrl: '/images/partners/GabUnioncover_notype.png',
     copy: '',
     confirmation: {
@@ -89,10 +89,45 @@ const partnersData = {
       link: '/files/Scholarship-Rules-2-7-18.pdf',
     },
   },
+  'summersweeps-girlboss': {
+    name: 'Treat yourself this summer with $1,000 from Shine & Girlboss',
+    imageUrl: '/images/partners/girlboss-giveaway.jpg',
+    copy:
+      '<p>Self-care isn’t just face masks and bubble baths—it means something different to everyone. This summer, snag some extra cash from Shine & Girlboss to help you practice your style of self-care. Whether it’s a weekend getaway with the VIPs in your life or paying off bills, we got you. </p><p>Enter to win $1,000 plus, a free year long subscription to the <a href="https://go.onelink.me/app/219fc510"/>Shine app</a> & the Girlboss Academy to inspire you all year long.</p>',
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're all signed up!",
+    },
+    additionalFormLink: {
+      label: 'Open to U.S. residents only. Official rules here.',
+      link: '/files/July_2018_1000_Self-Care_Sweeps.pdf',
+    },
+    campaignKey: 'OP39C0317FB30329CE81C46936C5DFE198',
+    alphaEmailRequired: true,
+    signUpButtonText: 'Enter',
+  },
+  'summersweeps-shine': {
+    name: 'Treat yourself this summer with $1,000 from Shine & Girlboss',
+    imageUrl: '/images/partners/girlboss-giveaway.jpg',
+    copy:
+      '<p>Self-care isn’t just face masks and bubble baths—it means something different to everyone. This summer, snag some extra cash from Shine & Girlboss to help you practice your style of self-care. Whether it’s a weekend getaway with the VIPs in your life or paying off bills, we got you. </p><p>Enter to win $1,000 plus, a free year long subscription to the <a href="https://go.onelink.me/app/219fc510"/>Shine app</a> & the Girlboss Academy to inspire you all year long.</p>',
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're all signed up!",
+    },
+    additionalFormLink: {
+      label: 'Open to U.S. residents only. Official rules here.',
+      link: '/files/July_2018_1000_Self-Care_Sweeps.pdf',
+    },
+    campaignKey: 'OP57EC434BD4A0CC3EFC5CB959EF7D9824',
+    alphaEmailRequired: true,
+    signUpButtonText: 'Enter',
+  },
   'valentines-day': {
     name: 'Be your own boo.',
     imageUrl: '/images/partners/love_yourself_first.jpg',
-    copy: '<p>Sign up for free texts to show some love to the most important person in your life: you.</p><div class="partner-gif"><img src="/images/partners/falling_hearts.gif"/></div>',
+    copy:
+      '<p>Sign up for free texts to show some love to the most important person in your life: you.</p><div class="partner-gif"><img src="/images/partners/falling_hearts.gif"/></div>',
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
       copy: "You're all signed up!",
@@ -112,7 +147,8 @@ const partnersData = {
   feels: {
     name: 'Embrace all the feels',
     imageUrl: '/images/partners/ALL_THE_FEELS_LANDING_PAGE.png',
-    copy: '<p>Sign up for texts from Shine to help you celebrate & embrace all of your feelings this Mental Health Month.</p>',
+    copy:
+      '<p>Sign up for texts from Shine to help you celebrate & embrace all of your feelings this Mental Health Month.</p>',
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
       copy: "You're all signed up!",
@@ -120,7 +156,8 @@ const partnersData = {
     campaignKey: process.env.ALL_THE_FEELS_MOBILECOMMONS_KEY,
     additionalFormLink: {
       label: 'Read Up on all of the feels',
-      link: 'https://advice.shinetext.com/tags/all-the-feels/?utm_source=Shine&utm_medium=PartnerPage&utm_campaign=AllTheFeels',
+      link:
+        'https://advice.shinetext.com/tags/all-the-feels/?utm_source=Shine&utm_medium=PartnerPage&utm_campaign=AllTheFeels',
     },
   },
   wybmn: {
@@ -132,7 +169,7 @@ const partnersData = {
       copy: "You're all signed up!",
     },
     campaignKey: process.env.MR_ROGERS_MOBILECOMMONS_KEY,
-  }
+  },
 };
 
 export default partnersData;
