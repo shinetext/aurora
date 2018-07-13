@@ -1,0 +1,90 @@
+.referral-rewards {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding: 0 @margin-md;
+  text-align: center;
+
+  h2 {
+    margin: @margin-lg 0;
+  }
+
+  li {
+    float: left;
+    list-style: none;
+    margin: @margin-sm 0 @margin-md 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    width: 33.33333333%;
+
+    @media (max-width: @screen-md-max) {
+      width: 50%;
+    }
+
+    @media (max-width: 620px) {
+      width: 100%;
+    }
+
+    p {
+      height: 44px;
+      margin: @margin-sm auto;
+    }
+
+    .label-container {
+      position: absolute;
+      right: 50%;
+      margin: 0;
+      transform: translateY(-50%);
+      white-space: nowrap;
+
+      h4 {
+        background-color: white;
+        border: 3px solid black;
+        font-family: 'Pangram';
+        font-size: 14px;
+        font-weight: 700;
+        right: -50%;
+        margin: 0;
+        padding: 10px;
+        position: relative;
+        text-transform: uppercase;
+      }
+    }
+
+    .reward-image {
+      background-position: top;
+      background-size: cover;
+      margin: 0 auto;
+      max-width: 300px;
+      height: 200px;
+    }
+
+    .reward-image.-r1 {
+      background-image: url('../images/referrals/referral-reward-1.jpg');
+    }
+
+    .reward-image.-r2 {
+      background-image: url('../images/referrals/referral-reward-2.jpg');
+      background-position: center;
+    }
+
+    .reward-image.-r3 {
+      background-image: url('../images/referrals/referral-reward-3.jpg');
+      background-position-y: -20px;
+    }
+
+    .reward-image.-r4 {
+      background-image: url('../images/referrals/referral-reward-4.jpg');
+    }
+
+    .reward-image.-r5 {
+      background-image: url('../images/referrals/referral-reward-5.jpg');
+      background-position-y: -40px;
+    }
+
+    .reward-image.-r6 {
+      background-image: url('../images/referrals/referral-reward-6.jpg');
+    }
+  }
+}
