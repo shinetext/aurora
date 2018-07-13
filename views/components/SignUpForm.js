@@ -13,7 +13,9 @@ const SignUpForm = props => {
     betaOptInPath,
     extras,
     additionalLink,
-    betaCount
+    betaCount,
+    alphaEmailRequired,
+    signUpButtonText,
   } = props;
 
   let infoView;
@@ -26,7 +28,10 @@ const SignUpForm = props => {
   let alphaView;
   if (!hideAlpha) {
     alphaView = (
-      <AlphaSignUpForm optin={PartnerService.getOptInPath(partnerId)} />
+      <AlphaSignUpForm
+        optin={PartnerService.getOptInPath(partnerId)}
+        emailRequired={alphaEmailRequired}
+      />
     );
   }
 
@@ -64,10 +69,15 @@ const SignUpForm = props => {
   return (
     <div className="SignUpForm col-md-7">
       <div className="container-signup">
-        <h2 dangerouslySetInnerHTML={{ __html: header}} />
+        <h2 dangerouslySetInnerHTML={{ __html: header }} />
         {infoView}
 
-        <form class="signup-form" id="alpha-signup" action="/join" method="post">
+        <form
+          class="signup-form"
+          id="alpha-signup"
+          action="/join"
+          method="post"
+        >
           {alphaView}
           {betaView}
           {extrasView}
@@ -82,7 +92,7 @@ const SignUpForm = props => {
               is
               class="btn"
               type="submit"
-              value="Get Shine Texts"
+              value={signUpButtonText || 'Get Shine Texts'}
               ga-on="click"
               ga-event-category="SignUp"
               ga-event-action="SMS"

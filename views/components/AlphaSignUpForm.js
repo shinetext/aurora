@@ -2,6 +2,19 @@ import React from 'react';
 import FormField from './FormField';
 
 const AlphaSignUpForm = props => {
+  let emailField;
+  if (props.emailRequired) {
+    emailField = (
+      <FormField
+        isRequired
+        label="Email"
+        type="email"
+        fieldName="email"
+        value=""
+      />
+    );
+  }
+
   return (
     <div className="AlphaSignUpForm">
       <FormField
@@ -18,6 +31,7 @@ const AlphaSignUpForm = props => {
         fieldName="phone"
         value=""
       />
+      {emailField}
       <FormField type="hidden" fieldName="opt_in_path" value={props.optin} />
     </div>
   );
