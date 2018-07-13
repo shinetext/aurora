@@ -22,14 +22,14 @@
 
 var routes = {
   /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
-  * etc. depending on your default view engine) your home page.              *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
+   *                                                                          *
+   * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
+   * etc. depending on your default view engine) your home page.              *
+   *                                                                          *
+   * (Alternatively, remove this and add an `index.html` file in your         *
+   * `assets` directory)                                                      *
+   *                                                                          *
+   ***************************************************************************/
 
   '/': 'WebViewController.home',
   '/home': 'WebViewController.home',
@@ -84,6 +84,15 @@ var routes = {
 
   '/referrals/:phone': 'WebViewController.myReferral',
 
+  '/swag': {
+    view: 'swag-page',
+    locals: {
+      title: 'Swag | Shine',
+      layout: 'layouts/subpage.layout',
+      hideFooterCta: true,
+    },
+  },
+
   '/sms-settings': 'WebViewController.smsSettings',
 
   '/speakers': {
@@ -124,14 +133,14 @@ var routes = {
   },
 
   /***************************************************************************
-  *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
-  * for configuration options and examples.                                  *
-  *                                                                          *
-  ***************************************************************************/
+   *                                                                          *
+   * Custom routes here...                                                    *
+   *                                                                          *
+   * If a request to a URL doesn't match any of the custom routes above, it   *
+   * is matched against Sails route blueprints. See `config/blueprints.js`    *
+   * for configuration options and examples.                                  *
+   *                                                                          *
+   ***************************************************************************/
 
   'post /joinSplashList': 'WebActionsController.joinSplashList',
   'post /join': 'WebActionsController.join',

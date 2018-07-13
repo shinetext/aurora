@@ -96,7 +96,7 @@ const partnersData = {
       '<p>Self-care isn’t just face masks and bubble baths—it means something different to everyone. This summer, snag some extra cash from Shine & Girlboss to help you practice your style of self-care. Whether it’s a weekend getaway with the VIPs in your life or paying off bills, we got you. </p><p>Enter to win $1,000 plus, a free year long subscription to the <a href="https://go.onelink.me/app/219fc510"/>Shine app</a> & the Girlboss Academy to inspire you all year long.</p>',
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
-      copy: "You're all signed up!",
+      copy: "You're entered to win!",
     },
     additionalFormLink: {
       label: 'Open to U.S. residents only. Official rules here.',
@@ -113,7 +113,7 @@ const partnersData = {
       '<p>Self-care isn’t just face masks and bubble baths—it means something different to everyone. This summer, snag some extra cash from Shine & Girlboss to help you practice your style of self-care. Whether it’s a weekend getaway with the VIPs in your life or paying off bills, we got you. </p><p>Enter to win $1,000 plus, a free year long subscription to the <a href="https://go.onelink.me/app/219fc510"/>Shine app</a> & the Girlboss Academy to inspire you all year long.</p>',
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
-      copy: "You're all signed up!",
+      copy: "You're entered to win!",
     },
     additionalFormLink: {
       label: 'Open to U.S. residents only. Official rules here.',
