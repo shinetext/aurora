@@ -86,9 +86,11 @@ var routes = {
 
   '/swag': {
     view: 'swag-page',
-    title: 'Swag',
-    layout: 'subpage.layout',
-    hideFooterCta: false,
+    locals: {
+      title: 'Swag | Shine',
+      layout: 'layouts/subpage.layout',
+      hideFooterCta: true,
+    },
   },
 
   '/sms-settings': 'WebViewController.smsSettings',
