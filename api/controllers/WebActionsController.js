@@ -213,6 +213,14 @@ module.exports = {
    * POST /join
    */
   join: function(req, res) {
+    sails.log.info(
+      `Beta's JOIN request: ${req.headers.referer} ${JSON.stringify(
+        req.body,
+        null,
+        2
+      )}`
+    );
+
     let redirectUrl;
 
     // If signing up through partner landing pages, redirect directly to
@@ -317,9 +325,8 @@ module.exports = {
                   'Invalid response received from Photon GET referral/:phone.'
                 );
               } else {
-                sails.log.info('Successful GET referral count');
                 sails.log.info(
-                  `  referralCount: ${resData.body.referralCount}`
+                  `Successful GET referral count: ${resData.body.referralCount}`
                 );
 
                 let referralData = {
@@ -333,14 +340,12 @@ module.exports = {
                     platformId: resData.body.id,
                     referralCode: req.body.referredByCode,
                     referralCount: resData.body.referralCount,
+                    phone: referrerPhone,
                   },
                 };
                 sails.log.info(`${
                   req.body.first_name
-                } just signed up and was referred by ${
-                  referralData.referrer.platformId
-                },
-                  who made ${referralData.referrer.referralCount} referrals.
+                } just signed up. ${JSON.stringify(referralData, null, 2)}
                   Publishing SNS event...`);
 
                 SnsService.publishEvent(
@@ -350,7 +355,7 @@ module.exports = {
               }
             })
             .catch(err => {
-              sails.log.error(err);
+              sails.log.error(`Error getting Referral Count ${err}`);
             });
         }
 
