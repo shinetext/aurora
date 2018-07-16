@@ -340,12 +340,15 @@ module.exports = {
                     platformId: resData.body.id,
                     referralCode: req.body.referredByCode,
                     referralCount: resData.body.referralCount,
-                    phone: referrerPhone,
                   },
                 };
                 sails.log.info(`${
                   req.body.first_name
-                } just signed up. ${JSON.stringify(referralData, null, 2)}
+                } with phone # ${referrerPhone} just signed up. ${JSON.stringify(
+                  referralData,
+                  null,
+                  2
+                )}
                   Publishing SNS event...`);
 
                 SnsService.publishEvent(
