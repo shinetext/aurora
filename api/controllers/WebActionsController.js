@@ -301,15 +301,19 @@ module.exports = {
           referralCode = response.body.referralCode;
         }
 
-        // GET referrer's referral count from Photon
-        //Publish 'referral' event to SNS after new user is sucessfully subscribed to MC
+        // Prior to sending data to SNS, makes sure that:
+        // 1) we have sucessfully added user to MC
+        // 2) new user was referred by someone else (presense of referredByCode)
+        // 3) new user did not refer themselves (referredByCode and referralCode are the same)
         if (
           mcSubscribeSuccessful &&
           req.body.referredByCode &&
-          req.body.referredByCode.length > 0
+          req.body.referredByCode.length > 0 &&
+          req.body.referredByCode !== referralCode
         ) {
           let referrerPhone = ReferralCodes.decode(req.body.referredByCode);
 
+          // GET referrer's referral count and platform id from Photon
           let referralCountRequest = {
             method: 'GET',
             uri:
@@ -326,7 +330,9 @@ module.exports = {
                 );
               } else {
                 sails.log.info(
-                  `Successful GET referral count: ${resData.body.referralCount}`
+                  `Response from GET referral count ${JSON.stringify(
+                    resData.body
+                  )}`
                 );
 
                 let referralData = {
