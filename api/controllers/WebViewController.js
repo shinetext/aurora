@@ -349,7 +349,7 @@ module.exports = {
     }`;
 
     const twitterShareBody =
-      'A text that sends you a daily self-care advice? Yes, please. Join me %26 sign up for Shine! %23ShineOn';
+      'A text that sends you daily self-care advice? Yes, please. Join me %26 sign up for Shine! %23ShineOn';
     const smsShareBody =
     'Hey! I just signed up for Shine %26 thought you would love this - Shine sends a free, daily motivational text message to make your morning better. Sign up with my link here:';
     const emailShareTitle = "Thought you'd like this!";
