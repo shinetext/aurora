@@ -32,19 +32,21 @@ var routes = {
    ***************************************************************************/
 
   '/': 'WebViewController.home',
-  '/home': 'WebViewController.home',
-
+  '/500': {
+    view: '500',
+  },
+  '/app': 'WebViewController.app',
   '/advice': 'WebViewController.advice',
   '/articles': 'WebViewController.advice',
   '/articles/*': 'WebViewController.articlesRedirect',
-
+  '/c/:campaign': 'WebViewController.campaigns',
+  '/c/:campaign/share': 'WebViewController.campaignReferral',
+  '/campaigns/:campaign': 'WebViewController.campaigns',
+  '/campaigns/:campaign/share': 'WebViewController.campaignReferral',
   '/careers': 'WebViewController.careers',
-  '/jobs': 'WebViewController.jobs',
-
+  '/coming-soon': 'WebViewController.splash',
   '/confirmation': 'WebViewController.confirmation',
-
   '/daily': 'WebViewController.daily',
-
   '/faq': {
     view: 'faq',
     locals: {
@@ -52,18 +54,11 @@ var routes = {
       layout: 'layouts/subpage.layout',
     },
   },
-
+  '/home': 'WebViewController.home',
+  '/jobs': 'WebViewController.jobs',
+  '/nod': 'WebViewController.nod',
   '/p/:partner': 'WebViewController.partners',
   '/partners/:partner': 'WebViewController.partners',
-
-  '/app': 'WebViewController.app',
-  '/coming-soon': 'WebViewController.splash',
-
-  '/campaigns/:campaign': 'WebViewController.campaigns',
-  '/campaigns/:campaign/share': 'WebViewController.campaignReferral',
-  '/c/:campaign': 'WebViewController.campaigns',
-  '/c/:campaign/share': 'WebViewController.campaignReferral',
-
   '/privacy-policy': {
     view: 'privacy-policy',
     locals: {
@@ -71,7 +66,6 @@ var routes = {
       layout: 'layouts/subpage.layout',
     },
   },
-
   '/referrals': {
     view: 'referrals',
     locals: {
@@ -81,9 +75,16 @@ var routes = {
       headerText: 'Shine with friends!',
     },
   },
-
   '/referrals/:phone': 'WebViewController.myReferral',
-
+  '/sms-settings': 'WebViewController.smsSettings',
+  '/speakers': {
+    view: 'speakers',
+    locals: {
+      title: 'Speakers | Shine',
+      layout: 'layouts/subpage.layout',
+    },
+  },
+  '/squad': 'WebViewController.squad',
   '/swag': {
     view: 'swag-page',
     locals: {
@@ -92,19 +93,6 @@ var routes = {
       hideFooterCta: true,
     },
   },
-
-  '/sms-settings': 'WebViewController.smsSettings',
-
-  '/speakers': {
-    view: 'speakers',
-    locals: {
-      title: 'Speakers | Shine',
-      layout: 'layouts/subpage.layout',
-    },
-  },
-
-  '/squad': 'WebViewController.squad',
-
   '/terms-of-service': {
     view: 'terms-of-service',
     locals: {
@@ -112,7 +100,6 @@ var routes = {
       layout: 'layouts/subpage.layout',
     },
   },
-
   '/try-messenger': {
     view: 'try-messenger',
     locals: {
@@ -120,11 +107,6 @@ var routes = {
       layout: 'layouts/subpage.layout',
     },
   },
-
-  '/500': {
-    view: '500',
-  },
-
   '/year1': {
     view: 'year1',
     locals: {

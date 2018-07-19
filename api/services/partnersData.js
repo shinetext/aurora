@@ -75,19 +75,15 @@ const partnersData = {
     campaignKey: process.env.SNAPCHAT_MOBILECOMMONS_KEY,
   },
   'self-care-scholarship-2017': {
-    name: '$500 Easy Self-Care Scholarship - Winter 2018',
+    name: 'The $500 Self-Care Scholarship is no longer running.',
     imageUrl: '/images/partners/scholarship/scholarship-2017-photo.jpg',
     copy:
-      '<p>School can be stressful.</p><p>Sign up to get a free daily text message to help you practice self-care AND get a chance to earn cash for school.</p><p>To enter the $500 scholarship, sign up for <a href="/?utm_source=Shine&utm_medium=Scholarship">Shine</a> texts.</p><p><a href="/images/partners/scholarship/scholarship-winner-denisse.png">Previous Scholarship Winner</a></p>',
+      'However, you can sign up to get a free daily text message from Shine to help you practice self-care and stress less this school year.',
     confirmation: {
       imageUrl: '/images/partners/scholarship/confirmation.gif',
       copy: 'You’ve entered the Shine Self-Care Scholarship!',
     },
-    campaignKey: 'OPF103C6C3AE571FD2082D4B7F18929F5B',
-    additionalFormLink: {
-      label: 'Official Scholarship Rules',
-      link: '/files/Scholarship-Rules-2-7-18.pdf',
-    },
+    campaignKey: 'OPB1AA249928CF5621FE3CA64715CB1B44',
   },
   'summersweeps-girlboss': {
     name: 'Treat yourself this summer with $1,000 from Shine & Girlboss',
@@ -159,6 +155,16 @@ const partnersData = {
       link:
         'https://advice.shinetext.com/tags/all-the-feels/?utm_source=Shine&utm_medium=PartnerPage&utm_campaign=AllTheFeels',
     },
+  },
+  nod: {
+    name: 'A daily text to help you thrive',
+    imageUrl: '/images/homepage/homepage_photo_1.jpg',
+    copy: '<p>Join over 2M people who start their morning with Shine.</p>',
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're all signed up!",
+    },
+    campaignKey: 'OP6DF7962B5D3CCC7F635D6BCD6713F25A',
   },
   wybmn: {
     name: 'Get texts from Shine inspired by Mr. Rogers',
