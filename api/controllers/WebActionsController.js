@@ -326,13 +326,11 @@ module.exports = {
             .then(resData => {
               if (!resData || !resData.body) {
                 sails.log.error(
-                  'Invalid response received from Photon GET referral/:phone.'
+                  'Invalid response from Photon GET referral/:phone.'
                 );
               } else {
                 sails.log.info(
-                  `Response from GET referral count ${JSON.stringify(
-                    resData.body
-                  )}`
+                  `Photon GET referral/:phone ${JSON.stringify(resData.body)}`
                 );
 
                 let referralData = {
