@@ -156,6 +156,16 @@ const partnersData = {
         'https://advice.shinetext.com/tags/all-the-feels/?utm_source=Shine&utm_medium=PartnerPage&utm_campaign=AllTheFeels',
     },
   },
+  nod: {
+    name: 'A daily text to help you thrive',
+    imageUrl: '/images/homepage/homepage_photo_1.jpg',
+    copy: '<p>Join over 2M people who start their morning with Shine.</p>',
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're all signed up!",
+    },
+    campaignKey: 'OP6DF7962B5D3CCC7F635D6BCD6713F25A',
+  },
   wybmn: {
     name: 'Get texts from Shine inspired by Mr. Rogers',
     imageUrl: '/images/partners/mr-rogers-shine.png',
