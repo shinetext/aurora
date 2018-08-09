@@ -14,12 +14,26 @@ export default function() {
             Take back me time with the Shine app. We’ll treat you like the
             friend you’ve always wanted.
           </p>
-          <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
-            <img
-              className="download-button"
-              src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
-            />
-          </a>
+          <div className="download-container">
+            <a
+              className="download-button-link"
+              href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8"
+            >
+              <img
+                className="download-button-img"
+                src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
+              />
+            </a>
+            <a className="download-android-link" href="/coming-soon-android">
+              <p className="download-android-text">
+                Looking For Android?
+                <img
+                  className="download-android-img"
+                  src="/images/app-page/LaunchPage-AndroidRobot.png"
+                />
+              </p>
+            </a>
+          </div>
         </div>
         <div className="right">
           <a href="https://youtu.be/j4C6SBHhSlo" target="_blank">
