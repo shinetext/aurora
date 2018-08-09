@@ -14,6 +14,7 @@ class PartnerApp extends React.Component {
       additionalFormLink,
       betaCount,
       alphaEmailRequired,
+      hideForm,
       signUpButtonText,
     } = this.props;
     const formDetails = {
@@ -25,6 +26,7 @@ class PartnerApp extends React.Component {
       additionalLink: additionalFormLink,
       betaCount,
       alphaEmailRequired,
+      hideForm,
       signUpButtonText,
     };
 
