@@ -2,105 +2,124 @@
 
 <div class="confirmation-page">
 
-<%- partial ('partials/navbar.ejs') %>
+  <%- partial ('partials/navbar.ejs') %>
 
-<div class="header">
+    <div class="header">
 
-  <h1><%= headerText %></h1>
+      <h1>
+        <%= headerText %>
+      </h1>
 
-  <img class="header-image" src="<%= headerImage %>">
+      <img class="header-image" src="<%= headerImage %>">
 
-</div>
-<div class="content">
-
-  <p><% if (fromReferral || fromPartner) { %>
-  Got more friends who would appreciate Shine?<br />
-  Spread some more motiv-affirmation!
-  <% } else if (fromCampaign) { %>
-  <%= bodyCopy %><br />
-  Learn how to get an invite to our <a href="/squad">VIP group</a> and earn free <a href="/referrals">swag</a>.
-  <% } else { %>
-  Want to make it even more official?<br />
-  Learn how to get an invite to our <a href="/squad">VIP group</a> and earn free <a href="/referrals">swag</a>.
-  <% } %></p>
-
-  <% if (referralCode.length > 0) { %>
-
-  <section class="referral-container">
-    <h2>Step 1. Copy your referral link:</h2>
-    <div class="referral-link-container"
-      data-clipboard-text="www.shinetext.com/?r=<%= referralCode %>">
-      <input id="referral-link-url"
-        value="www.shinetext.com/?r=<%= referralCode %>" disabled>
-      <button id="copy-referral-link" data-clipboard-text="www.shinetext.com/?r=<%= referralCode %>">Copy Link</button>
     </div>
-  </section>
+    <div class="content">
 
-  <section class="social-share">
-    <h2>Step 2. Share Away!</h2>
-    <ul class="social-share-icons">
-      <li class="twitter-container">
-        <a href="<%= shareUrls.twitter ? shareUrls.twitter : '#' %>" target="_blank"><div class="twitter icon"></div></a>
-        <label>Tweet</label>
-      </li>
-      <li class="facebook-container">
-        <a href="<%= shareUrls.facebook ? shareUrls.facebook : '#' %>" target="_blank"><div class="facebook icon"></div></a>
-        <label>Share</label>
-      </li>
-      <li class="email-container">
-        <a href="<%= shareUrls.email ? shareUrls.email : '#' %>" target="_blank"><div class="email icon"></div></a>
-        <label>Email</label>
-      </li>
-      <li class="sms-container">
-        <a href="<%= shareUrls.sms ? shareUrls.sms : '#' %>" target="_blank"><div class="sms icon"></div></a>
-        <label>Text</label>
-      </li>
-    </ul>
-  </section>
+      <p>
+        <% if (fromReferral || fromPartner) { %>
+          Got more friends who would appreciate Shine?
+          <br /> Spread some more motiv-affirmation!
+          <% } else if (fromCampaign) { %>
+            <%= bodyCopy %>
+              <br /> Learn how to get an invite to our
+              <a href="/squad">VIP group</a> and earn free
+              <a href="/referrals">swag</a>.
+              <% } else { %>
+                Want to make it even more official?
+                <br /> Learn how to get an invite to our
+                <a href="/squad">VIP group</a> and earn free
+                <a href="/referrals">swag</a>.
+                <% } %>
+      </p>
 
-  <section>
-    <h2>Step 3. Check on your swag!</h2>
-    <div class="phone-input-container">
-      <div class="form-field">
-        <input class="form-control get-referral-phone"
-          name="get-referral-phone-1"
-          id="get-referral-phone-1"
-          data-for="get-referral-phone-1"
-          data-error="invalid-number-error-1"
-          type="tel"
-          value="">
-        <label for="get-referral-phone-1">Phone Number</label>
-      </div>
-      <button class="get-referral-info-btn"
-        data-for="get-referral-phone-1"
-        data-error="invalid-number-error-1">Check</button>
+      <% if (referralCode.length > 0) { %>
+
+        <section class="referral-container">
+          <h2>Step 1. Copy your referral link:</h2>
+          <div class="referral-link-container" data-clipboard-text="www.shinetext.com/?r=<%= referralCode %>">
+            <input id="referral-link-url" value="www.shinetext.com/?r=<%= referralCode %>" disabled>
+            <button id="copy-referral-link" data-clipboard-text="www.shinetext.com/?r=<%= referralCode %>">Copy Link</button>
+          </div>
+        </section>
+
+        <section class="social-share">
+          <ul class="social-share-icons">
+            <li class="twitter-container">
+              <a href="<%= shareUrls.twitter ? shareUrls.twitter : '#' %>" target="_blank">
+                <div class="twitter icon"></div>
+              </a>
+              <label>Tweet</label>
+            </li>
+            <li class="facebook-container">
+              <a href="<%= shareUrls.facebook ? shareUrls.facebook : '#' %>" target="_blank">
+                <div class="facebook icon"></div>
+              </a>
+              <label>Share</label>
+            </li>
+            <li class="email-container">
+              <a href="<%= shareUrls.email ? shareUrls.email : '#' %>" target="_blank">
+                <div class="email icon"></div>
+              </a>
+              <label>Email</label>
+            </li>
+            <li class="sms-container">
+              <a href="<%= shareUrls.sms ? shareUrls.sms : '#' %>" target="_blank">
+                <div class="sms icon"></div>
+              </a>
+              <label>Text</label>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Step 2. Earn swag when your friends join</h2>
+          <%- partial ('partials/swag-block.ejs') %>
+        </section>
+        <section>
+          <h2 style="padding-bottom: 20px;">Your referral count</h2>
+          <div class="referral-info-container">
+            <div class="next-reward">
+              <i class="reward-image-1"></i>
+
+              <div class="next-reward-count">
+                <div>
+                  <span>
+                    0
+                  </span>
+                  / 10
+                </div>
+              </div>
+            </div>
+            <div class="referral-status-link">
+              <p>You can check your referrals progress anytime at
+                <a href="https://shinetext.com/" target="_blank">shinetext.com/invitefriends</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <% } %>
+
+          <section class="join-squad">
+            <h1>Join Shine Squad</h1>
+            <a href="/squad">
+              <button>Find Out How</button>
+            </a>
+          </section>
     </div>
-    <div class="phone-validation-error" id="invalid-number-error-1">Please enter a valid cell phone number.</div>
-  </section>
 
-  <% } %>
-
-  <div class="join-squad">
-    <h1>Join Shine Squad</h1>
-    <a href="/squad">
-      <button>Find Out How</button>
-    </a>
-  </div>
-
-</div>
 
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
 <script>
-// For copying the link to the clipboard
-var clipboard = new Clipboard('.referral-link-container');
-clipboard.on('success', function(e) {
-  $('#copy-referral-link').html('Copied!');
-  e.clearSelection();
+  // For copying the link to the clipboard
+  var clipboard = new Clipboard('.referral-link-container');
+  clipboard.on('success', function (e) {
+    $('#copy-referral-link').html('Copied!');
+    e.clearSelection();
 
-  setTimeout(function() {
-    $('#copy-referral-link').html('Copy Link');
-  }, 3000);
-});
+    setTimeout(function () {
+      $('#copy-referral-link').html('Copy Link');
+    }, 3000);
+  });
 </script>
