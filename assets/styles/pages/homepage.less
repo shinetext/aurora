@@ -406,7 +406,7 @@ font-size: @font-size-homepage-normal;
       text-align: Left;
       align-self: baseline;
       width: 421px;
-      font-color: black;
+      color: black;
       h2 {
         .font-Poppins;
       }
@@ -417,9 +417,45 @@ font-size: @font-size-homepage-normal;
         padding-top: @margin-sm;
         padding-bottom: @margin-sm;
       }
-      a img {
+      .download-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 249.1px;
+        height: 108.7px;
+        margin-top: 10px;
+      }
+      .download-button-img {
         width: 221.1px;
         height: 71.7px;
+      }
+      .download-button-link {
+        max-width: 221.1px;
+      }
+      .download-android-link {
+        max-width: 180px;
+        max-height: 20px;
+      }
+      .download-android-text {
+        font-family: 'Work Sans Regular';
+        font-weight: 400;
+        font-size: 14px;
+        color: black;
+        text-align: left;
+        line-height: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        margin-bottom: 0px;
+        text-decoration: underline;
+      }
+      .download-android-text:hover {
+        color:rgba(226, 160, 37, 0.5);
+      }
+      .download-android-img {
+        height: 18px;
+        width: auto;
+        padding-left: 5px;
+        margin-bottom: 4px;
       }
     }
     .app-image {

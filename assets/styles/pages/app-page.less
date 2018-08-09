@@ -83,9 +83,6 @@
         margin-bottom: 0px;
         text-decoration: underline;
       }
-      .download-android-text:hover {
-        color: #8d8d8d;
-      }
       .download-android-img {
         height: 18px;
         width: auto;
@@ -201,9 +198,48 @@
         padding-left: 40px;
         padding-right: 40px;
       }
-      .mobile-bottom-button {
+
+      .download-container {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 310px;
+        height: 85px;
         margin-top: 10px;
+      }
+      .download-button-img {
+        margin-top: 5px;
         height: 48px;
+        width: 147px;
+
+      }
+      .download-button-link {
+        align-self: center;
+        max-width: 147px;
+      }
+      .download-android-link {
+        align-self: center;
+        max-width: 170px;
+        max-height: 20px;
+      }
+      .download-android-text {
+        font-family: 'Work Sans Regular';
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(25, 25, 25, 1);
+        text-align: left;
+        line-height: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        text-decoration: underline;
+      }
+
+      .download-android-img {
+        height: 18px;
+        width: auto;
+        padding-left: 5px;
+        margin-bottom: 4px;
       }
     }
     .mobile-bottom-bottom {
@@ -395,13 +431,14 @@
       .footer-textarea {
         text-align: center;
         align-self: center;
-        height: 300px;
-        width: 600px;
+        height: 400px;
+        width: 550px;
         background-color: white;
         border-radius: 10px;
         -webkit-box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
         -moz-box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
         box-shadow: 0px 0px 59px -15px rgba(0, 0, 0, 0.78);
+        padding-top: 30px;
 
         h3 {
           .font-Poppins;
@@ -421,9 +458,49 @@
           line-height: 20px;
           padding-bottom: 32px;
         }
-        .footer-download-button {
-          height: 48px;
-          width: 147px;
+        .download-container {
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 550px;
+          height: 108.7px;
+          margin-top: 10px;
+        }
+        .download-button-img {
+          height: 71.7px;
+          width: 221.1px;
+        }
+        .download-button-link {
+          align-self: center;
+          max-width: 221.1px;
+        }
+        .download-android-link {
+          align-self: center;
+          max-height: 20px;
+          max-width: 180px;
+          // padding-top: 15px;
+        }
+        .download-android-text {
+          font-family: 'Work Sans Regular';
+          font-weight: 400;
+          font-size: 14px;
+          color: black;
+          text-align: left;
+          line-height: 0px;
+          padding-bottom: 0px;
+          margin-bottom: 0px;
+          text-decoration: underline;
+          max-width:180px
+        }
+        .download-android-text:hover {
+          color:#8d8d8d;
+        }
+        .download-android-img {
+          height: 18px;
+          width: auto;
+          padding-left: 5px;
+          margin-bottom: 4px;
         }
       }
       .footer-image {

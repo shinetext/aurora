@@ -17,7 +17,7 @@ export default function() {
           <div className="download-container">
             <a
               className="download-button-link"
-              href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8"
+              href="https://shineapp.onelink.me/Unhk/35044d63"
             >
               <img
                 className="download-button-img"
@@ -94,12 +94,26 @@ export default function() {
             Get your me time back with the first mindfulness app that speaks{' '}
             <i>your</i> language.
           </p>
-          <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
-            <img
-              className="footer-download-button"
-              src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
-            />
-          </a>
+          <div className="download-container">
+            <a
+              className="download-button-link"
+              href="https://shineapp.onelink.me/Unhk/35044d63"
+            >
+              <img
+                className="download-button-img"
+                src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
+              />
+            </a>
+            <a className="download-android-link" href="/coming-soon-android">
+              <p className="download-android-text">
+                Looking For Android?
+                <img
+                  className="download-android-img"
+                  src="/images/app-page/LaunchPage-AndroidRobot.png"
+                />
+              </p>
+            </a>
+          </div>
         </div>
         <img
           className="footer-image"
