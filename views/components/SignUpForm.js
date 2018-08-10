@@ -9,7 +9,7 @@ const SignUpForm = props => {
     header,
     info,
     partnerId,
-    hideAlpha,
+    hideForm,
     betaOptInPath,
     extras,
     additionalLink,
@@ -25,15 +25,12 @@ const SignUpForm = props => {
     );
   }
 
-  let alphaView;
-  if (!hideAlpha) {
-    alphaView = (
-      <AlphaSignUpForm
-        optin={PartnerService.getOptInPath(partnerId)}
-        emailRequired={alphaEmailRequired}
-      />
-    );
-  }
+  const alphaView = (
+    <AlphaSignUpForm
+      optin={PartnerService.getOptInPath(partnerId)}
+      emailRequired={alphaEmailRequired}
+    />
+  );
 
   let betaView;
   if (betaOptInPath) {
@@ -57,6 +54,35 @@ const SignUpForm = props => {
     }
   }
 
+  let webform;
+  if (!hideForm) {
+    webform = (
+      <form class="signup-form" id="alpha-signup" action="/join" method="post">
+        {alphaView}
+        {betaView}
+        {extrasView}
+
+        <FormField
+          type="hidden"
+          fieldName="partner"
+          value={partnerId ? partnerId : null}
+        />
+        <div>
+          <input
+            is
+            class="btn"
+            type="submit"
+            value={signUpButtonText || 'Get Shine Texts'}
+            ga-on="click"
+            ga-event-category="SignUp"
+            ga-event-action="SMS"
+            ga-event-label={partnerId}
+          />
+        </div>
+      </form>
+    );
+  }
+
   let additionalLinkView;
   if (additionalLink) {
     additionalLinkView = (
@@ -71,35 +97,7 @@ const SignUpForm = props => {
       <div className="container-signup">
         <h2 dangerouslySetInnerHTML={{ __html: header }} />
         {infoView}
-
-        <form
-          class="signup-form"
-          id="alpha-signup"
-          action="/join"
-          method="post"
-        >
-          {alphaView}
-          {betaView}
-          {extrasView}
-
-          <FormField
-            type="hidden"
-            fieldName="partner"
-            value={partnerId ? partnerId : null}
-          />
-          <div>
-            <input
-              is
-              class="btn"
-              type="submit"
-              value={signUpButtonText || 'Get Shine Texts'}
-              ga-on="click"
-              ga-event-category="SignUp"
-              ga-event-action="SMS"
-              ga-event-label={partnerId}
-            />
-          </div>
-        </form>
+        {webform}
         <Disclaimer />
         {additionalLinkView}
       </div>

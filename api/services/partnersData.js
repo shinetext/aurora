@@ -15,6 +15,9 @@
  *    campaignKeyBeta: 'Optional key for signing up beta users',
  *     betaCount: Number controling the amount of referral input fields to display,
  *    },
+ *    alphaEmailRequired: true/false, // Optional. Add email input field to the signup form
+ *    signUpButtonText: 'Enter', // Optional. Customized text on the submit button
+ *    hideForm: true/false, // Optional. Hides the signup form if set to true
  * }
  */
 const partnersData = {
@@ -86,7 +89,7 @@ const partnersData = {
     campaignKey: 'OPB1AA249928CF5621FE3CA64715CB1B44',
   },
   'summersweeps-girlboss': {
-    name: 'Treat yourself this summer with $1,000 from Shine & Girlboss',
+    name: 'This giveaway is no longer running',
     imageUrl: '/images/partners/girlboss-giveaway.jpg',
     copy:
       '<p>Self-care isn’t just face masks and bubble baths—it means something different to everyone. This summer, snag some extra cash from Shine & Girlboss to help you practice your style of self-care. Whether it’s a weekend getaway with the VIPs in your life or paying off bills, we got you. </p><p>Enter to win $1,000 plus, a free year long subscription to the <a href="https://go.onelink.me/app/219fc510"/>Shine app</a> & the Girlboss Academy to inspire you all year long.</p>',
@@ -101,9 +104,10 @@ const partnersData = {
     campaignKey: 'OP39C0317FB30329CE81C46936C5DFE198',
     alphaEmailRequired: true,
     signUpButtonText: 'Enter',
+    hideForm: true,
   },
   'summersweeps-shine': {
-    name: 'Treat yourself this summer with $1,000 from Shine & Girlboss',
+    name: 'This giveaway is no longer running',
     imageUrl: '/images/partners/girlboss-giveaway.jpg',
     copy:
       '<p>Self-care isn’t just face masks and bubble baths—it means something different to everyone. This summer, snag some extra cash from Shine & Girlboss to help you practice your style of self-care. Whether it’s a weekend getaway with the VIPs in your life or paying off bills, we got you. </p><p>Enter to win $1,000 plus, a free year long subscription to the <a href="https://go.onelink.me/app/219fc510"/>Shine app</a> & the Girlboss Academy to inspire you all year long.</p>',
@@ -118,6 +122,7 @@ const partnersData = {
     campaignKey: 'OP57EC434BD4A0CC3EFC5CB959EF7D9824',
     alphaEmailRequired: true,
     signUpButtonText: 'Enter',
+    hideForm: true,
   },
   'valentines-day': {
     name: 'Be your own boo.',
