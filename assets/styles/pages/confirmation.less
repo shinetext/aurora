@@ -253,9 +253,22 @@
       }
     }
     .referral-status-link {
+      max-width: 500px;
       .font-main-bold;
       font-size: 20px;
       padding: 40px;
+    }
+    @media (max-width: 800px) {
+      flex-direction: column;
+
+      .next-reward {
+        margin-bottom: @margin-md;
+      }
+
+      .share-inputs-container {
+        padding-left: @margin-sm;
+        padding-right: @margin-sm;
+      }
     }
   }
 }
