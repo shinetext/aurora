@@ -9,10 +9,10 @@ export default function() {
             src="/images/app-page/LaunchPage-Logo-Mobile.png"
             className="icon"
           />
-          <h1>You deserve a Mindful Moment.</h1>
+          <h1>Life is complicated— self-care shouldn’t be.</h1>
           <p>
-            Take back me time with the Shine app. We’ll treat you like the
-            friend you’ve always wanted.
+            The Shine app is your daily self-care sidekick, helping you grow one
+            Shine Text or Shine Talk at a time.
           </p>
           <div className="download-container">
             <a

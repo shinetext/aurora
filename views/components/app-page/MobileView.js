@@ -12,10 +12,10 @@ export default function() {
               className="icon"
             />
           </a>
-          <h1>You deserve a Mindful Moment.</h1>
+          <h1>Life is complicated— self-care shouldn’t be.</h1>
           <p>
-            Take back me time with the Shine app. We’ll treat you like the
-            friend you’ve always wanted.
+            The Shine app is your daily self-care sidekick, helping you grow one
+            Shine Text or Shine Talk at a time.
           </p>
         </div>
         <div className="mobile-header-bottom">
@@ -32,10 +32,10 @@ export default function() {
             <a className="download-android-link" href="/coming-soon-android">
               <p className="download-android-text">
                 Looking For Android?
-              <img
-                className="download-android-img"
-                src="/images/app-page/LaunchPage-AndroidRobot.png"
-              />
+                <img
+                  className="download-android-img"
+                  src="/images/app-page/LaunchPage-AndroidRobot.png"
+                />
               </p>
             </a>
           </div>
@@ -63,25 +63,25 @@ export default function() {
             <i>your</i> language.
           </p>
           <div className="download-container">
-          <a
-            className="download-button-link"
-            href="https://shineapp.onelink.me/Unhk/35044d63"
-          >
-            <img
-              className="download-button-img"
-              src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
-            />
-          </a>
-          <a className="download-android-link" href="/coming-soon-android">
-            <p className="download-android-text">
-              Looking For Android?
+            <a
+              className="download-button-link"
+              href="https://shineapp.onelink.me/Unhk/35044d63"
+            >
               <img
-                className="download-android-img"
-                src="/images/app-page/LaunchPage-AndroidRobot.png"
+                className="download-button-img"
+                src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
               />
-            </p>
-          </a>
-        </div>
+            </a>
+            <a className="download-android-link" href="/coming-soon-android">
+              <p className="download-android-text">
+                Looking For Android?
+                <img
+                  className="download-android-img"
+                  src="/images/app-page/LaunchPage-AndroidRobot.png"
+                />
+              </p>
+            </a>
+          </div>
         </div>
         <div className="mobile-bottom-bottom">
           <img

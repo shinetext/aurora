@@ -88,9 +88,13 @@ module.exports = {
       bodyCopy = campaignConfirmation.copy;
     } else {
       headerImage = 'images/confirmation-header-happy-dance.gif';
-      headerText = req.query.referral
-        ? `Thanks for sharing!`
-        : `You're all signed up!`;
+      if (req.query.signup === 'android') {
+        headerText = `You’re all signed up—stay tuned!`;
+      } else {
+        headerText = req.query.referral
+          ? `Thanks for sharing!`
+          : `You're all signed up!`;
+      }
     }
 
     let locals = {
