@@ -35,7 +35,7 @@
       <% if (referralCode.length > 0) { %>
 
         <section class="referral-container">
-          <h2>Step 1. Copy your referral link:</h2>
+          <h2>Step 1.Share your referral link with friends</h2>
           <div class="referral-link-container" data-clipboard-text="www.shinetext.com/?r=<%= referralCode %>">
             <input id="referral-link-url" value="www.shinetext.com/?r=<%= referralCode %>" disabled>
             <button id="copy-referral-link" data-clipboard-text="www.shinetext.com/?r=<%= referralCode %>">Copy Link</button>
@@ -75,18 +75,13 @@
           <%- partial ('partials/swag-block.ejs') %>
         </section>
         <section>
-          <h2 style="padding-bottom: 20px;">Your Referral Count</h2>
+          <h2 style="padding-bottom: 20px;">Track Your Referral Count</h2>
           <div class="referral-info-container">
             <div class="next-reward">
               <i class="reward-image-1"></i>
 
               <div class="next-reward-count">
-                <div>
-                  <span>
-                    0
-                  </span>
-                  / 10
-                </div>
+
               </div>
             </div>
             <div class="referral-status-link">
