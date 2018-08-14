@@ -48,7 +48,7 @@ module.exports = {
       .update(EMAIL.toLowerCase())
       .digest('hex');
     let redirectUrl = '/confirmation?signup=android';
-     const mailchimpUpdateRequest = {
+    const mailchimpUpdateRequest = {
       method: 'PATCH',
       uri: `${sails.config.globals.mailchimpApiUrl}/lists/${
         sails.config.globals.mailchimpListId
@@ -60,11 +60,11 @@ module.exports = {
       },
       body: {
         status: 'subscribed',
-        // Subscribe users to Shine Splash App Group
+        // Subscribe users to Shine App Splash / Android Interest Group
         interests: { c25f600d17: true },
       },
     };
-     const mailchimpSubscribeRequest = {
+    const mailchimpSubscribeRequest = {
       method: 'POST',
       uri: `${sails.config.globals.mailchimpApiUrl}/lists/${
         sails.config.globals.mailchimpListId
@@ -80,14 +80,14 @@ module.exports = {
         merge_fields: {
           FNAME: FNAME,
         },
-        interests: { c25f600d17: true }, // Subscribe users to Shine Splash App Group
+        interests: { c25f600d17: true }, // Subscribe users to Shine App Splash / Android Interest Group
       },
     };
-     return Promise.coroutine(function*() {
+    return Promise.coroutine(function*() {
       try {
         let patchRequest = yield request.patchAsync(mailchimpUpdateRequest);
         let postRequest;
-         if (patchRequest.statusCode === 200) {
+        if (patchRequest.statusCode === 200) {
           sails.log.info('Successful MailChimp update');
           return res.redirect(redirectUrl);
         } else if (patchRequest.statusCode === 404) {
