@@ -59,8 +59,7 @@ export default function() {
         <div className="mobile-bottom-top">
           <h3 className="mobile-bottom-header">Get the App Now</h3>
           <p className="mobile-bottom-subtitle">
-            Get your me time back with the first mindfulness app that speaks{' '}
-            <i>your</i> language.
+            Making self-care easy so you can live like you want to.
           </p>
           <div className="download-container">
             <a

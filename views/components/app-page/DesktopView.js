@@ -53,9 +53,11 @@ export default function() {
           <div className="textbox">
             <h3>Daily Motivation</h3>
             <p>
-              Need a reminder that you’re doing the best you can? We got you.
-              Wake up to daily Shine Texts to help you practice self-love and
-              remind you that you’re not alone in the struggle.
+              Things you tell yourself: I can’t, I’m not, I won’t. Things Shine
+              tells you: You got this, be kind to yourself, take it one step at
+              a time. Wake up to daily Shine Texts, bite size, research-backed
+              advice to help you practice self-love, get intentional, and
+              realize you’re not alone in the struggle.
             </p>
           </div>
         </div>
@@ -65,11 +67,13 @@ export default function() {
             <img src="/images/app-page/LaunchPage-Purple-Mobile.png" />
           </div>
           <div className="textbox">
-            <h3>Mindful Moments</h3>
+            <h3>Shine Talks</h3>
             <p>
-              Find calm on the fly—around whatever issue you’re struggling with.
-              Whether it’s a toxic friend, dating burnout, or you’re just trying
-              to find some chill in your day, sit back and listen. 🎧
+              Grow on the go with our Shine Talks, mini meditations,
+              affirmations, and inspirational stories that’ll leave you feeling
+              ready to tackle whatevers ahead. Whether it’s a toxic friend,
+              dating burnout, or you’re just trying to find some chill in your
+              day, sit back and listen. 🎧
             </p>
           </div>
         </div>
@@ -80,11 +84,11 @@ export default function() {
             <img src="/images/app-page/LaunchPage-Yellow-Mobile.png" />
           </div>
           <div className="textbox">
-            <h3>Shine On Demand</h3>
+            <h3>Check In With Yourself</h3>
             <p>
-              Customize your Mindful Moments by sharing more about your
-              situation. It’s like a cross between meditation and a call with a
-              friend. 💯
+              Invest in yourself daily with our check-in feature. We’ll prompt
+              you to log what you’re grateful for and what you’re doing to feel
+              good—it’s like a journal you finally won’t forget to fill out.
             </p>
           </div>
         </div>
@@ -92,10 +96,7 @@ export default function() {
       <div className="desktop-footer scrollify-section">
         <div className="footer-textarea">
           <h3>Get Shine Now</h3>
-          <p>
-            Get your me time back with the first mindfulness app that speaks{' '}
-            <i>your</i> language.
-          </p>
+          <p>Making self-care easy so you can live like you want to.</p>
           <div className="download-container">
             <a
               className="download-button-link"
