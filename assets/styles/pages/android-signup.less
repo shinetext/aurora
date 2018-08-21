@@ -11,7 +11,7 @@
 @color-label: rgba(141, 141, 141, 1);
 @margin-splash-sm: 28pt;
 
- .container-splash-lead {
+.container-splash-lead {
   padding: 0;
   margin-bottom: 0;
   background-image: url('https://images.ctfassets.net/awpxl2koull4/1YR7B1gPD2ueqKwAC4yc22/77e1316800611af0184429dc57f4264d/Mobile-background-Y.png');
@@ -54,11 +54,11 @@
       padding-bottom: 10px;
     }
   }
-   .splash-signup-form {
+  .splash-signup-form {
     max-width: 300pt;
     margin-left: @margin-splash-sm;
   }
-   .form-control {
+  .form-control {
     border: none;
     border-radius: 0;
     color: black;
@@ -67,7 +67,7 @@
     box-shadow: none;
     font-size: @font-size-input;
   }
-   .form-control + label {
+  .form-control + label + span {
     .font-work-sans-regular;
     color: @color-label-sm;
     pointer-events: none;
@@ -77,29 +77,29 @@
     left: 0px;
     margin: 0;
     text-transform: none;
-     -webkit-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
   }
-   .form-control[value=''] + label {
+  .form-control[value=''] + label + span {
     .font-work-sans-regular;
     color: @color-label;
     font-size: @font-size-label;
     top: 10px;
   }
-   .form-control:focus + label {
+  .form-control:focus + label + span {
     .font-work-sans-regular;
     color: @color-label-sm!important;
     font-size: @font-size-label-sm!important;
     top: 5px !important;
   }
-   .splash-form-field {
+  .splash-form-field {
     border-bottom: 2px solid @color-yellow!important;
     margin: @margin-sm 0;
     margin-right: @margin-splash-sm;
     position: relative;
-     label:hover {
+    label:hover {
       cursor: text;
     }
   }
@@ -140,10 +140,10 @@
       width: 158pt;
     }
   }
-   .container-splash-desktop {
+  .container-splash-desktop {
     display: none;
   }
-   @media (min-width: @screen-xs-max) {
+  @media (min-width: @screen-xs-max) {
     .container-splash {
       width: 1280pt;
       height: 847pt;
@@ -155,7 +155,7 @@
       justify-content: space-between;
       max-height: 750pt;
       margin-left: 9%;
-       .desktop-image {
+      .desktop-image {
         background-image: url('https://images.ctfassets.net/awpxl2koull4/4HXDe6VPX2yqWcMI2QSs8o/7873446cb7ae68e4d4f25b130a29e77c/Web-background-Y.png');
         background-repeat: no-repeat;
         background-size: cover;

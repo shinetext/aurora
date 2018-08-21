@@ -20,6 +20,7 @@ export default class AndroidSignUp extends Component {
             <form action="/android-signup" method="post">
               <div className="splash-form-field">
                 <input
+                  required
                   className="form-control"
                   value=""
                   type="text"
@@ -27,9 +28,11 @@ export default class AndroidSignUp extends Component {
                   id="mce-FNAME"
                 />
                 <label htmlFor="mce-FNAME">First Name</label>
+                <span>*</span>
               </div>
               <div className="splash-form-field">
                 <input
+                  required
                   className="form-control"
                   type="email"
                   value=""
@@ -37,6 +40,7 @@ export default class AndroidSignUp extends Component {
                   id="mce-EMAIL"
                 />
                 <label htmlFor="mce-EMAIL">Email</label>
+                <span>*</span>
               </div>
               <div className="splash-bottom">
                 <div className="splash-button">
@@ -72,6 +76,7 @@ export default class AndroidSignUp extends Component {
               <form action="/android-signup" method="post">
                 <div className="splash-form-field">
                   <input
+                    required
                     className="form-control"
                     value=""
                     type="text"
@@ -79,9 +84,11 @@ export default class AndroidSignUp extends Component {
                     id="mce-FNAME"
                   />
                   <label htmlFor="mce-FNAME">First Name</label>
+                  <span>*</span>
                 </div>
                 <div className="splash-form-field">
                   <input
+                    required
                     className="form-control"
                     type="email"
                     value=""
@@ -89,6 +96,7 @@ export default class AndroidSignUp extends Component {
                     id="mce-EMAIL"
                   />
                   <label htmlFor="mce-EMAIL">Email</label>
+                  <span>*</span>
                 </div>
                 <div className="splash-button">
                   <button
