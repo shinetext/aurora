@@ -48,24 +48,7 @@ module.exports = {
       .update(EMAIL.toLowerCase())
       .digest('hex');
     let redirectUrl = '/confirmation?signup=android';
-    const mailchimpUpdateRequest = {
-      method: 'PATCH',
-      uri: `${sails.config.globals.mailchimpApiUrl}/lists/${
-        sails.config.globals.mailchimpListId
-      }/members/${memberHash}`,
-      json: true,
-      auth: {
-        user: sails.config.globals.mailchimpApiAuthUser,
-        pass: sails.config.globals.mailchimpApiAuthPass,
-      },
-      body: {
-        status: 'subscribed',
-        // Subscribe users to Shine App Splash / Android Interest Group
-        interests: { c25f600d17: true },
-      },
-    };
-    const mailchimpSubscribeRequest = {
-      method: 'POST',
+    const baseMailchimpRequest = {
       uri: `${sails.config.globals.mailchimpApiUrl}/lists/${
         sails.config.globals.mailchimpListId
       }/members`,
@@ -74,15 +57,28 @@ module.exports = {
         user: sails.config.globals.mailchimpApiAuthUser,
         pass: sails.config.globals.mailchimpApiAuthPass,
       },
+    };
+    const mailchimpUpdateRequest = Object.assign({}, baseMailchimpRequest, {
+      method: 'PATCH',
+      uri: `${baseMailchimpRequest.uri}/${memberHash}`,
+      body: {
+        status: 'subscribed',
+        // Subscribe users to Shine App Splash / Android Interest Group
+        interests: { c25f600d17: true },
+      },
+    });
+    const mailchimpSubscribeRequest = Object.assign({}, baseMailchimpRequest, {
+      method: 'POST',
       body: {
         email_address: EMAIL,
         status: 'subscribed',
         merge_fields: {
           FNAME: FNAME,
         },
-        interests: { c25f600d17: true }, // Subscribe users to Shine App Splash / Android Interest Group
+        // Subscribe users to Shine App Splash / Android Interest Group
+        interests: { c25f600d17: true },
       },
-    };
+    });
     return Promise.coroutine(function*() {
       try {
         let patchRequest = yield request.patchAsync(mailchimpUpdateRequest);
