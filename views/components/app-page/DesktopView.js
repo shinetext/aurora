@@ -5,10 +5,12 @@ export default function() {
     <section className="desktop-container">
       <div className="desktop-first-section scrollify-section">
         <div className="left">
-          <img
-            src="/images/app-page/LaunchPage-Logo-Mobile.png"
-            className="icon"
-          />
+          <a href="/">
+            <img
+              src="/images/app-page/LaunchPage-Logo-Mobile.png"
+              className="icon"
+            />
+          </a>
           <h1>Life is complicated— self-care shouldn’t be.</h1>
           <p>
             The Shine app is your daily self-care sidekick, helping you grow one

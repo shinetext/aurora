@@ -6,10 +6,12 @@ export default class AndroidSignUp extends Component {
       <div className="container-splash-lead">
         <div className="container-splash">
           <div className="splash-top">
-            <img
-              src="/images/app-page/LaunchPage-Logo-Mobile.png"
-              className="splash-logo"
-            />
+            <a href="/">
+              <img
+                src="/images/app-page/LaunchPage-Logo-Mobile.png"
+                className="splash-logo"
+              />
+            </a>
             <div className="splash-header">Hear it first.</div>
             <div className="splash-subtitle">
               Our Android app is in the works—sign up to be the{' '}
@@ -62,10 +64,12 @@ export default class AndroidSignUp extends Component {
         <div className="container-splash-desktop">
           <div className="desktop-container-splash">
             <div className="desktop-splash-top">
-              <img
-                src="/images/app-page/LaunchPage-Logo-Mobile.png"
-                className="desktop-splash-logo"
-              />
+              <a href="/">
+                <img
+                  src="/images/app-page/LaunchPage-Logo-Mobile.png"
+                  className="desktop-splash-logo"
+                />
+              </a>
               <div className="desktop-splash-header">Hear it first.</div>
               <div className="desktop-splash-subtitle">
                 Our Android app is in the works—sign up to be the{' '}
