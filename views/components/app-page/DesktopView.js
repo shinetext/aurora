@@ -71,7 +71,7 @@ export default function() {
             <p>
               Grow on the go with our Shine Talks, mini meditations,
               affirmations, and inspirational stories that’ll leave you feeling
-              ready to tackle whatevers ahead. Whether it’s a toxic friend,
+              ready to tackle whatever's ahead. Whether it’s a toxic friend,
               dating burnout, or you’re just trying to find some chill in your
               day, sit back and listen. 🎧
             </p>

@@ -12,7 +12,7 @@ export default function() {
       <TimelineItem
         imageSrc="images/app-page/LaunchPage-Green-Mobile.png"
         header="Shine Talks"
-        subtitle="Grow on the go with our Shine Talks, mini meditations, affirmations, and inspirational stories that’ll leave you feeling ready to tackle whatevers ahead. Whether it’s a toxic friend, dating burnout, or you’re just trying to find some chill in your day, sit back and listen. 🎧"
+        subtitle="Grow on the go with our Shine Talks, mini meditations, affirmations, and inspirational stories that’ll leave you feeling ready to tackle whatever's ahead. Whether it’s a toxic friend, dating burnout, or you’re just trying to find some chill in your day, sit back and listen. 🎧"
       />
       <TimelineItem
         imageSrc="images/app-page/LaunchPage-Purple-Mobile.png"
