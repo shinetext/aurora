@@ -1,0 +1,229 @@
+@container-splash-lead-height: 847pt;
+@container-splash-lead-width: 1280pt;
+@container-splash-lead-height-mobi: 667pt;
+@container-splash-lead-width-mobi: 375pt;
+@font-size-label: 1em;
+@font-size-label-sm: 0.8em;
+@font-size-splash-header: 3.5em;
+@font-size-splash-subtitle: 18px;
+@font-size-splash-input: 14pt;
+@color-label-sm: rgba(141, 141, 141, 1);
+@color-label: rgba(141, 141, 141, 1);
+@margin-splash-sm: 28pt;
+
+.container-splash-lead {
+  padding: 0;
+  margin-bottom: 0;
+  background-image: url('https://images.ctfassets.net/awpxl2koull4/1YR7B1gPD2ueqKwAC4yc22/77e1316800611af0184429dc57f4264d/Mobile-background-Y.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  .container-splash {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  // Header
+  .splash-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: @margin-splash-sm;
+    margin-right: @margin-splash-sm;
+    .splash-logo {
+      margin-top: 30px;
+      top: 30px;
+      left: 30px;
+      height: 81px;
+    }
+    .splash-header {
+      .font-Poppins;
+      color: rgba(25, 25, 25, 1);
+      text-align: left;
+      margin-top: 0;
+      margin-bottom: 10pt !important;
+      font-size: @font-size-splash-header;
+      line-height: 55px;
+      padding-bottom: 20px;
+    }
+    .splash-subtitle {
+      .font-work-sans-regular;
+      color: @color-label;
+      font-size: @font-size-splash-subtitle;
+      text-align: left;
+      line-height: 20px;
+      padding-bottom: 10px;
+    }
+  }
+  .splash-signup-form {
+    max-width: 300pt;
+    margin-left: @margin-splash-sm;
+  }
+  .form-control {
+    border: none;
+    border-radius: 0;
+    color: black;
+    height: 50px;
+    padding: 30px 0px 10px 0px;
+    box-shadow: none;
+    font-size: @font-size-input;
+  }
+  .form-control + label + span {
+    .font-work-sans-regular;
+    color: @color-label-sm;
+    pointer-events: none;
+    position: absolute;
+    font-size: @font-size-label-sm;
+    top: 5px;
+    left: 0px;
+    margin: 0;
+    text-transform: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+  }
+  .form-control[value=''] + label + span {
+    .font-work-sans-regular;
+    color: @color-label;
+    font-size: @font-size-label;
+    top: 10px;
+  }
+  .form-control:focus + label + span {
+    .font-work-sans-regular;
+    color: @color-label-sm!important;
+    font-size: @font-size-label-sm!important;
+    top: 5px !important;
+  }
+  .splash-form-field {
+    border-bottom: 2px solid @color-yellow!important;
+    margin: @margin-sm 0;
+    margin-right: @margin-splash-sm;
+    position: relative;
+    label:hover {
+      cursor: text;
+    }
+  }
+  .splash-bottom {
+    margin-top: 43.5pt;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .splash-button {
+      flex-basis: 45%;
+      height: 45pt;
+      background-color: black;
+      border-radius: 5pt;
+      button {
+        .font-Poppins;
+        text-transform: uppercase;
+        font-size: 1.1em;
+        color: white;
+        border: none;
+        background-color: black;
+        line-height: 20pt;
+        text-align: center;
+        width: 100%;
+        max-width: 148pt;
+        height: 29pt;
+        margin-top: 8pt;
+        margin-bottom: 8pt;
+        letter-spacing: 2pt;
+      }
+    }
+    .splash-image {
+      flex-basis: 55%;
+      background-image: url('https://images.ctfassets.net/awpxl2koull4/49bXwfVJEAuSoMUW6EQQIU/9ba3c4a768f3efe38bc6406672f24d59/Figure3-mobile.png');
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      background-size: cover;
+      height: 250pt;
+      width: 158pt;
+    }
+  }
+  .container-splash-desktop {
+    display: none;
+  }
+  @media (min-width: @screen-xs-max) {
+    .container-splash {
+      width: 1280pt;
+      height: 847pt;
+      display: none;
+    }
+    .container-splash-desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      max-height: 750pt;
+      margin-left: 9%;
+      .desktop-image {
+        background-image: url('https://images.ctfassets.net/awpxl2koull4/4HXDe6VPX2yqWcMI2QSs8o/7873446cb7ae68e4d4f25b130a29e77c/Web-background-Y.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        height: 800px;
+        width: 100%;
+        .desktop-image-link {
+          max-height: 650px;
+        }
+        a img {
+          border: none;
+          height: 100%;
+          width: 340px;
+          margin-top: 35px;
+        }
+      }
+      .desktop-container-splash {
+        display: flex;
+        flex-direction: column;
+        max-width: 300pt;
+        .desktop-splash-top {
+          margin-top: 15pt;
+          .desktop-splash-logo {
+            top: 163px;
+            left: 254px;
+            height: 65px;
+            width: 65px;
+          }
+          .desktop-splash-header {
+            .font-Poppins;
+            font-size: @font-size-splash-header;
+            margin-bottom: 20pt;
+          }
+          .desktop-splash-subtitle {
+            .font-work-sans-regular;
+            color: @color-label;
+            font-size: @font-size-splash-subtitle;
+            margin-bottom: 10pt;
+          }
+        }
+        .splash-button {
+          margin-top: 52pt;
+          width: 200pt;
+          height: 45pt;
+          background-color: black;
+          border-radius: 5pt;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          button {
+            .font-Poppins;
+            text-transform: uppercase;
+            text-align: center;
+            border: none;
+            margin-top: 8pt;
+            margin-bottom: 8pt;
+            background-color: black;
+            line-height: 20pt;
+            letter-spacing: 2pt;
+            font-size: 1.2em;
+            color: white;
+            width: 179pt;
+            height: 29pt;
+          }
+        }
+      }
+    }
+    background-image: none;
+  }
+}
