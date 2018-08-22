@@ -5,21 +5,37 @@ export default function() {
     <section className="desktop-container">
       <div className="desktop-first-section scrollify-section">
         <div className="left">
-          <img
-            src="/images/app-page/LaunchPage-Logo-Mobile.png"
-            className="icon"
-          />
-          <h1>You deserve a Mindful Moment.</h1>
-          <p>
-            Take back me time with the Shine app. We’ll treat you like the
-            friend you’ve always wanted.
-          </p>
-          <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
+          <a href="/">
             <img
-              className="download-button"
-              src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
+              src="/images/app-page/LaunchPage-Logo-Mobile.png"
+              className="icon"
             />
           </a>
+          <h1>Life is complicated— self-care shouldn’t be.</h1>
+          <p>
+            The Shine app is your daily self-care sidekick, helping you grow one
+            Shine Text or Shine Talk at a time.
+          </p>
+          <div className="download-container">
+            <a
+              className="download-button-link"
+              href="https://shineapp.onelink.me/Unhk/35044d63"
+            >
+              <img
+                className="download-button-img"
+                src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
+              />
+            </a>
+            <a className="download-android-link" href="/coming-soon-android">
+              <p className="download-android-text">
+                Looking For Android?
+                <img
+                  className="download-android-img"
+                  src="/images/app-page/LaunchPage-AndroidRobot.png"
+                />
+              </p>
+            </a>
+          </div>
         </div>
         <div className="right">
           <a href="https://youtu.be/j4C6SBHhSlo" target="_blank">
@@ -37,9 +53,11 @@ export default function() {
           <div className="textbox">
             <h3>Daily Motivation</h3>
             <p>
-              Need a reminder that you’re doing the best you can? We got you.
-              Wake up to daily Shine Texts to help you practice self-love and
-              remind you that you’re not alone in the struggle.
+              Things you tell yourself: I can’t, I’m not, I won’t. Things Shine
+              tells you: You got this, be kind to yourself, take it one step at
+              a time. Wake up to daily Shine Texts, bite size, research-backed
+              advice to help you practice self-love, get intentional, and
+              realize you’re not alone in the struggle.
             </p>
           </div>
         </div>
@@ -49,11 +67,13 @@ export default function() {
             <img src="/images/app-page/LaunchPage-Purple-Mobile.png" />
           </div>
           <div className="textbox">
-            <h3>Mindful Moments</h3>
+            <h3>Shine Talks</h3>
             <p>
-              Find calm on the fly—around whatever issue you’re struggling with.
-              Whether it’s a toxic friend, dating burnout, or you’re just trying
-              to find some chill in your day, sit back and listen. 🎧
+              Grow on the go with our Shine Talks, mini meditations,
+              affirmations, and inspirational stories that’ll leave you feeling
+              ready to tackle whatever's ahead. Whether it’s a toxic friend,
+              dating burnout, or you’re just trying to find some chill in your
+              day, sit back and listen. 🎧
             </p>
           </div>
         </div>
@@ -64,11 +84,11 @@ export default function() {
             <img src="/images/app-page/LaunchPage-Yellow-Mobile.png" />
           </div>
           <div className="textbox">
-            <h3>Shine On Demand</h3>
+            <h3>Check In With Yourself</h3>
             <p>
-              Customize your Mindful Moments by sharing more about your
-              situation. It’s like a cross between meditation and a call with a
-              friend. 💯
+              Invest in yourself daily with our check-in feature. We’ll prompt
+              you to log what you’re grateful for and what you’re doing to feel
+              good—it’s like a journal you finally won’t forget to fill out.
             </p>
           </div>
         </div>
@@ -76,16 +96,27 @@ export default function() {
       <div className="desktop-footer scrollify-section">
         <div className="footer-textarea">
           <h3>Get Shine Now</h3>
-          <p>
-            Get your me time back with the first mindfulness app that speaks{' '}
-            <i>your</i> language.
-          </p>
-          <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
-            <img
-              className="footer-download-button"
-              src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
-            />
-          </a>
+          <p>Making self-care easy so you can live like you want to.</p>
+          <div className="download-container">
+            <a
+              className="download-button-link"
+              href="https://shineapp.onelink.me/Unhk/35044d63"
+            >
+              <img
+                className="download-button-img"
+                src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
+              />
+            </a>
+            <a className="download-android-link" href="/coming-soon-android">
+              <p className="download-android-text">
+                Looking For Android?
+                <img
+                  className="download-android-img"
+                  src="/images/app-page/LaunchPage-AndroidRobot.png"
+                />
+              </p>
+            </a>
+          </div>
         </div>
         <img
           className="footer-image"

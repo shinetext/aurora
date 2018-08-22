@@ -12,16 +12,33 @@ export default function() {
               className="icon"
             />
           </a>
-          <h1>You deserve a Mindful Moment.</h1>
+          <h1>Life is complicated— self-care shouldn’t be.</h1>
           <p>
-            Take back me time with the Shine app. We’ll treat you like the
-            friend you’ve always wanted.
+            The Shine app is your daily self-care sidekick, helping you grow one
+            Shine Text or Shine Talk at a time.
           </p>
         </div>
         <div className="mobile-header-bottom">
-          <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
-            <img src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png" />
-          </a>
+          <div className="download-container">
+            <a
+              className="download-button-link"
+              href="https://shineapp.onelink.me/Unhk/35044d63"
+            >
+              <img
+                className="download-button-img"
+                src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
+              />
+            </a>
+            <a className="download-android-link" href="/coming-soon-android">
+              <p className="download-android-text">
+                Looking For Android?
+                <img
+                  className="download-android-img"
+                  src="/images/app-page/LaunchPage-AndroidRobot.png"
+                />
+              </p>
+            </a>
+          </div>
         </div>
       </section>
       <section className="mobile-middle">
@@ -42,15 +59,28 @@ export default function() {
         <div className="mobile-bottom-top">
           <h3 className="mobile-bottom-header">Get the App Now</h3>
           <p className="mobile-bottom-subtitle">
-            Get your me time back with the first mindfulness app that speaks{' '}
-            <i>your</i> language.
+            Making self-care easy so you can live like you want to.
           </p>
-          <a href="https://itunes.apple.com/us/app/shine-daily-motivation/id1293721589?ls=1&mt=8">
-            <img
-              src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
-              className="mobile-bottom-button"
-            />
-          </a>
+          <div className="download-container">
+            <a
+              className="download-button-link"
+              href="https://shineapp.onelink.me/Unhk/35044d63"
+            >
+              <img
+                className="download-button-img"
+                src="/images/app-page/LaunchPage-AppleStoreBadge-Mobile.png"
+              />
+            </a>
+            <a className="download-android-link" href="/coming-soon-android">
+              <p className="download-android-text">
+                Looking For Android?
+                <img
+                  className="download-android-img"
+                  src="/images/app-page/LaunchPage-AndroidRobot.png"
+                />
+              </p>
+            </a>
+          </div>
         </div>
         <div className="mobile-bottom-bottom">
           <img

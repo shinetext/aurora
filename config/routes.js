@@ -45,6 +45,7 @@ var routes = {
   '/campaigns/:campaign/share': 'WebViewController.campaignReferral',
   '/careers': 'WebViewController.careers',
   '/coming-soon': 'WebViewController.splash',
+  '/coming-soon-android': 'WebViewController.androidSignUp',
   '/confirmation': 'WebViewController.confirmation',
   '/daily': 'WebViewController.daily',
   '/faq': {
@@ -124,6 +125,7 @@ var routes = {
    *                                                                          *
    ***************************************************************************/
 
+  'post /android-signup': 'WebActionsController.androidSignUp',
   'post /joinSplashList': 'WebActionsController.joinSplashList',
   'post /join': 'WebActionsController.join',
   'post /save-settings': 'WebActionsController.saveSettings',
