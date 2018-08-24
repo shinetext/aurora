@@ -44,7 +44,7 @@ export default function() {
       <div className="desktop-second-section">
         <div className="border" />
         <div className="content-sections scrollify-section">
-          <img src="/images/app-page/Phone-CheckInWithYourself.png" />
+          <img src="/images/app-page/Phone-DailyMotivation.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Green-Mobile.png" />
           </div>
