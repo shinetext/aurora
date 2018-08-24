@@ -38,13 +38,13 @@ export default function() {
           </div>
         </div>
         <div className="right">
-          <img src="/images/app-page/Iphone-LifeIsComplicated.png" />
+          <img src="/images/app-page/Phone-LifeIsComplicated.png" />
         </div>
       </div>
       <div className="desktop-second-section">
         <div className="border" />
         <div className="content-sections scrollify-section">
-          <img src="/images/app-page/iPhone-DailyMotivation.png" />
+          <img src="/images/app-page/Phone-CheckInWithYourself.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Green-Mobile.png" />
           </div>
@@ -60,7 +60,7 @@ export default function() {
           </div>
         </div>
         <div className="content-sections scrollify-section">
-          <img src="/images/app-page/iPhone-ShineTalks.png" />
+          <img src="/images/app-page/Phone-ShineTalks.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Purple-Mobile.png" />
           </div>
@@ -77,7 +77,7 @@ export default function() {
         </div>
 
         <div className="content-sections scrollify-section">
-          <img src="/images/app-page/iPhone-CheckInWithYourself.png" />
+          <img src="/images/app-page/Phone-CheckInWithYourself.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Yellow-Mobile.png" />
           </div>
