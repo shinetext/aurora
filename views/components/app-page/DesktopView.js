@@ -38,15 +38,13 @@ export default function() {
           </div>
         </div>
         <div className="right">
-          <a href="https://youtu.be/j4C6SBHhSlo" target="_blank">
-            <img src="/images/app-page/LaunchPage-Video-Mobile.png" />
-          </a>
+          <img src="/images/app-page/Phone-LifeIsComplicated.png" />
         </div>
       </div>
       <div className="desktop-second-section">
         <div className="border" />
         <div className="content-sections scrollify-section">
-          <img src="/images/app-page/iPhone-DailyMotivation.png" />
+          <img src="/images/app-page/Phone-DailyMotivation.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Green-Mobile.png" />
           </div>
@@ -62,7 +60,7 @@ export default function() {
           </div>
         </div>
         <div className="content-sections scrollify-section">
-          <img src="/images/app-page/iPhone-ShineOnDemand.png" />
+          <img src="/images/app-page/Phone-ShineTalks.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Purple-Mobile.png" />
           </div>
@@ -79,7 +77,7 @@ export default function() {
         </div>
 
         <div className="content-sections scrollify-section">
-          <img src="/images/app-page/iPhone-White-MindfulMoments.png" />
+          <img src="/images/app-page/Phone-CheckInWithYourself.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Yellow-Mobile.png" />
           </div>
@@ -96,7 +94,7 @@ export default function() {
       <div className="desktop-footer scrollify-section">
         <div className="footer-textarea">
           <h3>Get Shine Now</h3>
-          <p>Making self-care easy so you can live like you want to.</p>
+          <p>Making self-care easy so you can live like you want.</p>
           <div className="download-container">
             <a
               className="download-button-link"

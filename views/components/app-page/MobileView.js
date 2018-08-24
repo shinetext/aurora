@@ -42,24 +42,15 @@ export default function() {
         </div>
       </section>
       <section className="mobile-middle">
-        <div className="middle-top">
-          <video preload="auto" id="video">
-            <source
-              data-src="/images/app-page/vid-app-5.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-        </div>
         <div className="middle-bottom">
           <Timeline />
         </div>
       </section>
       <section className="mobile-bottom">
         <div className="mobile-bottom-top">
-          <h3 className="mobile-bottom-header">Get the App Now</h3>
+          <h3 className="mobile-bottom-header">Get Shine Now</h3>
           <p className="mobile-bottom-subtitle">
-            Making self-care easy so you can live like you want to.
+            Making self-care easy so you can live like you want.
           </p>
           <div className="download-container">
             <a
