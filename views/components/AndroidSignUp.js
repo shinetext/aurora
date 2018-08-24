@@ -117,13 +117,7 @@ export default class AndroidSignUp extends Component {
             </div>
           </div>
           <div className="desktop-image">
-            <a
-              className="desktop-image-link"
-              href="https://youtu.be/j4C6SBHhSlo"
-              target="_blank"
-            >
-              <img src="/images/app-page/LaunchPage-Video-Mobile.png" />
-            </a>
+            <img src="/images/app-page/Phone-LifeIsComplicated.png" />
           </div>
         </div>
       </div>
