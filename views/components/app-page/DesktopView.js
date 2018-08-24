@@ -38,9 +38,7 @@ export default function() {
           </div>
         </div>
         <div className="right">
-          <a href="https://youtu.be/j4C6SBHhSlo" target="_blank">
-            <img src="/images/app-page/LaunchPage-Video-Mobile.png" />
-          </a>
+          <img src="/images/app-page/Iphone-LifeIsComplicated.png" />
         </div>
       </div>
       <div className="desktop-second-section">
@@ -62,7 +60,7 @@ export default function() {
           </div>
         </div>
         <div className="content-sections scrollify-section">
-          <img src="/images/app-page/iPhone-ShineOnDemand.png" />
+          <img src="/images/app-page/iPhone-ShineTalks.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Purple-Mobile.png" />
           </div>
@@ -79,7 +77,7 @@ export default function() {
         </div>
 
         <div className="content-sections scrollify-section">
-          <img src="/images/app-page/iPhone-White-MindfulMoments.png" />
+          <img src="/images/app-page/iPhone-CheckInWithYourself.png" />
           <div className="quick-hitter-logo">
             <img src="/images/app-page/LaunchPage-Yellow-Mobile.png" />
           </div>
