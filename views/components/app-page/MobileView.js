@@ -57,9 +57,9 @@ export default function() {
       </section>
       <section className="mobile-bottom">
         <div className="mobile-bottom-top">
-          <h3 className="mobile-bottom-header">Get the App Now</h3>
+          <h3 className="mobile-bottom-header">Get Shine Now</h3>
           <p className="mobile-bottom-subtitle">
-            Making self-care easy so you can live like you want to.
+            Making self-care easy so you can live like you want.
           </p>
           <div className="download-container">
             <a

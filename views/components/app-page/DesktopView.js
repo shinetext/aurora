@@ -96,7 +96,7 @@ export default function() {
       <div className="desktop-footer scrollify-section">
         <div className="footer-textarea">
           <h3>Get Shine Now</h3>
-          <p>Making self-care easy so you can live like you want to.</p>
+          <p>Making self-care easy so you can live like you want.</p>
           <div className="download-container">
             <a
               className="download-button-link"
