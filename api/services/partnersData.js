@@ -181,6 +181,31 @@ const partnersData = {
     },
     campaignKey: process.env.MR_ROGERS_MOBILECOMMONS_KEY,
   },
+  'seizetheawkward-shannon': {
+    name: `Listen to Shannon Beveridge's Story`,
+    imageUrl: '/images/partners/seize_awk_shannon.png',
+    copy: `Talking about mental health can be awkward—but it's one of the most important conversations to have. Sign up for Shine to hear how Shannon Beveridge leaned into vulnerable convos, and get texts to help *you* prioritize your mental health.`,
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're all signed up!",
+    },
+    alphaEmailRequired: true,
+    signUpButtonText: 'Get Started',
+    campaignKey: 'OPD60F68F1A3BF4B78A338EC01FC230DB7',
+
+  },
+  'seizetheawkward-orion': {
+    name: `Listen to Orion's Story`,
+    imageUrl: '/images/partners/seize_awk_orion.png',
+    copy: `Talking about mental health can be awkward, but it can really help. Sign up for Shine to listen to how Orion Carloto came face-to-face with her social anxiety + get texts to help you prioritze your mental health.`,
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're all signed up!",
+    },
+    alphaEmailRequired: true,
+    signUpButtonText: 'Get Started',
+    campaignKey: 'OP836EE83472E6391BE0A81A0DEAF35F24',
+  }
 };
 
 export default partnersData;
