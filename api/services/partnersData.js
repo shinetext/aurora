@@ -191,7 +191,7 @@ const partnersData = {
     },
     alphaEmailRequired: true,
     signUpButtonText: 'Get Started',
-    campaignKey: process.env.SEIZE_THE_AWK_SHANNON,
+    campaignKey: 'OPD60F68F1A3BF4B78A338EC01FC230DB7',
 
   },
   'seizetheawkward-orion': {
@@ -204,7 +204,7 @@ const partnersData = {
     },
     alphaEmailRequired: true,
     signUpButtonText: 'Get Started',
-    campaignKey: process.env.SEIZE_THE_AWK_ORION,
+    campaignKey: 'OP836EE83472E6391BE0A81A0DEAF35F24',
   }
 };
 
