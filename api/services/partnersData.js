@@ -67,6 +67,57 @@ const partnersData = {
     },
     campaignKey: process.env.KEYSHIA_MOBILECOMMONS_KEY,
   },
+  morningsweeps: {
+    name: 'Win $1,000 to treat yourself',
+    imageUrl: '/images/partners/shine-theSkimm-sweeps.jpg',
+    copy:
+      "<p>Shine & theSkimm are your morning secret weapons—making it easier to take care of yourself & live smarter. Wouldn't it be great if other parts of your morning were easier ? (*World collectively nods*)</p><p>We got you. Enter to win $1,000 to upgrade your morning routine.</p>",
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're entered to win!",
+    },
+    additionalFormLink: {
+      label: 'Open to U.S. residents only. Official rules here.',
+      link: '/files/Shine_TheSkimm_Morning_Sweeps_Sep2018.pdf',
+    },
+    campaignKey: 'OPBC38B50FF31522DE04C627588499B5A3',
+    alphaEmailRequired: true,
+    signUpButtonText: 'Enter',
+  },
+  'morningsweeps-theskimm': {
+    name: 'Win $1,000 to treat yourself',
+    imageUrl: '/images/partners/shine-theSkimm-sweeps.jpg',
+    copy:
+      "<p>Shine & theSkimm are your morning secret weapons—making it easier to take care of yourself & live smarter. Wouldn't it be great if other parts of your morning were easier ? (*World collectively nods*)</p><p>We got you. Enter to win $1,000 to upgrade your morning routine.</p>",
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're entered to win!",
+    },
+    additionalFormLink: {
+      label: 'Open to U.S. residents only. Official rules here.',
+      link: '/files/Shine_TheSkimm_Morning_Sweeps_Sep2018.pdf',
+    },
+    campaignKey: 'OPBC38B50FF31522DE04C627588499B5A3',
+    alphaEmailRequired: true,
+    signUpButtonText: 'Enter',
+  },
+  'morningsweeps-shine': {
+    name: 'Win $1,000 to treat yourself',
+    imageUrl: '/images/partners/shine-theSkimm-sweeps.jpg',
+    copy:
+      "<p>Shine & theSkimm are your morning secret weapons—making it easier to take care of yourself & live smarter. Wouldn't it be great if other parts of your morning were easier ? (*World collectively nods*)</p><p>We got you. Enter to win $1,000 to upgrade your morning routine.</p>",
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're entered to win!",
+    },
+    additionalFormLink: {
+      label: 'Open to U.S. residents only. Official rules here.',
+      link: '/files/Shine_TheSkimm_Morning_Sweeps_Sep2018.pdf',
+    },
+    campaignKey: 'OP1C964164F0FFDBE1BDEA6DB81F73D8F2',
+    alphaEmailRequired: true,
+    signUpButtonText: 'Enter',
+  },
   snapchat: {
     name: 'Sign up for a daily text to help you feel your best.',
     imageUrl: '/images/partners/snapchat/snapchat-image-4.png',
@@ -192,7 +243,6 @@ const partnersData = {
     alphaEmailRequired: true,
     signUpButtonText: 'Get Started',
     campaignKey: 'OPD60F68F1A3BF4B78A338EC01FC230DB7',
-
   },
   'seizetheawkward-orion': {
     name: `Listen to Orion's Story`,
@@ -205,7 +255,7 @@ const partnersData = {
     alphaEmailRequired: true,
     signUpButtonText: 'Get Started',
     campaignKey: 'OP836EE83472E6391BE0A81A0DEAF35F24',
-  }
+  },
 };
 
 export default partnersData;
