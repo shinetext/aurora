@@ -16,6 +16,7 @@
  *     betaCount: Number controling the amount of referral input fields to display,
  *    },
  *    alphaEmailRequired: true/false, // Optional. Add email input field to the signup form
+ *    customDisclaimer: 'HTML HERE', // Optional. Overrides the default disclaimer
  *    signUpButtonText: 'Enter', // Optional. Customized text on the submit button
  *    hideForm: true/false, // Optional. Hides the signup form if set to true
  * }
@@ -82,6 +83,8 @@ const partnersData = {
     },
     campaignKey: 'OPBC38B50FF31522DE04C627588499B5A3',
     alphaEmailRequired: true,
+    customDisclaimer:
+      'Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a> & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily messages and the daily Skimm email from our partner. Message & data rates may apply. Text STOP to opt-out, HELP for help.',
     signUpButtonText: 'Enter',
   },
   'morningsweeps-shine': {
@@ -99,6 +102,8 @@ const partnersData = {
     },
     campaignKey: 'OP1C964164F0FFDBE1BDEA6DB81F73D8F2',
     alphaEmailRequired: true,
+    customDisclaimer:
+      'Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a> & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily messages and the daily Skimm email from our partner. Message & data rates may apply. Text STOP to opt-out, HELP for help.',
     signUpButtonText: 'Enter',
   },
   snapchat: {
