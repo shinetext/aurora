@@ -14,6 +14,7 @@ class PartnerApp extends React.Component {
       additionalFormLink,
       betaCount,
       alphaEmailRequired,
+      customDisclaimer,
       hideForm,
       signUpButtonText,
     } = this.props;
@@ -26,6 +27,7 @@ class PartnerApp extends React.Component {
       additionalLink: additionalFormLink,
       betaCount,
       alphaEmailRequired,
+      customDisclaimer,
       hideForm,
       signUpButtonText,
     };

@@ -16,6 +16,7 @@ const SignUpForm = props => {
     betaCount,
     alphaEmailRequired,
     signUpButtonText,
+    customDisclaimer,
   } = props;
 
   let infoView;
@@ -98,7 +99,7 @@ const SignUpForm = props => {
         <h2 dangerouslySetInnerHTML={{ __html: header }} />
         {infoView}
         {webform}
-        <Disclaimer />
+        <Disclaimer customHtml={customDisclaimer} />
         {additionalLinkView}
       </div>
     </div>
