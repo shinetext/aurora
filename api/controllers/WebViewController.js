@@ -28,10 +28,10 @@ module.exports = {
   },
 
   /**
-   * Redirect to the Shine Premium (web comversion) landing page.
+   * Redirect to the Shine Premium (web conversion) landing page.
    */
   app: (req, res) => {
-    return res.redirect(301, 'https://premium.shinetext.com/');
+    return res.redirect(301, sails.config.globals.premiumShineBaseUrl);
   },
 
   /**

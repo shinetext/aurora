@@ -38,11 +38,23 @@ module.exports = {
     // Base URL for advice content
     adviceBaseUrl: process.env.ADVICE_BASE_URL,
 
+    // AWS SNS
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    serviceRegion: process.env.AWS_DEFAULT_REGION,
+    snsTopicReferral: process.env.SNS_TOPIC_ARN_REFERRAL,
+
     // Base URL for the Daily Shine content
     dailyShineBaseUrl: process.env.DAILY_SHINE_BASE_URL,
 
     // External url where Shine jobs are posted
     jobsRedirectUrl: process.env.JOBS_REDIRECT_URL,
+
+    // MailChimp
+    mailchimpApiAuthUser: process.env.MAILCHIMP_API_USER,
+    mailchimpApiAuthPass: process.env.MAILCHIMP_API_PASSWORD,
+    mailchimpApiUrl: process.env.MAILCHIMP_API_URL,
+    mailchimpListId: process.env.MAILCHIMP_LIST_ID,
 
     // The Mobile Commons URL to send join requests to
     mcJoinUrl: 'https://secure.mcommons.com/profiles/join',
@@ -54,16 +66,7 @@ module.exports = {
     // The Photon API URL
     photonApiUrl: process.env.PHOTON_API_URL,
 
-    // MailChimp
-    mailchimpApiAuthUser: process.env.MAILCHIMP_API_USER,
-    mailchimpApiAuthPass: process.env.MAILCHIMP_API_PASSWORD,
-    mailchimpApiUrl: process.env.MAILCHIMP_API_URL,
-    mailchimpListId: process.env.MAILCHIMP_LIST_ID,
-
-    // AWS SNS
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    serviceRegion: process.env.AWS_DEFAULT_REGION,
-    snsTopicReferral: process.env.SNS_TOPIC_ARN_REFERRAL,
+    // Base URL for Shine Premium (web conversion) landing page.
+    premiumShineBaseUrl: process.env.PREMIUM_SHINE_BASE_URL,
   },
 };
