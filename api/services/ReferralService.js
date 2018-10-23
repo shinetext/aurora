@@ -46,14 +46,9 @@ module.exports = {
         let numMore = REWARDS[i].count - count;
         let strFriends = numMore == 1 ? 'friend' : 'friends';
         return {
-          message:
-            'Invite ' +
-            numMore +
-            ' more ' +
-            strFriends +
-            ' to get a ' +
-            REWARDS[i].reward +
-            '!',
+          message: `Invite ${numMore} more ${strFriends} to get a ${
+            REWARDS[i].reward
+          }!`,
           count: REWARDS[i].count,
           reward: REWARDS[i].reward,
         };
