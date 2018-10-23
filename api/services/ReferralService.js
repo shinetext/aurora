@@ -6,33 +6,32 @@
  */
 var REWARDS = [
   {
+    count: 5,
+    reward: 'Shine Squad Invitation',
+  },
+  {
     count: 10,
-    reward: 'Shine sticker',
+    reward: 'Shine Sticker',
   },
   {
     count: 20,
-    reward: 'Shine tote',
+    reward: 'Shine T-shirt',
   },
   {
     count: 30,
-    reward: 'Shine t-shirt',
+    reward: 'Shine Journal',
   },
   {
     count: 50,
-    reward: 'Shine call-out',
+    reward: 'Shine Water Bottle',
   },
   {
     count: 100,
-    reward: 'Shine hoodie',
+    reward: 'Shine Hoodie',
   },
-  {
-    count: 500,
-    reward: 'Shine leggings',
-  }
 ];
 
 module.exports = {
-
   /**
    * Gets the text to display that to tease the next level of rewards.
    *
@@ -43,12 +42,13 @@ module.exports = {
     for (let i = 0; i < REWARDS.length; i++) {
       if (count >= REWARDS[i].count) {
         continue;
-      }
-      else {
+      } else {
         let numMore = REWARDS[i].count - count;
         let strFriends = numMore == 1 ? 'friend' : 'friends';
         return {
-          message: 'Invite ' + numMore + ' more ' + strFriends + ' to get a ' + REWARDS[i].reward + '!',
+          message: `Invite ${numMore} more ${strFriends} to get a ${
+            REWARDS[i].reward
+          }!`,
           count: REWARDS[i].count,
           reward: REWARDS[i].reward,
         };
@@ -63,5 +63,4 @@ module.exports = {
       reward: '',
     };
   },
-
 };
