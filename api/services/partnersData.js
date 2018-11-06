@@ -244,6 +244,21 @@ const partnersData = {
     signUpButtonText: 'Get Started',
     campaignKey: 'OP836EE83472E6391BE0A81A0DEAF35F24',
   },
+  'get-app': {
+    name: 'Meet your new self-care sidekick.',
+    imageUrl: '/images/partners/shine-app.jpg',
+    copy:
+      "<p style='font-size: 18px'>1) Wake up daily to Shine Texts: bite-sized, research-backed advice.</p> <p style='font-size: 18px'>2) Listen to Shine Talks on topics like self-love, anxiety, and burnout.</p> <p style='font-size: 18px'>3) Remind yourself what you're grateful for every day.</p> <hr> <p style='font-weight: 800;'>93% of people felt happier and more confident after making Shine part of their daily routine.</p> <p style='font-size: 18px'>Enter your info below to get a text to download our app:</p>",
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "You're all signed up!",
+    },
+    campaignKey: 'OPDB9D9EC3F2E3A13D022DF83A30987B2B',
+    alphaEmailRequired: false,
+    customDisclaimer:
+      'Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a> & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily messages and the daily Skimm email from our partner. Message & data rates may apply. Text STOP to opt-out, HELP for help.',
+    signUpButtonText: 'Enter',
+  },
 };
 
 export default partnersData;
