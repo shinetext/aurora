@@ -244,6 +244,21 @@ const partnersData = {
     signUpButtonText: 'Get Started',
     campaignKey: 'OP836EE83472E6391BE0A81A0DEAF35F24',
   },
+  'fb-text-to-download': {
+    name: 'Meet your new self-care sidekick.',
+    imageUrl: '/images/partners/shine-app.jpg',
+    copy:
+      "<div style='font-size: 18px'><p>1) Wake up daily to Shine Texts: bite-sized, research-backed advice.</p> <p>2) Listen to Shine Talks on topics like self-love, anxiety, and burnout.</p> <p>3) Remind yourself what you're grateful for every day.</p> <hr> <p style='font-weight: 800;'>93% of people felt happier and more confident after making Shine part of their daily routine.</p> <p>Enter your info below to get a text to download our app:</p></div>",
+    confirmation: {
+      imageUrl: '/images/confirmation-header-happy-dance.gif',
+      copy: "We've sent you the text!",
+    },
+    campaignKey: 'OPC242EB5AF6EFE8477E4BEC73301BA67F',
+    alphaEmailRequired: true,
+    customDisclaimer:
+      'Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a> & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily text messages and Shine email newsletters. Message & data rates may apply. Text STOP to opt-out, HELP for help.',
+    signUpButtonText: 'Text me the link!',
+  },
 };
 
 export default partnersData;

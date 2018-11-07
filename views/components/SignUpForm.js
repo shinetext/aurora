@@ -74,10 +74,6 @@ const SignUpForm = props => {
             class="btn"
             type="submit"
             value={signUpButtonText || 'Get Shine Texts'}
-            ga-on="click"
-            ga-event-category="SignUp"
-            ga-event-action="SMS"
-            ga-event-label={partnerId}
           />
         </div>
       </form>
