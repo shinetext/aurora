@@ -251,7 +251,7 @@ const partnersData = {
       "<div style='font-size: 18px'><p>1) Wake up daily to Shine Texts: bite-sized, research-backed advice.</p> <p>2) Listen to Shine Talks on topics like self-love, anxiety, and burnout.</p> <p>3) Remind yourself what you're grateful for every day.</p> <hr> <p style='font-weight: 800;'>93% of people felt happier and more confident after making Shine part of their daily routine.</p> <p>Enter your info below to get a text to download our app:</p></div>",
     confirmation: {
       imageUrl: '/images/confirmation-header-happy-dance.gif',
-      copy: "You're all signed up!",
+      copy: "We've sent you the text!",
     },
     campaignKey: 'OPC242EB5AF6EFE8477E4BEC73301BA67F',
     alphaEmailRequired: true,
