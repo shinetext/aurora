@@ -256,7 +256,7 @@ const partnersData = {
     campaignKey: 'OPC242EB5AF6EFE8477E4BEC73301BA67F',
     alphaEmailRequired: true,
     customDisclaimer:
-      'Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a> & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily messages and the daily Skimm email from our partner. Message & data rates may apply. Text STOP to opt-out, HELP for help.',
+      'Signing up means you agree to our <a href="/terms-of-service">Terms of Service</a> & <a href="/privacy-policy">Privacy Policy</a> and to receive our daily text messages and Shine email newsletters. Message & data rates may apply. Text STOP to opt-out, HELP for help.',
     signUpButtonText: 'Text me the link!',
   },
 };
