@@ -46,6 +46,13 @@ module.exports = {
     return res.redirect(301, '/jobs');
   },
 
+  gift: (req, res) => {
+    return res.redirect(
+      301,
+      `${sails.config.globals.premiumShineBaseUrl}/gift`
+    );
+  },
+
   nod: (req, res) => {
     return res.redirect(301, '/p/nod');
   },
