@@ -55,6 +55,7 @@ var routes = {
       layout: 'layouts/subpage.layout',
     },
   },
+  '/gift': 'WebViewController.gift',
   '/home': 'WebViewController.home',
   '/jobs': 'WebViewController.jobs',
   '/nod': 'WebViewController.nod',
