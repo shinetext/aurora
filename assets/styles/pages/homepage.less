@@ -172,18 +172,24 @@ font-size: @font-size-homepage-normal;
  * "How Shine Works" section
  */
 .how-shine-works {
-  background: black;
+  background-color: rgb(255, 200, 0);
   border-top: 4px solid black;
   padding: 0;
   position: relative;
+  display: flex;
+
+  @media (max-width: @screen-sm-max) {
+    flex-direction: column;
+  }
 
   .product-image {
-    height: 840px;
+    height: auto;
     text-align: center;
+    display: flex;
+    justify-content: center;
     img {
       max-width: 90%;
-      position: relative;
-      top: @margin-md;
+      align-self: center;
     }
 
     @media (max-width: @screen-sm-max) {
@@ -196,7 +202,7 @@ font-size: @font-size-homepage-normal;
 
   .product-description {
     background: white;
-    height: 880px;
+    height: 100%;
     padding: @margin-lg @margin-md @margin-md @margin-md;
 
     ol {
@@ -223,18 +229,18 @@ font-size: @font-size-homepage-normal;
     }
 
     @media (max-width: @screen-md-max) {
-      height: 900px;
+      height: 100%;
       ol {
         width: 100%;
       }
     }
 
     @media (max-width: @screen-sm-max) {
-      height: 900px;
+      height: 100%;
     }
 
     @media (max-width: @screen-xs-max) {
-      height: 1525px;
+      height: 100%;
       ol {
         list-style: none;
         padding-left: 0;
@@ -477,25 +483,32 @@ font-size: @font-size-homepage-normal;
         margin-bottom: 4px;
       }
     }
+    .app-image-container {
+      width: 25%;
+      height: 100%;
+      display: flex;
+      padding-bottom: 5%;
+    }
     .app-image {
-      width: 446.7px;
-      height: 666.6px;
-      background-image: url('/images/app-page/iPhone-ShineOnDemand-half.png');
-      background-size: cover;
+      width: auto;
+      height: auto;
     }
 
     @media (max-width: @screen-sm-min) {
       display: flex;
       flex-direction: column;
 
-      .app-image {
+      .app-image-container {
         width: 95%;
         margin-top: @margin-lg;
-        background-image: url('/images/app-page/iPhone-ShineOnDemand.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
         margin-bottom: 70px;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 5%;
+      }
+      .app-image {
+        width: auto;
+        height: auto;
       }
       .info {
         width: 85%;
