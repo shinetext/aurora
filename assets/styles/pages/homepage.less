@@ -188,7 +188,7 @@ font-size: @font-size-homepage-normal;
     display: flex;
     justify-content: center;
     img {
-      max-width: 293px;
+      max-width: 90%;
       align-self: center;
     }
 
@@ -204,6 +204,12 @@ font-size: @font-size-homepage-normal;
     background: white;
     height: 100%;
     padding: @margin-lg @margin-md @margin-md @margin-md;
+
+    p {
+      font-size: @font-size-homepage-product-description;
+      margin: auto;
+      width: 85%;
+    }
 
     ol {
       width: 85%;
@@ -251,7 +257,7 @@ font-size: @font-size-homepage-normal;
   h2 {
     .font-Poppins;
     color: @color-black;
-    margin-bottom: @margin-lg;
+    margin-bottom: @margin-md;
     text-align: center;
 
     @media (max-width: @screen-sm-max) {
@@ -425,20 +431,29 @@ font-size: @font-size-homepage-normal;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 10%;
+
+    @media (max-width: @screen-sm-min) {
+      padding-bottom: 25%;
+    }
+
     .info {
       display: flex;
       flex-direction: column;
       text-align: Left;
       align-self: baseline;
       width: 421px;
-      color: black;
+      height: 600px;
+      color: #333;
+      justify-content: center;
+
       h2 {
         .font-Poppins;
       }
       p {
-        .font-open-sans-regular;
-        font-size: 14px;
-        line-height: 20px;
+        font-family: 'Pangram';
+        font-size: 20px;
+        line-height: 1.42857143;
         padding-top: @margin-sm;
         padding-bottom: @margin-sm;
       }
@@ -447,7 +462,7 @@ font-size: @font-size-homepage-normal;
         flex-direction: column;
         justify-content: space-between;
         width: 249.1px;
-        height: 108.7px;
+        height: 145px;
         margin-top: 10px;
       }
       .download-button-img {
@@ -461,16 +476,18 @@ font-size: @font-size-homepage-normal;
         max-width: 180px;
         max-height: 20px;
       }
-      .download-android-text {
-        font-family: 'Work Sans Regular';
+      .small-text {
+        font-family: 'Pangram';
         font-weight: 400;
         font-size: 14px;
-        color: black;
+        color: #333;
         text-align: left;
         line-height: 0px;
         padding-bottom: 0px;
         padding-top: 0px;
         margin-bottom: 0px;
+      }
+      .download-android-text {
         text-decoration: underline;
       }
       .download-android-text:hover {
@@ -487,7 +504,6 @@ font-size: @font-size-homepage-normal;
       width: 25%;
       height: 100%;
       display: flex;
-      padding-bottom: 5%;
     }
     .app-image {
       width: auto;
@@ -500,11 +516,8 @@ font-size: @font-size-homepage-normal;
 
       .app-image-container {
         width: 95%;
-        margin-top: @margin-lg;
-        margin-bottom: 70px;
         display: flex;
         justify-content: center;
-        padding-bottom: 5%;
       }
       .app-image {
         width: auto;
