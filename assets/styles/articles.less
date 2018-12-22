@@ -38,6 +38,7 @@
 }
 
 #promoted-articles {
+  padding-bottom: @margin-md;
   padding-top: @margin-md;
 
   h2 {
@@ -107,7 +108,7 @@
   }
 
   .recent-posts-icon {
-    background-image: url("https://images.ctfassets.net/awpxl2koull4/4LPOwGogeAawiQOCS8WuEi/3c120f45ff854e104340bd44e0fc6a09/shine-spotlight-icon.png?w=35&h=35");
+    background-image: url('https://images.ctfassets.net/awpxl2koull4/4LPOwGogeAawiQOCS8WuEi/3c120f45ff854e104340bd44e0fc6a09/shine-spotlight-icon.png?w=35&h=35');
     background-repeat: no-repeat;
     float: left;
     margin: 0 @margin-sm;
@@ -271,7 +272,7 @@
       font-size: @font-size-subtitle;
 
       @media (max-width: @screen-sm-max) {
-        font-size:  @font-size-featured-subtitle-sm;
+        font-size: @font-size-featured-subtitle-sm;
       }
 
       @media (max-width: @screen-xs-max) {
@@ -331,7 +332,7 @@
     }
 
     .featured-category-icon {
-      background-image: url("https://images.ctfassets.net/awpxl2koull4/5VsQehUgAEGUiY2msmawWm/bb11ccea710c363f1f053ce2766ca451/lightning-bolt-reads-icon.png?w=35&h=35");
+      background-image: url('https://images.ctfassets.net/awpxl2koull4/5VsQehUgAEGUiY2msmawWm/bb11ccea710c363f1f053ce2766ca451/lightning-bolt-reads-icon.png?w=35&h=35');
       background-repeat: no-repeat;
       float: left;
       margin-right: @margin-xs;
@@ -388,7 +389,6 @@
    * Items before the main article section
    */
   .pre-article {
-
     #header-author-photo {
       position: absolute;
       left: 50%;
@@ -466,7 +466,7 @@
    * drawn full-width.
    */
   .main-content {
-    background: rgba(255,255,255,1);
+    background: rgba(255, 255, 255, 1);
     margin: 0;
     padding: 0;
     position: absolute;
@@ -496,7 +496,7 @@
       }
 
       p:before {
-        content:"\A";
+        content: '\A';
         border-color: @color-yellow transparent transparent transparent;
         border-style: solid;
         border-width: 50px 200px 0 0;
@@ -522,7 +522,8 @@
       max-width: 100%;
     }
 
-    ol,ul {
+    ol,
+    ul {
       .font-caveat;
 
       font-size: @font-size-article-ol;
