@@ -1,42 +1,46 @@
 <footer>
   <% if (typeof hideFooterCta === 'undefined' || ! hideFooterCta) { %>
-    <div class="footer-cta">
-      <div class="cta-copy">Sign up for a free, daily motivational text message to make your morning better.</div>
-      <% if (typeof view !== 'undefined' && view === 'homepage') { %>
-        <a href="#" onclick="window.scrollTo(0,0);">
-          <div class="signup-button">Sign Up</div>
-        </a>
-        <% } else  { %>
-          <a href="/">
-            <div class="signup-button">Sign Up</div>
-          </a>
-          <% } %>
+  <div class="footer-cta">
+    <div class="cta-copy">
+      Sign up for a free, daily motivational text message to make your morning
+      better.
     </div>
-    <% } %>
-      <div class="social-and-footer-nav">
-        <div class="-social-icons">
-          <a class="-icon-facebook" href="https://www.facebook.com/Shine-Text" target="_blank"></a>
-          <a class="-icon-instagram" href="https://instagram.com/ShineText" target="_blank"></a>
-          <a class="-icon-twitter" href="https://twitter.com/ShineText" target="_blank"></a>
-        </div>
-        <div class="page-links">
-          <a href="/app">Get The App</a>
-          <a href="/advice">Get Advice</a>
-          <a href="/referrals">Invite Friends</a>
-          <a href="/squad">The Squad</a>
-          <a href="/jobs">Careers</a>
-          <a href="/faq">FAQ</a>
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/terms-of-service">Terms of Service</a>
-        </div>
-      </div>
+    <a href="/"> <div class="signup-button">Sign Up</div> </a>
+  </div>
+  <% } %>
+  <div class="social-and-footer-nav">
+    <div class="-social-icons">
+      <a
+        class="-icon-facebook"
+        href="https://www.facebook.com/Shine-Text"
+        target="_blank"
+      ></a>
+      <a
+        class="-icon-instagram"
+        href="https://instagram.com/ShineText"
+        target="_blank"
+      ></a>
+      <a
+        class="-icon-twitter"
+        href="https://twitter.com/ShineText"
+        target="_blank"
+      ></a>
+    </div>
+    <div class="page-links">
+      <a href="/app">Get The App</a> <a href="/advice">Get Advice</a>
+      <a href="/referrals">Invite Friends</a> <a href="/squad">The Squad</a>
+      <a href="/jobs">Careers</a> <a href="/faq">FAQ</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
+    </div>
+  </div>
 </footer>
 
 <!-- @todo HACK: remove the footer's top margin when the footer-cta isn't displayed -->
 <% if (typeof hideFooterCta !== 'undefined' && hideFooterCta) { %>
-  <style>
-    footer {
-      margin-top: 0;
-    }
-  </style>
-  <% } %>
+<style>
+  footer {
+    margin-top: 0;
+  }
+</style>
+<% } %>

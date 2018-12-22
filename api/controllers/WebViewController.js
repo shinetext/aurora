@@ -143,6 +143,7 @@ module.exports = {
       utmSource: req.query.utm_source,
       utmMedium: req.query.utm_medium,
       view: 'homepage',
+      hideFooterCta: true,
     };
 
     return res.view('homepage', locals);
