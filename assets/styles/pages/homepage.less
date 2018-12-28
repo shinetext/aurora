@@ -35,11 +35,11 @@ font-size: @font-size-homepage-normal;
     }
     .signup-download-container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
       width: 100%;
       height: auto;
-      margin: 0px 0px 50px 0px;
+      margin-bottom: 50px;
+      justify-content: center;
     }
     .signup-download-button-img {
       width: 100%;
@@ -47,8 +47,15 @@ font-size: @font-size-homepage-normal;
     }
 
     .signup-download-button-link {
-      max-width: 185px;
+      max-width: 30%;
       align-self: center;
+
+      @media (max-width: @screen-sm-min) {
+        max-width: 50%;
+      }
+      @media (device-width: 768px) {
+        max-width: 30%;
+      }
     }
 
     .form-container {
@@ -427,6 +434,10 @@ font-size: @font-size-homepage-normal;
     }
   }
 
+  /**
+ * Get the Shine App Section
+ */
+
   .info-container {
     display: flex;
     flex-direction: row;
@@ -435,6 +446,8 @@ font-size: @font-size-homepage-normal;
     margin-bottom: 10%;
 
     @media (max-width: @screen-sm-min) {
+      display: flex;
+      flex-direction: column;
       padding-bottom: 25%;
     }
 
@@ -442,11 +455,19 @@ font-size: @font-size-homepage-normal;
       display: flex;
       flex-direction: column;
       text-align: Left;
-      align-self: baseline;
-      width: 421px;
+      width: 455px;
       height: 600px;
       color: #333;
       justify-content: center;
+
+      @media (max-width: @screen-sm-min) {
+        width: 85%;
+        align-self: center;
+        margin-bottom: 15%;
+      }
+      @media (device-width: 768px) {
+        margin-bottom: 0;
+      }
 
       h2 {
         .font-Poppins;
@@ -460,73 +481,72 @@ font-size: @font-size-homepage-normal;
       }
       .download-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-between;
-        width: 249.1px;
-        height: 145px;
-        margin-top: 10px;
+        width: 100%;
+        height: auto;
+        margin: 5% 0 5% 0;
+        align-items: baseline;
+
+        @media (max-width: @screen-sm-min) {
+          align-items: center;
+          flex-direction: column;
+          margin-bottom: 10%;
+        }
+        @media (device-width: 768px) {
+          flex-direction: row;
+          margin-bottom: 5%;
+          justify-content: center;
+        }
       }
       .download-button-img {
-        width: 221.1px;
-        height: 71.7px;
+        width: 100%;
+        height: auto;
       }
       .download-button-link {
-        max-width: 221.1px;
-      }
-      .download-android-link {
-        max-width: 180px;
-        max-height: 20px;
+        max-width: 50%;
+
+        @media (max-width: @screen-sm-min) {
+          max-width: 75%;
+        }
+        @media (device-width: 768px) {
+          max-width: 45%;
+        }
       }
       .small-text {
         font-family: 'Pangram';
         font-weight: 400;
-        font-size: 14px;
+        font-size: 16px;
         color: #333;
-        text-align: left;
+        text-align: center;
         line-height: 0px;
         padding-bottom: 0px;
         padding-top: 0px;
         margin-bottom: 0px;
-      }
-      .download-android-text {
-        text-decoration: underline;
-      }
-      .download-android-text:hover {
-        color: #8d8d8d;
-      }
-      .download-android-img {
-        height: 18px;
-        width: auto;
-        padding-left: 5px;
-        margin-bottom: 4px;
       }
     }
     .app-image-container {
       width: 25%;
       height: 100%;
       display: flex;
-    }
-    .app-image {
-      width: auto;
-      height: auto;
-    }
 
-    @media (max-width: @screen-sm-min) {
-      display: flex;
-      flex-direction: column;
-
-      .app-image-container {
-        width: 95%;
+      @media (max-width: @screen-sm-min) {
+        width: 100%;
         display: flex;
         justify-content: center;
       }
-      .app-image {
-        width: auto;
-        height: auto;
-      }
-      .info {
+    }
+    .app-image {
+      width: 100%;
+      height: 100%;
+
+      @media (max-width: @screen-sm-min) {
         width: 85%;
-        align-self: center;
+        height: 85%;
+      }
+      @media (device-width: 768px) {
+        width: 50%;
+        height: 50%;
       }
     }
   }
