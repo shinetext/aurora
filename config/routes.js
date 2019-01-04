@@ -116,6 +116,23 @@ var routes = {
     },
   },
 
+  // PODCAST PROMO REDIRECTS
+  '/molls': 'WebViewController.podcastPromoRedirect',
+  '/boost': 'WebViewController.podcastPromoRedirect',
+  '/dst': 'WebViewController.podcastPromoRedirect',
+  '/friendzone': 'WebViewController.podcastPromoRedirect',
+  '/forever35': 'WebViewController.podcastPromoRedirect',
+  '/heygirl': 'WebViewController.podcastPromoRedirect',
+  '/hollywood': 'WebViewController.podcastPromoRedirect',
+  '/jvn': 'WebViewController.podcastPromoRedirect',
+  '/happiness': 'WebViewController.podcastPromoRedirect',
+  '/glowingup': 'WebViewController.podcastPromoRedirect',
+  '/smalldoses': 'WebViewController.podcastPromoRedirect',
+  '/happier': 'WebViewController.podcastPromoRedirect',
+  '/ladygang': 'WebViewController.podcastPromoRedirect',
+  '/prettybasic': 'WebViewController.podcastPromoRedirect',
+  '/zigzag': 'WebViewController.podcastPromoRedirect',
+
   /***************************************************************************
    *                                                                          *
    * Custom routes here...                                                    *

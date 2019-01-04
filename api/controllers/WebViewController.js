@@ -68,6 +68,36 @@ module.exports = {
     return res.redirect(301, sails.config.globals.dailyShineBaseUrl);
   },
 
+  /**
+   * Redirect to specific podcast promo page
+   */
+  podcastPromoRedirect: (req, res) => {
+    const podcastDirectories = {
+      molls: 'podcast-plzadvise',
+      boost: 'podcast-dailyboost',
+      dst: 'podcast-dietstartstomorrow',
+      friendzone: 'podcast-friendzone',
+      forever35: 'podcast-forever35',
+      heygirl: 'podcast-heygirl',
+      hollywood: 'podcast-happierinhollywood',
+      jvn: 'podcast-jvn',
+      happiness: 'podcast-scienceofhappiness',
+      glowingup: 'podcast-glowingup',
+      smalldoses: 'podcast-smalldoses',
+      happier: 'podcast-gretchenrubin',
+      ladygang: 'podcast-ladygang',
+      prettybasic: 'podcast-prettybasic',
+      zigzag: 'podcast-zigzag',
+    };
+
+    let originalName = req.url.split('/')[1];
+    let redirectName = podcastDirectories[originalName];
+    return res.redirect(
+      301,
+      `${sails.config.globals.premiumShineBaseUrl}/promo/${redirectName}`
+    );
+  },
+
   ////////////////////////////////////////////////////////////////////////////
 
   squad: (req, res) => {
