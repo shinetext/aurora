@@ -73,21 +73,36 @@ module.exports = {
    */
   podcastPromoRedirect: (req, res) => {
     const podcastDirectories = {
-      molls: 'podcast-plzadvise',
-      boost: 'podcast-dailyboost',
-      dst: 'podcast-dietstartstomorrow',
-      friendzone: 'podcast-friendzone',
-      forever35: 'podcast-forever35',
-      heygirl: 'podcast-heygirl',
-      hollywood: 'podcast-happierinhollywood',
-      jvn: 'podcast-jvn',
-      happiness: 'podcast-scienceofhappiness',
-      glowingup: 'podcast-glowingup',
-      smalldoses: 'podcast-smalldoses',
-      happier: 'podcast-gretchenrubin',
-      ladygang: 'podcast-ladygang',
-      prettybasic: 'podcast-prettybasic',
-      zigzag: 'podcast-zigzag',
+      molls:
+        'plzadvise?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Plz_Advise',
+      boost:
+        'dailyboost?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Daily_Boost',
+      dst:
+        'dietstartstomorrow?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Diet_Starts_Tomorrow',
+      friendzone:
+        'friendzone?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Friend_Zone',
+      forever35:
+        'forever35?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Forever35',
+      heygirl:
+        'heygirl?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Heygirl',
+      hollywood:
+        'happierinhollywood?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Happier_in_Hollywood',
+      jvn:
+        'gettingcuriouswithjvn?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=JVN',
+      happiness:
+        'scienceofhappiness?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Science_of_Happiness',
+      glowingup:
+        'glowingup?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Glowing_Up',
+      smalldoses:
+        'smalldoses?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Small_Doses',
+      happier:
+        'happierwithgretchenrubin?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Happier_with_Gretchen_Rubin',
+      ladygang:
+        'ladygang?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=LadyGang',
+      prettybasic:
+        'prettybasic?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Pretty_Basis',
+      zigzag:
+        'zigzag?utm_source=Veritone_One&utm_medium=podcast&utm_campaign=Zigzag',
     };
 
     let originalName = req.url.split('/')[1];
