@@ -72,22 +72,30 @@ module.exports = {
    * Redirect to specific podcast promo page
    */
   podcastPromoRedirect: (req, res) => {
+    const utmSource = 'utm_source=Veritone_One';
+    const utmMedium = 'utm_medium=podcast';
     const podcastDirectories = {
-      molls: 'podcast-plzadvise',
-      boost: 'podcast-dailyboost',
-      dst: 'podcast-dietstartstomorrow',
-      friendzone: 'podcast-friendzone',
-      forever35: 'podcast-forever35',
-      heygirl: 'podcast-heygirl',
-      hollywood: 'podcast-happierinhollywood',
-      jvn: 'podcast-jvn',
-      happiness: 'podcast-scienceofhappiness',
-      glowingup: 'podcast-glowingup',
-      smalldoses: 'podcast-smalldoses',
-      happier: 'podcast-gretchenrubin',
-      ladygang: 'podcast-ladygang',
-      prettybasic: 'podcast-prettybasic',
-      zigzag: 'podcast-zigzag',
+      awesome: `sortaawesome?${utmSource}&${utmMedium}&utm_campaign=Sorta_Awesome`,
+      boost: `dailyboost?${utmSource}&${utmMedium}&utm_campaign=Daily_Boost`,
+      dst: `dietstartstomorrow?${utmSource}&${utmMedium}&utm_campaign=Diet_Starts_Tomorrow`,
+      feelgood: `feelgood?${utmSource}&${utmMedium}&utm_campaign=Feel_Good`,
+      forever35: `forever35?${utmSource}&${utmMedium}&utm_campaign=Forever35`,
+      friendzone: `friendzone?${utmSource}&${utmMedium}&utm_campaign=Friend_Zone`,
+      glowingup: `glowingup?${utmSource}&${utmMedium}&utm_campaign=Glowing_Up`,
+      happier: `happierwithgretchenrubin?${utmSource}&${utmMedium}&utm_campaign=Happier_with_Gretchen_Rubin`,
+      happiness: `scienceofhappiness?${utmSource}&${utmMedium}&utm_campaign=Science_of_Happiness`,
+      heygirl: `heygirl?${utmSource}&${utmMedium}&utm_campaign=Heygirl`,
+      hollywood: `happierinhollywood?${utmSource}&${utmMedium}&utm_campaign=Happier_in_Hollywood`,
+      jvn: `gettingcuriouswithjvn?${utmSource}&${utmMedium}&utm_campaign=JVN`,
+      ladygang: `ladygang?${utmSource}&${utmMedium}&utm_campaign=LadyGang`,
+      molls: `plzadvise?${utmSource}&${utmMedium}&utm_campaign=Plz_Advise`,
+      mortified: `mortified?${utmSource}&${utmMedium}&utm_campaign=Mortified`,
+      selfie: `selfie?${utmSource}&${utmMedium}&utm_campaign=Selfie`,
+      simple: `simple?${utmSource}&${utmMedium}&utm_campaign=Simple`,
+      sisters: `satellitesisters?${utmSource}&${utmMedium}&utm_campaign=Satellite_Sisters`,
+      smalldoses: `smalldoses?${utmSource}&${utmMedium}&utm_campaign=Small_Doses`,
+      who: `whoweekly?${utmSource}&${utmMedium}&utm_campaign=Who_Weekly`,
+      zigzag: `zigzag?${utmSource}&${utmMedium}&utm_campaign=Zigzag`,
     };
 
     let originalName = req.url.split('/')[1];
