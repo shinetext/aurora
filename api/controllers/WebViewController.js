@@ -78,6 +78,7 @@ module.exports = {
       awesome: `sortaawesome?${utmSource}&${utmMedium}&utm_campaign=Sorta_Awesome`,
       boost: `dailyboost?${utmSource}&${utmMedium}&utm_campaign=Daily_Boost`,
       dst: `dietstartstomorrow?${utmSource}&${utmMedium}&utm_campaign=Diet_Starts_Tomorrow`,
+      feelbetter: `feelbetter?${utmSource}&${utmMedium}&utm_campaign=Feel_Better_Live_More`,
       feelgood: `feelgood?${utmSource}&${utmMedium}&utm_campaign=Feel_Good`,
       forever35: `forever35?${utmSource}&${utmMedium}&utm_campaign=Forever35`,
       friendzone: `friendzone?${utmSource}&${utmMedium}&utm_campaign=Friend_Zone`,

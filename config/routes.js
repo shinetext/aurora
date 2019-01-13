@@ -120,6 +120,7 @@ var routes = {
   '/awesome': 'WebViewController.podcastPromoRedirect',
   '/boost': 'WebViewController.podcastPromoRedirect',
   '/dst': 'WebViewController.podcastPromoRedirect',
+  '/feelbetter': 'WebViewController.podcastPromoRedirect',
   '/feelgood': 'WebViewController.podcastPromoRedirect',
   '/forever35': 'WebViewController.podcastPromoRedirect',
   '/friendzone': 'WebViewController.podcastPromoRedirect',
