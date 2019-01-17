@@ -19,9 +19,9 @@ const ReferralCodes = require('@jonuy/referral-codes');
 module.exports = {
   /**
    * Mobile Commons opt-in path to send on sign up.
-   * https://secure.mcommons.com/campaigns/147689/opt_in_paths/222196
+   * https://secure.mcommons.com/campaigns/184541/opt_in_paths/271856
    */
-  MOBILE_COMMONS_OPTIN: 'OPB1AA249928CF5621FE3CA64715CB1B44',
+  MOBILE_COMMONS_OPTIN: 'OP09D36BD6C2B25D1D27229D572E932783',
 
   /**
    * Mobile Commons SMS sent to people who are sending a referral invite.
