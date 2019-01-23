@@ -119,6 +119,7 @@ var routes = {
   // PODCAST PROMO REDIRECTS
   '/awesome': 'WebViewController.podcastPromoRedirect',
   '/boost': 'WebViewController.podcastPromoRedirect',
+  '/dateme': 'WebViewController.podcastPromoRedirect',
   '/dst': 'WebViewController.podcastPromoRedirect',
   '/feelbetter': 'WebViewController.podcastPromoRedirect',
   '/feelgood': 'WebViewController.podcastPromoRedirect',
@@ -129,6 +130,7 @@ var routes = {
   '/happiness': 'WebViewController.podcastPromoRedirect',
   '/heygirl': 'WebViewController.podcastPromoRedirect',
   '/hollywood': 'WebViewController.podcastPromoRedirect',
+  '/hurdle': 'WebViewController.podcastPromoRedirect',
   '/jvn': 'WebViewController.podcastPromoRedirect',
   '/ladygang': 'WebViewController.podcastPromoRedirect',
   '/molls': 'WebViewController.podcastPromoRedirect',
