@@ -72,31 +72,34 @@ module.exports = {
    * Redirect to specific podcast promo page
    */
   podcastPromoRedirect: (req, res) => {
-    const utmSource = 'utm_source=Veritone_One';
+    const utmSourceVeritone = 'utm_source=Veritone_One';
+    const utmSourcePartner = 'utm_source=Partner';
     const utmMedium = 'utm_medium=podcast';
     const podcastDirectories = {
-      awesome: `sortaawesome?${utmSource}&${utmMedium}&utm_campaign=Sorta_Awesome`,
-      boost: `dailyboost?${utmSource}&${utmMedium}&utm_campaign=Daily_Boost`,
-      dst: `dietstartstomorrow?${utmSource}&${utmMedium}&utm_campaign=Diet_Starts_Tomorrow`,
-      feelbetter: `feelbetter?${utmSource}&${utmMedium}&utm_campaign=Feel_Better_Live_More`,
-      feelgood: `feelgood?${utmSource}&${utmMedium}&utm_campaign=Feel_Good`,
-      forever35: `forever35?${utmSource}&${utmMedium}&utm_campaign=Forever35`,
-      friendzone: `friendzone?${utmSource}&${utmMedium}&utm_campaign=Friend_Zone`,
-      glowingup: `glowingup?${utmSource}&${utmMedium}&utm_campaign=Glowing_Up`,
-      happier: `happierwithgretchenrubin?${utmSource}&${utmMedium}&utm_campaign=Happier_with_Gretchen_Rubin`,
-      happiness: `scienceofhappiness?${utmSource}&${utmMedium}&utm_campaign=Science_of_Happiness`,
-      heygirl: `heygirl?${utmSource}&${utmMedium}&utm_campaign=Heygirl`,
-      hollywood: `happierinhollywood?${utmSource}&${utmMedium}&utm_campaign=Happier_in_Hollywood`,
-      jvn: `gettingcuriouswithjvn?${utmSource}&${utmMedium}&utm_campaign=JVN`,
-      ladygang: `ladygang?${utmSource}&${utmMedium}&utm_campaign=LadyGang`,
-      molls: `plzadvise?${utmSource}&${utmMedium}&utm_campaign=Plz_Advise`,
-      mortified: `mortified?${utmSource}&${utmMedium}&utm_campaign=Mortified`,
-      selfie: `selfie?${utmSource}&${utmMedium}&utm_campaign=Selfie`,
-      simple: `simple?${utmSource}&${utmMedium}&utm_campaign=Simple`,
-      sisters: `satellitesisters?${utmSource}&${utmMedium}&utm_campaign=Satellite_Sisters`,
-      smalldoses: `smalldoses?${utmSource}&${utmMedium}&utm_campaign=Small_Doses`,
-      who: `whoweekly?${utmSource}&${utmMedium}&utm_campaign=Who_Weekly`,
-      zigzag: `zigzag?${utmSource}&${utmMedium}&utm_campaign=Zigzag`,
+      awesome: `sortaawesome?${utmSourceVeritone}&${utmMedium}&utm_campaign=Sorta_Awesome`,
+      boost: `dailyboost?${utmSourceVeritone}&${utmMedium}&utm_campaign=Daily_Boost`,
+      dateme: `dateme?${utmSourceVeritone}&${utmMedium}&utm_campaign=Why_Wont_You_Date_Me`,
+      dst: `dietstartstomorrow?${utmSourceVeritone}&${utmMedium}&utm_campaign=Diet_Starts_Tomorrow`,
+      feelbetter: `feelbetter?${utmSourceVeritone}&${utmMedium}&utm_campaign=Feel_Better_Live_More`,
+      feelgood: `feelgood?${utmSourceVeritone}&${utmMedium}&utm_campaign=Feel_Good`,
+      forever35: `forever35?${utmSourceVeritone}&${utmMedium}&utm_campaign=Forever35`,
+      friendzone: `friendzone?${utmSourceVeritone}&${utmMedium}&utm_campaign=Friend_Zone`,
+      glowingup: `glowingup?${utmSourceVeritone}&${utmMedium}&utm_campaign=Glowing_Up`,
+      happier: `happierwithgretchenrubin?${utmSourceVeritone}&${utmMedium}&utm_campaign=Happier_with_Gretchen_Rubin`,
+      happiness: `scienceofhappiness?${utmSourceVeritone}&${utmMedium}&utm_campaign=Science_of_Happiness`,
+      heygirl: `heygirl?${utmSourceVeritone}&${utmMedium}&utm_campaign=Heygirl`,
+      hollywood: `happierinhollywood?${utmSourceVeritone}&${utmMedium}&utm_campaign=Happier_in_Hollywood`,
+      hurdle: `hurdle?${utmSourcePartner}&${utmMedium}&utm_campaign=Hurdle`,
+      jvn: `gettingcuriouswithjvn?${utmSourceVeritone}&${utmMedium}&utm_campaign=JVN`,
+      ladygang: `ladygang?${utmSourceVeritone}&${utmMedium}&utm_campaign=LadyGang`,
+      molls: `plzadvise?${utmSourceVeritone}&${utmMedium}&utm_campaign=Plz_Advise`,
+      mortified: `mortified?${utmSourceVeritone}&${utmMedium}&utm_campaign=Mortified`,
+      selfie: `selfie?${utmSourceVeritone}&${utmMedium}&utm_campaign=Selfie`,
+      simple: `simple?${utmSourceVeritone}&${utmMedium}&utm_campaign=Simple`,
+      sisters: `satellitesisters?${utmSourceVeritone}&${utmMedium}&utm_campaign=Satellite_Sisters`,
+      smalldoses: `smalldoses?${utmSourceVeritone}&${utmMedium}&utm_campaign=Small_Doses`,
+      who: `whoweekly?${utmSourceVeritone}&${utmMedium}&utm_campaign=Who_Weekly`,
+      zigzag: `zigzag?${utmSourceVeritone}&${utmMedium}&utm_campaign=Zigzag`,
     };
 
     let originalName = req.url.split('/')[1];
