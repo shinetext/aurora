@@ -152,7 +152,6 @@ var routes = {
    *                                                                          *
    ***************************************************************************/
 
-  'post /android-signup': 'WebActionsController.androidSignUp',
   'post /joinSplashList': 'WebActionsController.joinSplashList',
   'post /join': 'WebActionsController.join',
   'post /save-settings': 'WebActionsController.saveSettings',
