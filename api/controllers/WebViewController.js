@@ -11,7 +11,6 @@ import CampaignService from '../services/CampaignService';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import SplashPage from '../../views/components/splashpage/SplashPage';
-import AndroidSignUp from '../../views/components/AndroidSignUp';
 import PartnerApp from '../../views/components/PartnerApp';
 import CampaignApp from '../../views/components/campaigns/CampaignApp';
 import CampaignReferral from '../../views/components/campaigns/CampaignReferral';
@@ -25,6 +24,13 @@ module.exports = {
    */
   advice: (req, res) => {
     return res.redirect(301, sails.config.globals.adviceBaseUrl);
+  },
+
+  /**
+   * Redirect to the homepage now that Android has launched.
+   */
+  androidSignUp: function(req, res) {
+    return res.redirect(301, '/');
   },
 
   /**
@@ -163,7 +169,6 @@ module.exports = {
       fromReferral: req.query.referral ? true : false,
       fromPartner: req.query.partner ? true : false,
       fromCampaign: req.query.campaign ? true : false,
-      fromAndroidSignUp: req.query.signup === 'android' ? true : false,
       phone: req.query.phone ? req.query.phone : '',
       query: req.query,
       referralCode: req.query.referralCode ? req.query.referralCode : '',
@@ -291,27 +296,6 @@ module.exports = {
         hideFooterCta: true,
       };
       return res.view('partner-signup', locals);
-    } catch (err) {
-      sails.log.error(err);
-      return res.view(404);
-    }
-  },
-
-  /**
-   * View for android interest email signup
-   *
-   */
-  androidSignUp: function(req, res) {
-    try {
-      const androidSignUpComponentMarkup = ReactDOMServer.renderToString(
-        <AndroidSignUp />
-      );
-      const locals = {
-        layout: 'layouts/subpage-fullwidth-no-header.layout',
-        androidSignUpComponent: androidSignUpComponentMarkup,
-        hideFooterCta: true,
-      };
-      return res.view('android-signup', locals);
     } catch (err) {
       sails.log.error(err);
       return res.view(404);
