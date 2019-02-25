@@ -75,6 +75,39 @@ module.exports = {
   },
 
   /**
+   * Redirect to specific promo page
+   *
+   */
+  promoRedirect: (req, res) => {
+    const promoId = req.url.split('/')[1];
+    if (promoId === 'favicon.ico') return;
+    const baseUrl = sails.config.globals.premiumShineBaseUrl;
+    Promise.coroutine(function*() {
+      let contentfulReq = {
+        method: 'GET',
+        uri: `https://cdn.contentful.com/spaces/${
+          process.env.CONTENTFUL_SPACE_ID
+        }/entries?access_token=${
+          process.env.CONTENTFUL_ACCESS_TOKEN
+        }&fields.promoId=${promoId}&content_type=promoConfig`,
+        json: true,
+      };
+      try {
+        const result = yield request.getAsync(contentfulReq);
+        if (result.body.total > 0) {
+          res.redirect(
+            301,
+            `${sails.config.globals.premiumShineBaseUrl}/promo/${promoId}`
+          );
+        }
+      } catch (error) {
+        console.log('error: ', error);
+        res.redirect(301, '/');
+      }
+    })();
+  },
+  /**
+   *
    * Redirect to specific podcast promo page
    */
   podcastPromoRedirect: (req, res) => {
@@ -252,8 +285,6 @@ module.exports = {
             'ReferralPage'
           );
         }
-
-        return res.view('my-referrals', locals);
       } catch (err) {
         sails.log.error(err);
         return res.view(500);
