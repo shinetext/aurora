@@ -74,6 +74,34 @@ module.exports = {
     return res.redirect(301, sails.config.globals.dailyShineBaseUrl);
   },
 
+  promoRedirect: (req, res) => {
+    const promoId = req.url.split('/')[1];
+    Promise.coroutine(function*() {
+      let contentfulReq = {
+        method: 'GET',
+        uri: `https://cdn.contentful.com/spaces/${
+          process.env.CONTENTFUL_SPACE_ID
+        }/entries?access_token=${
+          process.env.CONTENTFUL_ACCESS_TOKEN
+        }&fields.promoId=${promoId}&content_type=promoConfig`,
+        json: true,
+      };
+      try {
+        const result = yield request.getAsync(contentfulReq);
+        if (result.body.total > 0) {
+          return res.redirect(
+            301,
+            `https://premium.shinetext.com/promo/${promoId}`
+          );
+        }
+      } catch (error) {
+        console.log('error: ', error);
+        return res.view(404);
+      }
+      return res.view(404);
+    })();
+  },
+
   /**
    * Redirect to specific podcast promo page
    */
@@ -115,7 +143,6 @@ module.exports = {
       `${sails.config.globals.premiumShineBaseUrl}/promo/${redirectName}`
     );
   },
-
   ////////////////////////////////////////////////////////////////////////////
 
   squad: (req, res) => {
