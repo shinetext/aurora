@@ -135,9 +135,7 @@ module.exports = {
       if (isPromo) {
         return res.redirect(
           301,
-          `${
-            sails.config.globals.premiumShineBaseUrl
-          }/promo/${promoId}?${utmSourceVeritone}&${utmMedium}&utm_campaign=${promoId}`
+          `${sails.config.globals.premiumShineBaseUrl}/promo/${promoId}`
         );
       } else if (podcastDirectories[promoId]) {
         return res.redirect(
