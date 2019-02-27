@@ -76,8 +76,12 @@ module.exports = {
 
   promoRedirect: (req, res) => {
     const promoId = req.url.split('/')[1];
+    const utmSourceVeritone = 'utm_source=Veritone_One';
+    const utmMedium = 'utm_medium=podcast';
+
     Promise.coroutine(function*() {
-      let contentfulReq = {
+      let isPromo = false;
+      const contentfulReq = {
         method: 'GET',
         uri: `https://cdn.contentful.com/spaces/${
           process.env.CONTENTFUL_SPACE_ID
@@ -86,19 +90,25 @@ module.exports = {
         }&fields.promoId=${promoId}&content_type=promoConfig`,
         json: true,
       };
+
       try {
-        const result = yield request.getAsync(contentfulReq);
-        if (result.body.total > 0) {
-          return res.redirect(
-            301,
-            `https://premium.shinetext.com/promo/${promoId}`
-          );
+        const response = yield request.getAsync(contentfulReq);
+        if (response.body.total > 0) {
+          isPromo = true;
         }
       } catch (error) {
         console.log('error: ', error);
+        isPromo = false;
+      }
+
+      if (isPromo) {
+        return res.redirect(
+          301,
+          `https://premium.shinetext.com/promo/${promoId}?${utmSourceVeritone}&${utmMedium}&utm_campaign=${promoId}`
+        );
+      } else {
         return res.view(404);
       }
-      return res.view(404);
     })();
   },
 
