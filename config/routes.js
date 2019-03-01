@@ -31,7 +31,7 @@ var routes = {
    *                                                                          *
    ***************************************************************************/
 
-  '/': 'WebViewController.home',
+  '/': 'WebViewController.app',
   '/500': {
     view: '500',
   },
@@ -56,7 +56,7 @@ var routes = {
     },
   },
   '/gift': 'WebViewController.gift',
-  '/home': 'WebViewController.home',
+  '/home': 'WebViewController.app',
   '/jobs': 'WebViewController.jobs',
   '/nod': 'WebViewController.nod',
   '/p/:partner': 'WebViewController.partners',
