@@ -36,8 +36,27 @@ module.exports = {
   /**
    * Redirect to the Shine Premium (web conversion) landing page.
    */
-  app: (req, res) => {
-    return res.redirect(301, sails.config.globals.premiumShineBaseUrl);
+  app: function(req, res) {
+    // @todo To support SMS referrals, we'll continue serving the old homepage
+    // to users who come in from a referral link. Will eventually need another
+    // solution for referrals to work with the app download page too.
+    if (req.query.r) {
+      return this.home(req, res);
+    }
+
+    // Make sure to pass the query string on through the redirect.
+    let query = '';
+    if (req.query) {
+      query += '?';
+      query += Object.entries(req.query)
+        .map(([key, val]) => `${key}=${encodeURIComponent(val)}`)
+        .join('&');
+    }
+
+    return res.redirect(
+      301,
+      `${sails.config.globals.premiumShineBaseUrl}${query}`
+    );
   },
 
   /**
