@@ -114,9 +114,9 @@ module.exports = {
       const contentfulReq = {
         method: 'GET',
         uri: `https://cdn.contentful.com/spaces/${
-          process.env.PROD_CONTENTFUL_SPACE_ID
+          process.env.PROD_CONTENTFUL_WEBAPP_SPACE_ID
         }/entries?access_token=${
-          process.env.PROD_CONTENTFUL_ACCESS_TOKEN
+          process.env.PROD_CONTENTFUL_WEBAPP_ACCESS_TOKEN
         }&fields.promoId=${promoId}&content_type=promoConfig`,
         json: true,
       };
