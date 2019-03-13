@@ -116,32 +116,6 @@ var routes = {
     },
   },
 
-  // PODCAST PROMO REDIRECTS
-  '/awesome': 'WebViewController.podcastPromoRedirect',
-  '/boost': 'WebViewController.podcastPromoRedirect',
-  '/dateme': 'WebViewController.podcastPromoRedirect',
-  '/dst': 'WebViewController.podcastPromoRedirect',
-  '/feelbetter': 'WebViewController.podcastPromoRedirect',
-  '/feelgood': 'WebViewController.podcastPromoRedirect',
-  '/forever35': 'WebViewController.podcastPromoRedirect',
-  '/friendzone': 'WebViewController.podcastPromoRedirect',
-  '/glowingup': 'WebViewController.podcastPromoRedirect',
-  '/happier': 'WebViewController.podcastPromoRedirect',
-  '/happiness': 'WebViewController.podcastPromoRedirect',
-  '/heygirl': 'WebViewController.podcastPromoRedirect',
-  '/hollywood': 'WebViewController.podcastPromoRedirect',
-  '/hurdle': 'WebViewController.podcastPromoRedirect',
-  '/jvn': 'WebViewController.podcastPromoRedirect',
-  '/ladygang': 'WebViewController.podcastPromoRedirect',
-  '/molls': 'WebViewController.podcastPromoRedirect',
-  '/mortified': 'WebViewController.podcastPromoRedirect',
-  '/selfie': 'WebViewController.podcastPromoRedirect',
-  '/simple': 'WebViewController.podcastPromoRedirect',
-  '/sisters': 'WebViewController.podcastPromoRedirect',
-  '/smalldoses': 'WebViewController.podcastPromoRedirect',
-  '/who': 'WebViewController.podcastPromoRedirect',
-  '/zigzag': 'WebViewController.podcastPromoRedirect',
-
   /***************************************************************************
    *                                                                          *
    * Custom routes here...                                                    *
@@ -156,6 +130,12 @@ var routes = {
   'post /join': 'WebActionsController.join',
   'post /save-settings': 'WebActionsController.saveSettings',
   'post /sms-invite': 'WebActionsController.smsInvite',
+
+  '/:promo': {
+    controller: 'WebViewController',
+    action: 'promoRedirect',
+    skipAssets: true,
+  },
 };
 
 /**

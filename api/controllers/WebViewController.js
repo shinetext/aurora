@@ -94,12 +94,13 @@ module.exports = {
   },
 
   /**
-   * Redirect to specific podcast promo page
+   * Redirect to specific promo page
    */
-  podcastPromoRedirect: (req, res) => {
+  promoRedirect: (req, res) => {
+    const promoId = req.url.split('/')[1];
     const utmSourceVeritone = 'utm_source=Veritone_One';
-    const utmSourcePartner = 'utm_source=Partner';
     const utmMedium = 'utm_medium=podcast';
+    const utmSourcePartner = 'utm_source=Partner';
     const podcastDirectories = {
       awesome: `sortaawesome?${utmSourceVeritone}&${utmMedium}&utm_campaign=Sorta_Awesome`,
       boost: `dailyboost?${utmSourceVeritone}&${utmMedium}&utm_campaign=Daily_Boost`,
@@ -127,15 +128,46 @@ module.exports = {
       zigzag: `zigzag?${utmSourceVeritone}&${utmMedium}&utm_campaign=Zigzag`,
     };
 
-    let originalName = req.url.split('/')[1];
-    let redirectName = podcastDirectories[originalName];
-    return res.redirect(
-      301,
-      `${sails.config.globals.premiumShineBaseUrl}/promo/${redirectName}`
-    );
-  },
+    Promise.coroutine(function*() {
+      let isPromo = false;
+      const contentfulReq = {
+        method: 'GET',
+        uri: `https://cdn.contentful.com/spaces/${
+          process.env.PROD_CONTENTFUL_WEBAPP_SPACE_ID
+        }/entries?access_token=${
+          process.env.PROD_CONTENTFUL_WEBAPP_ACCESS_TOKEN
+        }&fields.promoId=${promoId}&content_type=promoConfig`,
+        json: true,
+      };
 
-  ////////////////////////////////////////////////////////////////////////////
+      try {
+        const response = yield request.getAsync(contentfulReq);
+        if (response.body.total > 0) {
+          isPromo = true;
+        }
+      } catch (error) {
+        console.log('error: ', error);
+        isPromo = false;
+      }
+      // If the promotion configuration exists on contenful or in podcast directory redirect users to premium shinetext
+      // else send users to 404 page.
+      if (isPromo) {
+        return res.redirect(
+          301,
+          `${sails.config.globals.premiumShineBaseUrl}/promo/${promoId}`
+        );
+      } else if (podcastDirectories[promoId]) {
+        return res.redirect(
+          301,
+          `${sails.config.globals.premiumShineBaseUrl}/promo/${
+            podcastDirectories[promoId]
+          }`
+        );
+      } else {
+        return res.view(404);
+      }
+    })();
+  },
 
   squad: (req, res) => {
     let locals = {
