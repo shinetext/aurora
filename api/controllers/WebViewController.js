@@ -78,6 +78,10 @@ module.exports = {
     );
   },
 
+  gohome: (req, res) => {
+    return res.redirect(301, `https://gohome.shinetext.com`);
+  },
+
   nod: (req, res) => {
     return res.redirect(301, '/p/nod');
   },
