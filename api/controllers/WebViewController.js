@@ -16,21 +16,51 @@ import CampaignApp from '../../views/components/campaigns/CampaignApp';
 import CampaignReferral from '../../views/components/campaigns/CampaignReferral';
 Promise.promisifyAll(request);
 
+/**
+ * Parses the query object and returns a string that we'll use to pass on the
+ * values through the redirect.
+ *
+ * @param {object} query
+ * @return {string}
+ */
+function compileQueryToString(query) {
+  let result = '';
+  if (query && Object.entries(query).length > 0) {
+    result += '?';
+    result += Object.entries(query)
+      .map(([key, val]) => `${key}=${encodeURIComponent(val)}`)
+      .join('&');
+  }
+
+  return result;
+}
+
+/**
+ * Helper method for a 301 redirect that includes passing on any url queries.
+ *
+ * @param {string} url
+ * @param {object} req
+ * @param {object} res
+ * @return res.redirect()
+ */
+function redirectWithQueries(path, req, res) {
+  return res.redirect(301, `${path}${compileQueryToString(req.query)}`);
+}
+
 module.exports = {
   ////////////////////////////// Redirects ///////////////////////////////////
-
   /**
    * Redirect to the advice page.
    */
   advice: (req, res) => {
-    return res.redirect(301, sails.config.globals.adviceBaseUrl);
+    return redirectWithQueries(sails.config.globals.adviceBaseUrl, req, res);
   },
 
   /**
    * Redirect to the homepage now that Android has launched.
    */
   androidSignUp: function(req, res) {
-    return res.redirect(301, '/');
+    return redirectWithQueries('/', req, res);
   },
 
   /**
@@ -44,18 +74,10 @@ module.exports = {
       return this.home(req, res);
     }
 
-    // Make sure to pass the query string on through the redirect.
-    let query = '';
-    if (req.query) {
-      query += '?';
-      query += Object.entries(req.query)
-        .map(([key, val]) => `${key}=${encodeURIComponent(val)}`)
-        .join('&');
-    }
-
-    return res.redirect(
-      301,
-      `${sails.config.globals.premiumShineBaseUrl}${query}`
+    return redirectWithQueries(
+      sails.config.globals.premiumShineBaseUrl,
+      req,
+      res
     );
   },
 
@@ -64,33 +86,46 @@ module.exports = {
    * a link and don't specify the subdomain, we can try to fix that here.
    */
   articlesRedirect: (req, res) => {
-    return res.redirect(301, `${sails.config.globals.adviceBaseUrl}${req.url}`);
-  },
-
-  careers: (req, res) => {
-    return res.redirect(301, '/jobs');
-  },
-
-  gift: (req, res) => {
-    return res.redirect(
-      301,
-      `${sails.config.globals.premiumShineBaseUrl}/gift`
+    return redirectWithQueries(
+      `${sails.config.globals.adviceBaseUrl}${req.url}`,
+      req,
+      res
     );
   },
 
+  careers: (req, res) => {
+    return redirectWithQueries('/jobs', req, res);
+  },
+
+  gift: (req, res) => {
+    return redirectWithQueries(
+      `${sails.config.globals.premiumShineBaseUrl}/gift`,
+      req,
+      res
+    );
+  },
+
+  gohome: (req, res) => {
+    return redirectWithQueries(`https://gohome.shinetext.com`, req, res);
+  },
+
   nod: (req, res) => {
-    return res.redirect(301, '/p/nod');
+    return redirectWithQueries(`/p/nod`, req, res);
   },
 
   jobs: (req, res) => {
-    return res.redirect(302, `${sails.config.globals.jobsRedirectUrl}`);
+    return redirectWithQueries(sails.config.globals.jobsRedirectUrl, req, res);
   },
 
   /**
    * Redirect to the Daily Shine homepage.
    */
   daily: (req, res) => {
-    return res.redirect(301, sails.config.globals.dailyShineBaseUrl);
+    return redirectWithQueries(
+      sails.config.globals.dailyShineBaseUrl,
+      req,
+      res
+    );
   },
 
   /**
