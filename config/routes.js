@@ -56,7 +56,7 @@ var routes = {
     },
   },
   '/gift': 'WebViewController.gift',
-  '/gohome': 'WebViewController.gohome',
+  '/mentalhealthbreak': 'WebViewController.mentalhealthbreak',
   '/home': 'WebViewController.app',
   '/jobs': 'WebViewController.jobs',
   '/nod': 'WebViewController.nod',
