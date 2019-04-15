@@ -105,8 +105,12 @@ module.exports = {
     );
   },
 
-  gohome: (req, res) => {
-    return redirectWithQueries(`https://gohome.shinetext.com`, req, res);
+  mentalhealthbreak: (req, res) => {
+    return redirectWithQueries(
+      `https://www.nationalmentalhealthbreak.com`,
+      req,
+      res
+    );
   },
 
   nod: (req, res) => {
