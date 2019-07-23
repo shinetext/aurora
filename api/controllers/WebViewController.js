@@ -117,6 +117,13 @@ module.exports = {
     return redirectWithQueries(`/p/nod`, req, res);
   },
 
+  quiz: (req, res) =>
+    redirectWithQueries(
+      `https://premium.shinetext.com/promo/shine-self-care-day`,
+      req,
+      res
+    ),
+
   jobs: (req, res) => {
     return redirectWithQueries(sails.config.globals.jobsRedirectUrl, req, res);
   },
