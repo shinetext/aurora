@@ -60,6 +60,7 @@ var routes = {
   '/home': 'WebViewController.app',
   '/jobs': 'WebViewController.jobs',
   '/nod': 'WebViewController.nod',
+  '/quiz': 'WebViewController.quiz',
   '/p/:partner': 'WebViewController.partners',
   '/partners/:partner': 'WebViewController.partners',
   '/privacy-policy': {
