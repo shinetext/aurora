@@ -93,6 +93,14 @@ module.exports = {
     );
   },
 
+  bumble: (req, res) => {
+    return redirectWithQueries(
+      `https://mailchi.mp/shinetext.com/bumble`,
+      req,
+      res
+    );
+  },
+
   careers: (req, res) => {
     return redirectWithQueries('/jobs', req, res);
   },
@@ -178,11 +186,7 @@ module.exports = {
       let isPromo = false;
       const contentfulReq = {
         method: 'GET',
-        uri: `https://cdn.contentful.com/spaces/${
-          process.env.PROD_CONTENTFUL_WEBAPP_SPACE_ID
-        }/entries?access_token=${
-          process.env.PROD_CONTENTFUL_WEBAPP_ACCESS_TOKEN
-        }&fields.promoId=${promoId}&content_type=promoConfig`,
+        uri: `https://cdn.contentful.com/spaces/${process.env.PROD_CONTENTFUL_WEBAPP_SPACE_ID}/entries?access_token=${process.env.PROD_CONTENTFUL_WEBAPP_ACCESS_TOKEN}&fields.promoId=${promoId}&content_type=promoConfig`,
         json: true,
       };
 
@@ -205,9 +209,7 @@ module.exports = {
       } else if (podcastDirectories[promoId]) {
         return res.redirect(
           301,
-          `${sails.config.globals.premiumShineBaseUrl}/promo/${
-            podcastDirectories[promoId]
-          }`
+          `${sails.config.globals.premiumShineBaseUrl}/promo/${podcastDirectories[promoId]}`
         );
       } else {
         return res.view(404);

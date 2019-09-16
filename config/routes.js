@@ -39,6 +39,7 @@ var routes = {
   '/advice': 'WebViewController.advice',
   '/articles': 'WebViewController.advice',
   '/articles/*': 'WebViewController.articlesRedirect',
+  '/bumble': 'WebViewController.bumble',
   '/c/:campaign': 'WebViewController.campaigns',
   '/c/:campaign/share': 'WebViewController.campaignReferral',
   '/campaigns/:campaign': 'WebViewController.campaigns',
