@@ -70,7 +70,10 @@ module.exports = {
     // @todo To support SMS referrals, we'll continue serving the old homepage
     // to users who come in from a referral link. Will eventually need another
     // solution for referrals to work with the app download page too.
-    if (req.query.r) {
+    //
+    // UPDATE: excluding ?r=sms. It's not a real referral code and it's showing
+    // up in search results, where we'd rather forward people onto the app.
+    if (req.query.r && req.query.r !== 'sms') {
       return this.home(req, res);
     }
 
