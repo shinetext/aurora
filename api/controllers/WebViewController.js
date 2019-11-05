@@ -108,6 +108,14 @@ module.exports = {
     return redirectWithQueries('/jobs', req, res);
   },
 
+  faq: (req, res) => {
+    return redirectWithQueries(
+      `https://shinetext.zendesk.com/hc/en-us`,
+      req,
+      res
+    );
+  },
+
   gift: (req, res) => {
     return redirectWithQueries(
       `${sails.config.globals.premiumShineBaseUrl}/gift`,
