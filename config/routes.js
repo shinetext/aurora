@@ -49,13 +49,7 @@ var routes = {
   '/coming-soon-android': 'WebViewController.androidSignUp',
   '/confirmation': 'WebViewController.confirmation',
   '/daily': 'WebViewController.daily',
-  '/faq': {
-    view: 'faq',
-    locals: {
-      title: 'FAQ | Shine',
-      layout: 'layouts/subpage.layout',
-    },
-  },
+  '/faq': 'WebViewController.faq',
   '/gift': 'WebViewController.gift',
   '/mentalhealthbreak': 'WebViewController.mentalhealthbreak',
   '/home': 'WebViewController.app',

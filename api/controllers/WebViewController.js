@@ -96,6 +96,14 @@ module.exports = {
     );
   },
 
+  allraise: (req, res) => {
+    return redirectWithQueries(
+      `https://premium.shinetext.com/promo/allraise`,
+      req,
+      res
+    );
+  },
+
   bumble: (req, res) => {
     return redirectWithQueries(
       `https://mailchi.mp/shinetext.com/bumble`,
@@ -106,6 +114,22 @@ module.exports = {
 
   careers: (req, res) => {
     return redirectWithQueries('/jobs', req, res);
+  },
+
+  dreamforce: (req, res) => {
+    return redirectWithQueries(
+      `https://premium.shinetext.com/promo/dreamforce`,
+      req,
+      res
+    );
+  },
+
+  faq: (req, res) => {
+    return redirectWithQueries(
+      `https://shinetext.zendesk.com/hc/en-us`,
+      req,
+      res
+    );
   },
 
   gift: (req, res) => {

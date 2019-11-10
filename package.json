@@ -33,7 +33,7 @@
     "react": "^15.6.0",
     "react-dom": "^15.6.0",
     "request": "^2.72.0",
-    "sails": "~0.12.3",
+    "sails": "~0.12.7",
     "sails-disk": "~0.10.9",
     "sails-hook-babel": "^6.0.3"
   },
