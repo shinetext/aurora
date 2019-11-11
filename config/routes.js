@@ -35,6 +35,7 @@ var routes = {
   '/500': {
     view: '500',
   },
+  '/allraise': 'WebViewController.allraise',
   '/app': 'WebViewController.app',
   '/advice': 'WebViewController.advice',
   '/articles': 'WebViewController.advice',
@@ -49,6 +50,7 @@ var routes = {
   '/coming-soon-android': 'WebViewController.androidSignUp',
   '/confirmation': 'WebViewController.confirmation',
   '/daily': 'WebViewController.daily',
+  '/dreamforce': 'WebViewController.dreamforce',
   '/faq': 'WebViewController.faq',
   '/gift': 'WebViewController.gift',
   '/mentalhealthbreak': 'WebViewController.mentalhealthbreak',
