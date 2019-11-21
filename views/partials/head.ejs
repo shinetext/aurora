@@ -4,61 +4,84 @@
   </title>
 
   <!-- Viewport mobile tag for sensible mobile support -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="<%=typeof metaDescription === 'undefined' ? 'Shine sends you free daily text messages with motivational quotes, positive affirmations and actions you can take every morning.' : metaDescription%>" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+  <meta
+    name="description"
+    content="<%=typeof metaDescription === 'undefined' ? 'You are more than your stress and anxiety. Take care of your mental health every day with the Shine app.' : metaDescription%>"
+  />
 
   <meta property="og:url" content="https://www.shinetext.com" />
-  <meta property="og:title" content="<%= typeof title === 'undefined' ? 'Shine' : title %>" />
-  <meta property="og:description" content="<%= typeof metaDescription === 'undefined' ? 'Shine sends you daily text messages with motivational quotes, positive affirmations and actions you can take every morning.' : metaDescription %>" />
+  <meta
+    property="og:title"
+    content="<%= typeof title === 'undefined' ? 'Shine' : title %>"
+  />
+  <meta
+    property="og:description"
+    content="<%= typeof metaDescription === 'undefined' ? 'You are more than your stress and anxiety. Take care of your mental health every day with the Shine app.' : metaDescription %>"
+  />
   <meta property="og:site_name" content="Shine" />
-  <meta property="og:image" content="https://images.ctfassets.net/awpxl2koull4/4nhM4FHeQMOWA2MsEIO2qs/0322da55cfb456dd91bff6994f143ecb/shine-website-fb-og-image.jpg" />
+  <meta
+    property="og:image"
+    content="https://images.ctfassets.net/awpxl2koull4/4KNLCyL8rOyoU01JuEQd3R/213b28a27e4c38786668c7f02fe87a3f/new-og-image3.jpg"
+  />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Caveat+Brush"
+    rel="stylesheet"
+    type="text/css"
+  />
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
 
   <!--STYLES-->
-  <link rel="stylesheet" href="/styles/importer.css">
+  <link rel="stylesheet" href="/styles/importer.css" />
   <!--STYLES END-->
-
 
   <!-- Optimize - Page-hiding snippet to minimize page flickering -->
   <!--This snippet ensures that users only see your variant content, minimizing page
 flicker.-->
   <style>
     .async-hide {
-      opacity: 0 !important
+      opacity: 0 !important;
     }
-
   </style>
   <script>
-    (function (a, s, y, n, c, h, i, d, e) {
+    (function(a, s, y, n, c, h, i, d, e) {
       s.className += ' ' + y;
-      h.start = 1 * new Date;
-      h.end = i = function () {
-        s.className = s.className.replace(RegExp(' ?' + y), '')
+      h.start = 1 * new Date();
+      h.end = i = function() {
+        s.className = s.className.replace(RegExp(' ?' + y), '');
       };
       (a[n] = a[n] || []).hide = h;
-      setTimeout(function () {
+      setTimeout(function() {
         i();
-        h.end = null
+        h.end = null;
       }, c);
       h.timeout = c;
     })(window, document.documentElement, 'async-hide', 'dataLayer', 4000, {
-      '<%= process.env.GOOGLE_OPTIMIZE %>': true
+      '<%= process.env.GOOGLE_OPTIMIZE %>': true,
     });
-
   </script>
   <!--Optimize Page-hiding snippet end -->
 
-
   <script>
-    window.ga = window.ga || function () {
-      (ga.q = ga.q || []).push(arguments)
-    };
-    ga.l = +new Date;
+    window.ga =
+      window.ga ||
+      function() {
+        (ga.q = ga.q || []).push(arguments);
+      };
+    ga.l = +new Date();
     ga('create', '<%= process.env.GA_TRACKINGID %>', 'auto');
 
     // GA autotrack plugins
@@ -66,37 +89,38 @@ flicker.-->
     // GA Optimize plugin to load the specified Optimize experiment container
     ga('require', '<%= process.env.GOOGLE_OPTIMIZE %>');
     ga('send', 'pageview');
-
   </script>
-  <script async src='https://www.google-analytics.com/analytics.js'></script>
-  <script async src='https://cdnjs.cloudflare.com/ajax/libs/autotrack/1.0.1/autotrack.js'></script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script
+    async
+    src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/1.0.1/autotrack.js"
+  ></script>
   <!-- Google Tag Manager -->
   <script>
-    (function (w, d, s, l, i) {
+    (function(w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({
         'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
+        event: 'gtm.js',
       });
       var f = d.getElementsByTagName(s)[0],
         j = d.createElement(s),
         dl = l != 'dataLayer' ? '&l=' + l : '';
       j.async = true;
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-KCRJ54');
-
   </script>
   <!-- End Google Tag Manager -->
 
   <!-- Facebook Pixel Code -->
   <script>
-    ! function (f, b, e, v, n, t, s) {
+    !(function(f, b, e, v, n, t, s) {
       if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      n = f.fbq = function() {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
       };
       if (!f._fbq) f._fbq = n;
       n.push = n;
@@ -107,15 +131,23 @@ flicker.-->
       t.async = !0;
       t.src = v;
       s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window,
-      document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      'script',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    );
     fbq('init', '190488081450568');
     fbq('track', 'PageView');
-
   </script>
   <noscript>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=190488081450568&ev=PageView&noscript=1" />
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=190488081450568&ev=PageView&noscript=1"
+    />
   </noscript>
   <!-- End Facebook Pixel Code -->
 </head>
