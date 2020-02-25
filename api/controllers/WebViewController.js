@@ -184,7 +184,7 @@ module.exports = {
     const utmSourcePartner = 'utm_source=Partner';
     const podcastDirectories = {
       awesome: `sortaawesome?${utmSourceVeritone}&${utmMedium}&utm_campaign=Sorta_Awesome`,
-      boost: `dailyboost?${utmSourceVeritone}&${utmMedium}&utm_campaign=Daily_Boost`,
+      boost: `dailyboost-2020?utm_source=DailyBoost&utm_medium=podcast&utm_campaign=Feb2020`,
       dateme: `dateme?${utmSourceVeritone}&${utmMedium}&utm_campaign=Why_Wont_You_Date_Me`,
       dst: `dietstartstomorrow?${utmSourceVeritone}&${utmMedium}&utm_campaign=Diet_Starts_Tomorrow`,
       feelbetter: `feelbetter?${utmSourceVeritone}&${utmMedium}&utm_campaign=Feel_Better_Live_More`,
@@ -207,6 +207,7 @@ module.exports = {
       smalldoses: `smalldoses?${utmSourceVeritone}&${utmMedium}&utm_campaign=Small_Doses`,
       who: `whoweekly?${utmSourceVeritone}&${utmMedium}&utm_campaign=Who_Weekly`,
       zigzag: `zigzag?${utmSourceVeritone}&${utmMedium}&utm_campaign=Zigzag`,
+      spotify: `spotify?utm_source=spotify&utm_medium=podcast&utm_campaign=Feb2020`,
     };
 
     Promise.coroutine(function*() {
