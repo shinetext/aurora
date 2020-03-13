@@ -253,6 +253,10 @@ module.exports = {
     );
   },
 
+  virusanxiety: (req, res) => {
+    return redirectWithQueries(`https://virusanxiety.com`, req, res);
+  },
+
   /**
    * Display /confirmation view and pass along any query params.
    */

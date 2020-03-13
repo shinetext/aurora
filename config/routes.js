@@ -59,6 +59,7 @@ var routes = {
   '/nod': 'WebViewController.nod',
   '/quiz': 'WebViewController.quiz',
   '/p/:partner': 'WebViewController.partners',
+  '/pandemic-self-care-toolkit': 'WebViewController.virusanxiety',
   '/partners/:partner': 'WebViewController.partners',
   '/privacy-policy': {
     view: 'privacy-policy',
@@ -108,6 +109,7 @@ var routes = {
       layout: 'layouts/subpage.layout',
     },
   },
+  '/virusanxiety': 'WebViewController.virusanxiety',
   '/year1': {
     view: 'year1',
     locals: {
