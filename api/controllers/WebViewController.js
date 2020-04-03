@@ -67,16 +67,6 @@ module.exports = {
    * Redirect to the Shine Premium (web conversion) landing page.
    */
   app: function(req, res) {
-    // @todo To support SMS referrals, we'll continue serving the old homepage
-    // to users who come in from a referral link. Will eventually need another
-    // solution for referrals to work with the app download page too.
-    //
-    // UPDATE: excluding ?r=sms. It's not a real referral code and it's showing
-    // up in search results, where we'd rather forward people onto the app.
-    if (req.query.r && req.query.r !== 'sms') {
-      return this.home(req, res);
-    }
-
     return redirectWithQueries(
       sails.config.globals.premiumShineBaseUrl,
       req,
@@ -184,7 +174,7 @@ module.exports = {
     const utmSourcePartner = 'utm_source=Partner';
     const podcastDirectories = {
       awesome: `sortaawesome?${utmSourceVeritone}&${utmMedium}&utm_campaign=Sorta_Awesome`,
-      boost: `dailyboost-2020?utm_source=DailyBoost&utm_medium=podcast&utm_campaign=Feb2020`,
+      boost: `dailyboost-2020?utm_source=DailyBoost&utm_medium=podcast&utm_campaign=April2020`,
       dateme: `dateme?${utmSourceVeritone}&${utmMedium}&utm_campaign=Why_Wont_You_Date_Me`,
       dst: `dietstartstomorrow?${utmSourceVeritone}&${utmMedium}&utm_campaign=Diet_Starts_Tomorrow`,
       feelbetter: `feelbetter?${utmSourceVeritone}&${utmMedium}&utm_campaign=Feel_Better_Live_More`,
@@ -208,6 +198,7 @@ module.exports = {
       who: `whoweekly?${utmSourceVeritone}&${utmMedium}&utm_campaign=Who_Weekly`,
       zigzag: `zigzag?${utmSourceVeritone}&${utmMedium}&utm_campaign=Zigzag`,
       spotify: `spotify?utm_source=spotify&utm_medium=podcast&utm_campaign=Feb2020`,
+      podcast: `podcast?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA`,
     };
 
     Promise.coroutine(function*() {
