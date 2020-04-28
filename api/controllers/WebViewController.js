@@ -59,14 +59,14 @@ module.exports = {
   /**
    * Redirect to the homepage now that Android has launched.
    */
-  androidSignUp: function(req, res) {
+  androidSignUp: function (req, res) {
     return redirectWithQueries('/', req, res);
   },
 
   /**
    * Redirect to the Shine Premium (web conversion) landing page.
    */
-  app: function(req, res) {
+  app: function (req, res) {
     return redirectWithQueries(
       sails.config.globals.premiumShineBaseUrl,
       req,
@@ -199,9 +199,10 @@ module.exports = {
       zigzag: `zigzag?${utmSourceVeritone}&${utmMedium}&utm_campaign=Zigzag`,
       spotify: `spotify?utm_source=spotify&utm_medium=podcast&utm_campaign=Feb2020`,
       podcast: `podcast?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA`,
+      anxiety: `podcast-anxiety?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA_AnxietySeries`,
     };
 
-    Promise.coroutine(function*() {
+    Promise.coroutine(function* () {
       let isPromo = false;
       const contentfulReq = {
         method: 'GET',
@@ -251,7 +252,7 @@ module.exports = {
   /**
    * Display /confirmation view and pass along any query params.
    */
-  confirmation: function(req, res) {
+  confirmation: function (req, res) {
     let headerImage, headerText, bodyCopy;
     if (req.query.partner) {
       const partnerConfirmation = PartnerService.getPartner(req.query.partner)
@@ -299,7 +300,7 @@ module.exports = {
   /**
    * Display the homepage view.
    */
-  home: function(req, res) {
+  home: function (req, res) {
     let locals = {
       adviceBaseUrl: sails.config.globals.adviceBaseUrl,
       referredByCode: req.query.r,
@@ -317,9 +318,9 @@ module.exports = {
   /**
    * Display the user's referral info .
    */
-  myReferral: function(req, res) {
+  myReferral: function (req, res) {
     const _this = this;
-    Promise.coroutine(function*() {
+    Promise.coroutine(function* () {
       let referralRequest = {
         method: 'GET',
         uri:
@@ -383,7 +384,7 @@ module.exports = {
    * View for setting SMS settings. Typically shown immediately after a
    * sign up and before the confirmation page.
    */
-  smsSettings: function(req, res) {
+  smsSettings: function (req, res) {
     let locals = {
       user: {
         firstName: req.query.firstName,
@@ -401,7 +402,7 @@ module.exports = {
    * View for partner/influencer microsite
    *
    */
-  partners: function(req, res) {
+  partners: function (req, res) {
     try {
       const partnerName = req.params.partner.toLowerCase();
       const partner = PartnerService.getPartner(partnerName);
@@ -424,7 +425,7 @@ module.exports = {
    * View for mobile app splash
    *
    */
-  splash: function(req, res) {
+  splash: function (req, res) {
     try {
       const splashComponentMarkup = ReactDOMServer.renderToString(
         <SplashPage />
@@ -445,7 +446,7 @@ module.exports = {
    * View for campaign/influencer microsite
    *
    */
-  campaigns: function(req, res) {
+  campaigns: function (req, res) {
     try {
       let campaignName = req.params.campaign.toLowerCase();
       const campaign = CampaignService.getCampaign(campaignName);
@@ -468,7 +469,7 @@ module.exports = {
    * View for campaign referrals component
    *
    */
-  campaignReferral: function(req, res) {
+  campaignReferral: function (req, res) {
     try {
       let campaignName = req.params.campaign.toLowerCase();
       const campaign = CampaignService.getCampaign(campaignName);
@@ -498,7 +499,7 @@ module.exports = {
    * @param referralCode {string}
    * @return {object}
    */
-  makeShareUrls: function(referralCode, campaign) {
+  makeShareUrls: function (referralCode, campaign) {
     const shareBody = `Sign up with me to get Shine! A daily text for your self-care and joy.`;
     const shareTitle = `Sign up for Shine!`;
     const shareUrl = `https://www.shinetext.com?r=${referralCode}%26utm_source=Shine`;
