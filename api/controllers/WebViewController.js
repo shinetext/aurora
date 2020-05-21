@@ -198,7 +198,6 @@ module.exports = {
       who: `whoweekly?${utmSourceVeritone}&${utmMedium}&utm_campaign=Who_Weekly`,
       zigzag: `zigzag?${utmSourceVeritone}&${utmMedium}&utm_campaign=Zigzag`,
       spotify: `spotify?utm_source=spotify&utm_medium=podcast&utm_campaign=Feb2020`,
-      podcast: `podcast?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA`,
       anxiety: `podcast-anxiety?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA_AnxietySeries`,
       20: `podcast-20-sale?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA_20Sale`,
     };
@@ -248,6 +247,22 @@ module.exports = {
 
   virusanxiety: (req, res) => {
     return redirectWithQueries(`https://virusanxiety.com`, req, res);
+  },
+
+  podcast: (req, res) => {
+    return redirectWithQueries(
+      `https://join.shinetext.com/?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA`,
+      req,
+      res
+    );
+  },
+
+  invite: (req, res) => {
+    return redirectWithQueries(
+      `https://join.shinetext.com/promo/invite-friends/?utm_source=Shine&utm_medium=IG_Stories&utm_campaign=InviteFriends`,
+      req,
+      res
+    );
   },
 
   /**
