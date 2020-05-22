@@ -53,6 +53,7 @@ var routes = {
   '/dreamforce': 'WebViewController.dreamforce',
   '/faq': 'WebViewController.faq',
   '/gift': 'WebViewController.gift',
+  '/invite': 'WebViewController.invite',
   '/mentalhealthbreak': 'WebViewController.mentalhealthbreak',
   '/home': 'WebViewController.app',
   '/jobs': 'WebViewController.jobs',
@@ -61,6 +62,7 @@ var routes = {
   '/p/:partner': 'WebViewController.partners',
   '/pandemic-self-care-toolkit': 'WebViewController.virusanxiety',
   '/partners/:partner': 'WebViewController.partners',
+  '/podcast': 'WebViewController.podcast',
   '/privacy-policy': {
     view: 'privacy-policy',
     locals: {
