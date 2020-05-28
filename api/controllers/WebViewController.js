@@ -200,6 +200,7 @@ module.exports = {
       spotify: `spotify?utm_source=spotify&utm_medium=podcast&utm_campaign=Feb2020`,
       anxiety: `podcast-anxiety?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA_AnxietySeries`,
       20: `podcast-20-sale?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA_20Sale`,
+      30: `podcast-30-sale?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA_30Sale`,
     };
 
     Promise.coroutine(function* () {
