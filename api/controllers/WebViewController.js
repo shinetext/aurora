@@ -201,6 +201,7 @@ module.exports = {
       anxiety: `podcast-anxiety?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA_AnxietySeries`,
       20: `podcast-20-sale?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA_20Sale`,
       30: `podcast-30-sale?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA_30Sale`,
+      july: `podcast-support-bipoc-mental-health?utm_source=Shine&utm_medium=podcast&utm_campaign=Podcast_CTA_July_Support_BIPOC_MentalHealth`,
     };
 
     Promise.coroutine(function* () {
