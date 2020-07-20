@@ -35,6 +35,7 @@ var routes = {
   '/500': {
     view: '500',
   },
+  '/about': 'WebViewController.about',
   '/allraise': 'WebViewController.allraise',
   '/app': 'WebViewController.app',
   '/advice': 'WebViewController.advice',

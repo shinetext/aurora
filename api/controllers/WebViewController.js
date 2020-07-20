@@ -49,6 +49,10 @@ function redirectWithQueries(path, req, res) {
 
 module.exports = {
   ////////////////////////////// Redirects ///////////////////////////////////
+  about: (req, res) => {
+    return redirectWithQueries(`https://join.shinetext.com/about`, req, res);
+  },
+
   /**
    * Redirect to the advice page.
    */
