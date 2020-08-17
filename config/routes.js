@@ -64,6 +64,7 @@ var routes = {
   '/pandemic-self-care-toolkit': 'WebViewController.virusanxiety',
   '/partners/:partner': 'WebViewController.partners',
   '/podcast': 'WebViewController.podcast',
+  '/mealtime': 'WebViewController.mealtime',
   '/privacy-policy': {
     view: 'privacy-policy',
     locals: {

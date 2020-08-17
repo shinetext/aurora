@@ -167,6 +167,16 @@ module.exports = {
       res
     );
   },
+  /**
+   * Redirect to grubhub + shine compassion quiz.
+   */
+  mealtime: (req, res) => {
+    return redirectWithQueries(
+      `https://premium.shinetext.com/quiz/start?partner=grubhub`,
+      req,
+      res
+    );
+  },
 
   /**
    * Redirect to specific promo page
