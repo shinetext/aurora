@@ -65,6 +65,7 @@ var routes = {
   '/partners/:partner': 'WebViewController.partners',
   '/podcast': 'WebViewController.podcast',
   '/mealtime': 'WebViewController.mealtime',
+  '/2020-election': 'WebViewController.election',
   '/privacy-policy': {
     view: 'privacy-policy',
     locals: {

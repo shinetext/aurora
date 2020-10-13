@@ -179,6 +179,17 @@ module.exports = {
   },
 
   /**
+   * Redirect to 2020 election + shine quiz.
+   */
+  election: (req, res) => {
+    return redirectWithQueries(
+      `https://theshineapp.com/quiz/start?partner=election`,
+      req,
+      res
+    );
+  },
+
+  /**
    * Redirect to specific promo page
    */
   promoRedirect: (req, res) => {
